@@ -1,5 +1,6 @@
 from WorldGraph import World
 
+"""A gene is a single unit of a chromosone that informs the fitness function """
 class Gene:
     termination_timestamp: int | None
     vaccine_distribution: dict
@@ -8,7 +9,7 @@ class Gene:
         self.termination_timestamp = termination_timestamp
         self.vaccine_distribution = vaccine_distribution
     
-
+"""A chromosone is a list of genes"""
 class Chromosone:
     genes: list[Gene]
 
