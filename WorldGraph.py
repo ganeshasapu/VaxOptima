@@ -1,20 +1,25 @@
-class Country: # Equivalent to Vertex
+class Country:
+    """Class that represents a Country. Equivalent to Vertex in Graph"""
     name: str
 
     def __init__(self, name: str):
         self.name = name
 
-class ExportingCountry(Country): # Exporting Countries
+class ExportingCountry(Country):
+    """Class that represents a country exporting vaccines."""
     # Vaccine Export Rate
     # Vaccine Stored Amount
     pass
 
-class Edge: # Equivalent to Edge
+class Edge:
+    """A class that represents an edge between an exporter and importer. 
+    Equivalent to a directed and weighted edge."""
     exporter: ExportingCountry
     importer: Country
-    shipment_time: float
+    shipment_time: int
 
-class World: # Equivalent to Graph
+class World:
+    """A class representing the world. Equivalent to Graph."""
     countries: set[Country | ExportingCountry]
     edges: set[Edge]
 
