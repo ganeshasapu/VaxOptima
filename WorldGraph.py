@@ -1,5 +1,10 @@
 class World: # Equivalent to Graph
-    pass
+    countries: set
+    edges: set
+
+    def __init__(self, countries: set, edges: set):
+        self.countries = countries
+        self.edges = edges
 
 class Country: # Equivalent to Vertex
     pass
