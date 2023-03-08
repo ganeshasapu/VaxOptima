@@ -7,5 +7,5 @@ class Country: # Equivalent to Vertex
 class Edge: # Equivalent to Edge
     pass
 
-class ExportingCountry(Country):
+class ExportingCountry(Country): # Exporting Countries
     pass
