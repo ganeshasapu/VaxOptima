@@ -1,8 +1,11 @@
-class World:
+class World: # Equivalent to Graph
     pass
 
-class Country:
+class Country: # Equivalent to Vertex
     pass
 
-class Edge:
+class Edge: # Equivalent to Edge
+    pass
+
+class ExportingCountry(Country):
     pass
