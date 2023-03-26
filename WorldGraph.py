@@ -1,3 +1,7 @@
+"""
+File for the representation of the world graph
+"""
+
 class Country:
     """Class that represents a Country. Equivalent to Vertex in Graph"""
     name: str

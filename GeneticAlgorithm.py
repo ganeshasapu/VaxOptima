@@ -1,9 +1,18 @@
+"""
+File that performs the genetic algorithm
+"""
+
 from WorldGraph import World
 
 """A gene is a single unit of a chromosone that informs the fitness function """
 class Gene:
     termination_timestamp: int | None
-    vaccine_distribution: dict
+    vaccine_distribution: dict[dict[str: dict[int: list[tuple[str, int]]]]]
+    # Example vaccine distribution (max 10 countries, 1 timestamp): {
+    #    "exporter1": {1: [("country1", 5000), ("country1", 10000)], 2: [("country8", 5000)]},
+    #    "exporter2": {1: [("country4", 5000), ("country5", 10000)], 2: [("country2", 5000)]},
+    #    "exporter3": {1: [("country6", 5000), ("country3", 10000)], 2: [("country3", 5000)]}
+    # }
 
     def __init__(self, termination_timestamp: int | None, vaccine_distribution: dict):
         self.termination_timestamp = termination_timestamp
@@ -44,7 +53,12 @@ class GeneticAlgorithm:
         pass
 
     def create_initial_chromosone(self) -> Chromosone:
-        """Creates the initial chromosone"""
+        """Creates the initial chromosone
+        
+        
+        """
+
+
         pass
 
     def selection(self, chromosone: Chromosone) -> Chromosone:
