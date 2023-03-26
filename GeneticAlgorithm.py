@@ -39,21 +39,24 @@ class Gene:
         """Runs simulation and gives a fitness score to the gene"""
         vaccine_shipiments: list[VaccineShipment] = []
         exporters = list(world.exporting_countries.keys())
-        for i in range(num_timestamps):
+        for i in range(num_timestamps): 
             for exporter in exporters:
                 for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
                     exporter_obj = world.exporting_countries[exporter]
-                    vaccine_shipiments.append(VaccineShipment(
-                        importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
+                    # adding shipment to stack
+                    vaccine_shipiments.append(VaccineShipment(importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
             for shipment in vaccine_shipiments:
+                # updating shipments
                 shipment.time_left -= 1
                 if shipment.time_left == 0:
-                    world.export_vaccine(
-                        importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
+                    # shipment has arrived to country
+                    world.export_vaccine(importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
                     vaccine_shipiments.remove(shipment)
             for country in world.countries.values():
+                # country distributes vaccines to its population
                 country.vaccinate()
             if world.check_termination():
+                # if 70% of the population is vaccinated, terminate
                 self.fitness_value = i
                 return
         self.fitness_value = num_timestamps
@@ -81,9 +84,8 @@ class Chromosome:
         """Runs simulation and gives a fitness score to the each of the genes in the chromosome"""
         for gene in self.genes:
             gene.fitness(world=world, num_timestamps=num_timestamps)
-
-        world.reset()
-
+            world.reset()
+        
     def __str__(self) -> str:
         string = ""
         for gene in self.genes:
@@ -124,14 +126,14 @@ class GeneticAlgorithm:
 
     def run(self) -> Chromosome:
         """Runs the genetic algorithm and returns the final chromosome"""
-        for _ in range(self.num_chromosomes):
-            chromosome = self.create_initial_chromosome()
-            chromosome.fitness(
-                num_timestamps=self.num_timestamps, world=self.world_graph)
-            while True:
-                chromosome = self.selection(chromosome=chromosome)
-                chromosome.fitness(world=self.world_graph,
-                                   num_timestamps=self.num_timestamps)
+        chromosome = self.create_initial_chromosome()
+        chromosome.fitness(
+            num_timestamps=self.num_timestamps, world=self.world_graph)
+        for i in range(self.num_chromosomes):
+            print(i)
+            chromosome = self.selection(chromosome=chromosome)
+            chromosome.fitness(world=self.world_graph,
+                                num_timestamps=self.num_timestamps)
         return chromosome
 
     def create_initial_chromosome(self) -> Chromosome:
@@ -181,6 +183,7 @@ class GeneticAlgorithm:
         minimum_fitness_value = min(
             [gene.fitness_value for gene in chromosome.genes])
         genes_for_chromosome = []
+        print([gene.fitness_value for gene in chromosome.genes])
         for gene in chromosome.genes:
             if len(most_fit_genes_so_far) == 2:
                 break
