@@ -1,12 +1,10 @@
-print("Test")
+from GeneticAlgorithm import GeneticAlgorithm
+from WorldGraph import World
 
-def func(p1: int, p2: int) -> int:
-    """
-
-    :param p1:
-    :param p2:
-    :return:
-    """
-    return p1 + p2
-
-print(func(4, 5))
+if __name__ == "__main__":
+    countries = {"country1", "country2", "country3", "country4", "country5", "country6", "country7", "country8", "country9", "country10"}
+    edges = set()
+    world = World(countries, edges)
+    ga = GeneticAlgorithm(mutation_rate=0.1, crossover_rate=0.1, replication_rate=0.1, chromosone_size=3, num_chromosones=10, world=world)
+    init_chr = ga.create_initial_chromosone()
+    print(init_chr)

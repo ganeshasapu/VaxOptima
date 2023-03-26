@@ -1,5 +1,13 @@
+"""
+File for the representation of the world graph
+"""
+
 class Country:
-    """Class that represents a Country. Equivalent to Vertex in Graph"""
+    """Class that represents a Country. Equivalent to Vertex in Graph
+    
+    Instance Attributes:
+    - 
+    """
     name: str
 
     def __init__(self, name: str):
@@ -7,9 +15,8 @@ class Country:
 
 class ExportingCountry(Country):
     """Class that represents a country exporting vaccines."""
-    # Vaccine Export Rate
-    # Vaccine Stored Amount
-    pass
+    export_rate: float
+    vaccine_supply: int
 
 class Edge:
     """A class that represents an edge between an exporter and importer. 
