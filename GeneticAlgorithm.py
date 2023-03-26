@@ -21,10 +21,10 @@ class Gene:
 
     fitness_value: Optional[int]
     vaccine_distribution: dict[str: list[list[tuple[str, int]]]]
-     # Exporter -> Timestamp -> List of (Country, Vaccine Amount)
-    # Example vaccine distribution (2 exporters, 2 countries, 3 timestamps): 
+    # Exporter -> Timestamp -> List of (Country, Vaccine Amount)
+    # Example vaccine distribution (2 exporters, 2 countries, 3 timestamps):
     # {
-    # 'exporter1': [[('country1', 48), ('country2', 52)], [('country2', 63), ('country1', 137)], [('country2', 105), ('country1', 195)]], 
+    # 'exporter1': [[('country1', 48), ('country2', 52)], [('country2', 63), ('country1', 137)], [('country2', 105), ('country1', 195)]],
     # 'exporter2': [[('country2', 39), ('country1', 61)], [('country2', 81), ('country1', 119)], [('country2', 139), ('country1', 161)]]
     # }
 
@@ -34,7 +34,6 @@ class Gene:
 
     def __str__(self) -> str:
         return f"Termination Timestamp: {self.fitness_value}, Vaccine Distribution: {self.vaccine_distribution}"
-    
 
     def fitness(self, world: World, num_timestamps: int):
         """Runs simulation and gives a fitness score to the gene"""
@@ -44,26 +43,28 @@ class Gene:
             for exporter in exporters:
                 for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
                     exporter_obj = world.exporting_countries[exporter]
-                    print(exporter_obj.edges)
-                    vaccine_shipiments.append(VaccineShipment(importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
+                    vaccine_shipiments.append(VaccineShipment(
+                        importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
             for shipment in vaccine_shipiments:
                 shipment.time_left -= 1
                 if shipment.time_left == 0:
-                    world.export_vaccine(importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
+                    world.export_vaccine(
+                        importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
                     vaccine_shipiments.remove(shipment)
             for country in world.countries.values():
                 country.vaccinate()
             if world.check_termination():
-                print("Terminated at timestamp", i)
                 self.fitness_value = i
                 return
         self.fitness_value = num_timestamps
+
 
 @dataclass
 class VaccineShipment:
     importing_country: Country
     vaccine_amount: int
     time_left: int
+
 
 class Chromosome:
     """A chromosome is a list of genes
@@ -80,7 +81,7 @@ class Chromosome:
         """Runs simulation and gives a fitness score to the each of the genes in the chromosome"""
         for gene in self.genes:
             gene.fitness(world=world, num_timestamps=num_timestamps)
-        
+
         world.reset()
 
     def __str__(self) -> str:
@@ -101,7 +102,7 @@ class GeneticAlgorithm:
         - gene_count: the number of genes in a chromosome
         - num_chromosomes: the number of chromosomes in a population
         - world: the world graph
-    
+
     """
     replication_rate: float
     mutation_rate: float
@@ -125,48 +126,58 @@ class GeneticAlgorithm:
         """Runs the genetic algorithm and returns the final chromosome"""
         for _ in range(self.num_chromosomes):
             chromosome = self.create_initial_chromosome()
-            chromosome.fitness(num_timestamps=self.num_timestamps, world=self.world_graph)
+            chromosome.fitness(
+                num_timestamps=self.num_timestamps, world=self.world_graph)
             while True:
                 chromosome = self.selection(chromosome=chromosome)
-                chromosome.fitness(world=self.world_graph, num_timestamps=self.num_timestamps)
+                chromosome.fitness(world=self.world_graph,
+                                   num_timestamps=self.num_timestamps)
         return chromosome
 
     def create_initial_chromosome(self) -> Chromosome:
         """Creates the initial chromosome
         """
         genes: list[Gene] = []
-        timestamps_vaccine_amount = generate_timestamp_vaccine_amount(num_timestamps=self.num_timestamps)
+        timestamps_vaccine_amount = generate_timestamp_vaccine_amount(
+            num_timestamps=self.num_timestamps)
         countries = list(self.world_graph.countries.keys())
         exporting_countries = list(self.world_graph.exporting_countries.keys())
 
         for i in range(self.chromosome_size):
-            vaccine_distribution = {}  #Building up gene
+            vaccine_distribution = {}  # Building up gene
             for exporter in exporting_countries:
-                vaccine_distribution[exporter] = [] # each exporter has a list of shipments
+                # each exporter has a list of shipments
+                vaccine_distribution[exporter] = []
                 for i in range(len(timestamps_vaccine_amount)):
-                    chosen_countries = [] # list of countries that have already been chosen
-                    vaccine_distribution[exporter].append([]) # each timestamp has a list of shipments
-                    total_vaccine_amount = timestamps_vaccine_amount[i] # total amount of vaccines at timestamp i (decreases as we pick countries)
+                    chosen_countries = []  # list of countries that have already been chosen
+                    # each timestamp has a list of shipments
+                    vaccine_distribution[exporter].append([])
+                    # total amount of vaccines at timestamp i (decreases as we pick countries)
+                    total_vaccine_amount = timestamps_vaccine_amount[i]
                     while True:
                         # picks between 1/4 and 1/2 of the total amount of vaccines at timestamp i
-                        selected_amount = random.randint(timestamps_vaccine_amount[i] // 4, timestamps_vaccine_amount[i] // 2)
-                        countries_left  = list(set(countries).difference(set(chosen_countries)))
+                        selected_amount = random.randint(
+                            timestamps_vaccine_amount[i] // 4, timestamps_vaccine_amount[i] // 2)
+                        countries_left = list(
+                            set(countries).difference(set(chosen_countries)))
                         # 1 country left or chosen amount is greater than the amount of vaccines left
                         selected_country = random.choice(countries_left)
                         if len(chosen_countries) == len(countries) - 1 or total_vaccine_amount <= selected_amount:
-                            vaccine_distribution[exporter][i].append((selected_country, total_vaccine_amount))
+                            vaccine_distribution[exporter][i].append(
+                                (selected_country, total_vaccine_amount))
                             break
-                        vaccine_distribution[exporter][i].append((selected_country, selected_amount)) 
+                        vaccine_distribution[exporter][i].append(
+                            (selected_country, selected_amount))
                         total_vaccine_amount -= selected_amount
                         chosen_countries.append(selected_country)
-            genes.append(Gene(vaccine_distribution=vaccine_distribution, fitness_value=None))
+            genes.append(
+                Gene(vaccine_distribution=vaccine_distribution, fitness_value=None))
 
         return Chromosome(genes)
 
     def selection(self, chromosome: Chromosome) -> Chromosome:
         """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes and returns a chromosome including these genes"""
         most_fit_genes_so_far = []
-        print([gene.fitness_value for gene in chromosome.genes])
         minimum_fitness_value = min(
             [gene.fitness_value for gene in chromosome.genes])
         genes_for_chromosome = []
@@ -175,23 +186,23 @@ class GeneticAlgorithm:
                 break
             if gene.fitness_value == minimum_fitness_value:
                 most_fit_genes_so_far.append(gene)
-                print([gene.fitness_value for gene in chromosome.genes])
-                minimum_fitness_value = min(
-                    [gene.fitness_value for gene in chromosome.genes].remove(minimum_fitness_value))
-        index_so_far = 0
+                new_lst = [gene.fitness_value for gene in chromosome.genes]
+                new_lst.remove(minimum_fitness_value)
+                minimum_fitness_value = min(new_lst)
 
         while len(genes_for_chromosome) != 10:
+            index_so_far = 0
             if len(genes_for_chromosome) == 9:
                 current_option = random.choice(
                     [self.replication, self.mutation])
-                weighted_randint = random.random(
+                weighted_randint = random.uniform(
                     0, self.replication_rate + self.mutation_rate)
                 if weighted_randint <= self.replication_rate:
                     current_option = 'replication'
                 else:
                     current_option = 'mutation'
             else:
-                weighted_randint = random.random(0, 1)
+                weighted_randint = random.random()
                 if weighted_randint <= self.replication_rate:
                     current_option = 'replication'
                 elif self.replication_rate < weighted_randint <= self.mutation_rate:
@@ -213,6 +224,7 @@ class GeneticAlgorithm:
                         0, len(most_fit_genes_so_far) - 1)
                 genes_for_chromosome.extend(self.crossover(
                     most_fit_genes_so_far[index_so_far], most_fit_genes_so_far[crossover_index]))
+            index_so_far += 1
         return Chromosome(genes_for_chromosome)
 
     def crossover(self, gene1: Gene, gene2: Gene) -> list[Gene]:
@@ -235,8 +247,8 @@ class GeneticAlgorithm:
                 num = random.randint(0, len(timestamp))
                 while num != 0:
                     mutated_tuple = timestamp_copy.pop()
-                    mutated_tuple[1] = random.randint(
-                        int(mutated_tuple[1] * 0.8), int(mutated_tuple[1] * 1.2))
+                    mutated_tuple = (mutated_tuple[0], random.randint(
+                        int(mutated_tuple[1] * 0.8), int(mutated_tuple[1] * 1.2)))
                     newest_timestamp.append(mutated_tuple)
                     num -= 1
                 for tuple in newest_timestamp:
@@ -252,8 +264,8 @@ class GeneticAlgorithm:
 
 
 def generate_timestamp_vaccine_amount(num_timestamps) -> list[int]:
-        """Generates a list of the amount of vaccines at each timestamp"""
-        timestamps_vaccine_amount = []
-        for i in range(num_timestamps):
-            timestamps_vaccine_amount.append(i * 100)
-        return timestamps_vaccine_amount
+    """Generates a list of the amount of vaccines at each timestamp"""
+    timestamps_vaccine_amount = []
+    for i in range(num_timestamps):
+        timestamps_vaccine_amount.append(i * 100)
+    return timestamps_vaccine_amount
