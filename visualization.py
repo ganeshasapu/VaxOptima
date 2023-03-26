@@ -24,6 +24,8 @@ import os
 
 import webbrowser
 
+import requests
+
 chrome_path = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(chrome_path))
 
@@ -39,7 +41,7 @@ def visualize_countries():
     # Get the geographical boundary data
     countries_geographical = \
         'https://raw.githubusercontent.com/python-visualization/folium/blob/main/examples/data/world-countries.json'
-    # Get the file csv file with country names and their vaccination scores, and pass it into pandas to extract the data
+    # Get the csv file with country names and their vaccination scores, and pass it into pandas to extract the data
     countries_data = pandas.read_csv('countries_vaccination.csv')  # TODO: The file name is a placeholder
 
     # Initialize the world map and make its background black
@@ -108,12 +110,19 @@ def test_chloropleth(layer_control: bool = False, black_bg: bool = False):
 
     # folium.Marker([30, -100], popup=folium.Popup('visualization_result.html')).add_to(m)
 
-    # Define a style function to get rid of the blue lines
+    # # Define a style function to get rid of the blue lines
+    # url_to_data = requests.get(
+    #     'https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json').json()
+    # #Map name to code
+    # state_name_to_code = {x['properties']['name']: x['id'] for x in url_to_data['features']}
+
     def style_function(feature):
         return {
             "fillOpacity": 0,
             "weight": 0,
         }
+
+    # Check for matches in State Code (ex. TX) and State Name (ex. Texas).
 
     folium.GeoJson(
         data=state_geo, name='GeoJson',
