@@ -17,9 +17,12 @@ class Country:
     vaccines_held: int
     vaccine_rate: float
 
-    def __init__(self, name: str, vaccine_rate: float):
+    def __init__(self, name: str, vaccine_rate: float, population: int):
         self.name = name
         self.vaccine_rate = vaccine_rate
+        self.population = population
+        self.vaccinated_population = 0
+        self.vaccines_held = 0
     
     def vaccinate(self):
         """Vaccinates the country"""
@@ -28,6 +31,9 @@ class Country:
             self.vaccinated_population = self.population
         else:
             self.vaccinated_population += amount_vaxinated
+    
+    def __str__(self):
+        return f"{self.name}: {self.vaccinated_population} / {self.population}"
 
 
 class Edge:
@@ -35,17 +41,12 @@ class Edge:
     Equivalent to a directed and weighted edge."""
     importer: Country
     shipment_time: int
-    buffer_vaccine_shipments: list[tuple(int, int)]
-
-    def __init__(self, importer: Country, shipment_time: int, buffer_vaccines: int):
-        self.importer = importer
-        self.shipment_time = shipment_time
-        self.buffer_vaccines = buffer_vaccines
-
+    buffer_vaccine_shipments: list[tuple[int, int]] = []
 
     def __init__(self, importer: Country, shipment_time: int):
         self.importer = importer
         self.shipment_time = shipment_time
+        self.buffer_vaccine_shipments = []
 
 
 class ExportingCountry(Country):
@@ -53,11 +54,11 @@ class ExportingCountry(Country):
     export_rate: float
     edges: dict[str: Edge]
 
-    def __init__(self, name: str, vaccine_rate: float, export_rate: float, vaccine_supply: int):
-        super().__init__(name, vaccine_rate)
+    def __init__(self, name: str, vaccine_rate: float, export_rate: float, edges: dict[str: Edge], population: int):
+        super().__init__(name, vaccine_rate, population)
         self.export_rate = export_rate
-        self.vaccine_supply = vaccine_supply
-        self.edges = {}
+        self.edges = edges
+    
 
 
 class World:
@@ -68,6 +69,18 @@ class World:
     def __init__(self, countries: dict, exporting_countries: dict):
         self.countries = countries
         self.exporting_countries = exporting_countries
+    
+
+    def reset(self):
+        """Resets the world to the initial state"""
+        for country in self.countries.values():
+            country.vaccinated_population = 0
+            country.vaccines_held = 0
+        for exporter in self.exporting_countries.values():
+            exporter.vaccines_held = 0
+            exporter.vaccinated_population = 0
+            for edge in exporter.edges.values():
+                edge.buffer_vaccine_shipments = []
 
     def export_vaccine(self, importer: Country, vaccine_amount: int):
         importer.vaccines_held += vaccine_amount
@@ -79,4 +92,5 @@ class World:
         for country in self.countries.values():
             tot_vaccinated += country.vaccinated_population
             tot_pop += country.population
-        return tot_pop / tot_vaccinated >= 0.7
+        print(tot_vaccinated / tot_pop)
+        return tot_vaccinated / tot_pop >= 0.7
