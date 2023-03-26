@@ -40,24 +40,29 @@ class Gene:
         """Runs simulation and gives a fitness score to the gene"""
         vaccine_shipiments: list[VaccineShipment] = []
         exporters = list(world.exporting_countries.keys())
-        for i in range(num_timestamps):
+        for i in range(num_timestamps): 
             for exporter in exporters:
                 for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
                     exporter_obj = world.exporting_countries[exporter]
-                    print(exporter_obj.edges)
+                    # adding shipment to stack
                     vaccine_shipiments.append(VaccineShipment(importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
             for shipment in vaccine_shipiments:
+                # updating shipments
                 shipment.time_left -= 1
                 if shipment.time_left == 0:
+                    # shipment has arrived to country
                     world.export_vaccine(importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
                     vaccine_shipiments.remove(shipment)
             for country in world.countries.values():
+                # country distributes vaccines to its population
                 country.vaccinate()
             if world.check_termination():
+                # if 70% of the population is vaccinated, terminate
                 print("Terminated at timestamp", i)
                 self.fitness_value = i
                 return
         self.fitness_value = num_timestamps
+        print("Fitness", self.fitness_value)
 
 @dataclass
 class VaccineShipment:
@@ -80,9 +85,8 @@ class Chromosome:
         """Runs simulation and gives a fitness score to the each of the genes in the chromosome"""
         for gene in self.genes:
             gene.fitness(world=world, num_timestamps=num_timestamps)
+            world.reset()
         
-        world.reset()
-
     def __str__(self) -> str:
         string = ""
         for gene in self.genes:
@@ -166,7 +170,6 @@ class GeneticAlgorithm:
     def selection(self, chromosome: Chromosome) -> Chromosome:
         """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes and returns a chromosome including these genes"""
         most_fit_genes_so_far = []
-        print([gene.fitness_value for gene in chromosome.genes])
         minimum_fitness_value = min(
             [gene.fitness_value for gene in chromosome.genes])
         genes_for_chromosome = []
@@ -175,7 +178,9 @@ class GeneticAlgorithm:
                 break
             if gene.fitness_value == minimum_fitness_value:
                 most_fit_genes_so_far.append(gene)
-                print([gene.fitness_value for gene in chromosome.genes])
+                for gene in chromosome.genes:
+                    print(gene.fitness_value)
+                print([gene.fitness_value for gene in chromosome.genes].remove(minimum_fitness_value))
                 minimum_fitness_value = min(
                     [gene.fitness_value for gene in chromosome.genes].remove(minimum_fitness_value))
         index_so_far = 0

@@ -55,7 +55,7 @@ class ExportingCountry(Country):
     edges: dict[str: Edge]
 
     def __init__(self, name: str, vaccine_rate: float, export_rate: float, edges: dict[str: Edge], population: int):
-        super().__init__(name, vaccine_rate, population)
+        super().__init__(name=name, vaccine_rate=vaccine_rate, population=population)
         self.export_rate = export_rate
         self.edges = edges
     
@@ -81,6 +81,15 @@ class World:
             exporter.vaccinated_population = 0
             for edge in exporter.edges.values():
                 edge.buffer_vaccine_shipments = []
+        
+        for country in self.countries.values():
+            print("Vaccinaed pop ", country.vaccinated_population)
+            print("Vaccinaed Held ", country.vaccines_held)
+        for exporter in self.exporting_countries.values():
+            print("Vaccines Held", exporter.vaccines_held)
+            print("Vaccinaed pop ", exporter.vaccinated_population)
+            for edge in exporter.edges.values():
+                print("vax ship", edge.buffer_vaccine_shipments)
 
     def export_vaccine(self, importer: Country, vaccine_amount: int):
         importer.vaccines_held += vaccine_amount
@@ -92,5 +101,4 @@ class World:
         for country in self.countries.values():
             tot_vaccinated += country.vaccinated_population
             tot_pop += country.population
-        print(tot_vaccinated / tot_pop)
         return tot_vaccinated / tot_pop >= 0.7
