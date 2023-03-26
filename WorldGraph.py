@@ -43,6 +43,11 @@ class Edge:
         self.buffer_vaccines = buffer_vaccines
 
 
+    def __init__(self, importer: Country, shipment_time: int):
+        self.importer = importer
+        self.shipment_time = shipment_time
+
+
 class ExportingCountry(Country):
     """Class that represents a country exporting vaccines."""
     export_rate: float
@@ -64,7 +69,7 @@ class World:
 
     def __init__(self, countries: dict):
         self.countries = countries
-    
+
     def export_vaccine(self, exporter:ExportingCountry, importer: Country, vaccine_amount: int):
         exporter.vaccine_supply -= vaccine_amount
         importer.vaccines_held += vaccine_amount
