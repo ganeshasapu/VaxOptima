@@ -1,12 +1,15 @@
-import pandas as pd
 """File for data manipulation for data in datasets folder"""
+import pandas as pd
+
 
 def create_df(file: str) -> pd.DataFrame:
     """Method to create data frame given csv file"""
     df = pd.read_csv(file)
+    return df
 
 
 def get_all_countries(df: pd.DataFrame):
+    """Get all countries given a data frame"""
     return df["location"].unique()
 
 
@@ -17,16 +20,14 @@ def get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
         - dataframe includes column, "daily_vaccinations_per_million"
         - country name is formatted correctly
     """
-    df_country = df.query("location == country")
+    df_country = df[df['location'] == country]
     avg_vax_rate = df_country["daily_vaccinations_per_million"].mean() / 1000000
     return avg_vax_rate
 
 
 if __name__ == "__main__":
-    df = create_df("datasets\\vaccinations.csv")
-    countries = get_all_countries(df)
+    data = create_df("datasets\\vaccinations.csv")
+    countries = get_all_countries(data)
     print(countries)
-    avg_vax_rate = [get_avg_daily_vax_rate(df, c) for c in countries]
-    print(avg_vax_rate)
-
-
+    avg_vax = [get_avg_daily_vax_rate(data, c) for c in countries]
+    print(avg_vax)
