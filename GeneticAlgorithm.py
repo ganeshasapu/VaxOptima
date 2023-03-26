@@ -4,15 +4,19 @@ File that performs the genetic algorithm
 
 from WorldGraph import World, ExportingCountry, Country, Edge
 import random
+timestamps_vaccine_amount = [100, 200, 300]
+exporters = ["exporter1", "exporter2"]
+countries = ["country1", "country2"]
+world = World()
 
 class Gene:
     termination_timestamp: int | None
-    vaccine_distribution: dict[dict[str: list[list[tuple[str, int]]]]]
+    vaccine_distribution: dict[str: list[list[tuple[str, int]]]]
     # Exporter -> Timestamp -> List of (Country, Vaccine Amount)
-    # Example vaccine distribution (max 10 countries, 2 timestamp): {
-    #    "exporter1": [[("country1", 5000), ("country2", 10000)], [("country8", 5000)]],
-    #    "exporter2": [[("country4", 5000), ("country5", 10000)], [("country2", 5000)]],
-    #    "exporter3": [[("country6", 5000), ("country3", 10000)], [("country3", 5000)]]
+    # Example vaccine distribution (2 exporters, 2 countries, 3 timestamps): 
+    # {
+    # 'exporter1': [[('country1', 48), ('country2', 52)], [('country2', 63), ('country1', 137)], [('country2', 105), ('country1', 195)]], 
+    # 'exporter2': [[('country2', 39), ('country1', 61)], [('country2', 81), ('country1', 119)], [('country2', 139), ('country1', 161)]]
     # }
 
 
@@ -23,6 +27,18 @@ class Gene:
     def __str__(self):
         return f"Termination Timestamp: {self.termination_timestamp}, Vaccine Distribution: {self.vaccine_distribution}"
 
+    def fitness(self, world: World):
+        """Runs simulation and gives a fitness score to the gene"""
+        for i in range(len(timestamps_vaccine_amount)):
+            for exporter in exporters:
+                for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
+                    world.export_vaccine(exporter, country, vaccine_amount, i)
+            if world.check_termination():
+                self.termination_timestamp = i
+                break
+
+
+
 
 class Chromosome:
     """A chromosome is a list of genes"""
@@ -31,8 +47,12 @@ class Chromosome:
     def __init__(self, genes: list[Gene]):
         self.genes = genes
 
-    def fitness(self):
-        pass
+    def fitness(self, world: World):
+        """Runs simulation and gives a fitness score to the each of the genes in the chromosome"""
+        for gene in self.genes:
+            gene.fitness(world=world.copy())
+
+        
 
     def __str__(self):
         string = ""
@@ -48,15 +68,13 @@ class GeneticAlgorithm:
 
     chromosome_size: int
     num_chromosomes: int
-    world: World
 
-    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World):
+    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int):
         self.mutation_rate = mutation_rate
         self.crossover_rate = crossover_rate
         self.replication_rate = replication_rate
         self.chromosome_size = chromosome_size
         self.num_chromosomes = num_chromosomes
-        self.world = world
 
     def run(self) -> Chromosome:
         """Runs the genetic algorithm and returns the final chromosome"""
@@ -65,10 +83,6 @@ class GeneticAlgorithm:
     def create_initial_chromosome(self) -> Chromosome:
         """Creates the initial chromosome
         """
-        timestamps_vaccine_amount = [100, 200, 300]
-        exporters = ["exporter1", "exporter2"]
-        countries = ["country1", "country2"]
-
         genes = []
         for i in range(self.chromosome_size):
             vaccine_distribution = {}
@@ -93,7 +107,7 @@ class GeneticAlgorithm:
                         chosen_countries.append(selected_country)
             genes.append(Gene(None, vaccine_distribution))
 
-        return chromosome(genes)
+        return Chromosome(genes)
 
     def selection(self, chromosome: Chromosome) -> Chromosome:
         """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes and returns a chromosome including these genes"""
