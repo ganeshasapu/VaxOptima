@@ -1,4 +1,5 @@
 """Main runner file"""
 import DataManipulation as dm
-
-# Collecting parameters / data
+import WorldGraph as wg
+import GeneticAlgorithm as ga
+import visualization as vis
