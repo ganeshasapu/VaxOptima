@@ -24,8 +24,8 @@ class Gene:
         return f"Termination Timestamp: {self.termination_timestamp}, Vaccine Distribution: {self.vaccine_distribution}"
 
 
-class Chromosone:
-    """A chromosone is a list of genes"""
+class Chromosome:
+    """A chromosome is a list of genes"""
     genes: list[Gene]
 
     def __init__(self, genes: list[Gene]):
@@ -46,63 +46,64 @@ class GeneticAlgorithm:
     crossover_rate: float
     replication_rate: float
 
-    chromosone_size: int
-    num_chromosones: int
+    chromosome_size: int
+    num_chromosomes: int
     world: World
 
-    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosone_size: int, num_chromosones: int, world: World):
+    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World):
         self.mutation_rate = mutation_rate
         self.crossover_rate = crossover_rate
         self.replication_rate = replication_rate
-        self.chromosone_size = chromosone_size
-        self.num_chromosones = num_chromosones
+        self.chromosome_size = chromosome_size
+        self.num_chromosomes = num_chromosomes
         self.world = world
 
-    def run(self) -> Chromosone:
-        """Runs the genetic algorithm and returns the final chromosone"""
+    def run(self) -> Chromosome:
+        """Runs the genetic algorithm and returns the final chromosome"""
         pass
 
-    def create_initial_chromosone(self) -> Chromosone:
-        """Creates the initial chromosone
+    def create_initial_chromosome(self) -> Chromosome:
+        """Creates the initial chromosome
         """
         timestamps_vaccine_amount = [100, 200, 300]
         exporters = ["exporter1", "exporter2"]
         countries = ["country1", "country2"]
 
         genes = []
-        for i in range(self.chromosone_size):
+        for i in range(self.chromosome_size):
             vaccine_distribution = {}
             for exporter in exporters:
                 vaccine_distribution[exporter] = []
-                chosen_countries = []
                 for i in range(len(timestamps_vaccine_amount)):
-                    vaccine_distribution[exporter].append([])
-                    total_vaccine_amount = timestamps_vaccine_amount[i]
+                    chosen_countries = [] # list of countries that have already been chosen
+                    vaccine_distribution[exporter].append([])  
+                    total_vaccine_amount = timestamps_vaccine_amount[i] # total amount of vaccines at timestamp i (decreases as we pick countries)
                     while True:
                         # picks between 1/4 and 1/2 of the total amount of vaccines at timestamp i
                         selected_amount = random.randint(timestamps_vaccine_amount[i] // 4, timestamps_vaccine_amount[i] // 2)
-                        print(list(set(chosen_countries).difference(set(countries))))
-                        selected_country = random.choice(list(set(chosen_countries).difference(set(countries))))
+                        countries_left  = list(set(countries).difference(set(chosen_countries)))
+                        selected_country = random.choice(countries_left)
                         # 1 country left or chosen amount is greater than the amount of vaccines left
                         if len(chosen_countries) == len(countries) - 1 or total_vaccine_amount <= selected_amount:
+                            print(total_vaccine_amount)
                             vaccine_distribution[exporter][i].append((selected_country, total_vaccine_amount))
                             break
-                        vaccine_distribution[exporter][i].append((selected_country, selected_amount))
+                        vaccine_distribution[exporter][i].append((selected_country, selected_amount)) 
                         total_vaccine_amount -= selected_amount
+                        chosen_countries.append(selected_country)
             genes.append(Gene(None, vaccine_distribution))
 
-        return Chromosone(genes)
+        return chromosome(genes)
 
-    def selection(self, chromosone: Chromosone, ) -> Chromosone:
-        """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes and returns a chromosone including these genes"""
+    def selection(self, chromosome: Chromosome) -> Chromosome:
+        """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes and returns a chromosome including these genes"""
         most_fit_genes_so_far = []
-        minimum_fitness_value = min([gene.fitness_value for gene in chromosone.genes])
-        for gene in chromosone.genes:
+        minimum_fitness_value = min([gene.fitness_value for gene in chromosome.genes])
+        for gene in chromosome.genes:
             if len(most_fit_genes_so_far) == 2:
                 return most_fit_genes_so_far
             if gene.fitness_value == minimum_fitness_value:
                 most_fit_genes_so_far.append(gene)
-                minimum_fitness_value.
 
     def crossover(self, gene1: Gene, gene2: Gene) -> list[Gene]:
         """Performs crossover on the two genes and returns a list of the two children genes"""
