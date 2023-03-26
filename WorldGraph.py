@@ -1,17 +1,18 @@
-"""
-File for the representation of the world graph
-"""
+"""File for the representation of the world graph"""
 
 class Country:
     """Class that represents a Country. Equivalent to Vertex in Graph
     
     Instance Attributes:
-    - 
+    - name:
+
     """
     name: str
+    vaccine_hesitancy: int
 
     def __init__(self, name: str):
         self.name = name
+
 
 class ExportingCountry(Country):
     """Class that represents a country exporting vaccines."""
