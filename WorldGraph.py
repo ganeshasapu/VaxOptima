@@ -92,5 +92,4 @@ class World:
         for country in self.countries.values():
             tot_vaccinated += country.vaccinated_population
             tot_pop += country.population
-        print(tot_vaccinated / tot_pop)
         return tot_vaccinated / tot_pop >= 0.7
