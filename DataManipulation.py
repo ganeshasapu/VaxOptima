@@ -16,9 +16,9 @@ def get_all_country_vaxrate() -> dict[str: float]:
     return country_avg_vax_rate
 
 
-def get_all_countries(df: pd.DataFrame):
+def get_all_countries(df: pd.DataFrame) -> list:
     """Get all countries given a data frame"""
-    return df["location"].unique()
+    return list(df["location"].unique())
 
 
 # Helper Methods

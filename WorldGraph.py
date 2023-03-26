@@ -24,12 +24,17 @@ class ExportingCountry(Country):
     export_rate: float
     vaccine_supply: int
 
+
 class Edge:
     """A class that represents an edge between an exporter and importer.
     Equivalent to a directed and weighted edge."""
     exporter: ExportingCountry
     importer: Country
     shipment_time: int
+
+    def __init__(self, exporter: ExportingCountry, importer: Country, shipment_time: int ):
+        self.exporter = exporter
+
 
 class World:
     """A class representing the world. Equivalent to Graph."""
