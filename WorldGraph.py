@@ -51,7 +51,6 @@ class Edge:
 class ExportingCountry(Country):
     """Class that represents a country exporting vaccines."""
     export_rate: float
-    vaccine_supply: int
     edges: dict[str: Edge]
 
     def __init__(self, name: str, vaccine_rate: float, export_rate: float, vaccine_supply: int):
@@ -61,17 +60,16 @@ class ExportingCountry(Country):
         self.edges = {}
 
 
-
 class World:
     """A class representing the world. Equivalent to Graph."""
     exporting_countries: dict[str: ExportingCountry]
     countries: dict[str: Country]
 
-    def __init__(self, countries: dict):
+    def __init__(self, countries: dict, exporting_countries: dict):
         self.countries = countries
+        self.exporting_countries = exporting_countries
 
-    def export_vaccine(self, exporter:ExportingCountry, importer: Country, vaccine_amount: int):
-        exporter.vaccine_supply -= vaccine_amount
+    def export_vaccine(self, importer: Country, vaccine_amount: int):
         importer.vaccines_held += vaccine_amount
 
     def check_termination(self) -> bool:
