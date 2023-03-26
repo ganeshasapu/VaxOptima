@@ -1,5 +1,6 @@
 """File for the representation of the world graph"""
 
+EXPORTERS = ...  # List of strs representing exporters
 
 class Country:
     """Class that represents a Country. Equivalent to Vertex in Graph
