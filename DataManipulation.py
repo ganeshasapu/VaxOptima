@@ -8,12 +8,21 @@ def create_df(file: str) -> pd.DataFrame:
     return df
 
 
+def get_all_country_vaxrate() -> dict[str: float]:
+    """Returns a dictionary mapping a country to its vaccination rate"""
+    df = create_df("datasets\\vaccinations.csv")
+    countries = get_all_countries(df)
+    country_avg_vax_rate = {c: _get_avg_daily_vax_rate(df, c) for c in countries}
+    return country_avg_vax_rate
+
+
 def get_all_countries(df: pd.DataFrame):
     """Get all countries given a data frame"""
     return df["location"].unique()
 
 
-def get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
+# Helper Methods
+def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
     """Returns average vaccine rate given a country
 
     Preconditions:
@@ -26,8 +35,4 @@ def get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
 
 
 if __name__ == "__main__":
-    data = create_df("datasets\\vaccinations.csv")
-    countries = get_all_countries(data)
-    print(countries)
-    avg_vax = [get_avg_daily_vax_rate(data, c) for c in countries]
-    print(avg_vax)
+    print(get_all_country_vaxrate())
