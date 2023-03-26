@@ -2,6 +2,7 @@
 File that performs the genetic algorithm
 """
 
+from dataclasses import dataclass
 from WorldGraph import World, ExportingCountry, Country, Edge
 import random
 from typing import Optional
@@ -20,13 +21,11 @@ class Gene:
 
     fitness_value: Optional[int]
     vaccine_distribution: dict[str: list[list[tuple[str, int]]]]
-    # Exporter -> Timestamp -> List of (Country, Vaccine Amount)
-    # Example vaccine distribution (max 10 countries, 2 timestamp) -->
-    #
+     # Exporter -> Timestamp -> List of (Country, Vaccine Amount)
+    # Example vaccine distribution (2 exporters, 2 countries, 3 timestamps): 
     # {
-    #    "exporter1": [[("country1", 5000), ("country2", 10000)], [("country8", 5000)]],
-    #    "exporter2": [[("country4", 5000), ("country5", 10000)], [("country2", 5000)]],
-    #    "exporter3": [[("country6", 5000), ("country3", 10000)], [("country3", 5000)]]
+    # 'exporter1': [[('country1', 48), ('country2', 52)], [('country2', 63), ('country1', 137)], [('country2', 105), ('country1', 195)]], 
+    # 'exporter2': [[('country2', 39), ('country1', 61)], [('country2', 81), ('country1', 119)], [('country2', 139), ('country1', 161)]]
     # }
 
     def __init__(self, vaccine_distribution: dict, fitness_value: Optional[int] = None) -> None:
@@ -35,7 +34,31 @@ class Gene:
 
     def __str__(self) -> str:
         return f"Termination Timestamp: {self.termination_timestamp}, Vaccine Distribution: {self.vaccine_distribution}"
+    
 
+    def fitness(self, world: World):
+        """Runs simulation and gives a fitness score to the gene"""
+        vaccine_shipiments: list[VaccineShipment] = []
+        for i in range(len(timestamps_vaccine_amount)):
+            for exporter in exporters:
+                for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
+                    vaccine_shipiments.append(VaccineShipment(importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=world.countries[exporter].edges[country].shipment_time))
+            for shipment in vaccine_shipiments:
+                shipment.time_left -= 1
+                if shipment.time_left == 0:
+                    world.export_vaccine(exporter=world.countries[exporter], importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
+                    vaccine_shipiments.remove(shipment)
+            for country in world.countries.values():
+                country.vaccinate()
+            if world.check_termination():
+                self.termination_timestamp = i
+                break
+
+@dataclass
+class VaccineShipment:
+    importing_country: Country
+    vaccine_amount: int
+    time_left: int
 
 class Chromosome:
     """A chromosome is a list of genes
@@ -48,8 +71,12 @@ class Chromosome:
     def __init__(self, genes: list[Gene]) -> None:
         self.genes = genes
 
-    def fitness(self) -> None:
-        pass
+    def fitness(self, world: World) -> None:
+        """Runs simulation and gives a fitness score to the each of the genes in the chromosome"""
+        for gene in self.genes:
+            gene.fitness(world=world.copy())
+
+        
 
     def __str__(self) -> str:
         string = ""
@@ -74,8 +101,7 @@ class GeneticAlgorithm:
     replication_rate: float
     mutation_rate: float
     crossover_rate: float
-
-    gene_count: int
+    chromosome_size: int
     num_chromosomes: int
     world: World
 
@@ -94,34 +120,28 @@ class GeneticAlgorithm:
     def create_initial_chromosome(self) -> Chromosome:
         """Creates the initial chromosome
         """
-        timestamps_vaccine_amount = [100, 200, 300]
-        exporters = ["exporter1", "exporter2"]
-        countries = ["country1", "country2"]
-
-        genes = []
+        genes: list[Gene]
         for i in range(self.chromosome_size):
             vaccine_distribution = {}
             for exporter in exporters:
                 vaccine_distribution[exporter] = []
-                chosen_countries = []
                 for i in range(len(timestamps_vaccine_amount)):
-                    vaccine_distribution[exporter].append([])
-                    total_vaccine_amount = timestamps_vaccine_amount[i]
+                    chosen_countries = [] # list of countries that have already been chosen
+                    vaccine_distribution[exporter].append([])  
+                    total_vaccine_amount = timestamps_vaccine_amount[i] # total amount of vaccines at timestamp i (decreases as we pick countries)
                     while True:
                         # picks between 1/4 and 1/2 of the total amount of vaccines at timestamp i
-                        selected_amount = random.randint(
-                            timestamps_vaccine_amount[i] // 4, timestamps_vaccine_amount[i] // 2)
-                        print(list(set(chosen_countries).difference(set(countries))))
-                        selected_country = random.choice(
-                            list(set(chosen_countries).difference(set(countries))))
+                        selected_amount = random.randint(timestamps_vaccine_amount[i] // 4, timestamps_vaccine_amount[i] // 2)
+                        countries_left  = list(set(countries).difference(set(chosen_countries)))
+                        selected_country = random.choice(countries_left)
                         # 1 country left or chosen amount is greater than the amount of vaccines left
                         if len(chosen_countries) == len(countries) - 1 or total_vaccine_amount <= selected_amount:
-                            vaccine_distribution[exporter][i].append(
-                                (selected_country, total_vaccine_amount))
+                            print(total_vaccine_amount)
+                            vaccine_distribution[exporter][i].append((selected_country, total_vaccine_amount))
                             break
-                        vaccine_distribution[exporter][i].append(
-                            (selected_country, selected_amount))
+                        vaccine_distribution[exporter][i].append((selected_country, selected_amount)) 
                         total_vaccine_amount -= selected_amount
+                        chosen_countries.append(selected_country)
             genes.append(Gene(None, vaccine_distribution))
 
         return Chromosome(genes)
