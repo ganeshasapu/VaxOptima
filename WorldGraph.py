@@ -32,15 +32,15 @@ class Edge:
     importer: Country
     shipment_time: int
 
-    def __init__(self, exporter: ExportingCountry, importer: Country, shipment_time: int ):
+    def __init__(self, exporter: ExportingCountry, importer: Country, shipment_time: int):
         self.exporter = exporter
+        self.importer = importer
+        self.shipment_time = shipment_time
 
 
 class World:
     """A class representing the world. Equivalent to Graph."""
     countries: set[Country | ExportingCountry]
-    edges: set[Edge]
 
-    def __init__(self, countries: set, edges: set):
+    def __init__(self, countries: set):
         self.countries = countries
-        self.edges = edges
