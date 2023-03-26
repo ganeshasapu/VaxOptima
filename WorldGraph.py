@@ -21,12 +21,6 @@ class Country:
         self.vaccine_rate = vaccine_rate
 
 
-class ExportingCountry(Country):
-    """Class that represents a country exporting vaccines."""
-    export_rate: float
-    vaccine_supply: int
-
-
 class Edge:
     """A class that represents an edge between an exporter and importer.
     Equivalent to a directed and weighted edge."""
@@ -34,16 +28,22 @@ class Edge:
     shipment_time: int
     buffer_vaccines: int
 
+    def __init__(self, importer: Country, shipment_time: int):
+        self.importer = importer
+        self.shipment_time = shipment_time
+
+
 class ExportingCountry(Country):
     """Class that represents a country exporting vaccines."""
     export_rate: float
     vaccine_supply: int
     edges: set[Edge]
 
-    def __init__(self, exporter: ExportingCountry, importer: Country, shipment_time: int):
-        self.exporter = exporter
-        self.importer = importer
-        self.shipment_time = shipment_time
+    def __init__(self, name: str, vaccine_rate: float, export_rate: float, vaccine_supply: int, edges: set[Edge]):
+        Country.__init__(self, name, vaccine_rate)
+        self.export_rate = export_rate
+        self.vaccine_supply = vaccine_supply
+        self.edges = edges
 
 
 class World:
@@ -53,7 +53,7 @@ class World:
 
     def __init__(self, countries: set):
         self.countries = countries
-    
+
     def export_vaccine(self, exporter:ExportingCountry, importer: Country, vaccine_amount: int):
         self.exporting_countries[exporter].edges[importer].vaccinated_population += vaccine_amount
 
