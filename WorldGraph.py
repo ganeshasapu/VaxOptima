@@ -14,11 +14,20 @@ class Country:
     name: str
     population: int
     vaccinated_population: int
+    vaccines_held: int
     vaccine_rate: float
 
     def __init__(self, name: str, vaccine_rate: float):
         self.name = name
         self.vaccine_rate = vaccine_rate
+    
+    def vaccinate(self):
+        """Vaccinates the country"""
+        amount_vaxinated = self.vaccine_rate * self.vaccines_held
+        if amount_vaxinated > self.population - self.vaccinated_population:
+            self.vaccinated_population = self.population
+        else:
+            self.vaccinated_population += amount_vaxinated
 
 
 class Edge:
@@ -26,7 +35,13 @@ class Edge:
     Equivalent to a directed and weighted edge."""
     importer: Country
     shipment_time: int
-    buffer_vaccines: int
+    buffer_vaccine_shipments: list[tuple(int, int)]
+
+    def __init__(self, importer: Country, shipment_time: int, buffer_vaccines: int):
+        self.importer = importer
+        self.shipment_time = shipment_time
+        self.buffer_vaccines = buffer_vaccines
+
 
     def __init__(self, importer: Country, shipment_time: int):
         self.importer = importer
@@ -37,31 +52,33 @@ class ExportingCountry(Country):
     """Class that represents a country exporting vaccines."""
     export_rate: float
     vaccine_supply: int
-    edges: set[Edge]
+    edges: dict[str: Edge]
 
-    def __init__(self, name: str, vaccine_rate: float, export_rate: float, vaccine_supply: int, edges: set[Edge]):
-        Country.__init__(self, name, vaccine_rate)
+    def __init__(self, name: str, vaccine_rate: float, export_rate: float, vaccine_supply: int):
+        super().__init__(name, vaccine_rate)
         self.export_rate = export_rate
         self.vaccine_supply = vaccine_supply
-        self.edges = edges
+        self.edges = {}
+
 
 
 class World:
     """A class representing the world. Equivalent to Graph."""
     exporting_countries: dict[str: ExportingCountry]
-    countries: set[Country]
+    countries: dict[str: Country]
 
-    def __init__(self, countries: set):
+    def __init__(self, countries: dict):
         self.countries = countries
 
     def export_vaccine(self, exporter:ExportingCountry, importer: Country, vaccine_amount: int):
-        self.exporting_countries[exporter].edges[importer].vaccinated_population += vaccine_amount
+        exporter.vaccine_supply -= vaccine_amount
+        importer.vaccines_held += vaccine_amount
 
     def check_termination(self) -> bool:
         """Checks if the 70% population has been vaccinated"""
-        vaccinated_population = 0
-        total_population = 0
-        for country in self.countries:
-            vaccinated_population += country.vaccinated_population
-            total_population += country.population
-        return vaccinated_population / total_population >= 0.7
+        tot_vaccinated = 0
+        tot_pop = 0
+        for country in self.countries.values():
+            tot_vaccinated += country.vaccinated_population
+            tot_pop += country.population
+        return tot_pop / tot_vaccinated >= 0.7

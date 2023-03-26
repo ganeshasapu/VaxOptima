@@ -2,12 +2,12 @@
 File that performs the genetic algorithm
 """
 
+from dataclasses import dataclass
 from WorldGraph import World, ExportingCountry, Country, Edge
 import random
 timestamps_vaccine_amount = [100, 200, 300]
 exporters = ["exporter1", "exporter2"]
 countries = ["country1", "country2"]
-world = World()
 
 class Gene:
     termination_timestamp: int | None
@@ -26,19 +26,31 @@ class Gene:
 
     def __str__(self):
         return f"Termination Timestamp: {self.termination_timestamp}, Vaccine Distribution: {self.vaccine_distribution}"
+    
 
     def fitness(self, world: World):
         """Runs simulation and gives a fitness score to the gene"""
+        vaccine_shipiments: list[VaccineShipment] = []
         for i in range(len(timestamps_vaccine_amount)):
             for exporter in exporters:
                 for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
-                    world.export_vaccine(exporter, country, vaccine_amount, i)
+                    vaccine_shipiments.append(VaccineShipment(importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=world.countries[exporter].edges[country].shipment_time))
+            for shipment in vaccine_shipiments:
+                shipment.time_left -= 1
+                if shipment.time_left == 0:
+                    world.export_vaccine(exporter=world.countries[exporter], importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
+                    vaccine_shipiments.remove(shipment)
+            for country in world.countries.values():
+                country.vaccinate()
             if world.check_termination():
                 self.termination_timestamp = i
                 break
 
-
-
+@dataclass
+class VaccineShipment:
+    importing_country: Country
+    vaccine_amount: int
+    time_left: int
 
 class Chromosome:
     """A chromosome is a list of genes"""
@@ -83,7 +95,7 @@ class GeneticAlgorithm:
     def create_initial_chromosome(self) -> Chromosome:
         """Creates the initial chromosome
         """
-        genes = []
+        genes: Gene = []
         for i in range(self.chromosome_size):
             vaccine_distribution = {}
             for exporter in exporters:
