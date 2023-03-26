@@ -5,7 +5,6 @@ File that performs the genetic algorithm
 from WorldGraph import World, ExportingCountry, Country, Edge
 import random
 
-"""A gene is a single unit of a chromosone that informs the fitness function """
 class Gene:
     termination_timestamp: int | None
     vaccine_distribution: dict[dict[str: list[list[tuple[str, int]]]]]
@@ -16,15 +15,17 @@ class Gene:
     #    "exporter3": [[("country6", 5000), ("country3", 10000)], [("country3", 5000)]]
     # }
 
+
     def __init__(self, termination_timestamp: int | None, vaccine_distribution: dict):
         self.termination_timestamp = termination_timestamp
         self.vaccine_distribution = vaccine_distribution
 
     def __str__(self):
         return f"Termination Timestamp: {self.termination_timestamp}, Vaccine Distribution: {self.vaccine_distribution}"
-    
-"""A chromosone is a list of genes"""
+
+
 class Chromosone:
+    """A chromosone is a list of genes"""
     genes: list[Gene]
 
     def __init__(self, genes: list[Gene]):
@@ -40,8 +41,6 @@ class Chromosone:
         return string
 
 
-
-
 class GeneticAlgorithm:
     mutation_rate: float
     crossover_rate: float
@@ -51,7 +50,6 @@ class GeneticAlgorithm:
     num_chromosones: int
     world: World
 
-
     def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosone_size: int, num_chromosones: int, world: World):
         self.mutation_rate = mutation_rate
         self.crossover_rate = crossover_rate
@@ -59,7 +57,6 @@ class GeneticAlgorithm:
         self.chromosone_size = chromosone_size
         self.num_chromosones = num_chromosones
         self.world = world
-
 
     def run(self) -> Chromosone:
         """Runs the genetic algorithm and returns the final chromosone"""
@@ -96,10 +93,16 @@ class GeneticAlgorithm:
 
         return Chromosone(genes)
 
-
-    def selection(self, chromosone: Chromosone) -> Chromosone:
-        """Selects the best genes from the chromosone and returns a modified chromosone"""
-        pass
+    def selection(self, chromosone: Chromosone, ) -> Chromosone:
+        """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes and returns a chromosone including these genes"""
+        most_fit_genes_so_far = []
+        minimum_fitness_value = min([gene.fitness_value for gene in chromosone.genes])
+        for gene in chromosone.genes:
+            if len(most_fit_genes_so_far) == 2:
+                return most_fit_genes_so_far
+            if gene.fitness_value == minimum_fitness_value:
+                most_fit_genes_so_far.append(gene)
+                minimum_fitness_value.
 
     def crossover(self, gene1: Gene, gene2: Gene) -> list[Gene]:
         """Performs crossover on the two genes and returns a list of the two children genes"""
