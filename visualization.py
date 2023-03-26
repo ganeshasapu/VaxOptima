@@ -12,14 +12,24 @@
 
 # For Styling, use the [16] red to yellow colour scheme \
 # (https://python-visualization.github.io/folium/quickstart.html#Styling-function)
-
-
 import json
+
 import pandas as pd
 
 import folium as folium
 import requests as requests
 
+import ssl
+import certifi
+import os
+
+import webbrowser
+
+chrome_path = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(chrome_path))
+
+ssl._create_default_https_context = ssl._create_unverified_context
+os.environ['SSL_CERT_FILE'] = certifi.where()
 
 def visualize_countries():
     countries = 'https://github.com/python-visualization/folium/blob/main/examples/data/world-countries.json'
@@ -27,9 +37,9 @@ def visualize_countries():
 
 
 def test_chloropleth():
-    state_geo = 'https://github.com/python-visualization/folium/tree/main/examples/data/us-states.json'
+    state_geo = 'https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json'
     state_unemployment = \
-        'https://github.com/python-visualization/folium/tree/main/examples/data/US_Unemployment_Oct2012.csv'
+        'https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/US_Unemployment_Oct2012.csv'
     state_data = pd.read_csv(state_unemployment)
 
     m = folium.Map(location=[48, -102], zoom_start=3)
@@ -47,4 +57,5 @@ def test_chloropleth():
     ).add_to(m)
 
     folium.LayerControl().add_to(m)
-    m.render()
+    m.save('visualization_result.html')
+    webbrowser.get('chrome').open('visualization_result.html')
