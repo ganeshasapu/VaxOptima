@@ -57,11 +57,9 @@ class Gene:
                 country.vaccinate()
             if world.check_termination():
                 # if 70% of the population is vaccinated, terminate
-                print("Terminated at timestamp", i)
                 self.fitness_value = i
                 return
         self.fitness_value = num_timestamps
-        print("Fitness", self.fitness_value)
 
 
 @dataclass
@@ -128,14 +126,14 @@ class GeneticAlgorithm:
 
     def run(self) -> Chromosome:
         """Runs the genetic algorithm and returns the final chromosome"""
-        for _ in range(self.num_chromosomes):
-            chromosome = self.create_initial_chromosome()
-            chromosome.fitness(
-                num_timestamps=self.num_timestamps, world=self.world_graph)
-            while True:
-                chromosome = self.selection(chromosome=chromosome)
-                chromosome.fitness(world=self.world_graph,
-                                   num_timestamps=self.num_timestamps)
+        chromosome = self.create_initial_chromosome()
+        chromosome.fitness(
+            num_timestamps=self.num_timestamps, world=self.world_graph)
+        for i in range(self.num_chromosomes):
+            print(i)
+            chromosome = self.selection(chromosome=chromosome)
+            chromosome.fitness(world=self.world_graph,
+                                num_timestamps=self.num_timestamps)
         return chromosome
 
     def create_initial_chromosome(self) -> Chromosome:
@@ -185,6 +183,7 @@ class GeneticAlgorithm:
         minimum_fitness_value = min(
             [gene.fitness_value for gene in chromosome.genes])
         genes_for_chromosome = []
+        print([gene.fitness_value for gene in chromosome.genes])
         for gene in chromosome.genes:
             if len(most_fit_genes_so_far) == 2:
                 break
