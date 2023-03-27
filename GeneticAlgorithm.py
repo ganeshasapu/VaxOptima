@@ -180,26 +180,26 @@ class GeneticAlgorithm:
 
     def selection(self, chromosome: Chromosome) -> Chromosome:
         """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes and returns a chromosome including these genes"""
-        most_fit_genes_so_far = []
         print("fitnesses: ", [gene.fitness_value for gene in chromosome.genes])
-        #print("Chromosome at beginning: ",  chromosome)
+        # print("Chromosome at beginning: ",  chromosome)
         # print("-=-=-=-=-=-=-=-=-")
-        minimum_fitness_value = min(
-            [gene.fitness_value for gene in chromosome.genes])
-        genes_for_chromosome = []
-        for gene in chromosome.genes:
-            if len(most_fit_genes_so_far) == 2:
-                break
-            if gene.fitness_value == minimum_fitness_value:
-                most_fit_genes_so_far.append(gene)
-                new_lst = [gene.fitness_value for gene in chromosome.genes]
-                new_lst.remove(minimum_fitness_value)
-                minimum_fitness_value = min(new_lst)
+        # Getting the minimum fitness value genes
+        
+        genes = [(gene, gene.fitness_value) for gene in chromosome.genes]
+        genes.sort(key=lambda x: x[1])
+        best_genes = [gene[0] for gene in genes[:2]]
+        # print(len(best_genes))
+        # ("Val1: ", best_genes[0].vaccine_distribution)
+        # print("Val2: ", best_genes[1].vaccine_distribution)
+
+        # print("best genes: ", [gene.vaccine_distribution for gene in best_genes])
+        # print("best genes: ", [gene.fitness_value for gene in best_genes])
+        next_chromosome_genes = []
 
         index_so_far = 0
-        while len(genes_for_chromosome) != self.chromosome_size:
+        while len(next_chromosome_genes) != self.chromosome_size:
             
-            if len(genes_for_chromosome) == self.chromosome_size - 1:
+            if len(next_chromosome_genes) == self.chromosome_size - 1:
                 current_option = random.choice(
                     [self.replication, self.mutation])
                 weighted_randint = random.uniform(
@@ -219,23 +219,23 @@ class GeneticAlgorithm:
 
             # print(current_option)
             if current_option == 'replication':
-                genes_for_chromosome.append(self.replication(
-                    most_fit_genes_so_far[index_so_far]))
+                next_chromosome_genes.append(self.replication(
+                    best_genes[index_so_far]))
             elif current_option == 'mutation':
-                genes_for_chromosome.append(self.mutation(
-                    most_fit_genes_so_far[index_so_far]))
+                next_chromosome_genes.append(self.mutation(
+                    best_genes[index_so_far]))
             else:
                 crossover_index = random.randint(
-                    0, len(most_fit_genes_so_far) - 1)
+                    0, len(best_genes) - 1)
                 while crossover_index == index_so_far:
                     crossover_index = random.randint(
-                        0, len(most_fit_genes_so_far) - 1)
-                genes_for_chromosome.extend(self.crossover(
-                    most_fit_genes_so_far[index_so_far], most_fit_genes_so_far[crossover_index]))
-            index_so_far = (index_so_far + 1) % len(most_fit_genes_so_far)
+                        0, len(best_genes) - 1)
+                next_chromosome_genes.extend(self.crossover(
+                    best_genes[index_so_far], best_genes[crossover_index]))
+            index_so_far = (index_so_far + 1) % len(best_genes)
             # print("Chromosome so far: ", Chromosome(genes_for_chromosome))
         #print("Chromosome at end: ", Chromosome(genes_for_chromosome))
-        return Chromosome(genes_for_chromosome)
+        return Chromosome(next_chromosome_genes)
 
     def crossover(self, gene1: Gene, gene2: Gene) -> list[Gene]:
         """Performs crossover on the two genes and returns a list of the two children genes"""
@@ -284,5 +284,5 @@ def generate_timestamp_vaccine_amount(num_timestamps) -> list[int]:
     """Generates a list of the amount of vaccines at each timestamp"""
     timestamps_vaccine_amount = []
     for i in range(num_timestamps):
-        timestamps_vaccine_amount.append(i * 100)
+        timestamps_vaccine_amount.append((i + 1) * 1000)
     return timestamps_vaccine_amount
