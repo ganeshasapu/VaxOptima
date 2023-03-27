@@ -12,24 +12,16 @@
 
 # For Styling, use the [16] red to yellow colour scheme \
 # (https://python-visualization.github.io/folium/quickstart.html#Styling-function)
-import json
-from typing import Any, Callable, Optional
 
 import pandas
-
-import folium as folium
-
+import folium
 import ssl
-import certifi
 import os
-
 import webbrowser
 
-# Preparation for browser display. We need to make sure we don't get an SSL error.
-webbrowser.register \
-    ('chrome', None, webbrowser.BackgroundBrowser('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'))
+# Disable SSL verification, since it can prevent the web browser tabs from opening
 ssl._create_default_https_context = ssl._create_unverified_context
-os.environ['SSL_CERT_FILE'] = certifi.where()
+
 
 def visualize_countries():
     """ Create a world map for the current generation with countries coloured in accordance with their vaccination scores.
@@ -65,8 +57,8 @@ def visualize_countries():
     display_map(world_map, 'visualization_result.html')
 
 
-def test_chloropleth():
-    """This is just a test that displays an example Chloropleth map.
+def test_choropleth():
+    """This is just a test that displays an example Choropleth map.
     We looked at the example from https://python-visualization.github.io/folium/quickstart.html and reimplemented it in
     a way that is convenient to us.
     """
@@ -82,8 +74,11 @@ def test_chloropleth():
 # Our Helper Functions to Generate Maps More Easily
 def display_map(folium_map: folium.Map, file: str) -> None:
     """Saves the generated map in the given file and displays the map on the web browser."""
+    # Save the html info into the file and generate a website path for it
     folium_map.save(file)
-    webbrowser.get('chrome').open(file)
+    website = 'file://' + os.path.join(os.getcwd(), file)
+    # Open the web browser tab to display the map
+    webbrowser.open_new_tab(website)
 
 
 def generate_data(link_or_dataframe: str | pandas.DataFrame, print_result: bool = False) -> tuple[
