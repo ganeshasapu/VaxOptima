@@ -89,15 +89,6 @@ class World:
             for edge in exporter.edges.values():
                 edge.buffer_vaccine_shipments = []
 
-        # for country in self.countries.values():
-        #     print("Vaccinaed pop ", country.vaccinated_population)
-        #     print("Vaccinaed Held ", country.vaccines_held)
-        # for exporter in self.exporting_countries.values():
-        #     print("Vaccines Held", exporter.vaccines_held)
-        #     print("Vaccinaed pop ", exporter.vaccinated_population)
-        #     for edge in exporter.edges.values():
-        #         print("vax ship", edge.buffer_vaccine_shipments)
-
     def export_vaccine(self, importer: Country, vaccine_amount: int):
         """Export vaccine"""
         importer.vaccines_held += vaccine_amount
