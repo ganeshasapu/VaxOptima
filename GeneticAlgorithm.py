@@ -39,18 +39,20 @@ class Gene:
         """Runs simulation and gives a fitness score to the gene"""
         vaccine_shipiments: list[VaccineShipment] = []
         exporters = list(world.exporting_countries.keys())
-        for i in range(num_timestamps): 
+        for i in range(num_timestamps):
             for exporter in exporters:
                 for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
                     exporter_obj = world.exporting_countries[exporter]
                     # adding shipment to stack
-                    vaccine_shipiments.append(VaccineShipment(importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
+                    vaccine_shipiments.append(VaccineShipment(
+                        importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
             for shipment in vaccine_shipiments:
                 # updating shipments
                 shipment.time_left -= 1
                 if shipment.time_left == 0:
                     # shipment has arrived to country
-                    world.export_vaccine(importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
+                    world.export_vaccine(
+                        importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
                     vaccine_shipiments.remove(shipment)
             for country in world.countries.values():
                 # country distributes vaccines to its population
@@ -85,7 +87,7 @@ class Chromosome:
         for gene in self.genes:
             gene.fitness(world=world, num_timestamps=num_timestamps)
             world.reset()
-        
+
     def __str__(self) -> str:
         string = ""
         for i in range(len(self.genes)):
@@ -137,7 +139,7 @@ class GeneticAlgorithm:
             # print(f"Generation {i + 1}: {chromosome}")
             chromosome = self.selection(chromosome=chromosome)
             chromosome.fitness(world=self.world_graph,
-                                num_timestamps=self.num_timestamps)
+                               num_timestamps=self.num_timestamps)
         return chromosome
 
     def create_initial_chromosome(self) -> Chromosome:
