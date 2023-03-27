@@ -111,11 +111,13 @@ class GeneticAlgorithm:
     crossover_rate: float
     chromosome_size: int
     num_chromosomes: int
+    num_best_genes: int
 
     world_graph: World
     num_timestamps: int
 
-    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World, num_timestamps: int):
+
+    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World, num_timestamps: int, num_best_genes: int):
         self.mutation_rate = mutation_rate
         self.crossover_rate = crossover_rate
         self.replication_rate = replication_rate
@@ -123,6 +125,7 @@ class GeneticAlgorithm:
         self.num_chromosomes = num_chromosomes
         self.world_graph = world
         self.num_timestamps = num_timestamps
+        self.num_best_genes = num_best_genes
 
     def run(self) -> Chromosome:
         """Runs the genetic algorithm and returns the final chromosome"""
@@ -178,63 +181,57 @@ class GeneticAlgorithm:
 
         return Chromosome(genes)
 
+    def pick_best_genes(self, num_genes: int, genes: list[Gene]) -> list[Gene]:
+        """Returns the best genes from the list of genes"""
+        genes.sort(key=lambda x: x.fitness_value)
+        return genes[:num_genes]
+
+
+    def pick_random_option(self, remove_crossover:bool) -> str:
+        """Returns a random option from the options of replication, mutation, and crossover"""
+        if remove_crossover:
+            weighted_randint = random.uniform(0, self.replication_rate + self.mutation_rate)
+            if weighted_randint <= self.replication_rate:
+                return 'replication'
+            else:
+                return 'mutation'
+        weighted_randint = random.uniform(
+            0, self.replication_rate + self.mutation_rate + self.crossover_rate)
+        if weighted_randint <= self.replication_rate:
+            return 'replication'
+        elif weighted_randint <= self.replication_rate + self.mutation_rate:
+            return 'mutation'
+        else:
+            return 'crossover'
+
+
     def selection(self, chromosome: Chromosome) -> Chromosome:
         """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes and returns a chromosome including these genes"""
-        print("fitnesses: ", [gene.fitness_value for gene in chromosome.genes])
-        # print("Chromosome at beginning: ",  chromosome)
-        # print("-=-=-=-=-=-=-=-=-")
-        # Getting the minimum fitness value genes
+        # print("fitnesses: ", [gene.fitness_value for gene in chromosome.genes])
         
-        genes = [(gene, gene.fitness_value) for gene in chromosome.genes]
-        genes.sort(key=lambda x: x[1])
-        best_genes = [gene[0] for gene in genes[:2]]
-        # print(len(best_genes))
-        # ("Val1: ", best_genes[0].vaccine_distribution)
-        # print("Val2: ", best_genes[1].vaccine_distribution)
-
-        # print("best genes: ", [gene.vaccine_distribution for gene in best_genes])
-        # print("best genes: ", [gene.fitness_value for gene in best_genes])
+        best_genes = self.pick_best_genes(genes=chromosome.genes, num_genes=self.num_best_genes)
         next_chromosome_genes = []
 
-        index_so_far = 0
-        while len(next_chromosome_genes) != self.chromosome_size:
-            
-            if len(next_chromosome_genes) == self.chromosome_size - 1:
-                current_option = random.choice(
-                    [self.replication, self.mutation])
-                weighted_randint = random.uniform(
-                    0, self.replication_rate + self.mutation_rate)
-                if weighted_randint <= self.replication_rate:
-                    current_option = 'replication'
-                else:
-                    current_option = 'mutation'
-            else:
-                weighted_randint = random.random()
-                if weighted_randint <= self.replication_rate:
-                    current_option = 'replication'
-                elif self.replication_rate < weighted_randint <= self.mutation_rate:
-                    current_option = 'mutation'
-                else:
-                    current_option = 'crossover'
+        current_gene_index = 0
 
-            # print(current_option)
-            if current_option == 'replication':
-                next_chromosome_genes.append(self.replication(
-                    best_genes[index_so_far]))
-            elif current_option == 'mutation':
-                next_chromosome_genes.append(self.mutation(
-                    best_genes[index_so_far]))
+        while len(next_chromosome_genes) != self.chromosome_size:
+            # randomly choosing which type of change to make
+            if len(next_chromosome_genes) == self.chromosome_size - 1: # Removing crossover option
+                change_option = self.pick_random_option(remove_crossover=True)
             else:
-                crossover_index = random.randint(
-                    0, len(best_genes) - 1)
-                while crossover_index == index_so_far:
-                    crossover_index = random.randint(
-                        0, len(best_genes) - 1)
-                next_chromosome_genes.extend(self.crossover(
-                    best_genes[index_so_far], best_genes[crossover_index]))
-            index_so_far = (index_so_far + 1) % len(best_genes)
-            # print("Chromosome so far: ", Chromosome(genes_for_chromosome))
-        #print("Chromosome at end: ", Chromosome(genes_for_chromosome))
+                change_option = self.pick_random_option(remove_crossover=False)
+            
+            if change_option == 'replication':
+                next_chromosome_genes.append(self.replication(best_genes[current_gene_index]))
+            elif change_option == 'mutation':
+                next_chromosome_genes.append(self.mutation(best_genes[current_gene_index]))
+            else:
+                # picking a random secondary gene to crossover with
+                crossover_index = random.randint(0, len(best_genes) - 2)
+                if crossover_index >= current_gene_index:
+                    crossover_index += 1
+                next_chromosome_genes.extend(self.crossover(best_genes[current_gene_index], best_genes[crossover_index]))
+            current_gene_index = (current_gene_index + 1) % len(best_genes)
         return Chromosome(next_chromosome_genes)
 
     def crossover(self, gene1: Gene, gene2: Gene) -> list[Gene]:
