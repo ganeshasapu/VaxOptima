@@ -186,7 +186,7 @@ class GeneticAlgorithm:
         # print("Chromosome at beginning: ",  chromosome)
         # print("-=-=-=-=-=-=-=-=-")
         # Getting the minimum fitness value genes
-        
+
         genes = [(gene, gene.fitness_value) for gene in chromosome.genes]
         genes.sort(key=lambda x: x[1])
         best_genes = [gene[0] for gene in genes[:2]]
@@ -200,7 +200,7 @@ class GeneticAlgorithm:
 
         index_so_far = 0
         while len(next_chromosome_genes) != self.chromosome_size:
-            
+
             if len(next_chromosome_genes) == self.chromosome_size - 1:
                 current_option = random.choice(
                     [self.replication, self.mutation])
@@ -236,7 +236,7 @@ class GeneticAlgorithm:
                     best_genes[index_so_far], best_genes[crossover_index]))
             index_so_far = (index_so_far + 1) % len(best_genes)
             # print("Chromosome so far: ", Chromosome(genes_for_chromosome))
-        #print("Chromosome at end: ", Chromosome(genes_for_chromosome))
+        # print("Chromosome at end: ", Chromosome(genes_for_chromosome))
         return Chromosome(next_chromosome_genes)
 
     def crossover(self, gene1: Gene, gene2: Gene) -> list[Gene]:
@@ -248,34 +248,38 @@ class GeneticAlgorithm:
             for i in range(len(gene1_copy.vaccine_distribution[exporter])):
                 truth_value = random.choice([True, False])
                 if truth_value:
-                    gene1_copy.vaccine_distribution[exporter][i], gene2_copy.vaccine_distribution[exporter][i] = gene2_copy.vaccine_distribution[exporter][i], gene1_copy.vaccine_distribution[exporter][i]
-        
+                    gene1_copy.vaccine_distribution[exporter][i], gene2_copy.vaccine_distribution[exporter][
+                        i] = gene2_copy.vaccine_distribution[exporter][i], gene1_copy.vaccine_distribution[exporter][i]
+
         return [gene1_copy, gene2_copy]
 
     def mutation(self, gene: Gene) -> Gene:
         """Performs mutation on the gene and returns the mutated gene"""
         new_vaccine_distribution = {}
+        # traversing through the vaccine distribution of the gene
         for exporter in gene.vaccine_distribution:
             list_of_timestamps = []
             for timestamp in gene.vaccine_distribution[exporter]:
-                timestamp_copy = timestamp.copy()
-                # print("Timestamp copy:", timestamp_copy)
-                newest_timestamp = []
-                num = random.randint(0, len(timestamp))
-                while num != 0:
-                    mutated_tuple = timestamp_copy.pop()
-                    mutated_tuple = (mutated_tuple[0], random.randint(
-                        int(mutated_tuple[1] * 0.8), int(mutated_tuple[1] * 1.2)))
-                    newest_timestamp.append(mutated_tuple)
-                    num -= 1
-                # print("After Mutation: ", newest_timestamp)
-                for tuple in timestamp_copy:
-                    if tuple[0] not in [tup[0] for tup in newest_timestamp]:
-                        newest_timestamp.append(tuple)
-                # print("After Mutation2: ", newest_timestamp)
-                list_of_timestamps.append(newest_timestamp)
+                # pass each timestamp to the mutation helper to mutate it
+                list_of_timestamps.append(self.mutation_helper(timestamp))
+                # reassign the mutated timestamp to the mutation helper
                 new_vaccine_distribution[exporter] = list_of_timestamps
         return Gene(vaccine_distribution=new_vaccine_distribution)
+
+    def mutation_helper(self, timestamp: list[tuple]) -> list[tuple]:
+        timestamp_copy = timestamp.copy()
+        newest_timestamp = []
+        num = random.randint(0, len(timestamp))
+        while num != 0:
+            mutated_tuple = timestamp_copy.pop()
+            mutated_tuple = (mutated_tuple[0], random.randint(
+                int(mutated_tuple[1] * 0.8), int(mutated_tuple[1] * 1.2)))
+            newest_timestamp.append(mutated_tuple)
+            num -= 1
+        for tuple in timestamp_copy:
+            if tuple[0] not in [tup[0] for tup in newest_timestamp]:
+                newest_timestamp.append(tuple)
+        return newest_timestamp
 
     def replication(self, gene: Gene) -> Gene:
         """Returns the replicated gene"""
