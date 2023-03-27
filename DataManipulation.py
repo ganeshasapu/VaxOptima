@@ -8,6 +8,16 @@ VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.15,
                                     "Oceania": 0.3,
                                     "Africa": 0.4}
 
+VACCINE_EXPORTERS = {"Germany",
+                     "Belgium",
+                     "China",
+                     "United States of America",
+                     "South Korea",
+                     "India",
+                     "South Africa",
+                     "Russia",
+                     "Japan"}
+
 
 def get_all_countries_shipment_time() -> dict[str: int]:
     """Returns a dictionary mapping a country to its vaccination shipment time"""
