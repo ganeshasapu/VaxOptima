@@ -88,8 +88,8 @@ class Chromosome:
         
     def __str__(self) -> str:
         string = ""
-        for gene in self.genes:
-            string += str(gene) + "\n"
+        for i in range(len(self.genes)):
+            string += f"Gene {i + 1}: {self.genes[i]}\n\n"
         return string
 
 
@@ -126,11 +126,12 @@ class GeneticAlgorithm:
 
     def run(self) -> Chromosome:
         """Runs the genetic algorithm and returns the final chromosome"""
+        # print("Generation 0: Initial Chromosome")
         chromosome = self.create_initial_chromosome()
         chromosome.fitness(
             num_timestamps=self.num_timestamps, world=self.world_graph)
         for i in range(self.num_chromosomes):
-            print(i)
+            # print(f"Generation {i + 1}: {chromosome}")
             chromosome = self.selection(chromosome=chromosome)
             chromosome.fitness(world=self.world_graph,
                                 num_timestamps=self.num_timestamps)
@@ -180,10 +181,12 @@ class GeneticAlgorithm:
     def selection(self, chromosome: Chromosome) -> Chromosome:
         """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes and returns a chromosome including these genes"""
         most_fit_genes_so_far = []
+        print("fitnesses: ", [gene.fitness_value for gene in chromosome.genes])
+        #print("Chromosome at beginning: ",  chromosome)
+        # print("-=-=-=-=-=-=-=-=-")
         minimum_fitness_value = min(
             [gene.fitness_value for gene in chromosome.genes])
         genes_for_chromosome = []
-        print([gene.fitness_value for gene in chromosome.genes])
         for gene in chromosome.genes:
             if len(most_fit_genes_so_far) == 2:
                 break
@@ -193,9 +196,10 @@ class GeneticAlgorithm:
                 new_lst.remove(minimum_fitness_value)
                 minimum_fitness_value = min(new_lst)
 
-        while len(genes_for_chromosome) != 10:
-            index_so_far = 0
-            if len(genes_for_chromosome) == 9:
+        index_so_far = 0
+        while len(genes_for_chromosome) != self.chromosome_size:
+            
+            if len(genes_for_chromosome) == self.chromosome_size - 1:
                 current_option = random.choice(
                     [self.replication, self.mutation])
                 weighted_randint = random.uniform(
@@ -213,6 +217,7 @@ class GeneticAlgorithm:
                 else:
                     current_option = 'crossover'
 
+            # print(current_option)
             if current_option == 'replication':
                 genes_for_chromosome.append(self.replication(
                     most_fit_genes_so_far[index_so_far]))
@@ -227,17 +232,23 @@ class GeneticAlgorithm:
                         0, len(most_fit_genes_so_far) - 1)
                 genes_for_chromosome.extend(self.crossover(
                     most_fit_genes_so_far[index_so_far], most_fit_genes_so_far[crossover_index]))
-            index_so_far += 1
+            index_so_far = (index_so_far + 1) % len(most_fit_genes_so_far)
+            # print("Chromosome so far: ", Chromosome(genes_for_chromosome))
+        #print("Chromosome at end: ", Chromosome(genes_for_chromosome))
         return Chromosome(genes_for_chromosome)
 
     def crossover(self, gene1: Gene, gene2: Gene) -> list[Gene]:
         """Performs crossover on the two genes and returns a list of the two children genes"""
-        for exporter in gene1.vaccine_distribution:
-            for i in range(len(gene1.vaccine_distribution[exporter])):
+        # print(Chromosome([gene1, gene2]))
+        gene1_copy = Gene(vaccine_distribution=gene1.vaccine_distribution)
+        gene2_copy = Gene(vaccine_distribution=gene2.vaccine_distribution)
+        for exporter in gene1_copy.vaccine_distribution:
+            for i in range(len(gene1_copy.vaccine_distribution[exporter])):
                 truth_value = random.choice([True, False])
                 if truth_value:
-                    gene1.vaccine_distribution[exporter][i] = gene2.vaccine_distribution[exporter][i]
-        return [gene1, gene2]
+                    gene1_copy.vaccine_distribution[exporter][i], gene2_copy.vaccine_distribution[exporter][i] = gene2_copy.vaccine_distribution[exporter][i], gene1_copy.vaccine_distribution[exporter][i]
+        
+        return [gene1_copy, gene2_copy]
 
     def mutation(self, gene: Gene) -> Gene:
         """Performs mutation on the gene and returns the mutated gene"""
@@ -246,6 +257,7 @@ class GeneticAlgorithm:
             list_of_timestamps = []
             for timestamp in gene.vaccine_distribution[exporter]:
                 timestamp_copy = timestamp.copy()
+                # print("Timestamp copy:", timestamp_copy)
                 newest_timestamp = []
                 num = random.randint(0, len(timestamp))
                 while num != 0:
@@ -254,16 +266,18 @@ class GeneticAlgorithm:
                         int(mutated_tuple[1] * 0.8), int(mutated_tuple[1] * 1.2)))
                     newest_timestamp.append(mutated_tuple)
                     num -= 1
-                for tuple in newest_timestamp:
+                # print("After Mutation: ", newest_timestamp)
+                for tuple in timestamp_copy:
                     if tuple[0] not in [tup[0] for tup in newest_timestamp]:
                         newest_timestamp.append(tuple)
+                # print("After Mutation2: ", newest_timestamp)
                 list_of_timestamps.append(newest_timestamp)
                 new_vaccine_distribution[exporter] = list_of_timestamps
         return Gene(vaccine_distribution=new_vaccine_distribution)
 
     def replication(self, gene: Gene) -> Gene:
         """Returns the replicated gene"""
-        return gene
+        return Gene(vaccine_distribution=gene.vaccine_distribution)
 
 
 def generate_timestamp_vaccine_amount(num_timestamps) -> list[int]:
