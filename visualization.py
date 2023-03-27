@@ -26,8 +26,6 @@ import os
 import webbrowser
 
 # Preparation for browser display. We need to make sure we don't get an SSL error.
-webbrowser.register \
-    ('chrome', None, webbrowser.BackgroundBrowser('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'))
 ssl._create_default_https_context = ssl._create_unverified_context
 os.environ['SSL_CERT_FILE'] = certifi.where()
 
@@ -83,7 +81,7 @@ def test_chloropleth():
 def display_map(folium_map: folium.Map, file: str) -> None:
     """Saves the generated map in the given file and displays the map on the web browser."""
     folium_map.save(file)
-    webbrowser.get('chrome').open(file)
+    webbrowser.open_new_tab('file://' + os.path.join(os.getcwd(), file))
 
 
 def generate_data(link_or_dataframe: str | pandas.DataFrame, print_result: bool = False) -> tuple[
