@@ -1,5 +1,6 @@
 """File for the representation of the world graph"""
 
+EXPORTERS = ...  # List of strs representing exporters
 
 class Country:
     """Class that represents a Country. Equivalent to Vertex in Graph
@@ -23,7 +24,7 @@ class Country:
         self.population = population
         self.vaccinated_population = 0
         self.vaccines_held = 0
-    
+
     def vaccinate(self):
         """Vaccinates the country"""
         amount_vaxinated = self.vaccine_rate * self.vaccines_held
@@ -31,7 +32,7 @@ class Country:
             self.vaccinated_population = self.population
         else:
             self.vaccinated_population += amount_vaxinated
-    
+
     def __str__(self):
         return f"{self.name}: {self.vaccinated_population} / {self.population}"
 
@@ -58,7 +59,6 @@ class ExportingCountry(Country):
         super().__init__(name=name, vaccine_rate=vaccine_rate, population=population)
         self.export_rate = export_rate
         self.edges = edges
-    
 
 
 class World:
@@ -69,7 +69,14 @@ class World:
     def __init__(self, countries: dict, exporting_countries: dict):
         self.countries = countries
         self.exporting_countries = exporting_countries
-    
+
+    def create_countries(self) -> dict[str | Country]:
+        """Function that helps initialize World, returns a dict of all countries in the world"""
+        pass
+
+    def create_exporting_countries(self) -> dict[str | ExportingCountry]:
+        """Function that helps initialzie World, returns a list of all exporting countries in the world"""
+        pass
 
     def reset(self):
         """Resets the world to the initial state"""
@@ -81,7 +88,7 @@ class World:
             exporter.vaccinated_population = 0
             for edge in exporter.edges.values():
                 edge.buffer_vaccine_shipments = []
-        
+
         # for country in self.countries.values():
         #     print("Vaccinaed pop ", country.vaccinated_population)
         #     print("Vaccinaed Held ", country.vaccines_held)
@@ -92,6 +99,7 @@ class World:
         #         print("vax ship", edge.buffer_vaccine_shipments)
 
     def export_vaccine(self, importer: Country, vaccine_amount: int):
+        """Export vaccine"""
         importer.vaccines_held += vaccine_amount
 
     def check_termination(self) -> bool:
