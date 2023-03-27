@@ -65,7 +65,7 @@ def test_choropleth():
     state_geo = 'https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json'
     state_data, headers = generate_data(
         'https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/US_Unemployment_Oct2012.csv')
-    m = generate_map(background='black')
+    m = generate_map(background='terrain')
     add_choropleth(m, state_geo, state_data, headers, 'Unemployment Rate (%)')
     add_geojson(m, state_geo)
     display_map(m, 'visualization_result.html')
@@ -77,32 +77,45 @@ def display_map(folium_map: folium.Map, file: str) -> None:
     # Save the html info into the file and generate a website path for it
     folium_map.save(file)
     website = 'file://' + os.path.join(os.getcwd(), file)
+
     # Open the web browser tab to display the map
     webbrowser.open_new_tab(website)
 
 
-def generate_data(link_or_dataframe: str | pandas.DataFrame, print_result: bool = False) -> tuple[
-    pandas.DataFrame, list[str]]:
-    """Extracts the dataframe from a github link if the input is not already a data frame.
-    Returns a tuple containing the resultant dataframe and its headers.
-    Prints the dataframe in the console if specified.
+def generate_data(link_or_dataframe: str | pandas.DataFrame, print_result: bool = False) \
+        -> tuple[pandas.DataFrame, list[str]]:
+    """Extracts the DataFrame from a github link unless the input is already a DataFrame.
+    Returns a tuple containing the resultant DataFrame and its headers.
+    Prints the DataFrame in the console if specified.
     """
-    if isinstance(link_or_dataframe, str):
+    if isinstance(link_or_dataframe, str):  # Extract the DataFrame if given a link
         data = pandas.read_csv(link_or_dataframe)
-    else:
+    else:  # The data is already a DataFrame
         data = link_or_dataframe
+
+    # Print the resultant DataFrame if specified
     if print_result:
         print(data)
+
+    # Return the tuple containing the DataFrame and its headers.
     return (data, data.columns.tolist())
 
 
 def generate_map(location: tuple = (48, -102), zoom_start: int = 3, background: str = '') -> folium.map:
     """Generates and returns a map object focused on the given coordinates with the given background.
     """
-    background_options = {'black': 'cartodbdark_matter', 'white': 'cartodbpositron'}
+    # Define a dict containing all the background colour options
+    background_options = {'black': 'cartodbdark_matter', 'white': 'cartodbpositron', 'terrain': 'stamenterrain',
+                          'monochromatic': 'stamentoner'}
+
+    # Initialize the map object
     world_map = folium.Map(location=location, zoom_start=zoom_start)
+
+    # If a valid background colour is passed into the function, change the background to it
     if background in background_options:
         folium.TileLayer(background_options[background], name='Background', control=False).add_to(world_map)
+
+    # Return the map object
     return world_map
 
 
@@ -111,8 +124,9 @@ def add_choropleth(folium_map: folium.Map, geo_data: str, num_data: pandas.DataF
                    fill_opacity: float = 0.9, line_opacity: float = 0.2, smooth_factor: float = 1,
                    key_on: str = 'feature.id') -> None:
     """
-    Generates a choropleth and adds it to the given map.
+    Generates a Choropleth and adds it to the given map.
     """
+    # Initialize and add the Choropleth object
     folium.Choropleth(
         geo_data=geo_data,
         name=name,
@@ -132,15 +146,16 @@ def add_geojson(folium_map: folium.Map, geo_data: str, name: str = 'GeoJSON',
                 labels: bool = False, sticky: bool = True):
     """
     Generates a GeoJSON and adds it to the given map.
-    The style function is used to prevent thick blue borders.
     """
 
+    # Define a style function to prevent the default blue GeoJSON borders
     def style_function(feature):
         return {
             "fillOpacity": 0,
             "weight": 0,
         }
 
+    # Initialize and add the GeoJSON object
     folium.GeoJson(
         data=geo_data, name=name,
         tooltip=folium.features.GeoJsonTooltip(fields=fields, labels=labels, sticky=sticky),
