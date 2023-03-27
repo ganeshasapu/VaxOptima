@@ -1,7 +1,8 @@
 """File for data manipulation for data in datasets folder"""
 import pandas as pd
 
-VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.15,
+# TODO Generalize to the most extreme country in region
+VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.1,
                                     "Europe": 0.25,
                                     "North America": 0.25,
                                     "South America": 0.15,
@@ -18,9 +19,23 @@ VACCINE_EXPORTERS = {"Germany",
                      "Russia",
                      "Japan"}
 
+# TODO Filter out countries based on Folium maps
+
+
+def get_export_rate() -> dict[str: int]:
+    """Returns a dictionary mapping an exporter to its export rate of vaccine"""
+    # TODO get data set and finish
+
+
+def get_country_pop() -> dict[str: int]:
+    """Returns a dictionary mapping a country to its population"""
+    # TODO get data set and finish
+
 
 def get_all_countries_shipment_time() -> dict[str: int]:
     """Returns a dictionary mapping a country to its vaccination shipment time"""
+    # Same Continent 1 Day, Different Continent 2-3, # Calcualte VAccine Distribtuion rate by
+    # number of does divided by total doses, or find data on how far each contintent is away from each other
 
 
 def get_all_countries_vaxhesitancy() -> dict[str: float]:
