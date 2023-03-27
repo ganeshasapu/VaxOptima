@@ -20,5 +20,7 @@ if __name__ == "__main__":
 
 
     world = wg.World(exporting_countries=exporters, countries=countries)
-    simulation = ga.GeneticAlgorithm(mutation_rate=0.4, crossover_rate=0.1, replication_rate=0.5, chromosome_size=10, num_chromosomes=10, world=world, num_timestamps=10)
+    simulation = ga.GeneticAlgorithm(mutation_rate=0.5, crossover_rate=0.3, replication_rate=0.2, chromosome_size=10, num_chromosomes=10, world=world, num_timestamps=10)
     final = simulation.run()
+    print(final)
+
