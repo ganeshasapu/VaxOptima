@@ -1,11 +1,21 @@
 """File for data manipulation for data in datasets folder"""
 import pandas as pd
 
+CONTINENTS = ...  # Dict mapping countries to continent
+
 
 def create_df(file: str) -> pd.DataFrame:
     """Method to create data frame given csv file"""
     df = pd.read_csv(file)
     return df
+
+
+def get_all_countries_shipment_time() -> dict[str: int]:
+    """Returns a dictionary mapping a country to its vaccination shipment time"""
+
+
+def get_all_countries_vaxhesitancy() -> dict[str: float]:
+    """Returns a dictionary mapping a country to its vaccination hesitancy rate"""
 
 
 def get_all_country_vaxrate() -> dict[str: float]:
