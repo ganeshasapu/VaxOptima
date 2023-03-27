@@ -5,21 +5,26 @@ VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.15,
                                     "Europe": 0.25,
                                     "North America": 0.25,
                                     "South America": 0.15,
-                                    "Oceania": 0.3}
+                                    "Oceania": 0.3,
+                                    "Africa": 0.4}
 
 
 def get_all_countries_shipment_time() -> dict[str: int]:
     """Returns a dictionary mapping a country to its vaccination shipment time"""
 
 
-def get_all_countries_vaxhesitancy() -> dict[str: float]:  # 235
+def get_all_countries_vaxhesitancy() -> dict[str: float]:
     """Returns a dictionary mapping a country to its vaccination hesitancy rate. Note that we generalize the vaccine
     hesitancy rate of each continent to each country due to lack of data"""
+    countries = get_all_countries(_create_df("datasets\\vaccinations.csv"), "location", True)
     continent_df = _create_df("datasets\\continents-according-to-our-world-in-data.csv")
-    countries = get_all_countries(_create_df("datasets\\vaccinations.csv"), "location", False)
-
-
     country_vaxhesitacny = {}
+
+    for item in continent_df.iterrows():
+        country = item[1]['Entity']
+        continent = item[1]['Continent']
+        if country in countries:
+            country_vaxhesitacny[country] = VACCINE_HESITANCY_RATE_CONTINENT[continent]
     return country_vaxhesitacny
 
 
@@ -36,21 +41,6 @@ def get_all_countries(df: pd.DataFrame, column_name: str, with_cont: bool) -> se
     continent_df = _create_df("datasets\\continents-according-to-our-world-in-data.csv")
     countries_with_continents = set(continent_df["Entity"].unique())
     valid_countries = {c for c in set(df[column_name].unique()) if c in countries_with_continents}
-
-    if with_cont:
-        continent_to_countries = {"Asia": [],
-                                  "Europe": [],
-                                  "North America": [],
-                                  "South America": [],
-                                  "Oceania": []}
-        for c in continent_to_countries:
-            continent = continent_df[continent_df['Continent'] == c]
-            for item in continent.iterrows():
-                country = item[1]['Entity']
-                if country in valid_countries:
-                    continent_to_countries[c].append(country)
-        return continent_to_countries
-
     return valid_countries
 
 
