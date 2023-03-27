@@ -87,6 +87,10 @@ class Chromosome:
         for gene in self.genes:
             gene.fitness(world=world, num_timestamps=num_timestamps)
             world.reset()
+    
+    def calculate_average_fitness(self) -> float:
+        """Calculates the average fitness of the genes in the chromosome"""
+        return sum([gene.fitness_value for gene in self.genes]) / len(self.genes)
 
     def __str__(self) -> str:
         string = ""
@@ -140,6 +144,7 @@ class GeneticAlgorithm:
             chromosome = self.selection(chromosome=chromosome)
             chromosome.fitness(world=self.world_graph,
                                num_timestamps=self.num_timestamps)
+            print(f"Generation {i + 1} fitness : {chromosome.calculate_average_fitness()}")
         return chromosome
 
     def create_initial_chromosome(self) -> Chromosome:
@@ -209,7 +214,8 @@ class GeneticAlgorithm:
 
     def selection(self, chromosome: Chromosome) -> Chromosome:
         """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes and returns a chromosome including these genes"""
-        # print("fitnesses: ", [gene.fitness_value for gene in chromosome.genes])
+        #("fitnesses: ", [gene.fitness_value for gene in chromosome.genes])
+        # print("Average fitness: ", chromosome.calculate_average_fitness())
         
         best_genes = self.pick_best_genes(genes=chromosome.genes, num_genes=self.num_best_genes)
         next_chromosome_genes = []
@@ -226,7 +232,7 @@ class GeneticAlgorithm:
             if change_option == 'replication':
                 next_chromosome_genes.append(self.replication(best_genes[current_gene_index]))
             elif change_option == 'mutation':
-                next_chromosome_genes.append(self.mutation(best_genes[current_gene_index]))
+                next_chromosome_genes.append(self.mutation_aggressive(best_genes[current_gene_index]))
             else:
                 # picking a random secondary gene to crossover with
                 crossover_index = random.randint(0, len(best_genes) - 2)
@@ -249,6 +255,32 @@ class GeneticAlgorithm:
                         i] = gene2_copy.vaccine_distribution[exporter][i], gene1_copy.vaccine_distribution[exporter][i]
 
         return [gene1_copy, gene2_copy]
+
+    def mutation_aggressive(self, gene:Gene) -> Gene:
+        """Performs mutation on the gene and returns the mutated gene"""
+        new_vaccine_distribution = {}
+        # traversing through the vaccine distribution of the gene
+        for exporter in gene.vaccine_distribution:
+            list_of_timestamps = []
+            for timestamp in gene.vaccine_distribution[exporter]:
+                # pass each timestamp to the mutation helper to mutate it
+                list_of_timestamps.append(self.mutation_helper_aggressive(timestamp))
+                # reassign the mutated timestamp to the mutation helper
+                new_vaccine_distribution[exporter] = list_of_timestamps
+        return Gene(vaccine_distribution=new_vaccine_distribution)
+
+    def mutation_helper_aggressive(self, timestamp: list[tuple]) -> list[tuple]:
+        timestamp_copy = timestamp.copy()
+        newest_timestamp = []
+        for _ in range(len(timestamp_copy)):
+            mutated_tuple = timestamp_copy.pop()
+            mutated_tuple = (mutated_tuple[0], random.randint(
+                int(mutated_tuple[1] * 0.5), int(mutated_tuple[1] * 1.5)))
+            newest_timestamp.append(mutated_tuple)
+        for tuple in timestamp_copy:
+            if tuple[0] not in [tup[0] for tup in newest_timestamp]:
+                newest_timestamp.append(tuple)
+        return newest_timestamp
 
     def mutation(self, gene: Gene) -> Gene:
         """Performs mutation on the gene and returns the mutated gene"""
