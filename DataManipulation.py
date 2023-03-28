@@ -9,8 +9,7 @@ VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.15,
                                     "Oceania": 0.3,
                                     "Africa": 0.4}
 
-VACCINE_SHIPMENT_TIME_CONTINENT = {"Asia": {"Europe": ...,
-                                            "North America": ..., "South America": ..., "Oceania": ..., },
+VACCINE_SHIPMENT_TIME_CONTINENT = {"Asia": {},
                                    "Europe": {},
                                    "North America": {},
                                    "South America": {},
@@ -49,27 +48,18 @@ def get_country_pop() -> dict[str: int]:
     return country_to_pop
 
 
-def get_all_countries_shipment_time() -> dict[str: int]:
+def get_all_countries_shipment_time() -> dict[str: dict[str: int]]:
     """Returns a dictionary mapping a country to its vaccination shipment time"""
     # Same Continent 1 Day, Different Continent 2-3, or find data on how far each contintent is away from each other
-    continents = set(VACCINE_HESITANCY_RATE_CONTINENT.keys())
-    for cont in continents:
-
+    pass
 
 
 def get_all_countries_vaxhesitancy() -> dict[str: float]:
     """Returns a dictionary mapping a country to its vaccination hesitancy rate. Note that we generalize the vaccine
     hesitancy rate of each continent to each country due to lack of data"""
-    countries = get_all_countries()
-    continent_df = _create_df("datasets\\continents-according-to-our-world-in-data.csv")
-
-    country_vaxhesitacny = {}
-    for item in continent_df.iterrows():
-        country = item[1]['Entity']
-        continent = item[1]['Continent']
-        if country in countries:
-            country_vaxhesitacny[country] = VACCINE_HESITANCY_RATE_CONTINENT[continent]
-    return country_vaxhesitacny
+    country_to_cont = _get_country_continent()
+    country_vaxhesitancy = {c: VACCINE_HESITANCY_RATE_CONTINENT[country_to_cont[c]] for c in country_to_cont}
+    return country_vaxhesitancy
 
 
 def get_all_country_vaxrate() -> dict[str: float]:
@@ -101,13 +91,25 @@ def get_all_countries() -> set | dict:
 
 # Helper Methods
 def _create_df(file: str) -> pd.DataFrame:
-    """Method to create data frame given csv file"""
+    """Helper method to create data frame given csv file"""
     df = pd.read_csv(file)
     return df
 
+def _get_country_continent() -> dict[str: str]:
+    """Helper method to return a dict mapping countries to their continents"""
+    countries = get_all_countries()
+    continent_df = _create_df("datasets\\continents-according-to-our-world-in-data.csv")
+
+    country_vaxhesitacny = {}
+    for item in continent_df.iterrows():
+        country = item[1]['Entity']
+        continent = item[1]['Continent']
+        if country in countries:
+            country_vaxhesitacny[country] = continent
+    return country_vaxhesitacny
 
 def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
-    """Returns average vaccine rate given a country
+    """Helper method average vaccine rate given a country
 
     Preconditions:
         - dataframe includes column, "daily_vaccinations_per_million"
