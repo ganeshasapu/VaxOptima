@@ -1,6 +1,7 @@
 # Draw a map using Folium
 # Show each country on the map across generations
 import json
+import random
 import re
 import tempfile
 from typing import io
@@ -58,72 +59,72 @@ def test_choropleth():
     state_data, headers = generate_data(
         'https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/US_Unemployment_Oct2012.csv')
     m = generate_map(background='terrain')
-    add_choropleth(m, state_geo, state_data, headers, 'Unemployment Rate (%)')
+    add_choropleth(m, state_geo, state_data, headers, 'Unemployment Rate (%)', key_on='feature.id')
     add_geojson(m, state_geo)
     display_map(m, 'visualization_result.html')
 
 
-def test_world_map1():
-    """
-    We have played around with the example from
-    https://stackoverflow.com/questions/63613032/how-to-draw-a-world-map-in-folium-and-indicate-some-countries-on-it
-    to test whether the world map visualization is working.
-    """
-    # dynamically get the world-country boundaries
-    # We have a cleaner way of extracting data
-    res = requests.get(
-        "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/world-countries.json")
-    df = pandas.DataFrame(json.loads(res.content.decode()))
-    df = df.assign(id=df["features"].apply(pandas.Series)["id"],
-                   name=df["features"].apply(pandas.Series)["properties"].apply(pandas.Series)["name"])
-
-    # build a dataframe of country colours scraped from wikipedia
-    # We are not going to use anything of this sort, so we can just ignore this part
-    resp = requests.get("https://en.wikipedia.org/wiki/National_colours", )
-    soup = BeautifulSoup(resp.content.decode(), "html.parser")
-    colours = []
-    for t in soup.find_all("table", class_="wikitable"):
-        cols = t.find_all("th")
-        ok = (len(cols) > 5 and cols[0].string.strip() == "Country" and cols[4].string.strip() == "Primary")
-        if ok:
-            for tr in t.find_all("tr"):
-                td = tr.find_all("td")
-                if len(td) > 5:
-                    sp = td[4].find_all("span")
-                    c1 = re.sub("background-color:([\w,#,0-9]*).*", r"\1", sp[0]["style"])
-                    c2 = c1 if len(sp) == 1 else re.sub("background-color:([\w,#,0-9]*).*", r"\1", sp[1]["style"])
-                    colours.append({"country": td[0].find("a").string,
-                                    "colour1": c1,
-                                    "colour2": c2,
-
-                                    })
-    dfc = pandas.DataFrame(colours).set_index("country")
-
-    # Let's see what the dataframe is
-    print(dfc)
-
-    # a list of interesting countries - Singapore is missing!
-    # I have added Turkey, and it shows up!
-    countries = ['Singapore', 'Malaysia', 'Indonesia', 'Vietnam', 'Philippines', 'Turkey']
-
-    # style the overlays with the countries own colors...
-    # We have our own style function, so ignore this part
-    def style_fn(feature):
-        cc = dfc.loc[feature["properties"]["name"]]
-        ss = {'fillColor': f'{cc[0]}', 'color': f'{cc[1]}'}
-        return ss
-
-    # create the base map
-    # We have changed this to our own helper function
-    m = generate_map(location=(1.34, 103.82), zoom_start=6, background='terrain')
-
-    # overlay desired countries over folium map
-    # We are going to use a Choropleth instead of GeoJSON; still, understanding this part helps.
-    for r in df.loc[df["name"].isin(countries)].to_dict(orient="records"):
-        folium.GeoJson(r["features"], name=r["name"], tooltip=r["name"], style_function=style_fn).add_to(m)
-
-    # We have added this to visualize the map on our browser
-    display_map(m, 'visualization_result.html')  # Thankfully, it works!
+# def test_world_map1():
+#     """
+#     We have played around with the example from
+#     https://stackoverflow.com/questions/63613032/how-to-draw-a-world-map-in-folium-and-indicate-some-countries-on-it
+#     to test whether the world map visualization is working.
+#     """
+#     # dynamically get the world-country boundaries
+#     # We have a cleaner way of extracting data
+#     res = requests.get(
+#         "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/world-countries.json")
+#     df = pandas.DataFrame(json.loads(res.content.decode()))
+#     df = df.assign(id=df["features"].apply(pandas.Series)["id"],
+#                    name=df["features"].apply(pandas.Series)["properties"].apply(pandas.Series)["name"])
+#
+#     # build a dataframe of country colours scraped from wikipedia
+#     # We are not going to use anything of this sort, so we can just ignore this part
+#     resp = requests.get("https://en.wikipedia.org/wiki/National_colours", )
+#     soup = BeautifulSoup(resp.content.decode(), "html.parser")
+#     colours = []
+#     for t in soup.find_all("table", class_="wikitable"):
+#         cols = t.find_all("th")
+#         ok = (len(cols) > 5 and cols[0].string.strip() == "Country" and cols[4].string.strip() == "Primary")
+#         if ok:
+#             for tr in t.find_all("tr"):
+#                 td = tr.find_all("td")
+#                 if len(td) > 5:
+#                     sp = td[4].find_all("span")
+#                     c1 = re.sub("background-color:([\w,#,0-9]*).*", r"\1", sp[0]["style"])
+#                     c2 = c1 if len(sp) == 1 else re.sub("background-color:([\w,#,0-9]*).*", r"\1", sp[1]["style"])
+#                     colours.append({"country": td[0].find("a").string,
+#                                     "colour1": c1,
+#                                     "colour2": c2,
+#
+#                                     })
+#     dfc = pandas.DataFrame(colours).set_index("country")
+#
+#     # Let's see what the dataframe is
+#     print(dfc)
+#
+#     # a list of interesting countries - Singapore is missing!
+#     # I have added Turkey, and it shows up!
+#     countries = ['Singapore', 'Malaysia', 'Indonesia', 'Vietnam', 'Philippines', 'Turkey']
+#
+#     # style the overlays with the countries own colors...
+#     # We have our own style function, so ignore this part
+#     def style_fn(feature):
+#         cc = dfc.loc[feature["properties"]["name"]]
+#         ss = {'fillColor': f'{cc[0]}', 'color': f'{cc[1]}'}
+#         return ss
+#
+#     # create the base map
+#     # We have changed this to our own helper function
+#     m = generate_map(location=(1.34, 103.82), zoom_start=6, background='terrain')
+#
+#     # overlay desired countries over folium map
+#     # We are going to use a Choropleth instead of GeoJSON; still, understanding this part helps.
+#     for r in df.loc[df["name"].isin(countries)].to_dict(orient="records"):
+#         folium.GeoJson(r["features"], name=r["name"], tooltip=r["name"], style_function=style_fn).add_to(m)
+#
+#     # We have added this to visualize the map on our browser
+#     display_map(m, 'visualization_result.html')  # Thankfully, it works!
 
 
 def test_world_map2():
@@ -172,11 +173,77 @@ def test_world_map3():
     world_map = generate_map(background='terrain')
 
     # Add the Choropleth
-    add_choropleth(world_map, countries_geographical, dataframe, headers, legend_name='Area',
+    add_choropleth(world_map, countries_geographical, dataframe, headers, legend_name='Vaccination Score',
                    key_on='feature.properties.name')
 
     # Display the map
     display_map(world_map, 'visualization_result.html')
+
+
+def test_world_map4(countries: int):
+    """
+    In this test, we have fully automated the example dataframe generation.
+    The only input is the number of countries we want in our visualization.
+    """
+    # Get the geographical border data
+    countries_geographical = \
+        'https://raw.githubusercontent.com/python-visualization/folium/main/examples/data/world-countries.json'
+
+    # Generate the example dataframe and its headers
+    dataframe, headers = generate_example_dataframe(countries, countries_geographical, (0.0, 1.0), print_result=True)
+
+    # Generate the map
+    world_map = generate_map(background='terrain')
+
+    # Add the Choropleth
+    add_choropleth(world_map, countries_geographical, dataframe, headers, legend_name='Vaccination Score',
+                   key_on='feature.properties.name')
+
+    # Display the map
+    display_map(world_map, 'visualization_result.html')
+
+
+def test_world_map5(runs: int, int_range: tuple[int, int] | int):
+    """
+    This is the ultimate example dataframe test.
+    This test runs test_world_map4 a specified number of times with a specified number/range of countries.
+    """
+    # Run the specified number of times
+    for _ in range(0, runs):
+        if isinstance(int_range, tuple):  # Generate a random integer within the specified range
+            countries = random.randint(int_range[0], int_range[1])
+        else:  # Otherwise, use the given int
+            countries = int_range
+        test_world_map4(countries)
+
+
+# Our Helper Functions for Generating Example Test Data
+def generate_example_dataframe(countries: int, geodata: str, float_range: tuple[float, float],
+                               fitness_name: str = 'Vaccination Score', print_result: bool = False) -> tuple[
+    pandas.DataFrame, list[str]]:
+    """
+    This function is used for generating example test data.
+    Extracts the specified amount of country names from the given link. Then assigns each country a random fitness value
+    in the specified range (lowerbound, upperbound).
+    Returns the resultant DataFrame and its headers.
+    Prints the resultant DataFrame if specified.
+    """
+    # Sample a specified number of country names from the geodata link
+    country_names = random.sample \
+        ([country['properties']['name'] for country in requests.get(geodata).json()['features']], countries)
+
+    # Generate the dataframe with the selected countries and their random fitness values in the given range
+    lowerbound, upperbound = float_range
+    dataframe = pandas.DataFrame(
+        {'Country': country_names, fitness_name: numpy.random.uniform(lowerbound, upperbound, len(country_names))})
+
+    # Prints the dataframe if specified (also its length for testing purposes)
+    if print_result:
+        print(dataframe)
+        print('Length: ' + str(len(country_names)))
+
+    # Returns the dataframe
+    return (dataframe, dataframe.columns.tolist())
 
 
 # Our Helper Functions to Generate Maps More Easily
@@ -233,7 +300,7 @@ def generate_map(location: tuple = (48, -102), zoom_start: int = 3, background: 
 def add_choropleth(folium_map: folium.Map, geo_data: str, num_data: pandas.DataFrame, headers: list[str],
                    legend_name: str = '', colourbrew: str = 'RdYlGn', name: str = 'choropleth',
                    fill_opacity: float = 0.9, line_opacity: float = 0.2, smooth_factor: float = 1,
-                   key_on: str = 'feature.id', time_slider: bool = False) -> None:
+                   key_on: str = 'feature.properties.name', time_slider: bool = False) -> None:
     """
     Generates a Choropleth and adds it to the given map.
     Creates a TimeSliderChoropleth if time_slider is True.
