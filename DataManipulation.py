@@ -10,9 +10,10 @@ VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.15,
                                     "Oceania": 0.3,
                                     "Africa": 0.4}
 
-# Do it by ocean, if continents are on the same side as in east / west 2,
-# 1 if the same continent, 3 if across ocean
-# From the perspective of the exporter
+# Shipment Time Meaning:
+# 1 - Same Continent
+# 2 - Same Hemisphere
+# 3 - Different Hemisphere
 VACCINE_SHIPMENT_TIME_CONTINENT = {"Asia": {"Europe": 2,
                                             "North America": 3,
                                             "South America": 3,
@@ -50,6 +51,7 @@ VACCINE_SHIPMENT_TIME_CONTINENT = {"Asia": {"Europe": 2,
                                               "Africa": 1,
                                               "Asia": 2}}
 
+# These exporters make up the vast majority of covid vaccine exports
 VACCINE_EXPORTERS = {"Germany": 512484000,
                      "Spain": 268444000,
                      "Belgium": 1488600000,
@@ -84,7 +86,6 @@ def get_country_pop() -> dict[str: int]:
 
 def get_all_countries_shipment_time() -> dict[str: dict[str: int]]:
     """Returns a dictionary mapping a country to its vaccination shipment time"""
-    # Same Continent 1 Day, Different Continent 2-3, or find data on how far each contintent is away from each other
     country_to_cont = _get_country_continent()
     country_shipment_time = {c: VACCINE_SHIPMENT_TIME_CONTINENT[country_to_cont[c]] for c in country_to_cont}
     return country_shipment_time
@@ -112,6 +113,7 @@ def get_all_countries() -> set | dict:
     vaccine = set(_create_df("datasets\\vaccinations.csv")["location"].unique())
     population = set(_create_df("datasets\\population_by_country_2020.csv")['Country (or dependency)'].unique())
 
+    # Filtering countries with valid data
     countries_with_data = continent.intersection(vaccine, population)
 
     countries = []
