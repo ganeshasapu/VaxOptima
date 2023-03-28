@@ -2,6 +2,7 @@
 import pandas as pd
 import json
 
+
 VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.15,
                                     "Europe": 0.25,
                                     "North America": 0.25,
@@ -9,12 +10,45 @@ VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.15,
                                     "Oceania": 0.3,
                                     "Africa": 0.4}
 
-VACCINE_SHIPMENT_TIME_CONTINENT = {"Asia": {},
-                                   "Europe": {},
-                                   "North America": {},
-                                   "South America": {},
-                                   "Oceania": {},
-                                   "Africa": {}}
+# Do it by ocean, if continents are on the same side as in east / west 2,
+# 1 if the same continent, 3 if across ocean
+# From the perspective of the exporter
+VACCINE_SHIPMENT_TIME_CONTINENT = {"Asia": {"Europe": 2,
+                                            "North America": 3,
+                                            "South America": 3,
+                                            "Oceania": 2,
+                                            "Africa": 2,
+                                            "Asia": 1},
+                                   "Europe": {"Europe": 1,
+                                              "North America": 3,
+                                              "South America": 3,
+                                              "Oceania": 2,
+                                              "Africa": 2,
+                                              "Asia": 2},
+                                   "North America": {"Europe": 3,
+                                                     "North America": 1,
+                                                     "South America": 2,
+                                                     "Oceania": 3,
+                                                     "Africa": 3,
+                                                     "Asia": 3},
+                                   "South America": {"Europe": 3,
+                                                     "North America": 2,
+                                                     "South America": 1,
+                                                     "Oceania": 3,
+                                                     "Africa": 3,
+                                                     "Asia": 3},
+                                   "Oceania": {"Europe": 2,
+                                               "North America": 3,
+                                               "South America": 3,
+                                               "Oceania": 1,
+                                               "Africa": 2,
+                                               "Asia": 2},
+                                   "Africa": {"Europe": 2,
+                                              "North America": 3,
+                                              "South America": 3,
+                                              "Oceania": 2,
+                                              "Africa": 1,
+                                              "Asia": 2}}
 
 VACCINE_EXPORTERS = {"Germany": 512484000,
                      "Spain": 268444000,
@@ -51,7 +85,9 @@ def get_country_pop() -> dict[str: int]:
 def get_all_countries_shipment_time() -> dict[str: dict[str: int]]:
     """Returns a dictionary mapping a country to its vaccination shipment time"""
     # Same Continent 1 Day, Different Continent 2-3, or find data on how far each contintent is away from each other
-    pass
+    country_to_cont = _get_country_continent()
+    country_shipment_time = {c: VACCINE_SHIPMENT_TIME_CONTINENT[country_to_cont[c]] for c in country_to_cont}
+    return country_shipment_time
 
 
 def get_all_countries_vaxhesitancy() -> dict[str: float]:
@@ -95,6 +131,7 @@ def _create_df(file: str) -> pd.DataFrame:
     df = pd.read_csv(file)
     return df
 
+
 def _get_country_continent() -> dict[str: str]:
     """Helper method to return a dict mapping countries to their continents"""
     countries = get_all_countries()
@@ -107,6 +144,7 @@ def _get_country_continent() -> dict[str: str]:
         if country in countries:
             country_vaxhesitacny[country] = continent
     return country_vaxhesitacny
+
 
 def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
     """Helper method average vaccine rate given a country
@@ -126,6 +164,7 @@ if __name__ == "__main__":
     y = get_all_countries_vaxhesitancy()
     z = get_country_pop()
     b = get_export_rate()
+    j = get_all_countries_shipment_time()
 
     print(x)
     print(len(x))
@@ -135,3 +174,5 @@ if __name__ == "__main__":
     print(len(z))
     print(b)
     print(len(b))
+    print(j)
+    print(len(j))
