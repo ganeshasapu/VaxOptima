@@ -10,20 +10,22 @@ VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.1,
                                     "Oceania": 0.3,
                                     "Africa": 0.4}
 
-VACCINE_EXPORTERS = {"Germany",
-                     "Belgium",
-                     "China",
-                     "United States of America",
-                     "South Korea",
-                     "India",
-                     "South Africa",
-                     "Russia",
-                     "Japan"}
+VACCINE_EXPORTERS = {"Germany": 512484000,
+                     "Spain": 268444000,
+                     "Belgium": 1488600000,
+                     "China": 1986400000,
+                     "United States of America": 968000000,
+                     "South Korea": 240400000,
+                     "India": 140200000,
+                     "South Africa": 110100000,
+                     "Russia": 102400000,
+                     "Japan": 67000000}
 
 
 def get_export_rate() -> dict[str: int]:
     """Returns a dictionary mapping an exporter to its export rate of vaccine"""
-    # TODO get data set and finish
+    country_vac_export_rate = {c: (VACCINE_EXPORTERS[c] / 730) for c in VACCINE_EXPORTERS}
+    return country_vac_export_rate
 
 
 def get_country_pop() -> dict[str: int]:
