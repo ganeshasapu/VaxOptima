@@ -2,13 +2,20 @@
 import pandas as pd
 import json
 
-# TODO Generalize to the most extreme country in region
 VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.15,
                                     "Europe": 0.25,
                                     "North America": 0.25,
                                     "South America": 0.15,
                                     "Oceania": 0.3,
                                     "Africa": 0.4}
+
+VACCINE_SHIPMENT_TIME_CONTINENT = {"Asia": {"Europe": ...,
+                                            "North America": ..., "South America": ..., "Oceania": ..., },
+                                   "Europe": {},
+                                   "North America": {},
+                                   "South America": {},
+                                   "Oceania": {},
+                                   "Africa": {}}
 
 VACCINE_EXPORTERS = {"Germany": 512484000,
                      "Spain": 268444000,
@@ -44,8 +51,10 @@ def get_country_pop() -> dict[str: int]:
 
 def get_all_countries_shipment_time() -> dict[str: int]:
     """Returns a dictionary mapping a country to its vaccination shipment time"""
-    # Same Continent 1 Day, Different Continent 2-3, # Calcualte VAccine Distribtuion rate by
-    # number of does divided by total doses, or find data on how far each contintent is away from each other
+    # Same Continent 1 Day, Different Continent 2-3, or find data on how far each contintent is away from each other
+    continents = set(VACCINE_HESITANCY_RATE_CONTINENT.keys())
+    for cont in continents:
+
 
 
 def get_all_countries_vaxhesitancy() -> dict[str: float]:
@@ -109,6 +118,7 @@ def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
     return avg_vax_rate
 
 
+# Testing
 if __name__ == "__main__":
     x = get_all_country_vaxrate()
     y = get_all_countries_vaxhesitancy()
