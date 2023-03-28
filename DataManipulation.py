@@ -20,8 +20,6 @@ VACCINE_EXPORTERS = {"Germany",
                      "Russia",
                      "Japan"}
 
-# TODO Filter out countries based on Folium maps
-
 
 def get_export_rate() -> dict[str: int]:
     """Returns a dictionary mapping an exporter to its export rate of vaccine"""
@@ -30,7 +28,16 @@ def get_export_rate() -> dict[str: int]:
 
 def get_country_pop() -> dict[str: int]:
     """Returns a dictionary mapping a country to its population"""
-    # TODO get data set and finish
+    populations = _create_df("datasets\\population_by_country_2020.csv")
+    countries = get_all_countries()
+
+    country_to_pop = {}
+    for item in populations.iterrows():
+        country = item[1]['Country (or dependency)']
+        population = item[1]['Population (2020)']
+        if country in countries:
+            country_to_pop[country] = population
+    return country_to_pop
 
 
 def get_all_countries_shipment_time() -> dict[str: int]:
@@ -44,8 +51,8 @@ def get_all_countries_vaxhesitancy() -> dict[str: float]:
     hesitancy rate of each continent to each country due to lack of data"""
     countries = get_all_countries()
     continent_df = _create_df("datasets\\continents-according-to-our-world-in-data.csv")
-    country_vaxhesitacny = {}
 
+    country_vaxhesitacny = {}
     for item in continent_df.iterrows():
         country = item[1]['Entity']
         continent = item[1]['Continent']
@@ -64,11 +71,11 @@ def get_all_country_vaxrate() -> dict[str: float]:
 
 def get_all_countries() -> set | dict:
     """Get all countries"""
-    continent_df = _create_df("datasets\\continents-according-to-our-world-in-data.csv")
-    vaccine_df = _create_df("datasets\\vaccinations.csv")
+    continent = set(_create_df("datasets\\continents-according-to-our-world-in-data.csv")["Entity"].unique())
+    vaccine = set(_create_df("datasets\\vaccinations.csv")["location"].unique())
+    population = set(_create_df("datasets\\population_by_country_2020.csv")['Country (or dependency)'].unique())
 
-    countries_with_continents = set(continent_df["Entity"].unique())
-    countries_with_data = set(vaccine_df["location"].unique())
+    countries_with_data = continent.intersection(vaccine, population)
 
     countries = []
     with open("datasets\\world-countries.json") as file:
@@ -77,7 +84,7 @@ def get_all_countries() -> set | dict:
         for f in features:
             countries.append(f["properties"]["name"])
 
-    valid_countries = {c for c in countries if c in countries_with_continents and c in countries_with_data}
+    valid_countries = {c for c in countries if c in countries_with_data}
     return valid_countries
 
 
@@ -103,8 +110,11 @@ def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
 if __name__ == "__main__":
     x = get_all_country_vaxrate()
     y = get_all_countries_vaxhesitancy()
+    z = get_country_pop()
 
     print(x)
     print(len(x))
     print(y)
     print(len(y))
+    print(z)
+    print(len(z))
