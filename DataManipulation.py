@@ -1,5 +1,6 @@
 """File for data manipulation for data in datasets folder"""
 import pandas as pd
+import json
 
 # TODO Generalize to the most extreme country in region
 VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.1,
@@ -41,7 +42,7 @@ def get_all_countries_shipment_time() -> dict[str: int]:
 def get_all_countries_vaxhesitancy() -> dict[str: float]:
     """Returns a dictionary mapping a country to its vaccination hesitancy rate. Note that we generalize the vaccine
     hesitancy rate of each continent to each country due to lack of data"""
-    countries = get_all_countries(_create_df("datasets\\vaccinations.csv"), "location", True)
+    countries = get_all_countries()
     continent_df = _create_df("datasets\\continents-according-to-our-world-in-data.csv")
     country_vaxhesitacny = {}
 
@@ -56,16 +57,27 @@ def get_all_countries_vaxhesitancy() -> dict[str: float]:
 def get_all_country_vaxrate() -> dict[str: float]:
     """Returns a dictionary mapping a country to its vaccination rate"""
     df = _create_df("datasets\\vaccinations.csv")
-    countries = get_all_countries(df, "location", False)
+    countries = get_all_countries()
     country_avg_vax_rate = {c: _get_avg_daily_vax_rate(df, c) for c in countries}
     return country_avg_vax_rate
 
 
-def get_all_countries(df: pd.DataFrame, column_name: str, with_cont: bool) -> set | dict:
-    """Get all countries given a data frame"""
+def get_all_countries() -> set | dict:
+    """Get all countries"""
     continent_df = _create_df("datasets\\continents-according-to-our-world-in-data.csv")
+    vaccine_df = _create_df("datasets\\vaccinations.csv")
+
     countries_with_continents = set(continent_df["Entity"].unique())
-    valid_countries = {c for c in set(df[column_name].unique()) if c in countries_with_continents}
+    countries_with_data = set(vaccine_df["location"].unique())
+
+    countries = []
+    with open("datasets\\world-countries.json") as file:
+        data = json.load(file)
+        features = data["features"]
+        for f in features:
+            countries.append(f["properties"]["name"])
+
+    valid_countries = {c for c in countries if c in countries_with_continents and c in countries_with_data}
     return valid_countries
 
 
@@ -89,4 +101,10 @@ def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
 
 
 if __name__ == "__main__":
-    print(get_all_country_vaxrate())
+    x = get_all_country_vaxrate()
+    y = get_all_countries_vaxhesitancy()
+
+    print(x)
+    print(len(x))
+    print(y)
+    print(len(y))
