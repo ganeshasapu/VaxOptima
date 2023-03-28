@@ -3,7 +3,7 @@ import pandas as pd
 import json
 
 # TODO Generalize to the most extreme country in region
-VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.1,
+VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.15,
                                     "Europe": 0.25,
                                     "North America": 0.25,
                                     "South America": 0.15,
@@ -24,7 +24,7 @@ VACCINE_EXPORTERS = {"Germany": 512484000,
 
 def get_export_rate() -> dict[str: int]:
     """Returns a dictionary mapping an exporter to its export rate of vaccine"""
-    country_vac_export_rate = {c: (VACCINE_EXPORTERS[c] / 730) for c in VACCINE_EXPORTERS}
+    country_vac_export_rate = {c: (VACCINE_EXPORTERS[c] // 730) for c in VACCINE_EXPORTERS}
     return country_vac_export_rate
 
 
@@ -113,6 +113,7 @@ if __name__ == "__main__":
     x = get_all_country_vaxrate()
     y = get_all_countries_vaxhesitancy()
     z = get_country_pop()
+    b = get_export_rate()
 
     print(x)
     print(len(x))
@@ -120,3 +121,5 @@ if __name__ == "__main__":
     print(len(y))
     print(z)
     print(len(z))
+    print(b)
+    print(len(b))
