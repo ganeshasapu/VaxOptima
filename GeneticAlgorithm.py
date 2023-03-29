@@ -144,7 +144,7 @@ class GeneticAlgorithm:
             chromosome = self.selection(chromosome=chromosome)
             chromosome.fitness(world=self.world_graph,
                                num_timestamps=self.num_timestamps)
-            print(f"Generation {i + 1} fitness : {chromosome.calculate_average_fitness()}")
+            print(f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} min: {min([gene.fitness_value for gene in chromosome.genes])} max: {max([gene.fitness_value for gene in chromosome.genes])}")
         return chromosome
 
     def create_initial_chromosome(self) -> Chromosome:
