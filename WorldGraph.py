@@ -1,6 +1,7 @@
 """File for the representation of the world graph"""
 import DataManipulation as dm
 
+
 class Country:
     """Class that represents a Country. Equivalent to Vertex in Graph
 
@@ -69,10 +70,6 @@ class World:
         self.countries = countries
         self.exporting_countries = exporting_countries
 
-    def _initialize_exporters(self) -> dict[str: ExportingCountry]:
-        """Helper method to initialize all exporting countries"""
-
-
     def reset(self):
         """Resets the world to the initial state"""
         for country in self.countries.values():
@@ -98,17 +95,42 @@ class World:
         return tot_vaccinated / tot_pop >= 0.7
 
 
-def initialzie_countries() -> dict[str: Country]:
+def initialize_all_countries() -> dict:
     """Helper method to initialize all exporting countries"""
-    all_countries = dm.get_all_countries()
+    countries = dm.get_all_countries()
     country_populations = dm.get_country_pop()
-    country_vax_hesitancy = dm.get_all_countries_vaxhesitancy()
+    country_vax_hesitancy = dm.get_all_countries_vaxhesitancy()  # TODO do we need this
     country_vax_rate = dm.get_all_country_vaxrate()
 
-    countries = {}
-    for c in all_countries:
-        if c not in dm.VACCINE_EXPORTERS:
-            countries[c] = Country(name=c,
-                                   population=country_populations[c],
-                                   vaccine_rate=country_vax_rate[c])
-    return countries
+    exporters = dm.VACCINE_EXPORTERS
+    export_rate = dm.get_export_rate()
+
+    all_countries = {"Exporters": {}, "Countries": {}}
+    for c in countries:
+        if c not in exporters:
+            all_countries["Countries"][c] = Country(name=c,
+                                                    population=country_populations[c],
+                                                    vaccine_rate=country_vax_rate[c])
+        else:
+            edges = _get_edges(c, countries, country_populations, country_vax_rate)
+            all_countries["Exporters"][c] = ExportingCountry(name=c,
+                                                             population=country_populations[c],
+                                                             vaccine_rate=country_vax_rate[c],
+                                                             export_rate=export_rate[c],
+                                                             edges=edges)
+    return all_countries
+
+
+def _get_edges(exporter: str, countries: set, populations: dict, vax_rates: dict) -> dict:
+    """Gets all edges to all other countries other than exporters"""
+    shipment_times = dm.get_all_countries_shipment_time()
+
+    edges = {}
+    for c in countries:
+        if c != exporter:
+            edges[c] = Edge(importer=Country(name=c,
+                                             population=populations[c],
+                                             vaccine_rate=vax_rates[c]),
+                            shipment_time=shipment_times[c])
+
+    return edges
