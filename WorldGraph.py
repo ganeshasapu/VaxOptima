@@ -1,5 +1,5 @@
 """File for the representation of the world graph"""
-
+import DataManipulation as dm
 
 class Country:
     """Class that represents a Country. Equivalent to Vertex in Graph
@@ -69,13 +69,9 @@ class World:
         self.countries = countries
         self.exporting_countries = exporting_countries
 
-    def create_countries(self) -> dict[str | Country]:
-        """Function that helps initialize World, returns a dict of all countries in the world"""
-        pass
+    def _initialize_exporters(self) -> dict[str: ExportingCountry]:
+        """Helper method to initialize all exporting countries"""
 
-    def create_exporting_countries(self) -> dict[str | ExportingCountry]:
-        """Function that helps initialzie World, returns a list of all exporting countries in the world"""
-        pass
 
     def reset(self):
         """Resets the world to the initial state"""
@@ -100,3 +96,19 @@ class World:
             tot_vaccinated += country.vaccinated_population
             tot_pop += country.population
         return tot_vaccinated / tot_pop >= 0.7
+
+
+def initialzie_countries() -> dict[str: Country]:
+    """Helper method to initialize all exporting countries"""
+    all_countries = dm.get_all_countries()
+    country_populations = dm.get_country_pop()
+    country_vax_hesitancy = dm.get_all_countries_vaxhesitancy()
+    country_vax_rate = dm.get_all_country_vaxrate()
+
+    countries = {}
+    for c in all_countries:
+        if c not in dm.VACCINE_EXPORTERS:
+            countries[c] = Country(name=c,
+                                   population=country_populations[c],
+                                   vaccine_rate=country_vax_rate[c])
+    return countries

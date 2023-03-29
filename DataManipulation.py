@@ -107,7 +107,7 @@ def get_all_country_vaxrate() -> dict[str: float]:
     return country_avg_vax_rate
 
 
-def get_all_countries() -> set | dict:
+def get_all_countries() -> set:
     """Get all countries"""
     continent = set(_create_df("datasets\\continents-according-to-our-world-in-data.csv")["Entity"].unique())
     vaccine = set(_create_df("datasets\\vaccinations.csv")["location"].unique())
