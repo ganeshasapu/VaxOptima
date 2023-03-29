@@ -84,6 +84,7 @@ def get_country_pop() -> dict[str: int]:
     return country_to_pop
 
 
+# TODO fix bug here
 def get_all_countries_shipment_time() -> dict[str: dict[str: int]]:
     """Returns a dictionary mapping a country to its vaccination shipment time"""
     country_to_cont = _get_country_continent()

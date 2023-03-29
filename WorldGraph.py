@@ -112,6 +112,7 @@ def initialize_all_countries() -> dict:
                                                     population=country_populations[c],
                                                     vaccine_rate=country_vax_rate[c])
         else:
+            # TODO Fix bug here where it creates another object for an exporter but as a country essentailly duplicates
             edges = _get_edges(c, countries, country_populations, country_vax_rate)
             all_countries["Exporters"][c] = ExportingCountry(name=c,
                                                              population=country_populations[c],
@@ -123,6 +124,8 @@ def initialize_all_countries() -> dict:
 
 def _get_edges(exporter: str, countries: set, populations: dict, vax_rates: dict) -> dict:
     """Gets all edges to all other countries other than exporters"""
+    # TODO Fix bug here where it creates another object for an exporter but as a country essentailly duplicates
+    # TODO Do exporting countries export to each other?
     shipment_times = dm.get_all_countries_shipment_time()
 
     edges = {}
