@@ -11,6 +11,7 @@ VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.15,
                                     "Africa": 0.4}
 
 # Shipment Time Meaning:
+# Source: Destination
 # 1 - Same Continent
 # 2 - Same Hemisphere
 # 3 - Different Hemisphere
@@ -84,18 +85,19 @@ def get_country_pop() -> dict[str: int]:
     return country_to_pop
 
 
-# TODO fix bug here
+# TODO fix logical bug here
 def get_all_countries_shipment_time() -> dict[str: dict[str: int]]:
-    """Returns a dictionary mapping a country to its vaccination shipment time"""
-    country_to_cont = _get_country_continent()
-    country_shipment_time = {c: VACCINE_SHIPMENT_TIME_CONTINENT[country_to_cont[c]] for c in country_to_cont}
+    """Returns a dictionary mapping each exporter to its vaccination shipment time to all continents"""
+    country_to_cont = get_country_continent()
+    country_shipment_time = \
+        {c: VACCINE_SHIPMENT_TIME_CONTINENT[country_to_cont[c]] for c in country_to_cont if c in VACCINE_EXPORTERS}
     return country_shipment_time
 
 
 def get_all_countries_vaxhesitancy() -> dict[str: float]:
     """Returns a dictionary mapping a country to its vaccination hesitancy rate. Note that we generalize the vaccine
     hesitancy rate of each continent to each country due to lack of data"""
-    country_to_cont = _get_country_continent()
+    country_to_cont = get_country_continent()
     country_vaxhesitancy = {c: VACCINE_HESITANCY_RATE_CONTINENT[country_to_cont[c]] for c in country_to_cont}
     return country_vaxhesitancy
 
@@ -135,7 +137,7 @@ def _create_df(file: str) -> pd.DataFrame:
     return df
 
 
-def _get_country_continent() -> dict[str: str]:
+def get_country_continent() -> dict[str: str]:
     """Helper method to return a dict mapping countries to their continents"""
     countries = get_all_countries()
     continent_df = _create_df("datasets\\continents-according-to-our-world-in-data.csv")

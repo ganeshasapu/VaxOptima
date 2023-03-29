@@ -127,6 +127,7 @@ def _get_edges(exporter: str, countries: set, populations: dict, vax_rates: dict
     # TODO Fix bug here where it creates another object for an exporter but as a country essentailly duplicates
     # TODO Do exporting countries export to each other?
     shipment_times = dm.get_all_countries_shipment_time()
+    countries_to_continents = dm.get_country_continent()
 
     edges = {}
     for c in countries:
@@ -134,6 +135,6 @@ def _get_edges(exporter: str, countries: set, populations: dict, vax_rates: dict
             edges[c] = Edge(importer=Country(name=c,
                                              population=populations[c],
                                              vaccine_rate=vax_rates[c]),
-                            shipment_time=shipment_times[c])
+                            shipment_time=shipment_times[exporter][countries_to_continents[c]])
 
     return edges
