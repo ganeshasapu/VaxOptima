@@ -2,6 +2,7 @@
 import random
 import WorldGraph as wg
 import GeneticAlgorithm as ga
+import DataManipulation as dm
 
 
 def algorithm_runner_fixed(exporters_names: list, countries_names: list, num_timestamps: int, num_best_genes: int, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, population: int, max_shipment_time: int):
