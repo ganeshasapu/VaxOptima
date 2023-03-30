@@ -2,9 +2,8 @@
 import pandas as pd
 import json
 
-
+# Dictionary maps source to destinations and the time it takes to ship to each destination
 # Shipment Time Meaning:
-# Source: Destination
 # 1 - Same Continent
 # 2 - Same Hemisphere
 # 3 - Different Hemisphere
@@ -166,7 +165,9 @@ def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
     return avg_vax_rate
 
 
+# ----------------------------------------------------------------------------------------------------------------------
 # Testing
+# ----------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     cont = pd.read_csv("datasets\\continents-according-to-our-world-in-data.csv")
     vac = pd.read_csv("datasets\\vaccinations.csv")
