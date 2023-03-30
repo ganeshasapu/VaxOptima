@@ -1,6 +1,8 @@
 """File for the representation of the world graph"""
 import DataManipulation as dm
-
+# TODO Discuss whether or not edges should belong in World or Exporters. The issue is that youre gonna have issues
+#  instnatiating exporters because of duplicates. They need to be initiated one at a time in order to avoid the
+#  duplication.
 
 class Country:
     """Class that represents a Country. Equivalent to Vertex in Graph
@@ -93,48 +95,3 @@ class World:
             tot_vaccinated += country.vaccinated_population
             tot_pop += country.population
         return tot_vaccinated / tot_pop >= 0.7
-
-
-def initialize_all_countries() -> dict:
-    """Helper method to initialize all exporting countries"""
-    countries = dm.get_all_countries()
-    country_populations = dm.get_country_pop()
-    country_vax_hesitancy = dm.get_all_countries_vaxhesitancy()  # TODO do we need this
-    country_vax_rate = dm.get_all_country_vaxrate()
-
-    exporters = dm.VACCINE_EXPORTERS
-    export_rate = dm.get_export_rate()
-
-    all_countries = {"Exporters": {}, "Countries": {}}
-    for c in countries:
-        if c not in exporters:
-            all_countries["Countries"][c] = Country(name=c,
-                                                    population=country_populations[c],
-                                                    vaccine_rate=country_vax_rate[c])
-        else:
-            # TODO Fix bug here where it creates another object for an exporter but as a country essentailly duplicates
-            edges = _get_edges(c, countries, country_populations, country_vax_rate)
-            all_countries["Exporters"][c] = ExportingCountry(name=c,
-                                                             population=country_populations[c],
-                                                             vaccine_rate=country_vax_rate[c],
-                                                             export_rate=export_rate[c],
-                                                             edges=edges)
-    return all_countries
-
-
-def _get_edges(exporter: str, countries: set, populations: dict, vax_rates: dict) -> dict:
-    """Gets all edges to all other countries other than exporters"""
-    # TODO Fix bug here where it creates another object for an exporter but as a country essentailly duplicates
-    # TODO Do exporting countries export to each other?
-    shipment_times = dm.get_all_countries_shipment_time()
-    countries_to_continents = dm.get_country_continent()
-
-    edges = {}
-    for c in countries:
-        if c != exporter:
-            edges[c] = Edge(importer=Country(name=c,
-                                             population=populations[c],
-                                             vaccine_rate=vax_rates[c]),
-                            shipment_time=shipment_times[exporter][countries_to_continents[c]])
-
-    return edges
