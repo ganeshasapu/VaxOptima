@@ -72,7 +72,7 @@ def get_export_rate() -> dict[str: int]:
 
 def get_country_pop() -> dict[str: int]:
     """Returns a dictionary mapping a country to its population"""
-    populations = _create_df("datasets\\population_by_country_2020.csv")
+    populations = _create_df("datasets/population_by_country_2020.csv")
     countries = get_all_countries()
 
     country_to_pop = {}
@@ -101,7 +101,7 @@ def get_all_countries_vaxhesitancy() -> dict[str: float]:
 
 def get_all_country_vaxrate() -> dict[str: float]:
     """Returns a dictionary mapping a country to its vaccination rate"""
-    df = _create_df("datasets\\vaccinations.csv")
+    df = _create_df("datasets/vaccinations.csv")
     countries = get_all_countries()
     country_avg_vax_rate = {c: _get_avg_daily_vax_rate(df, c) for c in countries}
     return country_avg_vax_rate
@@ -109,15 +109,15 @@ def get_all_country_vaxrate() -> dict[str: float]:
 
 def get_all_countries() -> set | dict:
     """Get all countries"""
-    continent = set(_create_df("datasets\\continents-according-to-our-world-in-data.csv")["Entity"].unique())
-    vaccine = set(_create_df("datasets\\vaccinations.csv")["location"].unique())
-    population = set(_create_df("datasets\\population_by_country_2020.csv")['Country (or dependency)'].unique())
+    continent = set(_create_df("datasets/continents-according-to-our-world-in-data.csv")["Entity"].unique())
+    vaccine = set(_create_df("datasets/vaccinations.csv")["location"].unique())
+    population = set(_create_df("datasets/population_by_country_2020.csv")['Country (or dependency)'].unique())
 
     # Filtering countries with valid data
     countries_with_data = continent.intersection(vaccine, population)
 
     countries = []
-    with open("datasets\\world-countries.json") as file:
+    with open("datasets/world-countries.json") as file:
         data = json.load(file)
         features = data["features"]
         for f in features:
@@ -137,7 +137,7 @@ def _create_df(file: str) -> pd.DataFrame:
 def _get_country_continent() -> dict[str: str]:
     """Helper method to return a dict mapping countries to their continents"""
     countries = get_all_countries()
-    continent_df = _create_df("datasets\\continents-according-to-our-world-in-data.csv")
+    continent_df = _create_df("datasets/continents-according-to-our-world-in-data.csv")
 
     country_vaxhesitacny = {}
     for item in continent_df.iterrows():
