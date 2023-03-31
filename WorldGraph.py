@@ -87,12 +87,10 @@ class World:
 
     def check_termination(self) -> bool:
         """Checks if the 70% population has been vaccinated"""
-        tot_vaccinated = 0
-        tot_pop = 0
         for country in self.countries.values():
-            tot_vaccinated += country.vaccinated_population
-            tot_pop += country.population
-        return tot_vaccinated / tot_pop >= 0.7
+            if country.vaccinated_population / country.population < 0.7:
+                return False
+        return True
 
 
 def create_world() -> World:
