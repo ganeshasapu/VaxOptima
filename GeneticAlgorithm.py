@@ -6,7 +6,9 @@ from dataclasses import dataclass
 from WorldGraph import World, ExportingCountry, Country, Edge
 import random
 from typing import Optional
+import pandas
 
+CROSSOVER_AGGRESSION_RATE = 0.45
 
 class Gene:
     """
@@ -78,9 +80,11 @@ class Chromosome:
         - genes: a list of genes
     """
     genes: list[Gene]
+    gene_data: pandas.DataFrame
 
     def __init__(self, genes: list[Gene]) -> None:
         self.genes = genes
+        self.gene_data = pandas.DataFrame(columns=["Country", "Average Vaccinated"])
 
     def fitness(self, world: World, num_timestamps: int):
         """Runs simulation and gives a fitness score to the each of the genes in the chromosome"""
@@ -97,10 +101,6 @@ class Chromosome:
         for i in range(len(self.genes)):
             string += f"Gene {i + 1}: {self.genes[i]}\n\n"
         return string
-
-
-CROSSOVER_AGGRESSION_RATE = 0.45
-MUTATION_AGGRESSION_RATE = 0.6
 
 
 class GeneticAlgorithm:
@@ -125,6 +125,8 @@ class GeneticAlgorithm:
 
     world_graph: World
     num_timestamps: int
+    data_record: pandas.DataFrame
+
 
     def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World, num_timestamps: int, num_best_genes: int):
         self.mutation_rate = mutation_rate
@@ -135,6 +137,7 @@ class GeneticAlgorithm:
         self.world_graph = world
         self.num_timestamps = num_timestamps
         self.num_best_genes = num_best_genes
+        self.data_record = pandas.DataFrame(columns=["Generation", "Country", "Average Vaccinated"])
 
     def run(self) -> Chromosome:
         """Runs the genetic algorithm and returns the final chromosome"""
@@ -148,7 +151,16 @@ class GeneticAlgorithm:
             chromosome.fitness(world=self.world_graph,
                                num_timestamps=self.num_timestamps)
             print(f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} min: {min([gene.fitness_value for gene in chromosome.genes])} max: {max([gene.fitness_value for gene in chromosome.genes])}")
+        # self.data_record.to_csv("data.csv", index=False)
         return chromosome
+
+    def record_data(self, generation: int):
+        """Records the data from the current generation"""
+        for country in self.world_graph.countries.values():
+            print(country.vaccinated_population)
+            list_row = [generation, country.name, country.vaccinated_population / country.population]
+            df = self.data_record
+            df.loc[len(df)] = list_row
 
     def create_initial_chromosome(self) -> Chromosome:
         """Creates the initial chromosome
