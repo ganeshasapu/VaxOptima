@@ -1,8 +1,6 @@
 """File for the representation of the world graph"""
 import DataManipulation as dm
-# TODO Discuss whether or not edges should belong in World or Exporters. The issue is that youre gonna have issues
-#  instnatiating exporters because of duplicates. They need to be initiated one at a time in order to avoid the
-#  duplication.
+
 
 class Country:
     """Class that represents a Country. Equivalent to Vertex in Graph
@@ -89,9 +87,59 @@ class World:
 
     def check_termination(self) -> bool:
         """Checks if the 70% population has been vaccinated"""
-        tot_vaccinated = 0
-        tot_pop = 0
         for country in self.countries.values():
-            tot_vaccinated += country.vaccinated_population
-            tot_pop += country.population
-        return tot_vaccinated / tot_pop >= 0.7
+            if country.vaccinated_population / country.population < 0.7:
+                return False
+        return True
+
+
+def create_world() -> World:
+    """Method that creates a world object"""
+    exporters: dict[str: ExportingCountry] = {}
+    countries: dict[str: Country] = {}
+
+    all_country_attributes = dm.get_all_country_attributes()
+    all_countries_to_continent = all_country_attributes['Continents']
+    vaccine_rates = all_country_attributes['Vaccine Rates']
+    populations = all_country_attributes['Populations']
+    export_rates = all_country_attributes['Export Rate']
+    shipment_times = all_country_attributes['Shipment Times']
+    all_exporters = dm.VACCINE_EXPORTERS
+
+    # Initialzing Countries
+    for country in all_countries_to_continent:
+        if country not in all_exporters:
+            countries[country] = Country(name=country,
+                                         vaccine_rate=vaccine_rates[country],
+                                         population=populations[country])
+    # Initialzing Exporters
+    for exporter in all_exporters:
+        edges = get_edges(exporter, countries, all_countries_to_continent, shipment_times)
+        exporter = ExportingCountry(name=exporter,
+                                    vaccine_rate=vaccine_rates[exporter],
+                                    export_rate=export_rates[exporter],
+                                    edges=edges,
+                                    population=populations[exporter])
+        exporters[exporter] = exporter
+
+    # Add Exporter Edges to themselves
+    for exporter in exporters:
+        exporter.edges[exporter.name] = Edge(importer=exporter, shipment_time=0)
+
+    return World(countries, exporters)
+
+
+def get_edges(exporter: str, countries: dict, continents: dict, shipment_times: dict) -> dict[str: Edge]:
+    """Helper method to create all edges from specific exporter"""
+    edges = {}
+
+    for country in countries:
+        edges[country] = Edge(importer=countries[country],
+                              shipment_time=shipment_times[exporter][continents[country]])
+
+    return edges
+
+
+if __name__ == '__main__':
+    w = create_world()
+    print(w)

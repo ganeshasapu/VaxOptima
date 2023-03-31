@@ -135,61 +135,27 @@ def _get_populations(countries: dict, population_df: pd.DataFrame) -> dict:
 
 def _get_export_rates() -> dict:
     """Helper Method that returns a dict mapping a country to its population"""
-    country_vac_export_rate = {c: (VACCINE_EXPORTERS[c] // 730) for c in VACCINE_EXPORTERS}
+    country_vac_export_rate = {c: ((VACCINE_EXPORTERS[c] - 67000000) / (1986400000 - 67000000)) for c in VACCINE_EXPORTERS}
     return country_vac_export_rate
 
-def get_all_country_vaxrate() -> dict[str: float]:
-    """Returns a dictionary mapping a country to its vaccination rate"""
-    df = _create_df("datasets/vaccinations.csv")
-    countries = get_all_countries()
-    country_avg_vax_rate = {c: _get_avg_daily_vax_rate(df, c) for c in countries}
-    return country_avg_vax_rate
 
 def _get_shipment_times(countries: dict) -> dict:
     """Helper Method that returns a dict mapping an exporter to its shipment time to different continents"""
     shipment_time = {c: VACCINE_SHIPMENT_TIME_CONTINENT[countries[c]] for c in VACCINE_EXPORTERS}
     return shipment_time
 
-def get_all_countries() -> set | dict:
-    """Get all countries"""
-    continent = set(_create_df("datasets/continents-according-to-our-world-in-data.csv")["Entity"].unique())
-    vaccine = set(_create_df("datasets/vaccinations.csv")["location"].unique())
-    population = set(_create_df("datasets/population_by_country_2020.csv")['Country (or dependency)'].unique())
 
 def _get_countries_on_map() -> set:
     """Helper Method that returns a set of countries that are represented on the folium map"""
     countries = set()
 
-    countries = []
     with open("datasets/world-countries.json") as file:
         data = json.load(file)
         features = data["features"]
         for f in features:
             countries.add(f["properties"]["name"])
 
-    valid_countries = {c for c in countries if c in countries_with_data}
-    return valid_countries
-
-
-# Helper Methods
-def _create_df(file: str) -> pd.DataFrame:
-    """Helper method to create data frame given csv file"""
-    df = pd.read_csv(file)
-    return df
-
-
-def _get_country_continent() -> dict[str: str]:
-    """Helper method to return a dict mapping countries to their continents"""
-    countries = get_all_countries()
-    continent_df = _create_df("datasets/continents-according-to-our-world-in-data.csv")
-
-    country_vaxhesitacny = {}
-    for item in continent_df.iterrows():
-        country = item[1]['Entity']
-        continent = item[1]['Continent']
-        if country in countries:
-            country_vaxhesitacny[country] = continent
-    return country_vaxhesitacny
+    return countries
 
 
 def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
@@ -223,4 +189,4 @@ if __name__ == "__main__":
     # print(str(len(shiptime)) + ": " + str(shiptime))
 
     all_att = get_all_country_attributes()
-    print(all_att)
+    # print(all_att)
