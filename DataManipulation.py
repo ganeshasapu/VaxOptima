@@ -2,14 +2,7 @@
 import pandas as pd
 import json
 
-
-VACCINE_HESITANCY_RATE_CONTINENT = {"Asia": 0.15,
-                                    "Europe": 0.25,
-                                    "North America": 0.25,
-                                    "South America": 0.15,
-                                    "Oceania": 0.3,
-                                    "Africa": 0.4}
-
+# Dictionary maps source to destinations and the time it takes to ship to each destination
 # Shipment Time Meaning:
 # 1 - Same Continent
 # 2 - Same Hemisphere
@@ -51,12 +44,13 @@ VACCINE_SHIPMENT_TIME_CONTINENT = {"Asia": {"Europe": 2,
                                               "Africa": 1,
                                               "Asia": 2}}
 
-# These exporters make up the vast majority of covid vaccine exports
+# These exporters make up the vast majority of covid vaccine exports. It maps the exporter to the total amount of doses
+# they have produced since vaccine production started.
 VACCINE_EXPORTERS = {"Germany": 512484000,
                      "Spain": 268444000,
                      "Belgium": 1488600000,
                      "China": 1986400000,
-                     "United States of America": 968000000,
+                     "United States": 968000000,
                      "South Korea": 240400000,
                      "India": 140200000,
                      "South Africa": 110100000,
@@ -64,19 +58,74 @@ VACCINE_EXPORTERS = {"Germany": 512484000,
                      "Japan": 67000000}
 
 
-def get_export_rate() -> dict[str: int]:
-    """Returns a dictionary mapping an exporter to its export rate of vaccine"""
-    country_vac_export_rate = {c: (VACCINE_EXPORTERS[c] // 730) for c in VACCINE_EXPORTERS}
-    return country_vac_export_rate
+def get_all_country_attributes() -> dict:
+    """Function that returns all the attributes of each country in a dictionary"""
+    # Getting all countries and initiating data frames
+    continent_df = pd.read_csv("datasets\\continents-according-to-our-world-in-data.csv")
+    vaccine_df = pd.read_csv("datasets\\vaccinations.csv")
+    population_df = pd.read_csv("datasets\\population_by_country_2020.csv")
+    countries_on_map = _get_countries_on_map()
+
+    all_country_attributes = {}
+    countries = _get_all_countries(continent_df, vaccine_df, population_df, countries_on_map)
+
+    # Continents
+    all_country_attributes['Continents'] = countries
+
+    # Vaccine Rate
+    vaccine_rates = _get_vaxrates(countries, vaccine_df)
+    all_country_attributes["Vaccine Rates"] = vaccine_rates
+
+    # Population
+    population = _get_populations(countries, population_df)
+    all_country_attributes["Populations"] = population
+
+    # Export Rate
+    export_rates = _get_export_rates()
+    all_country_attributes["Export Rate"] = export_rates
+
+    # Shipment Time
+    shipment_times = _get_shipment_times(countries)
+    all_country_attributes["Shipment Times"] = shipment_times
+
+    return all_country_attributes
 
 
-def get_country_pop() -> dict[str: int]:
-    """Returns a dictionary mapping a country to its population"""
-    populations = _create_df("datasets/population_by_country_2020.csv")
-    countries = get_all_countries()
+# ----------------------------------------------------------------------------------------------------------------------
+# Helper Methods
+# ----------------------------------------------------------------------------------------------------------------------
+def _get_all_countries(continent_df: pd.DataFrame,
+                       vaccine_df: pd.DataFrame,
+                       population_df: pd.DataFrame,
+                       countries_on_map: set) -> dict:
+    """Helper Method that returns a dict mapping all countries with valid data to its continent"""
+    continents = set(continent_df["Entity"].unique())
+    vaccines = set(vaccine_df["location"].unique())
+    populations = set(population_df['Country (or dependency)'].unique())
+    valid_countries = countries_on_map.intersection(continents, vaccines, populations)
 
+    countries_to_continents = {}
+
+    # Mapping country to continent
+    for item in continent_df.iterrows():
+        country = item[1]['Entity']
+        continent = item[1]['Continent']
+        if country in valid_countries:
+            countries_to_continents[country] = continent
+
+    return countries_to_continents
+
+
+def _get_vaxrates(countries: dict, vaccines_df: pd.DataFrame) -> dict:
+    """Helper Method that returns a dict mapping a country to its vaccination rate"""
+    country_avg_vax_rate = {c: _get_avg_daily_vax_rate(vaccines_df, c) for c in countries}
+    return country_avg_vax_rate
+
+
+def _get_populations(countries: dict, population_df: pd.DataFrame) -> dict:
+    """Helper Method that returns a dict mapping an exporting country to its export rate"""
     country_to_pop = {}
-    for item in populations.iterrows():
+    for item in population_df.iterrows():
         country = item[1]['Country (or dependency)']
         population = item[1]['Population (2020)']
         if country in countries:
@@ -84,20 +133,10 @@ def get_country_pop() -> dict[str: int]:
     return country_to_pop
 
 
-def get_all_countries_shipment_time() -> dict[str: dict[str: int]]:
-    """Returns a dictionary mapping a country to its vaccination shipment time"""
-    country_to_cont = _get_country_continent()
-    country_shipment_time = {c: VACCINE_SHIPMENT_TIME_CONTINENT[country_to_cont[c]] for c in country_to_cont}
-    return country_shipment_time
-
-
-def get_all_countries_vaxhesitancy() -> dict[str: float]:
-    """Returns a dictionary mapping a country to its vaccination hesitancy rate. Note that we generalize the vaccine
-    hesitancy rate of each continent to each country due to lack of data"""
-    country_to_cont = _get_country_continent()
-    country_vaxhesitancy = {c: VACCINE_HESITANCY_RATE_CONTINENT[country_to_cont[c]] for c in country_to_cont}
-    return country_vaxhesitancy
-
+def _get_export_rates() -> dict:
+    """Helper Method that returns a dict mapping a country to its population"""
+    country_vac_export_rate = {c: (VACCINE_EXPORTERS[c] // 730) for c in VACCINE_EXPORTERS}
+    return country_vac_export_rate
 
 def get_all_country_vaxrate() -> dict[str: float]:
     """Returns a dictionary mapping a country to its vaccination rate"""
@@ -106,6 +145,10 @@ def get_all_country_vaxrate() -> dict[str: float]:
     country_avg_vax_rate = {c: _get_avg_daily_vax_rate(df, c) for c in countries}
     return country_avg_vax_rate
 
+def _get_shipment_times(countries: dict) -> dict:
+    """Helper Method that returns a dict mapping an exporter to its shipment time to different continents"""
+    shipment_time = {c: VACCINE_SHIPMENT_TIME_CONTINENT[countries[c]] for c in VACCINE_EXPORTERS}
+    return shipment_time
 
 def get_all_countries() -> set | dict:
     """Get all countries"""
@@ -113,15 +156,16 @@ def get_all_countries() -> set | dict:
     vaccine = set(_create_df("datasets/vaccinations.csv")["location"].unique())
     population = set(_create_df("datasets/population_by_country_2020.csv")['Country (or dependency)'].unique())
 
-    # Filtering countries with valid data
-    countries_with_data = continent.intersection(vaccine, population)
+def _get_countries_on_map() -> set:
+    """Helper Method that returns a set of countries that are represented on the folium map"""
+    countries = set()
 
     countries = []
     with open("datasets/world-countries.json") as file:
         data = json.load(file)
         features = data["features"]
         for f in features:
-            countries.append(f["properties"]["name"])
+            countries.add(f["properties"]["name"])
 
     valid_countries = {c for c in countries if c in countries_with_data}
     return valid_countries
@@ -149,32 +193,34 @@ def _get_country_continent() -> dict[str: str]:
 
 
 def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
-    """Helper method average vaccine rate given a country
-
-    Preconditions:
-        - dataframe includes column, "daily_vaccinations_per_million"
-        - country name is formatted correctly
-    """
+    """Helper method average vaccine rate given a country"""
     df_country = df[df['location'] == country]
     avg_vax_rate = df_country["daily_vaccinations_per_million"].mean() / 1000000
     return avg_vax_rate
 
 
+# ----------------------------------------------------------------------------------------------------------------------
 # Testing
+# ----------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
-    x = get_all_country_vaxrate()
-    y = get_all_countries_vaxhesitancy()
-    z = get_country_pop()
-    b = get_export_rate()
-    j = get_all_countries_shipment_time()
+    cont = pd.read_csv("datasets\\continents-according-to-our-world-in-data.csv")
+    vac = pd.read_csv("datasets\\vaccinations.csv")
+    pop = pd.read_csv("datasets\\population_by_country_2020.csv")
+    count = _get_countries_on_map()
+    countr = _get_all_countries(cont, vac, pop, count)
+    print(str(len(countr)) + ": " + str(countr))
 
-    print(x)
-    print(len(x))
-    print(y)
-    print(len(y))
-    print(z)
-    print(len(z))
-    print(b)
-    print(len(b))
-    print(j)
-    print(len(j))
+    vacr = _get_vaxrates(countr, vac)
+    print(str(len(vacr)) + ": " + str(vacr))
+
+    popu = _get_populations(countr, pop)
+    print(str(len(popu)) + ": " + str(popu))
+
+    exprate = _get_export_rates()
+    print(str(len(exprate)) + ": " + str(exprate))
+
+    shiptime = _get_shipment_times(countr)
+    print(str(len(shiptime)) + ": " + str(shiptime))
+
+    all_att = get_all_country_attributes()
+    print(all_att)
