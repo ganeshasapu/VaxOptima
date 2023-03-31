@@ -61,9 +61,9 @@ VACCINE_EXPORTERS = {"Germany": 512484000,
 def get_all_country_attributes() -> dict:
     """Function that returns all the attributes of each country in a dictionary"""
     # Getting all countries and initiating data frames
-    continent_df = pd.read_csv("datasets\\continents-according-to-our-world-in-data.csv")
-    vaccine_df = pd.read_csv("datasets\\vaccinations.csv")
-    population_df = pd.read_csv("datasets\\population_by_country_2020.csv")
+    continent_df = pd.read_csv("datasets/continents-according-to-our-world-in-data.csv")
+    vaccine_df = pd.read_csv("datasets/vaccinations.csv")
+    population_df = pd.read_csv("datasets/population_by_country_2020.csv")
     countries_on_map = _get_countries_on_map()
 
     all_country_attributes = {}
@@ -169,24 +169,24 @@ def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
 # Testing
 # ----------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
-    cont = pd.read_csv("datasets\\continents-according-to-our-world-in-data.csv")
-    vac = pd.read_csv("datasets\\vaccinations.csv")
-    pop = pd.read_csv("datasets\\population_by_country_2020.csv")
-    count = _get_countries_on_map()
-    countr = _get_all_countries(cont, vac, pop, count)
-    print(str(len(countr)) + ": " + str(countr))
-
-    vacr = _get_vaxrates(countr, vac)
-    print(str(len(vacr)) + ": " + str(vacr))
-
-    popu = _get_populations(countr, pop)
-    print(str(len(popu)) + ": " + str(popu))
-
-    exprate = _get_export_rates()
-    print(str(len(exprate)) + ": " + str(exprate))
-
-    shiptime = _get_shipment_times(countr)
-    print(str(len(shiptime)) + ": " + str(shiptime))
+    # cont = pd.read_csv("datasets\\continents-according-to-our-world-in-data.csv")
+    # vac = pd.read_csv("datasets\\vaccinations.csv")
+    # pop = pd.read_csv("datasets\\population_by_country_2020.csv")
+    # count = _get_countries_on_map()
+    # countr = _get_all_countries(cont, vac, pop, count)
+    # print(str(len(countr)) + ": " + str(countr))
+    #
+    # vacr = _get_vaxrates(countr, vac)
+    # print(str(len(vacr)) + ": " + str(vacr))
+    #
+    # popu = _get_populations(countr, pop)
+    # print(str(len(popu)) + ": " + str(popu))
+    #
+    # exprate = _get_export_rates()
+    # print(str(len(exprate)) + ": " + str(exprate))
+    #
+    # shiptime = _get_shipment_times(countr)
+    # print(str(len(shiptime)) + ": " + str(shiptime))
 
     all_att = get_all_country_attributes()
     print(all_att)
