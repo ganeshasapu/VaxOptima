@@ -157,7 +157,6 @@ class GeneticAlgorithm:
     def record_data(self, generation: int):
         """Records the data from the current generation"""
         for country in self.world_graph.countries.values():
-            print(country.vaccinated_population)
             list_row = [generation, country.name, country.vaccinated_population / country.population]
             df = self.data_record
             df.loc[len(df)] = list_row
@@ -167,25 +166,26 @@ class GeneticAlgorithm:
         """
         genes: list[Gene] = []
         timestamps_vaccine_amount = generate_timestamp_vaccine_amount(
-            num_timestamps=self.num_timestamps)
+            num_timestamps=self.num_timestamps, world=self.world_graph)
         countries = list(self.world_graph.countries.keys())
         exporting_countries = list(self.world_graph.exporting_countries.keys())
 
         for i in range(self.chromosome_size):
             vaccine_distribution = {}  # Building up gene
             for exporter in exporting_countries:
+                exporter_vaccine_amounts = timestamps_vaccine_amount[exporter.name]
                 # each exporter has a list of shipments
                 vaccine_distribution[exporter] = []
-                for i in range(len(timestamps_vaccine_amount)):
+                for i in range(len(exporter_vaccine_amounts)):
                     chosen_countries = []  # list of countries that have already been chosen
                     # each timestamp has a list of shipments
                     vaccine_distribution[exporter].append([])
                     # total amount of vaccines at timestamp i (decreases as we pick countries)
-                    total_vaccine_amount = timestamps_vaccine_amount[i]
+                    total_vaccine_amount = exporter_vaccine_amounts[i]
                     while True:
                         # picks between 1/4 and 1/2 of the total amount of vaccines at timestamp i
                         selected_amount = random.randint(
-                            timestamps_vaccine_amount[i] // 4, timestamps_vaccine_amount[i] // 2)
+                            exporter_vaccine_amounts[i] // 4, exporter_vaccine_amounts[i] // 2)
                         countries_left = list(
                             set(countries).difference(set(chosen_countries)))
                         # 1 country left or chosen amount is greater than the amount of vaccines left
@@ -346,9 +346,11 @@ class GeneticAlgorithm:
         return Gene(vaccine_distribution=gene.vaccine_distribution)
 
 
-def generate_timestamp_vaccine_amount(num_timestamps) -> list[int]:
+def generate_timestamp_vaccine_amount(num_timestamps, world) -> list[int]:
     """Generates a list of the amount of vaccines at each timestamp"""
-    timestamps_vaccine_amount = []
-    for i in range(num_timestamps):
-        timestamps_vaccine_amount.append((i + 1) * 1000)
+    timestamps_vaccine_amount = {}
+    for exporter in world.exporting_countries.values():
+        timestamps_vaccine_amount[exporter.name] = []
+        for i in range(num_timestamps):
+            timestamps_vaccine_amount[exporter.name].append((i+1) * exporter.export_rate * 10_000_000)
     return timestamps_vaccine_amount

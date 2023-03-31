@@ -135,7 +135,7 @@ def _get_populations(countries: dict, population_df: pd.DataFrame) -> dict:
 
 def _get_export_rates() -> dict:
     """Helper Method that returns a dict mapping a country to its population"""
-    country_vac_export_rate = {c: (VACCINE_EXPORTERS[c] // 730) for c in VACCINE_EXPORTERS}
+    country_vac_export_rate = {c: ((VACCINE_EXPORTERS[c] - 67000000) / (1986400000 - 67000000)) for c in VACCINE_EXPORTERS}
     return country_vac_export_rate
 
 
@@ -149,7 +149,7 @@ def _get_countries_on_map() -> set:
     """Helper Method that returns a set of countries that are represented on the folium map"""
     countries = set()
 
-    with open("datasets\\world-countries.json") as file:
+    with open("datasets/world-countries.json") as file:
         data = json.load(file)
         features = data["features"]
         for f in features:
@@ -189,4 +189,4 @@ if __name__ == "__main__":
     # print(str(len(shiptime)) + ": " + str(shiptime))
 
     all_att = get_all_country_attributes()
-    print(all_att)
+    # print(all_att)
