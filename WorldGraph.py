@@ -1,6 +1,8 @@
 """File for the representation of the world graph"""
-
-EXPORTERS = ...  # List of strs representing exporters
+import DataManipulation as dm
+# TODO Discuss whether or not edges should belong in World or Exporters. The issue is that youre gonna have issues
+#  instnatiating exporters because of duplicates. They need to be initiated one at a time in order to avoid the
+#  duplication.
 
 class Country:
     """Class that represents a Country. Equivalent to Vertex in Graph
@@ -69,14 +71,6 @@ class World:
     def __init__(self, countries: dict, exporting_countries: dict):
         self.countries = countries
         self.exporting_countries = exporting_countries
-
-    def create_countries(self) -> dict[str | Country]:
-        """Function that helps initialize World, returns a dict of all countries in the world"""
-        pass
-
-    def create_exporting_countries(self) -> dict[str | ExportingCountry]:
-        """Function that helps initialzie World, returns a list of all exporting countries in the world"""
-        pass
 
     def reset(self):
         """Resets the world to the initial state"""

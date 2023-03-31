@@ -40,12 +40,6 @@ class Gene:
         vaccine_shipiments: list[VaccineShipment] = []
         exporters = list(world.exporting_countries.keys())
         for i in range(num_timestamps):
-            for exporter in exporters:
-                for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
-                    exporter_obj = world.exporting_countries[exporter]
-                    # adding shipment to stack
-                    vaccine_shipiments.append(VaccineShipment(
-                        importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
             for shipment in vaccine_shipiments:
                 # updating shipments
                 shipment.time_left -= 1
@@ -54,6 +48,12 @@ class Gene:
                     world.export_vaccine(
                         importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
                     vaccine_shipiments.remove(shipment)
+            for exporter in exporters:
+                for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
+                    exporter_obj = world.exporting_countries[exporter]
+                    # adding shipment to stack
+                    vaccine_shipiments.append(VaccineShipment(
+                        importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
             for country in world.countries.values():
                 # country distributes vaccines to its population
                 country.vaccinate()
@@ -147,8 +147,7 @@ class GeneticAlgorithm:
             chromosome = self.selection(chromosome=chromosome)
             chromosome.fitness(world=self.world_graph,
                                num_timestamps=self.num_timestamps)
-            print(
-                f"Generation {i + 1} fitness : {chromosome.calculate_average_fitness()}")
+            print(f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} min: {min([gene.fitness_value for gene in chromosome.genes])} max: {max([gene.fitness_value for gene in chromosome.genes])}")
         return chromosome
 
     def create_initial_chromosome(self) -> Chromosome:
