@@ -10,6 +10,7 @@ import pandas
 
 CROSSOVER_AGGRESSION_RATE = 0.45
 
+
 class Gene:
     """
     A gene is a mapping of exporting countries to a list of importing countries while also specifying their chronological order of the exports
@@ -84,7 +85,8 @@ class Chromosome:
 
     def __init__(self, genes: list[Gene]) -> None:
         self.genes = genes
-        self.gene_data = pandas.DataFrame(columns=["Country", "Average Vaccinated"])
+        self.gene_data = pandas.DataFrame(
+            columns=["Country", "Average Vaccinated"])
 
     def fitness(self, world: World, num_timestamps: int):
         """Runs simulation and gives a fitness score to the each of the genes in the chromosome"""
@@ -144,11 +146,11 @@ class GeneticAlgorithm:
     num_chromosomes: int
     num_best_genes: int
     chromosome_dict: dict[int, dict[str, float]]
+    chromosome_dataframe: pandas.DataFrame
 
     world_graph: World
     num_timestamps: int
     data_record: pandas.DataFrame
-
 
     def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World, num_timestamps: int, num_best_genes: int, chromosome_dict: dict[int, dict[Country, float]]):
         self.mutation_rate = mutation_rate
@@ -176,14 +178,21 @@ class GeneticAlgorithm:
             chromosome = self.selection(chromosome=chromosome)
             chromosome.fitness(world=self.world_graph,
                                num_timestamps=self.num_timestamps)
-            print(f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} min: {min([gene.fitness_value for gene in chromosome.genes])} max: {max([gene.fitness_value for gene in chromosome.genes])}")
+            self.chromosome_dict[i + 1] = self.average_percentage_vaccinated(
+                chromosome)
+            index_so_far += 1
+            print(
+                f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} min: {min([gene.fitness_value for gene in chromosome.genes])} max: {max([gene.fitness_value for gene in chromosome.genes])}")
         # self.data_record.to_csv("data.csv", index=False)
+            self.chrosmosome_dataframe = pandas.DataFrame.from_dict(
+                self.chromosome_dict, orient='index')
         return chromosome
 
     def record_data(self, generation: int):
         """Records the data from the current generation"""
         for country in self.world_graph.countries.values():
-            list_row = [generation, country.name, country.vaccinated_population / country.population]
+            list_row = [generation, country.name,
+                        country.vaccinated_population / country.population]
             df = self.data_record
             df.loc[len(df)] = list_row
 
@@ -412,6 +421,8 @@ class GeneticAlgorithm:
     def merge(dict1, dict2):
         return (dict2.update(dict1))
 
+    def turn_to_dataframe(dict)
+
 
 def generate_timestamp_vaccine_amount(num_timestamps, world) -> list[int]:
     """Generates a list of the amount of vaccines at each timestamp"""
@@ -419,5 +430,6 @@ def generate_timestamp_vaccine_amount(num_timestamps, world) -> list[int]:
     for exporter in world.exporting_countries.values():
         timestamps_vaccine_amount[exporter.name] = []
         for i in range(num_timestamps):
-            timestamps_vaccine_amount[exporter.name].append((i+1) * exporter.export_rate * 10_000_000)
+            timestamps_vaccine_amount[exporter.name].append(
+                (i+1) * exporter.export_rate * 10_000_000)
     return timestamps_vaccine_amount
