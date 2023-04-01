@@ -421,8 +421,6 @@ class GeneticAlgorithm:
     def merge(dict1, dict2):
         return (dict2.update(dict1))
 
-    def turn_to_dataframe(dict)
-
 
 def generate_timestamp_vaccine_amount(num_timestamps, world) -> list[int]:
     """Generates a list of the amount of vaccines at each timestamp"""
