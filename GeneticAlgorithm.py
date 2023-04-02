@@ -8,8 +8,6 @@ import random
 from typing import Optional
 import pandas
 
-CROSSOVER_AGGRESSION_RATE = 0.45
-
 
 class Gene:
     """
@@ -24,6 +22,7 @@ class Gene:
 
     fitness_value: Optional[int]
     vaccine_distribution: dict[str: list[list[tuple[str, int]]]]
+    country_data: dict[int: dict[str: float]]
     # Exporter -> Timestamp -> List of (Country, Vaccine Amount)
     # Example vaccine distribution (2 exporters, 2 countries, 3 timestamps):
     # {
@@ -34,14 +33,18 @@ class Gene:
     def __init__(self, vaccine_distribution: dict, fitness_value: Optional[int] = None) -> None:
         self.fitness_value = fitness_value
         self.vaccine_distribution = vaccine_distribution
+        self.country_data = {}
+        
 
     def __str__(self) -> str:
-        return f"Termination Timestamp: {self.fitness_value}, Vaccine Distribution: {self.vaccine_distribution}"
+        return f"Termination Timestamp: {self.fitness_value}"
 
-    def fitness(self, world: World, num_timestamps: int) -> None:
+    def fitness(self, world: World, num_timestamps: int, record_data: bool) -> None:
         """Runs simulation and gives a fitness score to the gene"""
         vaccine_shipments: list[VaccineShipment] = []
         exporters = list(world.exporting_countries.keys())
+        if record_data:
+            self.country_data = {}
         for i in range(num_timestamps):
             for shipment in vaccine_shipments:
                 # updating shipments
@@ -64,8 +67,14 @@ class Gene:
                 # if 70% of the population is vaccinated, terminate
                 self.fitness_value = i
                 return
-        self.fitness_value = num_timestamps
+            if record_data:
+                self.country_data[i] = {}
+                for country in world.countries.values():
+                    average_vaccinated_population = round(country.vaccinated_population / country.population, 2)
+                    self.country_data[i][country.name] = average_vaccinated_population
 
+        self.fitness_value = num_timestamps
+            
 
 @dataclass
 class VaccineShipment:
@@ -81,17 +90,14 @@ class Chromosome:
         - genes: a list of genes
     """
     genes: list[Gene]
-    gene_data: pandas.DataFrame
 
     def __init__(self, genes: list[Gene]) -> None:
         self.genes = genes
-        self.gene_data = pandas.DataFrame(
-            columns=["Country", "Average Vaccinated"])
 
-    def fitness(self, world: World, num_timestamps: int):
+    def fitness(self, world: World, num_timestamps: int, dataframe: pandas.DataFrame) -> None:
         """Runs simulation and gives a fitness score to the each of the genes in the chromosome"""
         for gene in self.genes:
-            gene.fitness(world=world, num_timestamps=num_timestamps)
+            gene.fitness(world=world, num_timestamps=num_timestamps, record_data=False)
             world.reset()
 
     def calculate_average_fitness(self) -> float:
@@ -119,6 +125,18 @@ class Chromosome:
         fitness_values = [gene.fitness_value for gene in self.genes]
         return min(fitness_values)
 
+    def update_final_distribution(self, world: World, dataframe: pandas.DataFrame) -> None:
+        """Updates the final distribution of the chromosome"""
+        lowest_gene = self.genes[0]
+        for gene in self.genes:
+            if gene.fitness_value < lowest_gene.fitness_value:
+                lowest_gene = gene
+        lowest_gene.fitness(world=world, num_timestamps=lowest_gene.fitness_value, record_data=True)
+        for i in lowest_gene.country_data:
+            timestamp = lowest_gene.country_data[i]
+            for country in timestamp.keys():
+                dataframe.loc[len(dataframe)] = [i, country, timestamp[country]]
+            
     def __str__(self) -> str:
         string = ""
         for i in range(len(self.genes)):
@@ -151,6 +169,7 @@ class GeneticAlgorithm:
     world_graph: World
     num_timestamps: int
     data_record: pandas.DataFrame
+    final_chromosome_data: pandas.DataFrame
 
     def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World, num_timestamps: int, num_best_genes: int) -> None:
         self.mutation_rate = mutation_rate
@@ -161,38 +180,31 @@ class GeneticAlgorithm:
         self.world_graph = world
         self.num_timestamps = num_timestamps
         self.num_best_genes = num_best_genes
+        self.chromosome_dataframe = pandas.DataFrame(
+            columns=["Generation", "Country", "Average Vaccinated"])
+        self.final_chromosome_data = pandas.DataFrame(
+            columns=["Timestamp", "Country", "Percent Vaccinated"])
 
     def run(self) -> Chromosome:
         """Runs the genetic algorithm and returns the final chromosome"""
         # print("Generation 0: Initial Chromosome")
-        index_so_far = 0
         chromosome = self.create_initial_chromosome()
-        self.chromosome_dict[index_so_far] = self.average_percentage_vaccinated(
-            self.world_graph, chromosome)
         chromosome.fitness(
-            num_timestamps=self.num_timestamps, world=self.world_graph)
+            num_timestamps=self.num_timestamps, world=self.world_graph, dataframe=self.chromosome_dataframe)
         for i in range(self.num_chromosomes):
             # print(f"Generation {i + 1}: {chromosome}")
             chromosome = self.selection(chromosome=chromosome)
             chromosome.fitness(world=self.world_graph,
-                               num_timestamps=self.num_timestamps)
-            self.chromosome_dict[index_so_far + 1] = self.average_percentage_vaccinated(
-                self.world_graph, chromosome)
-            index_so_far += 1
+                               num_timestamps=self.num_timestamps, dataframe=self.chromosome_dataframe)
             print(
                 f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} min: {min([gene.fitness_value for gene in chromosome.genes])} max: {max([gene.fitness_value for gene in chromosome.genes])}")
-        # self.data_record.to_csv("data.csv", index=False)
-            self.chromosome_dataframe = pandas.DataFrame.from_dict(
-                self.chromosome_dict, orient='index')
+            
+                
+        # self.chromosome_dataframe.to_csv("chromosome_data.csv", index=False)
+        chromosome.update_final_distribution(world=self.world_graph, dataframe=self.final_chromosome_data)
+        self.final_chromosome_data.to_csv("final_chromosome_data.csv", index=False)
         return chromosome
 
-    def record_data(self, generation: int):
-        """Records the data from the current generation"""
-        for country in self.world_graph.countries.values():
-            list_row = [generation, country.name,
-                        country.vaccinated_population / country.population]
-            df = self.data_record
-            df.loc[len(df)] = list_row
 
     def create_initial_chromosome(self) -> Chromosome:
         """Creates the initial chromosome
@@ -312,7 +324,7 @@ class GeneticAlgorithm:
         gene2_copy = Gene(vaccine_distribution=gene2.vaccine_distribution)
         for exporter in gene1_copy.vaccine_distribution:
             for i in range(len(gene1_copy.vaccine_distribution[exporter])):
-                occurrence_percentage = CROSSOVER_AGGRESSION_RATE
+                occurrence_percentage = 0.45
                 crossover_probability = random.uniform(0, 1)
                 if crossover_probability > occurrence_percentage:
                     gene1_copy.vaccine_distribution[exporter][i], gene2_copy.vaccine_distribution[exporter][
@@ -378,38 +390,6 @@ class GeneticAlgorithm:
         """Returns the replicated gene"""
         return Gene(vaccine_distribution=gene.vaccine_distribution)
 
-    def average_percentage_vaccinated(self, world: World, chromosome: Chromosome) -> dict[str, float]:
-        """Calculates the average percentage of vaccinated people in each country in a gene in a chromosome"""
-        countries2 = {}
-        countries_with_genes = {}
-        for gene in chromosome.genes:
-            for exporter in gene.vaccine_distribution:
-                for timestamp in gene.vaccine_distribution[exporter]:
-                    for tpl in timestamp:
-                        if tpl[0] not in countries2:
-                            countries2[tpl[0]] = tpl[1]
-                        else:
-                            countries2[tpl[0]] += tpl[1]
-            countries_with_genes[gene] = countries2
-            countries2 = {}
-        for gene in countries_with_genes:
-            for country in countries_with_genes[gene]:
-                countries_with_genes[gene][country] = countries_with_genes[gene][country] / \
-                    self.world_graph.countries[country].population
-
-        countries_with_weighted_avg = {}
-        for gene in countries_with_genes:
-            for country in countries_with_genes[gene]:
-                if country not in countries_with_weighted_avg:
-                    countries_with_weighted_avg[country] = countries_with_genes[gene][country]
-                else:
-                    countries_with_weighted_avg[country] += countries_with_genes[gene][country]
-        for country in countries_with_weighted_avg:
-            countries_with_weighted_avg[country] = countries_with_weighted_avg[country] / len(
-                chromosome.genes)
-        return countries_with_weighted_avg
-
-
 def generate_timestamp_vaccine_amount(num_timestamps, world) -> list[int]:
     """Generates a list of the amount of vaccines at each timestamp"""
     timestamps_vaccine_amount = {}
@@ -417,5 +397,5 @@ def generate_timestamp_vaccine_amount(num_timestamps, world) -> list[int]:
         timestamps_vaccine_amount[exporter.name] = []
         for i in range(num_timestamps):
             timestamps_vaccine_amount[exporter.name].append(
-                (i+1) * exporter.export_rate * 10_000_000)
+                ((i+1) ** 2) * exporter.export_rate * 10_000_000)
     return timestamps_vaccine_amount

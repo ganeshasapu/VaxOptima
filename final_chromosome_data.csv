@@ -1,0 +1,9053 @@
+Timestamp,Country,Percent Vaccinated
+0,Afghanistan,0.0
+0,Albania,0.0
+0,Algeria,0.0
+0,Angola,0.0
+0,Argentina,0.0
+0,Armenia,0.0
+0,Australia,0.0
+0,Austria,0.0
+0,Azerbaijan,0.0
+0,Bangladesh,0.0
+0,Belarus,0.0
+0,Belize,0.0
+0,Benin,0.0
+0,Bhutan,0.0
+0,Bolivia,0.0
+0,Bosnia and Herzegovina,0.0
+0,Botswana,0.0
+0,Brazil,0.0
+0,Brunei,0.0
+0,Bulgaria,0.0
+0,Burkina Faso,0.0
+0,Burundi,0.0
+0,Cambodia,0.0
+0,Cameroon,0.0
+0,Canada,0.0
+0,Central African Republic,0.0
+0,Chad,0.0
+0,Chile,0.0
+0,Colombia,0.0
+0,Costa Rica,0.0
+0,Croatia,0.0
+0,Cuba,0.0
+0,Cyprus,0.0
+0,Denmark,0.0
+0,Djibouti,0.0
+0,Dominican Republic,0.0
+0,Ecuador,0.0
+0,Egypt,0.0
+0,El Salvador,0.0
+0,Equatorial Guinea,0.0
+0,Estonia,0.0
+0,Ethiopia,0.0
+0,Falkland Islands,0.0
+0,Fiji,0.0
+0,Finland,0.0
+0,France,0.0
+0,Gabon,0.0
+0,Gambia,0.0
+0,Georgia,0.0
+0,Ghana,0.0
+0,Greece,0.0
+0,Greenland,0.0
+0,Guatemala,0.0
+0,Guinea,0.0
+0,Guyana,0.0
+0,Haiti,0.0
+0,Honduras,0.0
+0,Hungary,0.0
+0,Iceland,0.0
+0,Indonesia,0.0
+0,Iran,0.0
+0,Iraq,0.0
+0,Ireland,0.0
+0,Israel,0.0
+0,Italy,0.0
+0,Jamaica,0.0
+0,Jordan,0.0
+0,Kazakhstan,0.0
+0,Kenya,0.0
+0,Kuwait,0.0
+0,Kyrgyzstan,0.0
+0,Laos,0.0
+0,Latvia,0.0
+0,Lebanon,0.0
+0,Lesotho,0.0
+0,Liberia,0.0
+0,Libya,0.0
+0,Lithuania,0.0
+0,Luxembourg,0.0
+0,Madagascar,0.0
+0,Malawi,0.0
+0,Malaysia,0.0
+0,Mali,0.0
+0,Mauritania,0.0
+0,Mexico,0.0
+0,Moldova,0.0
+0,Mongolia,0.0
+0,Montenegro,0.0
+0,Morocco,0.0
+0,Mozambique,0.0
+0,Myanmar,0.0
+0,Namibia,0.0
+0,Nepal,0.0
+0,Netherlands,0.0
+0,New Caledonia,0.0
+0,New Zealand,0.0
+0,Nicaragua,0.0
+0,Niger,0.0
+0,Nigeria,0.0
+0,Norway,0.0
+0,Oman,0.0
+0,Pakistan,0.0
+0,Panama,0.0
+0,Papua New Guinea,0.0
+0,Paraguay,0.0
+0,Peru,0.0
+0,Philippines,0.0
+0,Poland,0.0
+0,Portugal,0.0
+0,Qatar,0.0
+0,Romania,0.0
+0,Rwanda,0.0
+0,Saudi Arabia,0.0
+0,Senegal,0.0
+0,Sierra Leone,0.0
+0,Slovakia,0.0
+0,Slovenia,0.0
+0,Solomon Islands,0.0
+0,Somalia,0.0
+0,South Sudan,0.0
+0,Sri Lanka,0.0
+0,Sudan,0.0
+0,Suriname,0.0
+0,Sweden,0.0
+0,Switzerland,0.0
+0,Syria,0.0
+0,Taiwan,0.0
+0,Tajikistan,0.0
+0,Thailand,0.0
+0,Togo,0.0
+0,Trinidad and Tobago,0.0
+0,Tunisia,0.0
+0,Turkey,0.0
+0,Turkmenistan,0.0
+0,Uganda,0.0
+0,Ukraine,0.0
+0,United Arab Emirates,0.0
+0,United Kingdom,0.0
+0,Uruguay,0.0
+0,Uzbekistan,0.0
+0,Vanuatu,0.0
+0,Venezuela,0.0
+0,Vietnam,0.0
+0,Yemen,0.0
+0,Zambia,0.0
+0,Zimbabwe,0.0
+1,Afghanistan,0.0
+1,Albania,0.0
+1,Algeria,0.0
+1,Angola,0.0
+1,Argentina,0.0
+1,Armenia,0.0
+1,Australia,0.0
+1,Austria,0.0
+1,Azerbaijan,0.0
+1,Bangladesh,0.0
+1,Belarus,0.0
+1,Belize,0.0
+1,Benin,0.0
+1,Bhutan,0.0
+1,Bolivia,0.0
+1,Bosnia and Herzegovina,0.0
+1,Botswana,0.0
+1,Brazil,0.0
+1,Brunei,0.0
+1,Bulgaria,0.0
+1,Burkina Faso,0.0
+1,Burundi,0.0
+1,Cambodia,0.0
+1,Cameroon,0.0
+1,Canada,0.0
+1,Central African Republic,0.0
+1,Chad,0.0
+1,Chile,0.0
+1,Colombia,0.0
+1,Costa Rica,0.0
+1,Croatia,0.0
+1,Cuba,0.0
+1,Cyprus,0.0
+1,Denmark,0.0
+1,Djibouti,0.0
+1,Dominican Republic,0.0
+1,Ecuador,0.0
+1,Egypt,0.0
+1,El Salvador,0.0
+1,Equatorial Guinea,0.0
+1,Estonia,0.0
+1,Ethiopia,0.0
+1,Falkland Islands,0.0
+1,Fiji,0.0
+1,Finland,0.0
+1,France,0.0
+1,Gabon,0.0
+1,Gambia,0.0
+1,Georgia,0.0
+1,Ghana,0.0
+1,Greece,0.0
+1,Greenland,0.0
+1,Guatemala,0.0
+1,Guinea,0.0
+1,Guyana,0.0
+1,Haiti,0.0
+1,Honduras,0.0
+1,Hungary,0.0
+1,Iceland,0.0
+1,Indonesia,0.0
+1,Iran,0.0
+1,Iraq,0.0
+1,Ireland,0.0
+1,Israel,0.0
+1,Italy,0.0
+1,Jamaica,0.0
+1,Jordan,0.0
+1,Kazakhstan,0.0
+1,Kenya,0.0
+1,Kuwait,0.0
+1,Kyrgyzstan,0.0
+1,Laos,0.0
+1,Latvia,0.0
+1,Lebanon,0.0
+1,Lesotho,0.0
+1,Liberia,0.0
+1,Libya,0.0
+1,Lithuania,0.0
+1,Luxembourg,0.0
+1,Madagascar,0.0
+1,Malawi,0.0
+1,Malaysia,0.0
+1,Mali,0.0
+1,Mauritania,0.0
+1,Mexico,0.0
+1,Moldova,0.0
+1,Mongolia,0.0
+1,Montenegro,0.0
+1,Morocco,0.0
+1,Mozambique,0.0
+1,Myanmar,0.0
+1,Namibia,0.0
+1,Nepal,0.0
+1,Netherlands,0.0
+1,New Caledonia,0.0
+1,New Zealand,0.0
+1,Nicaragua,0.0
+1,Niger,0.0
+1,Nigeria,0.0
+1,Norway,0.0
+1,Oman,0.0
+1,Pakistan,0.0
+1,Panama,0.0
+1,Papua New Guinea,0.0
+1,Paraguay,0.0
+1,Peru,0.0
+1,Philippines,0.0
+1,Poland,0.0
+1,Portugal,0.0
+1,Qatar,0.0
+1,Romania,0.0
+1,Rwanda,0.0
+1,Saudi Arabia,0.0
+1,Senegal,0.0
+1,Sierra Leone,0.0
+1,Slovakia,0.0
+1,Slovenia,0.0
+1,Solomon Islands,0.0
+1,Somalia,0.0
+1,South Sudan,0.0
+1,Sri Lanka,0.0
+1,Sudan,0.0
+1,Suriname,0.0
+1,Sweden,0.0
+1,Switzerland,0.0
+1,Syria,0.0
+1,Taiwan,0.0
+1,Tajikistan,0.0
+1,Thailand,0.0
+1,Togo,0.0
+1,Trinidad and Tobago,0.0
+1,Tunisia,0.0
+1,Turkey,0.0
+1,Turkmenistan,0.0
+1,Uganda,0.0
+1,Ukraine,0.0
+1,United Arab Emirates,0.0
+1,United Kingdom,0.0
+1,Uruguay,0.0
+1,Uzbekistan,0.0
+1,Vanuatu,0.0
+1,Venezuela,0.0
+1,Vietnam,0.0
+1,Yemen,0.0
+1,Zambia,0.0
+1,Zimbabwe,0.0
+2,Afghanistan,0.0
+2,Albania,0.0
+2,Algeria,0.0
+2,Angola,0.0
+2,Argentina,0.0
+2,Armenia,0.0
+2,Australia,0.0
+2,Austria,0.0
+2,Azerbaijan,0.0
+2,Bangladesh,0.0
+2,Belarus,0.0
+2,Belize,0.0
+2,Benin,0.0
+2,Bhutan,0.0
+2,Bolivia,0.0
+2,Bosnia and Herzegovina,0.0
+2,Botswana,0.0
+2,Brazil,0.0
+2,Brunei,0.0
+2,Bulgaria,0.0
+2,Burkina Faso,0.0
+2,Burundi,0.0
+2,Cambodia,0.0
+2,Cameroon,0.0
+2,Canada,0.0
+2,Central African Republic,0.0
+2,Chad,0.0
+2,Chile,0.0
+2,Colombia,0.0
+2,Costa Rica,0.0
+2,Croatia,0.0
+2,Cuba,0.0
+2,Cyprus,0.0
+2,Denmark,0.0
+2,Djibouti,0.0
+2,Dominican Republic,0.0
+2,Ecuador,0.0
+2,Egypt,0.0
+2,El Salvador,0.0
+2,Equatorial Guinea,0.0
+2,Estonia,0.0
+2,Ethiopia,0.0
+2,Falkland Islands,0.0
+2,Fiji,0.01
+2,Finland,0.0
+2,France,0.0
+2,Gabon,0.0
+2,Gambia,0.0
+2,Georgia,0.0
+2,Ghana,0.0
+2,Greece,0.0
+2,Greenland,0.0
+2,Guatemala,0.0
+2,Guinea,0.0
+2,Guyana,0.0
+2,Haiti,0.0
+2,Honduras,0.0
+2,Hungary,0.0
+2,Iceland,0.0
+2,Indonesia,0.0
+2,Iran,0.0
+2,Iraq,0.0
+2,Ireland,0.0
+2,Israel,0.0
+2,Italy,0.0
+2,Jamaica,0.0
+2,Jordan,0.0
+2,Kazakhstan,0.0
+2,Kenya,0.0
+2,Kuwait,0.0
+2,Kyrgyzstan,0.0
+2,Laos,0.0
+2,Latvia,0.0
+2,Lebanon,0.0
+2,Lesotho,0.0
+2,Liberia,0.0
+2,Libya,0.0
+2,Lithuania,0.0
+2,Luxembourg,0.0
+2,Madagascar,0.0
+2,Malawi,0.0
+2,Malaysia,0.0
+2,Mali,0.0
+2,Mauritania,0.0
+2,Mexico,0.0
+2,Moldova,0.0
+2,Mongolia,0.0
+2,Montenegro,0.0
+2,Morocco,0.0
+2,Mozambique,0.0
+2,Myanmar,0.0
+2,Namibia,0.0
+2,Nepal,0.0
+2,Netherlands,0.0
+2,New Caledonia,0.0
+2,New Zealand,0.0
+2,Nicaragua,0.0
+2,Niger,0.0
+2,Nigeria,0.0
+2,Norway,0.0
+2,Oman,0.0
+2,Pakistan,0.0
+2,Panama,0.0
+2,Papua New Guinea,0.0
+2,Paraguay,0.0
+2,Peru,0.0
+2,Philippines,0.0
+2,Poland,0.0
+2,Portugal,0.0
+2,Qatar,0.0
+2,Romania,0.0
+2,Rwanda,0.0
+2,Saudi Arabia,0.0
+2,Senegal,0.0
+2,Sierra Leone,0.0
+2,Slovakia,0.0
+2,Slovenia,0.0
+2,Solomon Islands,0.0
+2,Somalia,0.0
+2,South Sudan,0.0
+2,Sri Lanka,0.0
+2,Sudan,0.0
+2,Suriname,0.0
+2,Sweden,0.0
+2,Switzerland,0.0
+2,Syria,0.0
+2,Taiwan,0.0
+2,Tajikistan,0.0
+2,Thailand,0.0
+2,Togo,0.0
+2,Trinidad and Tobago,0.0
+2,Tunisia,0.0
+2,Turkey,0.0
+2,Turkmenistan,0.0
+2,Uganda,0.0
+2,Ukraine,0.0
+2,United Arab Emirates,0.0
+2,United Kingdom,0.0
+2,Uruguay,0.0
+2,Uzbekistan,0.0
+2,Vanuatu,0.0
+2,Venezuela,0.0
+2,Vietnam,0.0
+2,Yemen,0.0
+2,Zambia,0.0
+2,Zimbabwe,0.0
+3,Afghanistan,0.0
+3,Albania,0.0
+3,Algeria,0.0
+3,Angola,0.0
+3,Argentina,0.0
+3,Armenia,0.0
+3,Australia,0.0
+3,Austria,0.0
+3,Azerbaijan,0.0
+3,Bangladesh,0.0
+3,Belarus,0.0
+3,Belize,0.0
+3,Benin,0.0
+3,Bhutan,0.0
+3,Bolivia,0.0
+3,Bosnia and Herzegovina,0.0
+3,Botswana,0.0
+3,Brazil,0.0
+3,Brunei,0.0
+3,Bulgaria,0.0
+3,Burkina Faso,0.0
+3,Burundi,0.0
+3,Cambodia,0.0
+3,Cameroon,0.0
+3,Canada,0.0
+3,Central African Republic,0.0
+3,Chad,0.0
+3,Chile,0.0
+3,Colombia,0.0
+3,Costa Rica,0.0
+3,Croatia,0.0
+3,Cuba,0.0
+3,Cyprus,0.0
+3,Denmark,0.0
+3,Djibouti,0.0
+3,Dominican Republic,0.0
+3,Ecuador,0.0
+3,Egypt,0.0
+3,El Salvador,0.0
+3,Equatorial Guinea,0.0
+3,Estonia,0.0
+3,Ethiopia,0.0
+3,Falkland Islands,0.0
+3,Fiji,0.02
+3,Finland,0.0
+3,France,0.0
+3,Gabon,0.0
+3,Gambia,0.0
+3,Georgia,0.0
+3,Ghana,0.0
+3,Greece,0.0
+3,Greenland,0.0
+3,Guatemala,0.0
+3,Guinea,0.0
+3,Guyana,0.0
+3,Haiti,0.0
+3,Honduras,0.0
+3,Hungary,0.0
+3,Iceland,0.0
+3,Indonesia,0.0
+3,Iran,0.0
+3,Iraq,0.0
+3,Ireland,0.0
+3,Israel,0.0
+3,Italy,0.0
+3,Jamaica,0.0
+3,Jordan,0.0
+3,Kazakhstan,0.0
+3,Kenya,0.0
+3,Kuwait,0.0
+3,Kyrgyzstan,0.0
+3,Laos,0.0
+3,Latvia,0.0
+3,Lebanon,0.0
+3,Lesotho,0.0
+3,Liberia,0.0
+3,Libya,0.0
+3,Lithuania,0.0
+3,Luxembourg,0.0
+3,Madagascar,0.0
+3,Malawi,0.0
+3,Malaysia,0.0
+3,Mali,0.0
+3,Mauritania,0.0
+3,Mexico,0.0
+3,Moldova,0.0
+3,Mongolia,0.0
+3,Montenegro,0.0
+3,Morocco,0.0
+3,Mozambique,0.0
+3,Myanmar,0.0
+3,Namibia,0.0
+3,Nepal,0.0
+3,Netherlands,0.0
+3,New Caledonia,0.0
+3,New Zealand,0.0
+3,Nicaragua,0.0
+3,Niger,0.0
+3,Nigeria,0.0
+3,Norway,0.0
+3,Oman,0.0
+3,Pakistan,0.0
+3,Panama,0.0
+3,Papua New Guinea,0.0
+3,Paraguay,0.0
+3,Peru,0.0
+3,Philippines,0.0
+3,Poland,0.0
+3,Portugal,0.0
+3,Qatar,0.0
+3,Romania,0.0
+3,Rwanda,0.0
+3,Saudi Arabia,0.0
+3,Senegal,0.0
+3,Sierra Leone,0.0
+3,Slovakia,0.0
+3,Slovenia,0.0
+3,Solomon Islands,0.0
+3,Somalia,0.0
+3,South Sudan,0.0
+3,Sri Lanka,0.0
+3,Sudan,0.0
+3,Suriname,0.0
+3,Sweden,0.0
+3,Switzerland,0.0
+3,Syria,0.0
+3,Taiwan,0.0
+3,Tajikistan,0.0
+3,Thailand,0.0
+3,Togo,0.0
+3,Trinidad and Tobago,0.0
+3,Tunisia,0.0
+3,Turkey,0.0
+3,Turkmenistan,0.0
+3,Uganda,0.0
+3,Ukraine,0.0
+3,United Arab Emirates,0.0
+3,United Kingdom,0.0
+3,Uruguay,0.0
+3,Uzbekistan,0.0
+3,Vanuatu,0.0
+3,Venezuela,0.0
+3,Vietnam,0.0
+3,Yemen,0.0
+3,Zambia,0.0
+3,Zimbabwe,0.0
+4,Afghanistan,0.0
+4,Albania,0.0
+4,Algeria,0.0
+4,Angola,0.0
+4,Argentina,0.0
+4,Armenia,0.0
+4,Australia,0.0
+4,Austria,0.0
+4,Azerbaijan,0.0
+4,Bangladesh,0.0
+4,Belarus,0.0
+4,Belize,0.0
+4,Benin,0.0
+4,Bhutan,0.0
+4,Bolivia,0.0
+4,Bosnia and Herzegovina,0.0
+4,Botswana,0.0
+4,Brazil,0.0
+4,Brunei,0.0
+4,Bulgaria,0.0
+4,Burkina Faso,0.0
+4,Burundi,0.0
+4,Cambodia,0.0
+4,Cameroon,0.0
+4,Canada,0.0
+4,Central African Republic,0.0
+4,Chad,0.0
+4,Chile,0.0
+4,Colombia,0.0
+4,Costa Rica,0.0
+4,Croatia,0.0
+4,Cuba,0.0
+4,Cyprus,0.01
+4,Denmark,0.0
+4,Djibouti,0.0
+4,Dominican Republic,0.0
+4,Ecuador,0.0
+4,Egypt,0.0
+4,El Salvador,0.0
+4,Equatorial Guinea,0.0
+4,Estonia,0.0
+4,Ethiopia,0.0
+4,Falkland Islands,0.0
+4,Fiji,0.02
+4,Finland,0.01
+4,France,0.0
+4,Gabon,0.0
+4,Gambia,0.0
+4,Georgia,0.0
+4,Ghana,0.0
+4,Greece,0.0
+4,Greenland,0.0
+4,Guatemala,0.0
+4,Guinea,0.0
+4,Guyana,0.0
+4,Haiti,0.0
+4,Honduras,0.0
+4,Hungary,0.0
+4,Iceland,0.0
+4,Indonesia,0.0
+4,Iran,0.0
+4,Iraq,0.0
+4,Ireland,0.0
+4,Israel,0.0
+4,Italy,0.0
+4,Jamaica,0.0
+4,Jordan,0.0
+4,Kazakhstan,0.0
+4,Kenya,0.0
+4,Kuwait,0.0
+4,Kyrgyzstan,0.0
+4,Laos,0.0
+4,Latvia,0.0
+4,Lebanon,0.0
+4,Lesotho,0.0
+4,Liberia,0.0
+4,Libya,0.0
+4,Lithuania,0.0
+4,Luxembourg,0.0
+4,Madagascar,0.0
+4,Malawi,0.0
+4,Malaysia,0.0
+4,Mali,0.0
+4,Mauritania,0.0
+4,Mexico,0.0
+4,Moldova,0.0
+4,Mongolia,0.0
+4,Montenegro,0.0
+4,Morocco,0.0
+4,Mozambique,0.0
+4,Myanmar,0.0
+4,Namibia,0.0
+4,Nepal,0.0
+4,Netherlands,0.0
+4,New Caledonia,0.0
+4,New Zealand,0.0
+4,Nicaragua,0.0
+4,Niger,0.0
+4,Nigeria,0.0
+4,Norway,0.01
+4,Oman,0.0
+4,Pakistan,0.0
+4,Panama,0.0
+4,Papua New Guinea,0.0
+4,Paraguay,0.0
+4,Peru,0.0
+4,Philippines,0.0
+4,Poland,0.0
+4,Portugal,0.0
+4,Qatar,0.0
+4,Romania,0.0
+4,Rwanda,0.0
+4,Saudi Arabia,0.0
+4,Senegal,0.0
+4,Sierra Leone,0.0
+4,Slovakia,0.0
+4,Slovenia,0.0
+4,Solomon Islands,0.0
+4,Somalia,0.0
+4,South Sudan,0.0
+4,Sri Lanka,0.0
+4,Sudan,0.0
+4,Suriname,0.0
+4,Sweden,0.0
+4,Switzerland,0.0
+4,Syria,0.0
+4,Taiwan,0.0
+4,Tajikistan,0.0
+4,Thailand,0.0
+4,Togo,0.0
+4,Trinidad and Tobago,0.0
+4,Tunisia,0.0
+4,Turkey,0.0
+4,Turkmenistan,0.0
+4,Uganda,0.0
+4,Ukraine,0.0
+4,United Arab Emirates,0.0
+4,United Kingdom,0.0
+4,Uruguay,0.0
+4,Uzbekistan,0.0
+4,Vanuatu,0.0
+4,Venezuela,0.0
+4,Vietnam,0.0
+4,Yemen,0.0
+4,Zambia,0.0
+4,Zimbabwe,0.0
+5,Afghanistan,0.0
+5,Albania,0.0
+5,Algeria,0.0
+5,Angola,0.0
+5,Argentina,0.0
+5,Armenia,0.0
+5,Australia,0.0
+5,Austria,0.0
+5,Azerbaijan,0.0
+5,Bangladesh,0.0
+5,Belarus,0.0
+5,Belize,0.0
+5,Benin,0.0
+5,Bhutan,0.0
+5,Bolivia,0.0
+5,Bosnia and Herzegovina,0.0
+5,Botswana,0.0
+5,Brazil,0.0
+5,Brunei,0.0
+5,Bulgaria,0.0
+5,Burkina Faso,0.0
+5,Burundi,0.0
+5,Cambodia,0.0
+5,Cameroon,0.0
+5,Canada,0.0
+5,Central African Republic,0.0
+5,Chad,0.0
+5,Chile,0.0
+5,Colombia,0.0
+5,Costa Rica,0.0
+5,Croatia,0.0
+5,Cuba,0.0
+5,Cyprus,0.01
+5,Denmark,0.0
+5,Djibouti,0.0
+5,Dominican Republic,0.0
+5,Ecuador,0.0
+5,Egypt,0.0
+5,El Salvador,0.0
+5,Equatorial Guinea,0.0
+5,Estonia,0.0
+5,Ethiopia,0.0
+5,Falkland Islands,0.0
+5,Fiji,0.03
+5,Finland,0.01
+5,France,0.0
+5,Gabon,0.0
+5,Gambia,0.0
+5,Georgia,0.0
+5,Ghana,0.0
+5,Greece,0.0
+5,Greenland,0.0
+5,Guatemala,0.0
+5,Guinea,0.0
+5,Guyana,0.0
+5,Haiti,0.0
+5,Honduras,0.0
+5,Hungary,0.0
+5,Iceland,0.04
+5,Indonesia,0.0
+5,Iran,0.0
+5,Iraq,0.0
+5,Ireland,0.0
+5,Israel,0.0
+5,Italy,0.0
+5,Jamaica,0.0
+5,Jordan,0.0
+5,Kazakhstan,0.0
+5,Kenya,0.0
+5,Kuwait,0.0
+5,Kyrgyzstan,0.0
+5,Laos,0.0
+5,Latvia,0.0
+5,Lebanon,0.0
+5,Lesotho,0.0
+5,Liberia,0.0
+5,Libya,0.0
+5,Lithuania,0.0
+5,Luxembourg,0.0
+5,Madagascar,0.0
+5,Malawi,0.0
+5,Malaysia,0.0
+5,Mali,0.0
+5,Mauritania,0.0
+5,Mexico,0.0
+5,Moldova,0.0
+5,Mongolia,0.0
+5,Montenegro,0.0
+5,Morocco,0.0
+5,Mozambique,0.0
+5,Myanmar,0.0
+5,Namibia,0.0
+5,Nepal,0.0
+5,Netherlands,0.0
+5,New Caledonia,0.0
+5,New Zealand,0.0
+5,Nicaragua,0.0
+5,Niger,0.0
+5,Nigeria,0.0
+5,Norway,0.02
+5,Oman,0.0
+5,Pakistan,0.0
+5,Panama,0.0
+5,Papua New Guinea,0.0
+5,Paraguay,0.0
+5,Peru,0.0
+5,Philippines,0.0
+5,Poland,0.0
+5,Portugal,0.0
+5,Qatar,0.0
+5,Romania,0.0
+5,Rwanda,0.0
+5,Saudi Arabia,0.0
+5,Senegal,0.0
+5,Sierra Leone,0.0
+5,Slovakia,0.0
+5,Slovenia,0.04
+5,Solomon Islands,0.0
+5,Somalia,0.0
+5,South Sudan,0.0
+5,Sri Lanka,0.0
+5,Sudan,0.0
+5,Suriname,0.0
+5,Sweden,0.0
+5,Switzerland,0.0
+5,Syria,0.0
+5,Taiwan,0.0
+5,Tajikistan,0.0
+5,Thailand,0.0
+5,Togo,0.0
+5,Trinidad and Tobago,0.0
+5,Tunisia,0.0
+5,Turkey,0.0
+5,Turkmenistan,0.01
+5,Uganda,0.0
+5,Ukraine,0.0
+5,United Arab Emirates,0.01
+5,United Kingdom,0.0
+5,Uruguay,0.0
+5,Uzbekistan,0.0
+5,Vanuatu,0.0
+5,Venezuela,0.0
+5,Vietnam,0.0
+5,Yemen,0.0
+5,Zambia,0.0
+5,Zimbabwe,0.0
+6,Afghanistan,0.0
+6,Albania,0.0
+6,Algeria,0.0
+6,Angola,0.0
+6,Argentina,0.0
+6,Armenia,0.0
+6,Australia,0.01
+6,Austria,0.0
+6,Azerbaijan,0.0
+6,Bangladesh,0.0
+6,Belarus,0.0
+6,Belize,0.01
+6,Benin,0.0
+6,Bhutan,0.0
+6,Bolivia,0.0
+6,Bosnia and Herzegovina,0.0
+6,Botswana,0.0
+6,Brazil,0.0
+6,Brunei,0.0
+6,Bulgaria,0.0
+6,Burkina Faso,0.0
+6,Burundi,0.0
+6,Cambodia,0.0
+6,Cameroon,0.0
+6,Canada,0.0
+6,Central African Republic,0.0
+6,Chad,0.0
+6,Chile,0.0
+6,Colombia,0.0
+6,Costa Rica,0.0
+6,Croatia,0.0
+6,Cuba,0.0
+6,Cyprus,0.02
+6,Denmark,0.0
+6,Djibouti,0.0
+6,Dominican Republic,0.0
+6,Ecuador,0.0
+6,Egypt,0.0
+6,El Salvador,0.0
+6,Equatorial Guinea,0.0
+6,Estonia,0.0
+6,Ethiopia,0.0
+6,Falkland Islands,0.0
+6,Fiji,0.04
+6,Finland,0.01
+6,France,0.0
+6,Gabon,0.0
+6,Gambia,0.0
+6,Georgia,0.0
+6,Ghana,0.0
+6,Greece,0.0
+6,Greenland,0.0
+6,Guatemala,0.0
+6,Guinea,0.0
+6,Guyana,0.0
+6,Haiti,0.0
+6,Honduras,0.0
+6,Hungary,0.0
+6,Iceland,0.09
+6,Indonesia,0.0
+6,Iran,0.0
+6,Iraq,0.0
+6,Ireland,0.01
+6,Israel,0.0
+6,Italy,0.0
+6,Jamaica,0.0
+6,Jordan,0.0
+6,Kazakhstan,0.0
+6,Kenya,0.0
+6,Kuwait,0.0
+6,Kyrgyzstan,0.0
+6,Laos,0.0
+6,Latvia,0.0
+6,Lebanon,0.0
+6,Lesotho,0.0
+6,Liberia,0.0
+6,Libya,0.0
+6,Lithuania,0.0
+6,Luxembourg,0.0
+6,Madagascar,0.0
+6,Malawi,0.0
+6,Malaysia,0.0
+6,Mali,0.0
+6,Mauritania,0.0
+6,Mexico,0.0
+6,Moldova,0.0
+6,Mongolia,0.0
+6,Montenegro,0.0
+6,Morocco,0.0
+6,Mozambique,0.0
+6,Myanmar,0.0
+6,Namibia,0.0
+6,Nepal,0.0
+6,Netherlands,0.0
+6,New Caledonia,0.0
+6,New Zealand,0.0
+6,Nicaragua,0.0
+6,Niger,0.0
+6,Nigeria,0.0
+6,Norway,0.03
+6,Oman,0.0
+6,Pakistan,0.0
+6,Panama,0.0
+6,Papua New Guinea,0.0
+6,Paraguay,0.0
+6,Peru,0.0
+6,Philippines,0.0
+6,Poland,0.0
+6,Portugal,0.02
+6,Qatar,0.0
+6,Romania,0.0
+6,Rwanda,0.0
+6,Saudi Arabia,0.0
+6,Senegal,0.0
+6,Sierra Leone,0.0
+6,Slovakia,0.0
+6,Slovenia,0.09
+6,Solomon Islands,0.0
+6,Somalia,0.0
+6,South Sudan,0.0
+6,Sri Lanka,0.0
+6,Sudan,0.0
+6,Suriname,0.0
+6,Sweden,0.01
+6,Switzerland,0.01
+6,Syria,0.0
+6,Taiwan,0.0
+6,Tajikistan,0.0
+6,Thailand,0.0
+6,Togo,0.0
+6,Trinidad and Tobago,0.0
+6,Tunisia,0.0
+6,Turkey,0.0
+6,Turkmenistan,0.04
+6,Uganda,0.0
+6,Ukraine,0.0
+6,United Arab Emirates,0.03
+6,United Kingdom,0.0
+6,Uruguay,0.0
+6,Uzbekistan,0.0
+6,Vanuatu,0.0
+6,Venezuela,0.0
+6,Vietnam,0.0
+6,Yemen,0.0
+6,Zambia,0.0
+6,Zimbabwe,0.0
+7,Afghanistan,0.0
+7,Albania,0.0
+7,Algeria,0.0
+7,Angola,0.0
+7,Argentina,0.0
+7,Armenia,0.03
+7,Australia,0.02
+7,Austria,0.0
+7,Azerbaijan,0.0
+7,Bangladesh,0.0
+7,Belarus,0.0
+7,Belize,0.01
+7,Benin,0.0
+7,Bhutan,0.0
+7,Bolivia,0.0
+7,Bosnia and Herzegovina,0.01
+7,Botswana,0.0
+7,Brazil,0.0
+7,Brunei,0.0
+7,Bulgaria,0.0
+7,Burkina Faso,0.0
+7,Burundi,0.0
+7,Cambodia,0.0
+7,Cameroon,0.0
+7,Canada,0.0
+7,Central African Republic,0.0
+7,Chad,0.0
+7,Chile,0.0
+7,Colombia,0.0
+7,Costa Rica,0.0
+7,Croatia,0.0
+7,Cuba,0.0
+7,Cyprus,0.03
+7,Denmark,0.0
+7,Djibouti,0.0
+7,Dominican Republic,0.0
+7,Ecuador,0.0
+7,Egypt,0.0
+7,El Salvador,0.0
+7,Equatorial Guinea,0.0
+7,Estonia,0.0
+7,Ethiopia,0.0
+7,Falkland Islands,0.0
+7,Fiji,0.05
+7,Finland,0.01
+7,France,0.0
+7,Gabon,0.0
+7,Gambia,0.0
+7,Georgia,0.0
+7,Ghana,0.0
+7,Greece,0.0
+7,Greenland,0.0
+7,Guatemala,0.0
+7,Guinea,0.0
+7,Guyana,0.0
+7,Haiti,0.0
+7,Honduras,0.0
+7,Hungary,0.0
+7,Iceland,0.13
+7,Indonesia,0.0
+7,Iran,0.0
+7,Iraq,0.0
+7,Ireland,0.01
+7,Israel,0.01
+7,Italy,0.0
+7,Jamaica,0.0
+7,Jordan,0.0
+7,Kazakhstan,0.0
+7,Kenya,0.0
+7,Kuwait,0.01
+7,Kyrgyzstan,0.0
+7,Laos,0.0
+7,Latvia,0.0
+7,Lebanon,0.0
+7,Lesotho,0.0
+7,Liberia,0.0
+7,Libya,0.0
+7,Lithuania,0.0
+7,Luxembourg,0.0
+7,Madagascar,0.0
+7,Malawi,0.0
+7,Malaysia,0.0
+7,Mali,0.0
+7,Mauritania,0.0
+7,Mexico,0.0
+7,Moldova,0.0
+7,Mongolia,0.0
+7,Montenegro,0.0
+7,Morocco,0.0
+7,Mozambique,0.0
+7,Myanmar,0.0
+7,Namibia,0.0
+7,Nepal,0.0
+7,Netherlands,0.0
+7,New Caledonia,0.01
+7,New Zealand,0.0
+7,Nicaragua,0.0
+7,Niger,0.0
+7,Nigeria,0.0
+7,Norway,0.04
+7,Oman,0.0
+7,Pakistan,0.0
+7,Panama,0.0
+7,Papua New Guinea,0.0
+7,Paraguay,0.0
+7,Peru,0.0
+7,Philippines,0.0
+7,Poland,0.0
+7,Portugal,0.04
+7,Qatar,0.0
+7,Romania,0.0
+7,Rwanda,0.0
+7,Saudi Arabia,0.0
+7,Senegal,0.0
+7,Sierra Leone,0.0
+7,Slovakia,0.0
+7,Slovenia,0.13
+7,Solomon Islands,0.0
+7,Somalia,0.0
+7,South Sudan,0.0
+7,Sri Lanka,0.0
+7,Sudan,0.0
+7,Suriname,0.0
+7,Sweden,0.01
+7,Switzerland,0.01
+7,Syria,0.0
+7,Taiwan,0.0
+7,Tajikistan,0.01
+7,Thailand,0.0
+7,Togo,0.0
+7,Trinidad and Tobago,0.0
+7,Tunisia,0.0
+7,Turkey,0.0
+7,Turkmenistan,0.11
+7,Uganda,0.0
+7,Ukraine,0.0
+7,United Arab Emirates,0.04
+7,United Kingdom,0.0
+7,Uruguay,0.0
+7,Uzbekistan,0.01
+7,Vanuatu,0.0
+7,Venezuela,0.0
+7,Vietnam,0.0
+7,Yemen,0.0
+7,Zambia,0.0
+7,Zimbabwe,0.0
+8,Afghanistan,0.0
+8,Albania,0.0
+8,Algeria,0.0
+8,Angola,0.0
+8,Argentina,0.0
+8,Armenia,0.06
+8,Australia,0.02
+8,Austria,0.0
+8,Azerbaijan,0.0
+8,Bangladesh,0.0
+8,Belarus,0.01
+8,Belize,0.02
+8,Benin,0.0
+8,Bhutan,0.03
+8,Bolivia,0.0
+8,Bosnia and Herzegovina,0.01
+8,Botswana,0.0
+8,Brazil,0.0
+8,Brunei,0.0
+8,Bulgaria,0.0
+8,Burkina Faso,0.0
+8,Burundi,0.0
+8,Cambodia,0.0
+8,Cameroon,0.0
+8,Canada,0.0
+8,Central African Republic,0.0
+8,Chad,0.0
+8,Chile,0.0
+8,Colombia,0.0
+8,Costa Rica,0.0
+8,Croatia,0.0
+8,Cuba,0.0
+8,Cyprus,0.03
+8,Denmark,0.0
+8,Djibouti,0.0
+8,Dominican Republic,0.0
+8,Ecuador,0.0
+8,Egypt,0.0
+8,El Salvador,0.0
+8,Equatorial Guinea,0.0
+8,Estonia,0.15
+8,Ethiopia,0.0
+8,Falkland Islands,0.0
+8,Fiji,0.05
+8,Finland,0.02
+8,France,0.0
+8,Gabon,0.0
+8,Gambia,0.0
+8,Georgia,0.0
+8,Ghana,0.0
+8,Greece,0.0
+8,Greenland,0.0
+8,Guatemala,0.0
+8,Guinea,0.0
+8,Guyana,0.0
+8,Haiti,0.0
+8,Honduras,0.0
+8,Hungary,0.03
+8,Iceland,0.17
+8,Indonesia,0.0
+8,Iran,0.0
+8,Iraq,0.0
+8,Ireland,0.01
+8,Israel,0.01
+8,Italy,0.0
+8,Jamaica,0.0
+8,Jordan,0.0
+8,Kazakhstan,0.0
+8,Kenya,0.0
+8,Kuwait,0.02
+8,Kyrgyzstan,0.01
+8,Laos,0.01
+8,Latvia,0.01
+8,Lebanon,0.0
+8,Lesotho,0.0
+8,Liberia,0.0
+8,Libya,0.0
+8,Lithuania,0.0
+8,Luxembourg,0.04
+8,Madagascar,0.0
+8,Malawi,0.0
+8,Malaysia,0.0
+8,Mali,0.0
+8,Mauritania,0.0
+8,Mexico,0.0
+8,Moldova,0.0
+8,Mongolia,0.0
+8,Montenegro,0.0
+8,Morocco,0.01
+8,Mozambique,0.0
+8,Myanmar,0.0
+8,Namibia,0.0
+8,Nepal,0.0
+8,Netherlands,0.0
+8,New Caledonia,0.01
+8,New Zealand,0.0
+8,Nicaragua,0.0
+8,Niger,0.0
+8,Nigeria,0.0
+8,Norway,0.06
+8,Oman,0.06
+8,Pakistan,0.0
+8,Panama,0.0
+8,Papua New Guinea,0.0
+8,Paraguay,0.0
+8,Peru,0.01
+8,Philippines,0.01
+8,Poland,0.0
+8,Portugal,0.05
+8,Qatar,0.0
+8,Romania,0.0
+8,Rwanda,0.01
+8,Saudi Arabia,0.0
+8,Senegal,0.0
+8,Sierra Leone,0.0
+8,Slovakia,0.0
+8,Slovenia,0.17
+8,Solomon Islands,0.0
+8,Somalia,0.0
+8,South Sudan,0.0
+8,Sri Lanka,0.0
+8,Sudan,0.0
+8,Suriname,0.0
+8,Sweden,0.02
+8,Switzerland,0.01
+8,Syria,0.0
+8,Taiwan,0.0
+8,Tajikistan,0.01
+8,Thailand,0.0
+8,Togo,0.0
+8,Trinidad and Tobago,0.01
+8,Tunisia,0.0
+8,Turkey,0.0
+8,Turkmenistan,0.19
+8,Uganda,0.0
+8,Ukraine,0.0
+8,United Arab Emirates,0.05
+8,United Kingdom,0.0
+8,Uruguay,0.0
+8,Uzbekistan,0.01
+8,Vanuatu,0.0
+8,Venezuela,0.0
+8,Vietnam,0.0
+8,Yemen,0.0
+8,Zambia,0.0
+8,Zimbabwe,0.0
+9,Afghanistan,0.0
+9,Albania,0.11
+9,Algeria,0.0
+9,Angola,0.0
+9,Argentina,0.0
+9,Armenia,0.12
+9,Australia,0.03
+9,Austria,0.0
+9,Azerbaijan,0.0
+9,Bangladesh,0.01
+9,Belarus,0.01
+9,Belize,0.02
+9,Benin,0.0
+9,Bhutan,0.06
+9,Bolivia,0.0
+9,Bosnia and Herzegovina,0.05
+9,Botswana,0.0
+9,Brazil,0.0
+9,Brunei,0.0
+9,Bulgaria,0.01
+9,Burkina Faso,0.0
+9,Burundi,0.0
+9,Cambodia,0.0
+9,Cameroon,0.0
+9,Canada,0.0
+9,Central African Republic,0.0
+9,Chad,0.0
+9,Chile,0.0
+9,Colombia,0.0
+9,Costa Rica,0.0
+9,Croatia,0.01
+9,Cuba,0.0
+9,Cyprus,0.04
+9,Denmark,0.01
+9,Djibouti,0.0
+9,Dominican Republic,0.0
+9,Ecuador,0.0
+9,Egypt,0.0
+9,El Salvador,0.01
+9,Equatorial Guinea,0.0
+9,Estonia,0.31
+9,Ethiopia,0.0
+9,Falkland Islands,0.0
+9,Fiji,0.06
+9,Finland,0.07
+9,France,0.0
+9,Gabon,0.0
+9,Gambia,0.0
+9,Georgia,0.03
+9,Ghana,0.0
+9,Greece,0.0
+9,Greenland,0.0
+9,Guatemala,0.0
+9,Guinea,0.0
+9,Guyana,0.0
+9,Haiti,0.0
+9,Honduras,0.0
+9,Hungary,0.07
+9,Iceland,0.22
+9,Indonesia,0.0
+9,Iran,0.0
+9,Iraq,0.0
+9,Ireland,0.05
+9,Israel,0.01
+9,Italy,0.0
+9,Jamaica,0.0
+9,Jordan,0.01
+9,Kazakhstan,0.0
+9,Kenya,0.0
+9,Kuwait,0.03
+9,Kyrgyzstan,0.01
+9,Laos,0.03
+9,Latvia,0.02
+9,Lebanon,0.0
+9,Lesotho,0.0
+9,Liberia,0.0
+9,Libya,0.0
+9,Lithuania,0.0
+9,Luxembourg,0.08
+9,Madagascar,0.0
+9,Malawi,0.0
+9,Malaysia,0.0
+9,Mali,0.0
+9,Mauritania,0.0
+9,Mexico,0.0
+9,Moldova,0.0
+9,Mongolia,0.0
+9,Montenegro,0.0
+9,Morocco,0.01
+9,Mozambique,0.0
+9,Myanmar,0.0
+9,Namibia,0.0
+9,Nepal,0.0
+9,Netherlands,0.0
+9,New Caledonia,0.01
+9,New Zealand,0.0
+9,Nicaragua,0.0
+9,Niger,0.0
+9,Nigeria,0.0
+9,Norway,0.07
+9,Oman,0.12
+9,Pakistan,0.0
+9,Panama,0.0
+9,Papua New Guinea,0.0
+9,Paraguay,0.01
+9,Peru,0.01
+9,Philippines,0.01
+9,Poland,0.01
+9,Portugal,0.07
+9,Qatar,0.0
+9,Romania,0.0
+9,Rwanda,0.01
+9,Saudi Arabia,0.0
+9,Senegal,0.0
+9,Sierra Leone,0.0
+9,Slovakia,0.0
+9,Slovenia,0.21
+9,Solomon Islands,0.0
+9,Somalia,0.0
+9,South Sudan,0.0
+9,Sri Lanka,0.01
+9,Sudan,0.0
+9,Suriname,0.0
+9,Sweden,0.02
+9,Switzerland,0.01
+9,Syria,0.0
+9,Taiwan,0.0
+9,Tajikistan,0.01
+9,Thailand,0.0
+9,Togo,0.0
+9,Trinidad and Tobago,0.01
+9,Tunisia,0.0
+9,Turkey,0.0
+9,Turkmenistan,0.27
+9,Uganda,0.0
+9,Ukraine,0.0
+9,United Arab Emirates,0.07
+9,United Kingdom,0.0
+9,Uruguay,0.0
+9,Uzbekistan,0.02
+9,Vanuatu,0.0
+9,Venezuela,0.0
+9,Vietnam,0.0
+9,Yemen,0.0
+9,Zambia,0.0
+9,Zimbabwe,0.0
+10,Afghanistan,0.0
+10,Albania,0.22
+10,Algeria,0.0
+10,Angola,0.0
+10,Argentina,0.0
+10,Armenia,0.18
+10,Australia,0.04
+10,Austria,0.01
+10,Azerbaijan,0.0
+10,Bangladesh,0.01
+10,Belarus,0.01
+10,Belize,1.0
+10,Benin,0.01
+10,Bhutan,0.1
+10,Bolivia,0.0
+10,Bosnia and Herzegovina,0.08
+10,Botswana,0.03
+10,Brazil,0.0
+10,Brunei,0.0
+10,Bulgaria,0.01
+10,Burkina Faso,0.0
+10,Burundi,0.0
+10,Cambodia,0.0
+10,Cameroon,0.0
+10,Canada,0.01
+10,Central African Republic,0.0
+10,Chad,0.0
+10,Chile,0.0
+10,Colombia,0.0
+10,Costa Rica,0.0
+10,Croatia,0.03
+10,Cuba,0.0
+10,Cyprus,0.05
+10,Denmark,0.01
+10,Djibouti,0.0
+10,Dominican Republic,0.0
+10,Ecuador,0.01
+10,Egypt,0.0
+10,El Salvador,0.01
+10,Equatorial Guinea,0.0
+10,Estonia,0.46
+10,Ethiopia,0.0
+10,Falkland Islands,0.0
+10,Fiji,0.08
+10,Finland,0.12
+10,France,0.0
+10,Gabon,0.01
+10,Gambia,0.0
+10,Georgia,0.07
+10,Ghana,0.0
+10,Greece,0.0
+10,Greenland,0.0
+10,Guatemala,0.0
+10,Guinea,0.0
+10,Guyana,0.0
+10,Haiti,0.0
+10,Honduras,0.0
+10,Hungary,0.11
+10,Iceland,1.0
+10,Indonesia,0.0
+10,Iran,0.0
+10,Iraq,0.0
+10,Ireland,0.08
+10,Israel,0.01
+10,Italy,0.0
+10,Jamaica,0.0
+10,Jordan,0.02
+10,Kazakhstan,0.0
+10,Kenya,0.0
+10,Kuwait,0.03
+10,Kyrgyzstan,0.01
+10,Laos,0.04
+10,Latvia,0.03
+10,Lebanon,0.0
+10,Lesotho,0.01
+10,Liberia,0.0
+10,Libya,0.0
+10,Lithuania,0.01
+10,Luxembourg,1.0
+10,Madagascar,0.0
+10,Malawi,0.02
+10,Malaysia,0.0
+10,Mali,0.0
+10,Mauritania,0.0
+10,Mexico,0.0
+10,Moldova,0.0
+10,Mongolia,0.0
+10,Montenegro,0.0
+10,Morocco,0.01
+10,Mozambique,0.0
+10,Myanmar,0.0
+10,Namibia,0.0
+10,Nepal,0.0
+10,Netherlands,0.0
+10,New Caledonia,0.01
+10,New Zealand,0.0
+10,Nicaragua,0.0
+10,Niger,0.0
+10,Nigeria,0.0
+10,Norway,0.08
+10,Oman,0.18
+10,Pakistan,0.0
+10,Panama,0.0
+10,Papua New Guinea,0.0
+10,Paraguay,0.01
+10,Peru,0.01
+10,Philippines,0.01
+10,Poland,0.01
+10,Portugal,0.09
+10,Qatar,0.01
+10,Romania,0.0
+10,Rwanda,0.02
+10,Saudi Arabia,0.0
+10,Senegal,0.0
+10,Sierra Leone,0.0
+10,Slovakia,0.0
+10,Slovenia,0.26
+10,Solomon Islands,0.0
+10,Somalia,0.0
+10,South Sudan,0.0
+10,Sri Lanka,0.01
+10,Sudan,0.0
+10,Suriname,0.0
+10,Sweden,0.03
+10,Switzerland,0.02
+10,Syria,0.0
+10,Taiwan,0.0
+10,Tajikistan,0.01
+10,Thailand,0.0
+10,Togo,0.0
+10,Trinidad and Tobago,0.01
+10,Tunisia,0.01
+10,Turkey,0.0
+10,Turkmenistan,0.34
+10,Uganda,0.0
+10,Ukraine,0.01
+10,United Arab Emirates,0.08
+10,United Kingdom,0.0
+10,Uruguay,0.0
+10,Uzbekistan,0.03
+10,Vanuatu,0.0
+10,Venezuela,0.0
+10,Vietnam,0.0
+10,Yemen,0.0
+10,Zambia,0.0
+10,Zimbabwe,0.0
+11,Afghanistan,0.0
+11,Albania,0.34
+11,Algeria,0.0
+11,Angola,0.0
+11,Argentina,0.0
+11,Armenia,0.24
+11,Australia,0.05
+11,Austria,0.01
+11,Azerbaijan,0.0
+11,Bangladesh,0.02
+11,Belarus,0.01
+11,Belize,1.0
+11,Benin,0.01
+11,Bhutan,0.13
+11,Bolivia,0.01
+11,Bosnia and Herzegovina,0.12
+11,Botswana,0.07
+11,Brazil,0.0
+11,Brunei,0.0
+11,Bulgaria,0.02
+11,Burkina Faso,0.0
+11,Burundi,0.0
+11,Cambodia,0.0
+11,Cameroon,0.0
+11,Canada,0.01
+11,Central African Republic,0.0
+11,Chad,0.0
+11,Chile,0.0
+11,Colombia,0.01
+11,Costa Rica,0.0
+11,Croatia,0.05
+11,Cuba,0.0
+11,Cyprus,0.06
+11,Denmark,0.01
+11,Djibouti,0.0
+11,Dominican Republic,0.0
+11,Ecuador,0.02
+11,Egypt,0.0
+11,El Salvador,0.01
+11,Equatorial Guinea,0.0
+11,Estonia,0.61
+11,Ethiopia,0.0
+11,Falkland Islands,0.0
+11,Fiji,0.45
+11,Finland,0.18
+11,France,0.0
+11,Gabon,0.01
+11,Gambia,0.0
+11,Georgia,0.1
+11,Ghana,0.0
+11,Greece,0.02
+11,Greenland,0.66
+11,Guatemala,0.0
+11,Guinea,0.0
+11,Guyana,0.0
+11,Haiti,0.0
+11,Honduras,0.0
+11,Hungary,0.18
+11,Iceland,1.0
+11,Indonesia,0.0
+11,Iran,0.0
+11,Iraq,0.0
+11,Ireland,0.12
+11,Israel,0.01
+11,Italy,0.0
+11,Jamaica,0.0
+11,Jordan,0.04
+11,Kazakhstan,0.0
+11,Kenya,0.0
+11,Kuwait,0.04
+11,Kyrgyzstan,0.01
+11,Laos,0.05
+11,Latvia,0.04
+11,Lebanon,0.0
+11,Lesotho,0.01
+11,Liberia,0.0
+11,Libya,0.0
+11,Lithuania,0.01
+11,Luxembourg,1.0
+11,Madagascar,0.0
+11,Malawi,0.04
+11,Malaysia,0.0
+11,Mali,0.0
+11,Mauritania,0.01
+11,Mexico,0.01
+11,Moldova,0.0
+11,Mongolia,0.0
+11,Montenegro,0.0
+11,Morocco,0.01
+11,Mozambique,0.0
+11,Myanmar,0.0
+11,Namibia,0.01
+11,Nepal,0.0
+11,Netherlands,0.0
+11,New Caledonia,0.01
+11,New Zealand,0.0
+11,Nicaragua,0.0
+11,Niger,0.0
+11,Nigeria,0.0
+11,Norway,0.09
+11,Oman,0.24
+11,Pakistan,0.0
+11,Panama,0.0
+11,Papua New Guinea,0.0
+11,Paraguay,0.01
+11,Peru,0.02
+11,Philippines,0.01
+11,Poland,0.02
+11,Portugal,0.11
+11,Qatar,0.02
+11,Romania,0.0
+11,Rwanda,0.03
+11,Saudi Arabia,0.0
+11,Senegal,0.0
+11,Sierra Leone,0.0
+11,Slovakia,0.0
+11,Slovenia,0.3
+11,Solomon Islands,0.0
+11,Somalia,0.0
+11,South Sudan,0.0
+11,Sri Lanka,0.01
+11,Sudan,0.0
+11,Suriname,0.0
+11,Sweden,0.03
+11,Switzerland,0.02
+11,Syria,0.0
+11,Taiwan,0.0
+11,Tajikistan,0.01
+11,Thailand,0.0
+11,Togo,0.0
+11,Trinidad and Tobago,0.01
+11,Tunisia,0.01
+11,Turkey,0.0
+11,Turkmenistan,0.42
+11,Uganda,0.0
+11,Ukraine,0.01
+11,United Arab Emirates,0.1
+11,United Kingdom,0.0
+11,Uruguay,0.01
+11,Uzbekistan,0.04
+11,Vanuatu,0.0
+11,Venezuela,0.0
+11,Vietnam,0.01
+11,Yemen,0.0
+11,Zambia,0.0
+11,Zimbabwe,0.0
+12,Afghanistan,0.01
+12,Albania,0.46
+12,Algeria,0.0
+12,Angola,0.0
+12,Argentina,0.0
+12,Armenia,0.3
+12,Australia,0.06
+12,Austria,0.01
+12,Azerbaijan,0.01
+12,Bangladesh,0.03
+12,Belarus,0.02
+12,Belize,1.0
+12,Benin,0.02
+12,Bhutan,0.16
+12,Bolivia,0.03
+12,Bosnia and Herzegovina,0.15
+12,Botswana,0.1
+12,Brazil,0.0
+12,Brunei,0.0
+12,Bulgaria,0.04
+12,Burkina Faso,0.0
+12,Burundi,0.0
+12,Cambodia,0.01
+12,Cameroon,0.01
+12,Canada,0.01
+12,Central African Republic,0.0
+12,Chad,0.0
+12,Chile,0.0
+12,Colombia,0.01
+12,Costa Rica,0.0
+12,Croatia,0.08
+12,Cuba,0.22
+12,Cyprus,0.56
+12,Denmark,0.01
+12,Djibouti,0.0
+12,Dominican Republic,0.0
+12,Ecuador,0.03
+12,Egypt,0.0
+12,El Salvador,0.02
+12,Equatorial Guinea,0.0
+12,Estonia,0.76
+12,Ethiopia,0.0
+12,Falkland Islands,0.0
+12,Fiji,0.83
+12,Finland,0.24
+12,France,0.0
+12,Gabon,0.02
+12,Gambia,0.0
+12,Georgia,0.14
+12,Ghana,0.0
+12,Greece,0.03
+12,Greenland,1.0
+12,Guatemala,0.01
+12,Guinea,0.01
+12,Guyana,0.0
+12,Haiti,0.0
+12,Honduras,0.0
+12,Hungary,0.25
+12,Iceland,1.0
+12,Indonesia,0.0
+12,Iran,0.0
+12,Iraq,0.0
+12,Ireland,0.16
+12,Israel,0.01
+12,Italy,0.0
+12,Jamaica,0.0
+12,Jordan,0.06
+12,Kazakhstan,0.0
+12,Kenya,0.0
+12,Kuwait,0.05
+12,Kyrgyzstan,0.02
+12,Laos,0.07
+12,Latvia,0.05
+12,Lebanon,0.0
+12,Lesotho,0.02
+12,Liberia,0.0
+12,Libya,0.0
+12,Lithuania,0.01
+12,Luxembourg,1.0
+12,Madagascar,0.0
+12,Malawi,0.07
+12,Malaysia,0.0
+12,Mali,0.0
+12,Mauritania,0.01
+12,Mexico,0.01
+12,Moldova,0.0
+12,Mongolia,0.04
+12,Montenegro,0.0
+12,Morocco,0.02
+12,Mozambique,0.01
+12,Myanmar,0.0
+12,Namibia,0.01
+12,Nepal,0.0
+12,Netherlands,0.0
+12,New Caledonia,0.01
+12,New Zealand,0.0
+12,Nicaragua,0.0
+12,Niger,0.0
+12,Nigeria,0.0
+12,Norway,0.1
+12,Oman,0.3
+12,Pakistan,0.0
+12,Panama,0.0
+12,Papua New Guinea,0.0
+12,Paraguay,0.05
+12,Peru,0.03
+12,Philippines,0.02
+12,Poland,0.03
+12,Portugal,0.13
+12,Qatar,0.03
+12,Romania,0.0
+12,Rwanda,0.03
+12,Saudi Arabia,0.0
+12,Senegal,0.0
+12,Sierra Leone,0.01
+12,Slovakia,0.0
+12,Slovenia,0.34
+12,Solomon Islands,0.0
+12,Somalia,0.01
+12,South Sudan,0.0
+12,Sri Lanka,0.02
+12,Sudan,0.0
+12,Suriname,0.0
+12,Sweden,0.04
+12,Switzerland,0.02
+12,Syria,0.0
+12,Taiwan,0.0
+12,Tajikistan,0.01
+12,Thailand,0.0
+12,Togo,0.0
+12,Trinidad and Tobago,0.01
+12,Tunisia,0.01
+12,Turkey,0.0
+12,Turkmenistan,0.5
+12,Uganda,0.0
+12,Ukraine,0.01
+12,United Arab Emirates,0.11
+12,United Kingdom,0.0
+12,Uruguay,0.01
+12,Uzbekistan,0.04
+12,Vanuatu,0.0
+12,Venezuela,0.0
+12,Vietnam,0.01
+12,Yemen,0.0
+12,Zambia,0.0
+12,Zimbabwe,0.0
+13,Afghanistan,0.03
+13,Albania,0.57
+13,Algeria,0.0
+13,Angola,0.0
+13,Argentina,0.0
+13,Armenia,0.36
+13,Australia,0.06
+13,Austria,0.01
+13,Azerbaijan,0.01
+13,Bangladesh,0.04
+13,Belarus,0.02
+13,Belize,1.0
+13,Benin,0.02
+13,Bhutan,0.19
+13,Bolivia,0.04
+13,Bosnia and Herzegovina,0.18
+13,Botswana,0.13
+13,Brazil,0.0
+13,Brunei,0.01
+13,Bulgaria,0.05
+13,Burkina Faso,0.0
+13,Burundi,0.0
+13,Cambodia,0.01
+13,Cameroon,0.01
+13,Canada,0.01
+13,Central African Republic,0.0
+13,Chad,0.0
+13,Chile,0.0
+13,Colombia,0.01
+13,Costa Rica,0.0
+13,Croatia,0.1
+13,Cuba,0.44
+13,Cyprus,1.0
+13,Denmark,0.01
+13,Djibouti,0.0
+13,Dominican Republic,0.0
+13,Ecuador,0.04
+13,Egypt,0.0
+13,El Salvador,0.02
+13,Equatorial Guinea,0.0
+13,Estonia,1.0
+13,Ethiopia,0.0
+13,Falkland Islands,0.0
+13,Fiji,1.0
+13,Finland,0.31
+13,France,0.01
+13,Gabon,0.02
+13,Gambia,0.0
+13,Georgia,0.17
+13,Ghana,0.0
+13,Greece,0.05
+13,Greenland,1.0
+13,Guatemala,0.01
+13,Guinea,0.01
+13,Guyana,0.0
+13,Haiti,0.0
+13,Honduras,0.0
+13,Hungary,0.33
+13,Iceland,1.0
+13,Indonesia,0.0
+13,Iran,0.0
+13,Iraq,0.0
+13,Ireland,0.2
+13,Israel,0.02
+13,Italy,0.0
+13,Jamaica,0.0
+13,Jordan,0.08
+13,Kazakhstan,0.0
+13,Kenya,0.0
+13,Kuwait,0.06
+13,Kyrgyzstan,0.02
+13,Laos,0.08
+13,Latvia,0.05
+13,Lebanon,0.0
+13,Lesotho,0.02
+13,Liberia,0.0
+13,Libya,0.0
+13,Lithuania,0.01
+13,Luxembourg,1.0
+13,Madagascar,0.0
+13,Malawi,0.09
+13,Malaysia,0.0
+13,Mali,0.0
+13,Mauritania,0.01
+13,Mexico,0.01
+13,Moldova,0.0
+13,Mongolia,0.08
+13,Montenegro,0.29
+13,Morocco,0.02
+13,Mozambique,0.01
+13,Myanmar,0.0
+13,Namibia,0.11
+13,Nepal,0.0
+13,Netherlands,0.0
+13,New Caledonia,0.01
+13,New Zealand,0.0
+13,Nicaragua,0.0
+13,Niger,0.0
+13,Nigeria,0.0
+13,Norway,0.12
+13,Oman,0.36
+13,Pakistan,0.0
+13,Panama,0.0
+13,Papua New Guinea,0.0
+13,Paraguay,0.08
+13,Peru,0.04
+13,Philippines,0.02
+13,Poland,0.03
+13,Portugal,0.15
+13,Qatar,0.04
+13,Romania,0.0
+13,Rwanda,0.04
+13,Saudi Arabia,0.0
+13,Senegal,0.0
+13,Sierra Leone,0.01
+13,Slovakia,0.0
+13,Slovenia,0.38
+13,Solomon Islands,0.14
+13,Somalia,0.01
+13,South Sudan,0.0
+13,Sri Lanka,0.02
+13,Sudan,0.0
+13,Suriname,0.0
+13,Sweden,0.04
+13,Switzerland,0.02
+13,Syria,0.0
+13,Taiwan,0.0
+13,Tajikistan,0.02
+13,Thailand,0.0
+13,Togo,0.0
+13,Trinidad and Tobago,0.03
+13,Tunisia,0.02
+13,Turkey,0.0
+13,Turkmenistan,0.58
+13,Uganda,0.0
+13,Ukraine,0.01
+13,United Arab Emirates,0.13
+13,United Kingdom,0.0
+13,Uruguay,0.02
+13,Uzbekistan,0.05
+13,Vanuatu,0.0
+13,Venezuela,0.0
+13,Vietnam,0.02
+13,Yemen,0.0
+13,Zambia,0.0
+13,Zimbabwe,0.01
+14,Afghanistan,0.04
+14,Albania,0.69
+14,Algeria,0.0
+14,Angola,0.0
+14,Argentina,0.0
+14,Armenia,0.42
+14,Australia,0.07
+14,Austria,0.02
+14,Azerbaijan,0.01
+14,Bangladesh,0.05
+14,Belarus,0.02
+14,Belize,1.0
+14,Benin,0.03
+14,Bhutan,0.23
+14,Bolivia,0.07
+14,Bosnia and Herzegovina,0.22
+14,Botswana,0.17
+14,Brazil,0.0
+14,Brunei,0.01
+14,Bulgaria,0.08
+14,Burkina Faso,0.01
+14,Burundi,0.0
+14,Cambodia,0.01
+14,Cameroon,0.01
+14,Canada,0.01
+14,Central African Republic,0.01
+14,Chad,0.0
+14,Chile,0.0
+14,Colombia,0.02
+14,Costa Rica,0.01
+14,Croatia,0.32
+14,Cuba,1.0
+14,Cyprus,1.0
+14,Denmark,0.01
+14,Djibouti,0.0
+14,Dominican Republic,0.0
+14,Ecuador,0.05
+14,Egypt,0.0
+14,El Salvador,0.03
+14,Equatorial Guinea,0.0
+14,Estonia,1.0
+14,Ethiopia,0.0
+14,Falkland Islands,0.0
+14,Fiji,1.0
+14,Finland,0.39
+14,France,0.01
+14,Gabon,0.03
+14,Gambia,0.01
+14,Georgia,0.21
+14,Ghana,0.0
+14,Greece,0.13
+14,Greenland,1.0
+14,Guatemala,0.02
+14,Guinea,0.02
+14,Guyana,0.0
+14,Haiti,0.0
+14,Honduras,0.01
+14,Hungary,0.4
+14,Iceland,1.0
+14,Indonesia,0.0
+14,Iran,0.0
+14,Iraq,0.0
+14,Ireland,0.23
+14,Israel,0.02
+14,Italy,0.0
+14,Jamaica,0.0
+14,Jordan,0.17
+14,Kazakhstan,0.0
+14,Kenya,0.0
+14,Kuwait,0.06
+14,Kyrgyzstan,0.02
+14,Laos,0.1
+14,Latvia,0.06
+14,Lebanon,0.01
+14,Lesotho,0.03
+14,Liberia,0.01
+14,Libya,0.0
+14,Lithuania,0.01
+14,Luxembourg,1.0
+14,Madagascar,0.0
+14,Malawi,0.11
+14,Malaysia,0.0
+14,Mali,0.0
+14,Mauritania,0.01
+14,Mexico,0.01
+14,Moldova,0.0
+14,Mongolia,0.12
+14,Montenegro,0.63
+14,Morocco,0.02
+14,Mozambique,0.02
+14,Myanmar,0.0
+14,Namibia,0.22
+14,Nepal,0.0
+14,Netherlands,0.0
+14,New Caledonia,0.01
+14,New Zealand,0.0
+14,Nicaragua,0.0
+14,Niger,0.0
+14,Nigeria,0.0
+14,Norway,0.13
+14,Oman,0.42
+14,Pakistan,0.0
+14,Panama,0.0
+14,Papua New Guinea,0.0
+14,Paraguay,0.11
+14,Peru,0.05
+14,Philippines,0.02
+14,Poland,0.04
+14,Portugal,0.17
+14,Qatar,0.06
+14,Romania,0.0
+14,Rwanda,0.05
+14,Saudi Arabia,0.0
+14,Senegal,0.0
+14,Sierra Leone,0.01
+14,Slovakia,0.0
+14,Slovenia,0.43
+14,Solomon Islands,0.28
+14,Somalia,0.02
+14,South Sudan,0.0
+14,Sri Lanka,0.03
+14,Sudan,0.0
+14,Suriname,0.0
+14,Sweden,0.06
+14,Switzerland,0.03
+14,Syria,0.0
+14,Taiwan,0.0
+14,Tajikistan,0.03
+14,Thailand,0.0
+14,Togo,0.0
+14,Trinidad and Tobago,0.04
+14,Tunisia,0.02
+14,Turkey,0.0
+14,Turkmenistan,0.65
+14,Uganda,0.0
+14,Ukraine,0.01
+14,United Arab Emirates,0.14
+14,United Kingdom,0.0
+14,Uruguay,0.02
+14,Uzbekistan,0.06
+14,Vanuatu,0.0
+14,Venezuela,0.01
+14,Vietnam,0.02
+14,Yemen,0.0
+14,Zambia,0.0
+14,Zimbabwe,0.01
+15,Afghanistan,0.05
+15,Albania,0.81
+15,Algeria,0.0
+15,Angola,0.0
+15,Argentina,0.0
+15,Armenia,0.48
+15,Australia,0.08
+15,Austria,0.02
+15,Azerbaijan,0.01
+15,Bangladesh,0.06
+15,Belarus,0.03
+15,Belize,1.0
+15,Benin,0.04
+15,Bhutan,0.26
+15,Bolivia,0.1
+15,Bosnia and Herzegovina,0.27
+15,Botswana,0.21
+15,Brazil,0.0
+15,Brunei,0.02
+15,Bulgaria,0.11
+15,Burkina Faso,0.01
+15,Burundi,0.0
+15,Cambodia,0.01
+15,Cameroon,0.01
+15,Canada,0.01
+15,Central African Republic,0.02
+15,Chad,0.0
+15,Chile,0.0
+15,Colombia,0.02
+15,Costa Rica,0.02
+15,Croatia,0.54
+15,Cuba,1.0
+15,Cyprus,1.0
+15,Denmark,0.01
+15,Djibouti,0.0
+15,Dominican Republic,0.0
+15,Ecuador,0.06
+15,Egypt,0.0
+15,El Salvador,0.03
+15,Equatorial Guinea,0.0
+15,Estonia,1.0
+15,Ethiopia,0.0
+15,Falkland Islands,0.41
+15,Fiji,1.0
+15,Finland,0.47
+15,France,0.01
+15,Gabon,0.03
+15,Gambia,0.01
+15,Georgia,0.24
+15,Ghana,0.01
+15,Greece,0.22
+15,Greenland,1.0
+15,Guatemala,0.03
+15,Guinea,0.02
+15,Guyana,0.0
+15,Haiti,0.0
+15,Honduras,0.02
+15,Hungary,0.47
+15,Iceland,1.0
+15,Indonesia,0.0
+15,Iran,0.0
+15,Iraq,0.0
+15,Ireland,0.27
+15,Israel,0.02
+15,Italy,0.0
+15,Jamaica,0.0
+15,Jordan,0.48
+15,Kazakhstan,0.01
+15,Kenya,0.0
+15,Kuwait,0.3
+15,Kyrgyzstan,0.02
+15,Laos,0.11
+15,Latvia,0.07
+15,Lebanon,0.01
+15,Lesotho,0.03
+15,Liberia,0.02
+15,Libya,0.0
+15,Lithuania,0.01
+15,Luxembourg,1.0
+15,Madagascar,0.0
+15,Malawi,0.13
+15,Malaysia,0.0
+15,Mali,0.0
+15,Mauritania,0.01
+15,Mexico,0.01
+15,Moldova,0.0
+15,Mongolia,0.16
+15,Montenegro,0.97
+15,Morocco,0.02
+15,Mozambique,0.02
+15,Myanmar,0.01
+15,Namibia,0.32
+15,Nepal,0.0
+15,Netherlands,0.0
+15,New Caledonia,0.02
+15,New Zealand,0.01
+15,Nicaragua,0.0
+15,Niger,0.01
+15,Nigeria,0.0
+15,Norway,0.14
+15,Oman,0.48
+15,Pakistan,0.0
+15,Panama,0.0
+15,Papua New Guinea,0.0
+15,Paraguay,0.14
+15,Peru,0.06
+15,Philippines,0.03
+15,Poland,0.05
+15,Portugal,0.18
+15,Qatar,0.07
+15,Romania,0.0
+15,Rwanda,0.05
+15,Saudi Arabia,0.0
+15,Senegal,0.0
+15,Sierra Leone,0.01
+15,Slovakia,0.0
+15,Slovenia,0.47
+15,Solomon Islands,0.42
+15,Somalia,0.03
+15,South Sudan,0.0
+15,Sri Lanka,0.03
+15,Sudan,0.0
+15,Suriname,0.0
+15,Sweden,0.08
+15,Switzerland,0.05
+15,Syria,0.0
+15,Taiwan,0.0
+15,Tajikistan,0.04
+15,Thailand,0.0
+15,Togo,0.0
+15,Trinidad and Tobago,0.05
+15,Tunisia,0.02
+15,Turkey,0.0
+15,Turkmenistan,0.73
+15,Uganda,0.0
+15,Ukraine,0.01
+15,United Arab Emirates,0.16
+15,United Kingdom,0.0
+15,Uruguay,0.03
+15,Uzbekistan,0.07
+15,Vanuatu,0.0
+15,Venezuela,0.01
+15,Vietnam,0.02
+15,Yemen,0.0
+15,Zambia,0.0
+15,Zimbabwe,0.01
+16,Afghanistan,0.06
+16,Albania,0.92
+16,Algeria,0.0
+16,Angola,0.0
+16,Argentina,0.01
+16,Armenia,0.68
+16,Australia,0.09
+16,Austria,0.03
+16,Azerbaijan,0.02
+16,Bangladesh,0.07
+16,Belarus,0.15
+16,Belize,1.0
+16,Benin,0.05
+16,Bhutan,0.29
+16,Bolivia,0.13
+16,Bosnia and Herzegovina,0.32
+16,Botswana,0.24
+16,Brazil,0.0
+16,Brunei,0.02
+16,Bulgaria,0.13
+16,Burkina Faso,0.02
+16,Burundi,0.0
+16,Cambodia,0.01
+16,Cameroon,0.01
+16,Canada,0.02
+16,Central African Republic,0.02
+16,Chad,0.0
+16,Chile,0.01
+16,Colombia,0.02
+16,Costa Rica,0.03
+16,Croatia,0.76
+16,Cuba,1.0
+16,Cyprus,1.0
+16,Denmark,0.04
+16,Djibouti,0.0
+16,Dominican Republic,0.0
+16,Ecuador,0.07
+16,Egypt,0.0
+16,El Salvador,0.04
+16,Equatorial Guinea,0.0
+16,Estonia,1.0
+16,Ethiopia,0.01
+16,Falkland Islands,0.82
+16,Fiji,1.0
+16,Finland,0.55
+16,France,0.02
+16,Gabon,0.03
+16,Gambia,0.02
+16,Georgia,0.28
+16,Ghana,0.01
+16,Greece,0.3
+16,Greenland,1.0
+16,Guatemala,0.03
+16,Guinea,0.03
+16,Guyana,0.0
+16,Haiti,0.0
+16,Honduras,0.03
+16,Hungary,0.55
+16,Iceland,1.0
+16,Indonesia,0.0
+16,Iran,0.0
+16,Iraq,0.0
+16,Ireland,0.46
+16,Israel,0.02
+16,Italy,0.0
+16,Jamaica,0.03
+16,Jordan,0.78
+16,Kazakhstan,0.01
+16,Kenya,0.02
+16,Kuwait,0.53
+16,Kyrgyzstan,0.03
+16,Laos,0.12
+16,Latvia,0.08
+16,Lebanon,0.03
+16,Lesotho,0.05
+16,Liberia,0.03
+16,Libya,0.0
+16,Lithuania,0.01
+16,Luxembourg,1.0
+16,Madagascar,0.0
+16,Malawi,0.17
+16,Malaysia,0.0
+16,Mali,0.0
+16,Mauritania,0.02
+16,Mexico,0.01
+16,Moldova,0.0
+16,Mongolia,0.2
+16,Montenegro,1.0
+16,Morocco,0.03
+16,Mozambique,0.03
+16,Myanmar,0.01
+16,Namibia,0.43
+16,Nepal,0.0
+16,Netherlands,0.0
+16,New Caledonia,0.02
+16,New Zealand,0.01
+16,Nicaragua,0.0
+16,Niger,0.01
+16,Nigeria,0.0
+16,Norway,0.15
+16,Oman,0.54
+16,Pakistan,0.01
+16,Panama,0.0
+16,Papua New Guinea,0.0
+16,Paraguay,0.18
+16,Peru,0.08
+16,Philippines,0.03
+16,Poland,0.06
+16,Portugal,0.2
+16,Qatar,0.08
+16,Romania,0.01
+16,Rwanda,0.06
+16,Saudi Arabia,0.01
+16,Senegal,0.0
+16,Sierra Leone,0.01
+16,Slovakia,0.0
+16,Slovenia,0.51
+16,Solomon Islands,0.56
+16,Somalia,0.04
+16,South Sudan,0.0
+16,Sri Lanka,0.03
+16,Sudan,0.0
+16,Suriname,0.0
+16,Sweden,0.1
+16,Switzerland,0.08
+16,Syria,0.0
+16,Taiwan,0.0
+16,Tajikistan,0.05
+16,Thailand,0.0
+16,Togo,0.0
+16,Trinidad and Tobago,0.06
+16,Tunisia,0.02
+16,Turkey,0.0
+16,Turkmenistan,0.81
+16,Uganda,0.0
+16,Ukraine,0.02
+16,United Arab Emirates,0.18
+16,United Kingdom,0.02
+16,Uruguay,0.03
+16,Uzbekistan,0.07
+16,Vanuatu,0.0
+16,Venezuela,0.01
+16,Vietnam,0.03
+16,Yemen,0.0
+16,Zambia,0.0
+16,Zimbabwe,0.01
+17,Afghanistan,0.07
+17,Albania,1.0
+17,Algeria,0.0
+17,Angola,0.0
+17,Argentina,0.01
+17,Armenia,0.95
+17,Australia,0.1
+17,Austria,0.03
+17,Azerbaijan,0.04
+17,Bangladesh,0.08
+17,Belarus,0.27
+17,Belize,1.0
+17,Benin,0.06
+17,Bhutan,0.32
+17,Bolivia,0.16
+17,Bosnia and Herzegovina,0.37
+17,Botswana,0.28
+17,Brazil,0.0
+17,Brunei,0.03
+17,Bulgaria,0.16
+17,Burkina Faso,0.02
+17,Burundi,0.0
+17,Cambodia,0.01
+17,Cameroon,0.01
+17,Canada,0.02
+17,Central African Republic,0.03
+17,Chad,0.0
+17,Chile,0.01
+17,Colombia,0.02
+17,Costa Rica,0.05
+17,Croatia,0.97
+17,Cuba,1.0
+17,Cyprus,1.0
+17,Denmark,0.06
+17,Djibouti,0.0
+17,Dominican Republic,0.01
+17,Ecuador,0.1
+17,Egypt,0.0
+17,El Salvador,0.04
+17,Equatorial Guinea,0.0
+17,Estonia,1.0
+17,Ethiopia,0.01
+17,Falkland Islands,1.0
+17,Fiji,1.0
+17,Finland,0.63
+17,France,0.03
+17,Gabon,0.05
+17,Gambia,0.02
+17,Georgia,0.31
+17,Ghana,0.02
+17,Greece,0.39
+17,Greenland,1.0
+17,Guatemala,0.04
+17,Guinea,0.04
+17,Guyana,0.0
+17,Haiti,0.0
+17,Honduras,0.05
+17,Hungary,0.62
+17,Iceland,1.0
+17,Indonesia,0.0
+17,Iran,0.0
+17,Iraq,0.0
+17,Ireland,0.65
+17,Israel,0.04
+17,Italy,0.0
+17,Jamaica,0.06
+17,Jordan,1.0
+17,Kazakhstan,0.02
+17,Kenya,0.04
+17,Kuwait,0.77
+17,Kyrgyzstan,0.03
+17,Laos,0.27
+17,Latvia,0.09
+17,Lebanon,0.04
+17,Lesotho,0.07
+17,Liberia,0.04
+17,Libya,0.0
+17,Lithuania,0.01
+17,Luxembourg,1.0
+17,Madagascar,0.0
+17,Malawi,0.21
+17,Malaysia,0.0
+17,Mali,0.0
+17,Mauritania,0.04
+17,Mexico,0.01
+17,Moldova,0.01
+17,Mongolia,0.24
+17,Montenegro,1.0
+17,Morocco,0.03
+17,Mozambique,0.03
+17,Myanmar,0.01
+17,Namibia,0.53
+17,Nepal,0.0
+17,Netherlands,0.0
+17,New Caledonia,0.02
+17,New Zealand,0.01
+17,Nicaragua,0.0
+17,Niger,0.02
+17,Nigeria,0.0
+17,Norway,0.17
+17,Oman,0.59
+17,Pakistan,0.01
+17,Panama,0.0
+17,Papua New Guinea,0.01
+17,Paraguay,0.21
+17,Peru,0.1
+17,Philippines,0.03
+17,Poland,0.07
+17,Portugal,0.22
+17,Qatar,0.09
+17,Romania,0.01
+17,Rwanda,0.07
+17,Saudi Arabia,0.01
+17,Senegal,0.0
+17,Sierra Leone,0.01
+17,Slovakia,0.01
+17,Slovenia,0.72
+17,Solomon Islands,0.74
+17,Somalia,0.05
+17,South Sudan,0.0
+17,Sri Lanka,0.04
+17,Sudan,0.0
+17,Suriname,0.55
+17,Sweden,0.13
+17,Switzerland,0.1
+17,Syria,0.0
+17,Taiwan,0.02
+17,Tajikistan,0.06
+17,Thailand,0.0
+17,Togo,0.0
+17,Trinidad and Tobago,0.07
+17,Tunisia,0.03
+17,Turkey,0.0
+17,Turkmenistan,0.89
+17,Uganda,0.0
+17,Ukraine,0.02
+17,United Arab Emirates,0.19
+17,United Kingdom,0.04
+17,Uruguay,0.04
+17,Uzbekistan,0.08
+17,Vanuatu,0.0
+17,Venezuela,0.01
+17,Vietnam,0.03
+17,Yemen,0.0
+17,Zambia,0.01
+17,Zimbabwe,0.01
+18,Afghanistan,0.09
+18,Albania,1.0
+18,Algeria,0.0
+18,Angola,0.0
+18,Argentina,0.02
+18,Armenia,1.0
+18,Australia,0.11
+18,Austria,0.04
+18,Azerbaijan,0.05
+18,Bangladesh,0.09
+18,Belarus,0.39
+18,Belize,1.0
+18,Benin,0.07
+18,Bhutan,0.36
+18,Bolivia,0.19
+18,Bosnia and Herzegovina,0.42
+18,Botswana,0.32
+18,Brazil,0.0
+18,Brunei,0.03
+18,Bulgaria,0.19
+18,Burkina Faso,0.02
+18,Burundi,0.0
+18,Cambodia,0.01
+18,Cameroon,0.01
+18,Canada,0.02
+18,Central African Republic,0.05
+18,Chad,0.0
+18,Chile,0.01
+18,Colombia,0.03
+18,Costa Rica,0.06
+18,Croatia,1.0
+18,Cuba,1.0
+18,Cyprus,1.0
+18,Denmark,0.09
+18,Djibouti,0.0
+18,Dominican Republic,0.01
+18,Ecuador,0.12
+18,Egypt,0.0
+18,El Salvador,0.05
+18,Equatorial Guinea,0.0
+18,Estonia,1.0
+18,Ethiopia,0.01
+18,Falkland Islands,1.0
+18,Fiji,1.0
+18,Finland,0.71
+18,France,0.05
+18,Gabon,0.11
+18,Gambia,0.04
+18,Georgia,0.37
+18,Ghana,0.02
+18,Greece,0.48
+18,Greenland,1.0
+18,Guatemala,0.05
+18,Guinea,0.04
+18,Guyana,0.0
+18,Haiti,0.0
+18,Honduras,0.06
+18,Hungary,0.7
+18,Iceland,1.0
+18,Indonesia,0.0
+18,Iran,0.0
+18,Iraq,0.0
+18,Ireland,0.84
+18,Israel,0.06
+18,Italy,0.0
+18,Jamaica,0.09
+18,Jordan,1.0
+18,Kazakhstan,0.04
+18,Kenya,0.06
+18,Kuwait,1.0
+18,Kyrgyzstan,0.03
+18,Laos,0.42
+18,Latvia,0.1
+18,Lebanon,0.17
+18,Lesotho,0.09
+18,Liberia,0.04
+18,Libya,0.0
+18,Lithuania,0.01
+18,Luxembourg,1.0
+18,Madagascar,0.0
+18,Malawi,0.25
+18,Malaysia,0.0
+18,Mali,0.0
+18,Mauritania,0.05
+18,Mexico,0.02
+18,Moldova,0.01
+18,Mongolia,0.28
+18,Montenegro,1.0
+18,Morocco,0.03
+18,Mozambique,0.04
+18,Myanmar,0.02
+18,Namibia,0.63
+18,Nepal,0.0
+18,Netherlands,0.0
+18,New Caledonia,0.02
+18,New Zealand,0.03
+18,Nicaragua,0.0
+18,Niger,0.02
+18,Nigeria,0.0
+18,Norway,0.18
+18,Oman,0.65
+18,Pakistan,0.01
+18,Panama,0.0
+18,Papua New Guinea,0.02
+18,Paraguay,0.24
+18,Peru,0.11
+18,Philippines,0.03
+18,Poland,0.08
+18,Portugal,1.0
+18,Qatar,0.26
+18,Romania,0.02
+18,Rwanda,0.07
+18,Saudi Arabia,0.01
+18,Senegal,0.0
+18,Sierra Leone,0.01
+18,Slovakia,0.01
+18,Slovenia,0.92
+18,Solomon Islands,0.93
+18,Somalia,0.05
+18,South Sudan,0.1
+18,Sri Lanka,0.04
+18,Sudan,0.0
+18,Suriname,1.0
+18,Sweden,0.15
+18,Switzerland,0.13
+18,Syria,0.0
+18,Taiwan,0.03
+18,Tajikistan,0.07
+18,Thailand,0.0
+18,Togo,0.01
+18,Trinidad and Tobago,0.09
+18,Tunisia,0.06
+18,Turkey,0.0
+18,Turkmenistan,0.97
+18,Uganda,0.01
+18,Ukraine,0.02
+18,United Arab Emirates,0.22
+18,United Kingdom,0.05
+18,Uruguay,0.04
+18,Uzbekistan,0.09
+18,Vanuatu,0.0
+18,Venezuela,0.01
+18,Vietnam,0.03
+18,Yemen,0.0
+18,Zambia,0.01
+18,Zimbabwe,0.01
+19,Afghanistan,0.1
+19,Albania,1.0
+19,Algeria,0.0
+19,Angola,0.0
+19,Argentina,0.02
+19,Armenia,1.0
+19,Australia,0.12
+19,Austria,0.04
+19,Azerbaijan,0.06
+19,Bangladesh,0.11
+19,Belarus,0.51
+19,Belize,1.0
+19,Benin,0.08
+19,Bhutan,0.39
+19,Bolivia,0.22
+19,Bosnia and Herzegovina,0.48
+19,Botswana,0.36
+19,Brazil,0.01
+19,Brunei,0.04
+19,Bulgaria,0.21
+19,Burkina Faso,0.03
+19,Burundi,0.0
+19,Cambodia,0.28
+19,Cameroon,0.02
+19,Canada,0.02
+19,Central African Republic,0.08
+19,Chad,0.01
+19,Chile,0.01
+19,Colombia,0.04
+19,Costa Rica,0.08
+19,Croatia,1.0
+19,Cuba,1.0
+19,Cyprus,1.0
+19,Denmark,0.11
+19,Djibouti,0.0
+19,Dominican Republic,0.01
+19,Ecuador,0.15
+19,Egypt,0.01
+19,El Salvador,0.05
+19,Equatorial Guinea,0.0
+19,Estonia,1.0
+19,Ethiopia,0.01
+19,Falkland Islands,1.0
+19,Fiji,1.0
+19,Finland,0.79
+19,France,0.06
+19,Gabon,0.17
+19,Gambia,0.07
+19,Georgia,0.44
+19,Ghana,0.03
+19,Greece,0.56
+19,Greenland,1.0
+19,Guatemala,0.05
+19,Guinea,0.05
+19,Guyana,0.01
+19,Haiti,0.0
+19,Honduras,0.07
+19,Hungary,0.9
+19,Iceland,1.0
+19,Indonesia,0.01
+19,Iran,0.0
+19,Iraq,0.0
+19,Ireland,1.0
+19,Israel,0.08
+19,Italy,0.01
+19,Jamaica,0.12
+19,Jordan,1.0
+19,Kazakhstan,0.13
+19,Kenya,0.08
+19,Kuwait,1.0
+19,Kyrgyzstan,0.03
+19,Laos,0.57
+19,Latvia,0.11
+19,Lebanon,0.3
+19,Lesotho,0.1
+19,Liberia,0.05
+19,Libya,0.0
+19,Lithuania,0.02
+19,Luxembourg,1.0
+19,Madagascar,0.0
+19,Malawi,0.29
+19,Malaysia,0.0
+19,Mali,0.01
+19,Mauritania,0.06
+19,Mexico,0.02
+19,Moldova,0.01
+19,Mongolia,0.32
+19,Montenegro,1.0
+19,Morocco,0.04
+19,Mozambique,0.04
+19,Myanmar,0.02
+19,Namibia,0.74
+19,Nepal,0.0
+19,Netherlands,0.0
+19,New Caledonia,0.21
+19,New Zealand,0.05
+19,Nicaragua,0.0
+19,Niger,0.03
+19,Nigeria,0.01
+19,Norway,0.19
+19,Oman,0.71
+19,Pakistan,0.01
+19,Panama,0.0
+19,Papua New Guinea,0.02
+19,Paraguay,0.28
+19,Peru,0.13
+19,Philippines,0.04
+19,Poland,0.08
+19,Portugal,1.0
+19,Qatar,0.44
+19,Romania,0.03
+19,Rwanda,0.08
+19,Saudi Arabia,0.01
+19,Senegal,0.0
+19,Sierra Leone,0.01
+19,Slovakia,0.02
+19,Slovenia,1.0
+19,Solomon Islands,1.0
+19,Somalia,0.06
+19,South Sudan,0.19
+19,Sri Lanka,0.05
+19,Sudan,0.0
+19,Suriname,1.0
+19,Sweden,0.17
+19,Switzerland,0.15
+19,Syria,0.0
+19,Taiwan,0.05
+19,Tajikistan,0.08
+19,Thailand,0.01
+19,Togo,0.03
+19,Trinidad and Tobago,0.1
+19,Tunisia,0.1
+19,Turkey,0.0
+19,Turkmenistan,1.0
+19,Uganda,0.01
+19,Ukraine,0.03
+19,United Arab Emirates,0.26
+19,United Kingdom,0.07
+19,Uruguay,0.05
+19,Uzbekistan,0.12
+19,Vanuatu,1.0
+19,Venezuela,0.02
+19,Vietnam,0.04
+19,Yemen,0.0
+19,Zambia,0.01
+19,Zimbabwe,0.02
+20,Afghanistan,0.11
+20,Albania,1.0
+20,Algeria,0.0
+20,Angola,0.01
+20,Argentina,0.03
+20,Armenia,1.0
+20,Australia,0.13
+20,Austria,0.04
+20,Azerbaijan,0.08
+20,Bangladesh,0.12
+20,Belarus,0.63
+20,Belize,1.0
+20,Benin,0.1
+20,Bhutan,0.42
+20,Bolivia,0.25
+20,Bosnia and Herzegovina,0.53
+20,Botswana,0.4
+20,Brazil,0.01
+20,Brunei,0.04
+20,Bulgaria,0.24
+20,Burkina Faso,0.03
+20,Burundi,0.0
+20,Cambodia,0.55
+20,Cameroon,0.02
+20,Canada,0.02
+20,Central African Republic,0.1
+20,Chad,0.01
+20,Chile,0.12
+20,Colombia,0.05
+20,Costa Rica,0.09
+20,Croatia,1.0
+20,Cuba,1.0
+20,Cyprus,1.0
+20,Denmark,0.14
+20,Djibouti,0.0
+20,Dominican Republic,0.01
+20,Ecuador,0.17
+20,Egypt,0.01
+20,El Salvador,0.08
+20,Equatorial Guinea,0.0
+20,Estonia,1.0
+20,Ethiopia,0.01
+20,Falkland Islands,1.0
+20,Fiji,1.0
+20,Finland,0.87
+20,France,0.08
+20,Gabon,0.23
+20,Gambia,0.09
+20,Georgia,0.52
+20,Ghana,0.03
+20,Greece,0.65
+20,Greenland,1.0
+20,Guatemala,0.06
+20,Guinea,0.06
+20,Guyana,0.02
+20,Haiti,0.0
+20,Honduras,0.09
+20,Hungary,1.0
+20,Iceland,1.0
+20,Indonesia,0.01
+20,Iran,0.0
+20,Iraq,0.0
+20,Ireland,1.0
+20,Israel,0.15
+20,Italy,0.01
+20,Jamaica,0.15
+20,Jordan,1.0
+20,Kazakhstan,0.21
+20,Kenya,0.1
+20,Kuwait,1.0
+20,Kyrgyzstan,0.04
+20,Laos,0.72
+20,Latvia,0.12
+20,Lebanon,0.43
+20,Lesotho,0.12
+20,Liberia,0.06
+20,Libya,0.03
+20,Lithuania,0.02
+20,Luxembourg,1.0
+20,Madagascar,0.0
+20,Malawi,0.33
+20,Malaysia,0.01
+20,Mali,0.01
+20,Mauritania,0.1
+20,Mexico,0.02
+20,Moldova,0.01
+20,Mongolia,1.0
+20,Montenegro,1.0
+20,Morocco,0.04
+20,Mozambique,0.05
+20,Myanmar,0.03
+20,Namibia,0.84
+20,Nepal,0.0
+20,Netherlands,0.0
+20,New Caledonia,1.0
+20,New Zealand,0.09
+20,Nicaragua,0.01
+20,Niger,0.03
+20,Nigeria,0.01
+20,Norway,0.21
+20,Oman,0.77
+20,Pakistan,0.01
+20,Panama,0.0
+20,Papua New Guinea,0.03
+20,Paraguay,0.31
+20,Peru,0.15
+20,Philippines,0.04
+20,Poland,0.09
+20,Portugal,1.0
+20,Qatar,0.61
+20,Romania,0.04
+20,Rwanda,0.09
+20,Saudi Arabia,0.01
+20,Senegal,0.0
+20,Sierra Leone,0.01
+20,Slovakia,0.02
+20,Slovenia,1.0
+20,Solomon Islands,1.0
+20,Somalia,0.07
+20,South Sudan,0.29
+20,Sri Lanka,0.05
+20,Sudan,0.0
+20,Suriname,1.0
+20,Sweden,0.19
+20,Switzerland,0.18
+20,Syria,0.0
+20,Taiwan,0.06
+20,Tajikistan,0.09
+20,Thailand,0.01
+20,Togo,0.05
+20,Trinidad and Tobago,0.11
+20,Tunisia,0.14
+20,Turkey,0.01
+20,Turkmenistan,1.0
+20,Uganda,0.01
+20,Ukraine,0.03
+20,United Arab Emirates,0.29
+20,United Kingdom,0.09
+20,Uruguay,0.06
+20,Uzbekistan,0.15
+20,Vanuatu,1.0
+20,Venezuela,0.04
+20,Vietnam,0.04
+20,Yemen,0.0
+20,Zambia,0.02
+20,Zimbabwe,0.02
+21,Afghanistan,0.12
+21,Albania,1.0
+21,Algeria,0.0
+21,Angola,0.01
+21,Argentina,0.03
+21,Armenia,1.0
+21,Australia,0.14
+21,Austria,0.05
+21,Azerbaijan,0.09
+21,Bangladesh,0.13
+21,Belarus,0.75
+21,Belize,1.0
+21,Benin,0.11
+21,Bhutan,0.52
+21,Bolivia,0.28
+21,Bosnia and Herzegovina,0.58
+21,Botswana,0.44
+21,Brazil,0.01
+21,Brunei,0.05
+21,Bulgaria,0.27
+21,Burkina Faso,0.03
+21,Burundi,0.01
+21,Cambodia,0.81
+21,Cameroon,0.02
+21,Canada,0.02
+21,Central African Republic,0.12
+21,Chad,0.01
+21,Chile,0.22
+21,Colombia,0.06
+21,Costa Rica,0.11
+21,Croatia,1.0
+21,Cuba,1.0
+21,Cyprus,1.0
+21,Denmark,0.16
+21,Djibouti,0.13
+21,Dominican Republic,0.02
+21,Ecuador,0.19
+21,Egypt,0.01
+21,El Salvador,0.11
+21,Equatorial Guinea,0.0
+21,Estonia,1.0
+21,Ethiopia,0.01
+21,Falkland Islands,1.0
+21,Fiji,1.0
+21,Finland,0.98
+21,France,0.09
+21,Gabon,0.29
+21,Gambia,0.11
+21,Georgia,0.62
+21,Ghana,0.04
+21,Greece,0.74
+21,Greenland,1.0
+21,Guatemala,0.07
+21,Guinea,0.07
+21,Guyana,0.02
+21,Haiti,0.0
+21,Honduras,0.1
+21,Hungary,1.0
+21,Iceland,1.0
+21,Indonesia,0.01
+21,Iran,0.01
+21,Iraq,0.0
+21,Ireland,1.0
+21,Israel,0.22
+21,Italy,0.01
+21,Jamaica,0.17
+21,Jordan,1.0
+21,Kazakhstan,0.3
+21,Kenya,0.11
+21,Kuwait,1.0
+21,Kyrgyzstan,0.04
+21,Laos,0.91
+21,Latvia,0.13
+21,Lebanon,0.55
+21,Lesotho,0.14
+21,Liberia,0.08
+21,Libya,0.1
+21,Lithuania,0.02
+21,Luxembourg,1.0
+21,Madagascar,0.0
+21,Malawi,0.37
+21,Malaysia,0.01
+21,Mali,0.03
+21,Mauritania,0.13
+21,Mexico,0.02
+21,Moldova,0.01
+21,Mongolia,1.0
+21,Montenegro,1.0
+21,Morocco,0.04
+21,Mozambique,0.06
+21,Myanmar,0.04
+21,Namibia,0.95
+21,Nepal,0.0
+21,Netherlands,0.0
+21,New Caledonia,1.0
+21,New Zealand,0.12
+21,Nicaragua,0.02
+21,Niger,0.04
+21,Nigeria,0.02
+21,Norway,0.22
+21,Oman,0.86
+21,Pakistan,0.01
+21,Panama,0.19
+21,Papua New Guinea,0.04
+21,Paraguay,0.34
+21,Peru,0.18
+21,Philippines,0.04
+21,Poland,0.1
+21,Portugal,1.0
+21,Qatar,0.79
+21,Romania,0.05
+21,Rwanda,0.1
+21,Saudi Arabia,0.01
+21,Senegal,0.0
+21,Sierra Leone,0.01
+21,Slovakia,0.03
+21,Slovenia,1.0
+21,Solomon Islands,1.0
+21,Somalia,0.08
+21,South Sudan,0.41
+21,Sri Lanka,0.05
+21,Sudan,0.0
+21,Suriname,1.0
+21,Sweden,0.22
+21,Switzerland,0.2
+21,Syria,0.0
+21,Taiwan,0.08
+21,Tajikistan,0.14
+21,Thailand,0.01
+21,Togo,0.07
+21,Trinidad and Tobago,0.12
+21,Tunisia,0.17
+21,Turkey,0.01
+21,Turkmenistan,1.0
+21,Uganda,0.07
+21,Ukraine,0.03
+21,United Arab Emirates,0.33
+21,United Kingdom,0.1
+21,Uruguay,0.06
+21,Uzbekistan,0.18
+21,Vanuatu,1.0
+21,Venezuela,0.05
+21,Vietnam,0.04
+21,Yemen,0.0
+21,Zambia,0.02
+21,Zimbabwe,0.03
+22,Afghanistan,0.13
+22,Albania,1.0
+22,Algeria,0.0
+22,Angola,0.01
+22,Argentina,0.04
+22,Armenia,1.0
+22,Australia,0.15
+22,Austria,0.06
+22,Azerbaijan,0.11
+22,Bangladesh,0.15
+22,Belarus,0.87
+22,Belize,1.0
+22,Benin,0.15
+22,Bhutan,0.62
+22,Bolivia,0.31
+22,Bosnia and Herzegovina,0.64
+22,Botswana,0.48
+22,Brazil,0.01
+22,Brunei,0.05
+22,Bulgaria,0.29
+22,Burkina Faso,0.04
+22,Burundi,0.01
+22,Cambodia,1.0
+22,Cameroon,0.02
+22,Canada,0.03
+22,Central African Republic,0.15
+22,Chad,0.01
+22,Chile,0.33
+22,Colombia,0.19
+22,Costa Rica,0.13
+22,Croatia,1.0
+22,Cuba,1.0
+22,Cyprus,1.0
+22,Denmark,0.2
+22,Djibouti,0.26
+22,Dominican Republic,0.03
+22,Ecuador,0.22
+22,Egypt,0.01
+22,El Salvador,0.15
+22,Equatorial Guinea,0.0
+22,Estonia,1.0
+22,Ethiopia,0.01
+22,Falkland Islands,1.0
+22,Fiji,1.0
+22,Finland,1.0
+22,France,0.12
+22,Gabon,0.48
+22,Gambia,0.14
+22,Georgia,0.72
+22,Ghana,0.05
+22,Greece,0.82
+22,Greenland,1.0
+22,Guatemala,0.08
+22,Guinea,0.08
+22,Guyana,0.39
+22,Haiti,0.01
+22,Honduras,0.11
+22,Hungary,1.0
+22,Iceland,1.0
+22,Indonesia,0.01
+22,Iran,0.01
+22,Iraq,0.0
+22,Ireland,1.0
+22,Israel,0.29
+22,Italy,0.02
+22,Jamaica,0.2
+22,Jordan,1.0
+22,Kazakhstan,0.39
+22,Kenya,0.13
+22,Kuwait,1.0
+22,Kyrgyzstan,0.04
+22,Laos,1.0
+22,Latvia,0.14
+22,Lebanon,0.85
+22,Lesotho,0.19
+22,Liberia,0.09
+22,Libya,0.16
+22,Lithuania,0.03
+22,Luxembourg,1.0
+22,Madagascar,0.0
+22,Malawi,0.41
+22,Malaysia,0.02
+22,Mali,0.05
+22,Mauritania,0.16
+22,Mexico,0.03
+22,Moldova,0.12
+22,Mongolia,1.0
+22,Montenegro,1.0
+22,Morocco,0.05
+22,Mozambique,0.07
+22,Myanmar,0.06
+22,Namibia,1.0
+22,Nepal,0.0
+22,Netherlands,0.0
+22,New Caledonia,1.0
+22,New Zealand,0.16
+22,Nicaragua,0.03
+22,Niger,0.04
+22,Nigeria,0.02
+22,Norway,0.23
+22,Oman,0.95
+22,Pakistan,0.01
+22,Panama,0.38
+22,Papua New Guinea,0.05
+22,Paraguay,0.37
+22,Peru,0.21
+22,Philippines,0.05
+22,Poland,0.11
+22,Portugal,1.0
+22,Qatar,0.96
+22,Romania,0.06
+22,Rwanda,0.1
+22,Saudi Arabia,0.01
+22,Senegal,0.0
+22,Sierra Leone,0.01
+22,Slovakia,0.04
+22,Slovenia,1.0
+22,Solomon Islands,1.0
+22,Somalia,0.09
+22,South Sudan,0.59
+22,Sri Lanka,0.06
+22,Sudan,0.01
+22,Suriname,1.0
+22,Sweden,0.24
+22,Switzerland,0.22
+22,Syria,0.0
+22,Taiwan,0.09
+22,Tajikistan,0.18
+22,Thailand,0.02
+22,Togo,0.15
+22,Trinidad and Tobago,0.15
+22,Tunisia,0.21
+22,Turkey,0.01
+22,Turkmenistan,1.0
+22,Uganda,0.13
+22,Ukraine,0.1
+22,United Arab Emirates,0.37
+22,United Kingdom,0.12
+22,Uruguay,0.07
+22,Uzbekistan,0.22
+22,Vanuatu,1.0
+22,Venezuela,0.06
+22,Vietnam,0.05
+22,Yemen,0.0
+22,Zambia,0.02
+22,Zimbabwe,0.03
+23,Afghanistan,0.15
+23,Albania,1.0
+23,Algeria,0.0
+23,Angola,0.02
+23,Argentina,0.04
+23,Armenia,1.0
+23,Australia,0.16
+23,Austria,0.06
+23,Azerbaijan,0.13
+23,Bangladesh,0.16
+23,Belarus,0.99
+23,Belize,1.0
+23,Benin,0.19
+23,Bhutan,0.71
+23,Bolivia,0.34
+23,Bosnia and Herzegovina,0.69
+23,Botswana,0.52
+23,Brazil,0.01
+23,Brunei,0.05
+23,Bulgaria,0.32
+23,Burkina Faso,0.04
+23,Burundi,0.01
+23,Cambodia,1.0
+23,Cameroon,0.03
+23,Canada,0.03
+23,Central African Republic,0.17
+23,Chad,0.01
+23,Chile,0.44
+23,Colombia,0.31
+23,Costa Rica,0.14
+23,Croatia,1.0
+23,Cuba,1.0
+23,Cyprus,1.0
+23,Denmark,0.23
+23,Djibouti,0.38
+23,Dominican Republic,0.03
+23,Ecuador,0.24
+23,Egypt,0.01
+23,El Salvador,0.19
+23,Equatorial Guinea,0.0
+23,Estonia,1.0
+23,Ethiopia,0.02
+23,Falkland Islands,1.0
+23,Fiji,1.0
+23,Finland,1.0
+23,France,0.14
+23,Gabon,0.67
+23,Gambia,0.16
+23,Georgia,0.81
+23,Ghana,0.05
+23,Greece,0.91
+23,Greenland,1.0
+23,Guatemala,0.1
+23,Guinea,0.09
+23,Guyana,0.77
+23,Haiti,0.02
+23,Honduras,0.13
+23,Hungary,1.0
+23,Iceland,1.0
+23,Indonesia,0.01
+23,Iran,0.01
+23,Iraq,0.0
+23,Ireland,1.0
+23,Israel,0.37
+23,Italy,0.02
+23,Jamaica,0.23
+23,Jordan,1.0
+23,Kazakhstan,0.48
+23,Kenya,0.15
+23,Kuwait,1.0
+23,Kyrgyzstan,0.04
+23,Laos,1.0
+23,Latvia,0.14
+23,Lebanon,1.0
+23,Lesotho,0.28
+23,Liberia,0.11
+23,Libya,0.23
+23,Lithuania,0.04
+23,Luxembourg,1.0
+23,Madagascar,0.0
+23,Malawi,0.46
+23,Malaysia,0.02
+23,Mali,0.08
+23,Mauritania,0.2
+23,Mexico,0.03
+23,Moldova,0.25
+23,Mongolia,1.0
+23,Montenegro,1.0
+23,Morocco,0.05
+23,Mozambique,0.07
+23,Myanmar,0.07
+23,Namibia,1.0
+23,Nepal,0.0
+23,Netherlands,0.0
+23,New Caledonia,1.0
+23,New Zealand,0.2
+23,Nicaragua,0.04
+23,Niger,0.05
+23,Nigeria,0.02
+23,Norway,0.25
+23,Oman,1.0
+23,Pakistan,0.01
+23,Panama,0.57
+23,Papua New Guinea,0.06
+23,Paraguay,0.42
+23,Peru,0.24
+23,Philippines,0.05
+23,Poland,0.12
+23,Portugal,1.0
+23,Qatar,1.0
+23,Romania,0.07
+23,Rwanda,0.11
+23,Saudi Arabia,0.01
+23,Senegal,0.0
+23,Sierra Leone,0.01
+23,Slovakia,0.04
+23,Slovenia,1.0
+23,Solomon Islands,1.0
+23,Somalia,0.1
+23,South Sudan,0.76
+23,Sri Lanka,0.07
+23,Sudan,0.01
+23,Suriname,1.0
+23,Sweden,0.26
+23,Switzerland,0.25
+23,Syria,0.0
+23,Taiwan,0.11
+23,Tajikistan,0.23
+23,Thailand,0.02
+23,Togo,0.72
+23,Trinidad and Tobago,0.18
+23,Tunisia,0.25
+23,Turkey,0.02
+23,Turkmenistan,1.0
+23,Uganda,0.19
+23,Ukraine,0.16
+23,United Arab Emirates,0.41
+23,United Kingdom,0.13
+23,Uruguay,0.07
+23,Uzbekistan,0.25
+23,Vanuatu,1.0
+23,Venezuela,0.07
+23,Vietnam,0.05
+23,Yemen,0.0
+23,Zambia,0.02
+23,Zimbabwe,0.03
+24,Afghanistan,0.16
+24,Albania,1.0
+24,Algeria,0.0
+24,Angola,0.02
+24,Argentina,0.08
+24,Armenia,1.0
+24,Australia,0.17
+24,Austria,0.08
+24,Azerbaijan,0.16
+24,Bangladesh,0.17
+24,Belarus,1.0
+24,Belize,1.0
+24,Benin,0.23
+24,Bhutan,0.81
+24,Bolivia,0.37
+24,Bosnia and Herzegovina,0.74
+24,Botswana,0.56
+24,Brazil,0.01
+24,Brunei,0.06
+24,Bulgaria,0.35
+24,Burkina Faso,0.05
+24,Burundi,0.02
+24,Cambodia,1.0
+24,Cameroon,0.03
+24,Canada,0.03
+24,Central African Republic,0.19
+24,Chad,0.01
+24,Chile,0.55
+24,Colombia,0.44
+24,Costa Rica,0.16
+24,Croatia,1.0
+24,Cuba,1.0
+24,Cyprus,1.0
+24,Denmark,0.27
+24,Djibouti,0.51
+24,Dominican Republic,0.04
+24,Ecuador,0.27
+24,Egypt,0.02
+24,El Salvador,0.22
+24,Equatorial Guinea,0.0
+24,Estonia,1.0
+24,Ethiopia,0.02
+24,Falkland Islands,1.0
+24,Fiji,1.0
+24,Finland,1.0
+24,France,0.18
+24,Gabon,0.86
+24,Gambia,0.18
+24,Georgia,0.97
+24,Ghana,0.06
+24,Greece,0.99
+24,Greenland,1.0
+24,Guatemala,0.11
+24,Guinea,0.1
+24,Guyana,1.0
+24,Haiti,0.03
+24,Honduras,0.14
+24,Hungary,1.0
+24,Iceland,1.0
+24,Indonesia,0.02
+24,Iran,0.01
+24,Iraq,0.0
+24,Ireland,1.0
+24,Israel,0.45
+24,Italy,0.03
+24,Jamaica,0.26
+24,Jordan,1.0
+24,Kazakhstan,0.56
+24,Kenya,0.17
+24,Kuwait,1.0
+24,Kyrgyzstan,0.05
+24,Laos,1.0
+24,Latvia,0.15
+24,Lebanon,1.0
+24,Lesotho,0.38
+24,Liberia,0.12
+24,Libya,0.3
+24,Lithuania,0.06
+24,Luxembourg,1.0
+24,Madagascar,0.0
+24,Malawi,0.5
+24,Malaysia,0.03
+24,Mali,0.12
+24,Mauritania,0.24
+24,Mexico,0.08
+24,Moldova,0.45
+24,Mongolia,1.0
+24,Montenegro,1.0
+24,Morocco,0.05
+24,Mozambique,0.08
+24,Myanmar,0.08
+24,Namibia,1.0
+24,Nepal,0.0
+24,Netherlands,0.0
+24,New Caledonia,1.0
+24,New Zealand,0.24
+24,Nicaragua,0.18
+24,Niger,0.05
+24,Nigeria,0.03
+24,Norway,0.26
+24,Oman,1.0
+24,Pakistan,0.01
+24,Panama,0.76
+24,Papua New Guinea,0.06
+24,Paraguay,0.47
+24,Peru,0.28
+24,Philippines,0.05
+24,Poland,0.14
+24,Portugal,1.0
+24,Qatar,1.0
+24,Romania,0.08
+24,Rwanda,0.12
+24,Saudi Arabia,0.01
+24,Senegal,0.0
+24,Sierra Leone,0.01
+24,Slovakia,0.05
+24,Slovenia,1.0
+24,Solomon Islands,1.0
+24,Somalia,0.1
+24,South Sudan,0.94
+24,Sri Lanka,0.07
+24,Sudan,0.01
+24,Suriname,1.0
+24,Sweden,0.29
+24,Switzerland,0.27
+24,Syria,0.02
+24,Taiwan,0.13
+24,Tajikistan,0.28
+24,Thailand,0.03
+24,Togo,1.0
+24,Trinidad and Tobago,0.21
+24,Tunisia,0.28
+24,Turkey,0.03
+24,Turkmenistan,1.0
+24,Uganda,0.26
+24,Ukraine,0.23
+24,United Arab Emirates,0.45
+24,United Kingdom,0.15
+24,Uruguay,1.0
+24,Uzbekistan,0.28
+24,Vanuatu,1.0
+24,Venezuela,0.09
+24,Vietnam,0.06
+24,Yemen,0.0
+24,Zambia,0.03
+24,Zimbabwe,0.04
+25,Afghanistan,0.17
+25,Albania,1.0
+25,Algeria,0.01
+25,Angola,0.02
+25,Argentina,0.12
+25,Armenia,1.0
+25,Australia,0.2
+25,Austria,0.11
+25,Azerbaijan,0.18
+25,Bangladesh,0.19
+25,Belarus,1.0
+25,Belize,1.0
+25,Benin,0.28
+25,Bhutan,1.0
+25,Bolivia,0.4
+25,Bosnia and Herzegovina,0.79
+25,Botswana,0.6
+25,Brazil,0.03
+25,Brunei,0.06
+25,Bulgaria,0.38
+25,Burkina Faso,0.05
+25,Burundi,0.02
+25,Cambodia,1.0
+25,Cameroon,0.04
+25,Canada,0.03
+25,Central African Republic,0.22
+25,Chad,0.01
+25,Chile,0.66
+25,Colombia,0.56
+25,Costa Rica,0.17
+25,Croatia,1.0
+25,Cuba,1.0
+25,Cyprus,1.0
+25,Denmark,0.31
+25,Djibouti,0.64
+25,Dominican Republic,0.36
+25,Ecuador,0.29
+25,Egypt,0.02
+25,El Salvador,0.26
+25,Equatorial Guinea,0.0
+25,Estonia,1.0
+25,Ethiopia,0.02
+25,Falkland Islands,1.0
+25,Fiji,1.0
+25,Finland,1.0
+25,France,0.25
+25,Gabon,1.0
+25,Gambia,0.23
+25,Georgia,1.0
+25,Ghana,0.07
+25,Greece,1.0
+25,Greenland,1.0
+25,Guatemala,0.13
+25,Guinea,0.1
+25,Guyana,1.0
+25,Haiti,0.04
+25,Honduras,0.16
+25,Hungary,1.0
+25,Iceland,1.0
+25,Indonesia,0.02
+25,Iran,0.01
+25,Iraq,0.0
+25,Ireland,1.0
+25,Israel,0.54
+25,Italy,0.03
+25,Jamaica,0.29
+25,Jordan,1.0
+25,Kazakhstan,0.65
+25,Kenya,0.2
+25,Kuwait,1.0
+25,Kyrgyzstan,0.05
+25,Laos,1.0
+25,Latvia,0.16
+25,Lebanon,1.0
+25,Lesotho,0.47
+25,Liberia,0.14
+25,Libya,0.36
+25,Lithuania,0.07
+25,Luxembourg,1.0
+25,Madagascar,0.0
+25,Malawi,0.54
+25,Malaysia,0.03
+25,Mali,0.16
+25,Mauritania,0.28
+25,Mexico,0.12
+25,Moldova,0.66
+25,Mongolia,1.0
+25,Montenegro,1.0
+25,Morocco,0.14
+25,Mozambique,0.09
+25,Myanmar,0.1
+25,Namibia,1.0
+25,Nepal,0.0
+25,Netherlands,0.0
+25,New Caledonia,1.0
+25,New Zealand,0.27
+25,Nicaragua,0.33
+25,Niger,0.06
+25,Nigeria,0.03
+25,Norway,0.65
+25,Oman,1.0
+25,Pakistan,0.01
+25,Panama,0.94
+25,Papua New Guinea,0.07
+25,Paraguay,0.52
+25,Peru,0.31
+25,Philippines,0.06
+25,Poland,0.15
+25,Portugal,1.0
+25,Qatar,1.0
+25,Romania,0.09
+25,Rwanda,0.12
+25,Saudi Arabia,0.01
+25,Senegal,0.02
+25,Sierra Leone,0.01
+25,Slovakia,0.06
+25,Slovenia,1.0
+25,Solomon Islands,1.0
+25,Somalia,0.11
+25,South Sudan,1.0
+25,Sri Lanka,0.08
+25,Sudan,0.01
+25,Suriname,1.0
+25,Sweden,0.31
+25,Switzerland,0.3
+25,Syria,0.03
+25,Taiwan,0.14
+25,Tajikistan,0.32
+25,Thailand,0.03
+25,Togo,1.0
+25,Trinidad and Tobago,0.23
+25,Tunisia,0.32
+25,Turkey,0.03
+25,Turkmenistan,1.0
+25,Uganda,0.32
+25,Ukraine,0.29
+25,United Arab Emirates,0.49
+25,United Kingdom,0.17
+25,Uruguay,1.0
+25,Uzbekistan,0.31
+25,Vanuatu,1.0
+25,Venezuela,0.1
+25,Vietnam,0.07
+25,Yemen,0.0
+25,Zambia,0.03
+25,Zimbabwe,0.04
+26,Afghanistan,0.19
+26,Albania,1.0
+26,Algeria,0.01
+26,Angola,0.03
+26,Argentina,0.16
+26,Armenia,1.0
+26,Australia,0.23
+26,Austria,0.13
+26,Azerbaijan,0.2
+26,Bangladesh,0.2
+26,Belarus,1.0
+26,Belize,1.0
+26,Benin,0.32
+26,Bhutan,1.0
+26,Bolivia,0.43
+26,Bosnia and Herzegovina,0.96
+26,Botswana,0.64
+26,Brazil,0.04
+26,Brunei,0.07
+26,Bulgaria,0.5
+26,Burkina Faso,0.05
+26,Burundi,0.02
+26,Cambodia,1.0
+26,Cameroon,0.04
+26,Canada,0.04
+26,Central African Republic,0.24
+26,Chad,0.02
+26,Chile,0.77
+26,Colombia,0.69
+26,Costa Rica,0.19
+26,Croatia,1.0
+26,Cuba,1.0
+26,Cyprus,1.0
+26,Denmark,0.34
+26,Djibouti,0.77
+26,Dominican Republic,0.67
+26,Ecuador,0.42
+26,Egypt,0.02
+26,El Salvador,0.29
+26,Equatorial Guinea,0.0
+26,Estonia,1.0
+26,Ethiopia,0.03
+26,Falkland Islands,1.0
+26,Fiji,1.0
+26,Finland,1.0
+26,France,0.32
+26,Gabon,1.0
+26,Gambia,0.27
+26,Georgia,1.0
+26,Ghana,0.08
+26,Greece,1.0
+26,Greenland,1.0
+26,Guatemala,0.15
+26,Guinea,0.12
+26,Guyana,1.0
+26,Haiti,0.05
+26,Honduras,0.17
+26,Hungary,1.0
+26,Iceland,1.0
+26,Indonesia,0.04
+26,Iran,0.01
+26,Iraq,0.0
+26,Ireland,1.0
+26,Israel,0.62
+26,Italy,0.04
+26,Jamaica,0.33
+26,Jordan,1.0
+26,Kazakhstan,0.74
+26,Kenya,0.22
+26,Kuwait,1.0
+26,Kyrgyzstan,0.05
+26,Laos,1.0
+26,Latvia,0.17
+26,Lebanon,1.0
+26,Lesotho,0.57
+26,Liberia,0.32
+26,Libya,0.49
+26,Lithuania,0.11
+26,Luxembourg,1.0
+26,Madagascar,0.0
+26,Malawi,0.59
+26,Malaysia,0.42
+26,Mali,0.2
+26,Mauritania,0.33
+26,Mexico,0.17
+26,Moldova,0.86
+26,Mongolia,1.0
+26,Montenegro,1.0
+26,Morocco,0.23
+26,Mozambique,0.09
+26,Myanmar,0.12
+26,Namibia,1.0
+26,Nepal,0.0
+26,Netherlands,0.0
+26,New Caledonia,1.0
+26,New Zealand,0.31
+26,Nicaragua,0.47
+26,Niger,0.06
+26,Nigeria,0.04
+26,Norway,1.0
+26,Oman,1.0
+26,Pakistan,0.01
+26,Panama,1.0
+26,Papua New Guinea,0.08
+26,Paraguay,0.57
+26,Peru,0.34
+26,Philippines,0.06
+26,Poland,0.16
+26,Portugal,1.0
+26,Qatar,1.0
+26,Romania,0.1
+26,Rwanda,0.16
+26,Saudi Arabia,0.01
+26,Senegal,0.03
+26,Sierra Leone,0.02
+26,Slovakia,0.06
+26,Slovenia,1.0
+26,Solomon Islands,1.0
+26,Somalia,0.12
+26,South Sudan,1.0
+26,Sri Lanka,0.18
+26,Sudan,0.01
+26,Suriname,1.0
+26,Sweden,0.34
+26,Switzerland,0.32
+26,Syria,0.04
+26,Taiwan,0.16
+26,Tajikistan,0.57
+26,Thailand,0.04
+26,Togo,1.0
+26,Trinidad and Tobago,0.26
+26,Tunisia,0.36
+26,Turkey,0.04
+26,Turkmenistan,1.0
+26,Uganda,0.38
+26,Ukraine,0.36
+26,United Arab Emirates,0.53
+26,United Kingdom,0.19
+26,Uruguay,1.0
+26,Uzbekistan,0.4
+26,Vanuatu,1.0
+26,Venezuela,0.11
+26,Vietnam,0.09
+26,Yemen,0.01
+26,Zambia,0.04
+26,Zimbabwe,0.05
+27,Afghanistan,0.2
+27,Albania,1.0
+27,Algeria,0.01
+27,Angola,0.03
+27,Argentina,0.19
+27,Armenia,1.0
+27,Australia,0.26
+27,Austria,0.16
+27,Azerbaijan,0.22
+27,Bangladesh,0.22
+27,Belarus,1.0
+27,Belize,1.0
+27,Benin,0.36
+27,Bhutan,1.0
+27,Bolivia,0.46
+27,Bosnia and Herzegovina,1.0
+27,Botswana,0.68
+27,Brazil,0.05
+27,Brunei,0.07
+27,Bulgaria,0.63
+27,Burkina Faso,0.06
+27,Burundi,0.03
+27,Cambodia,1.0
+27,Cameroon,0.05
+27,Canada,0.04
+27,Central African Republic,0.27
+27,Chad,0.02
+27,Chile,0.88
+27,Colombia,0.82
+27,Costa Rica,0.2
+27,Croatia,1.0
+27,Cuba,1.0
+27,Cyprus,1.0
+27,Denmark,0.41
+27,Djibouti,0.9
+27,Dominican Republic,0.99
+27,Ecuador,0.55
+27,Egypt,0.02
+27,El Salvador,0.33
+27,Equatorial Guinea,0.25
+27,Estonia,1.0
+27,Ethiopia,0.03
+27,Falkland Islands,1.0
+27,Fiji,1.0
+27,Finland,1.0
+27,France,0.39
+27,Gabon,1.0
+27,Gambia,0.31
+27,Georgia,1.0
+27,Ghana,0.08
+27,Greece,1.0
+27,Greenland,1.0
+27,Guatemala,0.17
+27,Guinea,0.14
+27,Guyana,1.0
+27,Haiti,0.06
+27,Honduras,0.25
+27,Hungary,1.0
+27,Iceland,1.0
+27,Indonesia,0.05
+27,Iran,0.01
+27,Iraq,0.01
+27,Ireland,1.0
+27,Israel,0.7
+27,Italy,0.04
+27,Jamaica,0.36
+27,Jordan,1.0
+27,Kazakhstan,0.83
+27,Kenya,0.24
+27,Kuwait,1.0
+27,Kyrgyzstan,0.06
+27,Laos,1.0
+27,Latvia,0.18
+27,Lebanon,1.0
+27,Lesotho,0.66
+27,Liberia,0.51
+27,Libya,0.61
+27,Lithuania,0.15
+27,Luxembourg,1.0
+27,Madagascar,0.0
+27,Malawi,0.64
+27,Malaysia,0.8
+27,Mali,0.25
+27,Mauritania,0.37
+27,Mexico,0.24
+27,Moldova,1.0
+27,Mongolia,1.0
+27,Montenegro,1.0
+27,Morocco,0.32
+27,Mozambique,0.1
+27,Myanmar,0.14
+27,Namibia,1.0
+27,Nepal,0.0
+27,Netherlands,0.0
+27,New Caledonia,1.0
+27,New Zealand,0.35
+27,Nicaragua,0.62
+27,Niger,0.08
+27,Nigeria,0.04
+27,Norway,1.0
+27,Oman,1.0
+27,Pakistan,0.02
+27,Panama,1.0
+27,Papua New Guinea,0.09
+27,Paraguay,0.62
+27,Peru,0.37
+27,Philippines,0.07
+27,Poland,0.18
+27,Portugal,1.0
+27,Qatar,1.0
+27,Romania,0.11
+27,Rwanda,0.19
+27,Saudi Arabia,0.01
+27,Senegal,0.05
+27,Sierra Leone,0.02
+27,Slovakia,0.07
+27,Slovenia,1.0
+27,Solomon Islands,1.0
+27,Somalia,0.39
+27,South Sudan,1.0
+27,Sri Lanka,0.28
+27,Sudan,0.01
+27,Suriname,1.0
+27,Sweden,0.37
+27,Switzerland,0.35
+27,Syria,0.05
+27,Taiwan,0.17
+27,Tajikistan,1.0
+27,Thailand,0.04
+27,Togo,1.0
+27,Trinidad and Tobago,0.29
+27,Tunisia,0.43
+27,Turkey,0.05
+27,Turkmenistan,1.0
+27,Uganda,0.45
+27,Ukraine,0.42
+27,United Arab Emirates,0.57
+27,United Kingdom,0.22
+27,Uruguay,1.0
+27,Uzbekistan,0.5
+27,Vanuatu,1.0
+27,Venezuela,0.12
+27,Vietnam,0.1
+27,Yemen,0.01
+27,Zambia,0.04
+27,Zimbabwe,0.05
+28,Afghanistan,0.21
+28,Albania,1.0
+28,Algeria,0.01
+28,Angola,0.03
+28,Argentina,0.23
+28,Armenia,1.0
+28,Australia,0.29
+28,Austria,0.2
+28,Azerbaijan,0.24
+28,Bangladesh,0.23
+28,Belarus,1.0
+28,Belize,1.0
+28,Benin,0.41
+28,Bhutan,1.0
+28,Bolivia,0.58
+28,Bosnia and Herzegovina,1.0
+28,Botswana,1.0
+28,Brazil,0.06
+28,Brunei,0.08
+28,Bulgaria,0.75
+28,Burkina Faso,0.06
+28,Burundi,0.03
+28,Cambodia,1.0
+28,Cameroon,0.05
+28,Canada,0.04
+28,Central African Republic,0.46
+28,Chad,0.02
+28,Chile,1.0
+28,Colombia,0.94
+28,Costa Rica,0.22
+28,Croatia,1.0
+28,Cuba,1.0
+28,Cyprus,1.0
+28,Denmark,0.58
+28,Djibouti,1.0
+28,Dominican Republic,1.0
+28,Ecuador,0.68
+28,Egypt,0.03
+28,El Salvador,0.37
+28,Equatorial Guinea,0.49
+28,Estonia,1.0
+28,Ethiopia,0.04
+28,Falkland Islands,1.0
+28,Fiji,1.0
+28,Finland,1.0
+28,France,0.46
+28,Gabon,1.0
+28,Gambia,0.35
+28,Georgia,1.0
+28,Ghana,0.09
+28,Greece,1.0
+28,Greenland,1.0
+28,Guatemala,0.19
+28,Guinea,0.21
+28,Guyana,1.0
+28,Haiti,0.08
+28,Honduras,0.32
+28,Hungary,1.0
+28,Iceland,1.0
+28,Indonesia,0.07
+28,Iran,0.01
+28,Iraq,0.01
+28,Ireland,1.0
+28,Israel,0.79
+28,Italy,0.05
+28,Jamaica,0.39
+28,Jordan,1.0
+28,Kazakhstan,0.92
+28,Kenya,0.26
+28,Kuwait,1.0
+28,Kyrgyzstan,0.06
+28,Laos,1.0
+28,Latvia,0.19
+28,Lebanon,1.0
+28,Lesotho,0.75
+28,Liberia,0.72
+28,Libya,0.73
+28,Lithuania,0.18
+28,Luxembourg,1.0
+28,Madagascar,0.0
+28,Malawi,0.69
+28,Malaysia,1.0
+28,Mali,0.29
+28,Mauritania,0.41
+28,Mexico,0.32
+28,Moldova,1.0
+28,Mongolia,1.0
+28,Montenegro,1.0
+28,Morocco,0.41
+28,Mozambique,0.11
+28,Myanmar,0.16
+28,Namibia,1.0
+28,Nepal,0.0
+28,Netherlands,0.05
+28,New Caledonia,1.0
+28,New Zealand,0.43
+28,Nicaragua,0.77
+28,Niger,0.09
+28,Nigeria,0.04
+28,Norway,1.0
+28,Oman,1.0
+28,Pakistan,0.02
+28,Panama,1.0
+28,Papua New Guinea,0.1
+28,Paraguay,0.67
+28,Peru,0.4
+28,Philippines,0.08
+28,Poland,0.19
+28,Portugal,1.0
+28,Qatar,1.0
+28,Romania,0.14
+28,Rwanda,0.23
+28,Saudi Arabia,0.02
+28,Senegal,0.06
+28,Sierra Leone,0.02
+28,Slovakia,0.07
+28,Slovenia,1.0
+28,Solomon Islands,1.0
+28,Somalia,0.65
+28,South Sudan,1.0
+28,Sri Lanka,0.39
+28,Sudan,0.01
+28,Suriname,1.0
+28,Sweden,0.41
+28,Switzerland,0.37
+28,Syria,0.06
+28,Taiwan,0.36
+28,Tajikistan,1.0
+28,Thailand,0.05
+28,Togo,1.0
+28,Trinidad and Tobago,0.33
+28,Tunisia,0.5
+28,Turkey,0.05
+28,Turkmenistan,1.0
+28,Uganda,0.51
+28,Ukraine,0.48
+28,United Arab Emirates,0.6
+28,United Kingdom,0.25
+28,Uruguay,1.0
+28,Uzbekistan,0.59
+28,Vanuatu,1.0
+28,Venezuela,0.14
+28,Vietnam,0.12
+28,Yemen,0.01
+28,Zambia,0.05
+28,Zimbabwe,0.06
+29,Afghanistan,0.23
+29,Albania,1.0
+29,Algeria,0.01
+29,Angola,0.05
+29,Argentina,0.27
+29,Armenia,1.0
+29,Australia,0.32
+29,Austria,0.23
+29,Azerbaijan,0.38
+29,Bangladesh,0.25
+29,Belarus,1.0
+29,Belize,1.0
+29,Benin,0.45
+29,Bhutan,1.0
+29,Bolivia,0.71
+29,Bosnia and Herzegovina,1.0
+29,Botswana,1.0
+29,Brazil,0.08
+29,Brunei,0.08
+29,Bulgaria,0.88
+29,Burkina Faso,0.06
+29,Burundi,0.03
+29,Cambodia,1.0
+29,Cameroon,0.06
+29,Canada,0.05
+29,Central African Republic,0.65
+29,Chad,0.02
+29,Chile,1.0
+29,Colombia,1.0
+29,Costa Rica,0.24
+29,Croatia,1.0
+29,Cuba,1.0
+29,Cyprus,1.0
+29,Denmark,0.75
+29,Djibouti,1.0
+29,Dominican Republic,1.0
+29,Ecuador,0.81
+29,Egypt,0.03
+29,El Salvador,0.4
+29,Equatorial Guinea,0.74
+29,Estonia,1.0
+29,Ethiopia,0.04
+29,Falkland Islands,1.0
+29,Fiji,1.0
+29,Finland,1.0
+29,France,0.53
+29,Gabon,1.0
+29,Gambia,0.4
+29,Georgia,1.0
+29,Ghana,0.1
+29,Greece,1.0
+29,Greenland,1.0
+29,Guatemala,0.21
+29,Guinea,0.27
+29,Guyana,1.0
+29,Haiti,0.1
+29,Honduras,0.4
+29,Hungary,1.0
+29,Iceland,1.0
+29,Indonesia,0.08
+29,Iran,0.01
+29,Iraq,0.01
+29,Ireland,1.0
+29,Israel,0.87
+29,Italy,0.06
+29,Jamaica,0.43
+29,Jordan,1.0
+29,Kazakhstan,1.0
+29,Kenya,0.28
+29,Kuwait,1.0
+29,Kyrgyzstan,0.07
+29,Laos,1.0
+29,Latvia,0.25
+29,Lebanon,1.0
+29,Lesotho,0.86
+29,Liberia,1.0
+29,Libya,0.85
+29,Lithuania,0.22
+29,Luxembourg,1.0
+29,Madagascar,0.0
+29,Malawi,0.73
+29,Malaysia,1.0
+29,Mali,0.33
+29,Mauritania,0.45
+29,Mexico,0.4
+29,Moldova,1.0
+29,Mongolia,1.0
+29,Montenegro,1.0
+29,Morocco,0.51
+29,Mozambique,0.12
+29,Myanmar,0.18
+29,Namibia,1.0
+29,Nepal,0.0
+29,Netherlands,0.09
+29,New Caledonia,1.0
+29,New Zealand,0.51
+29,Nicaragua,0.91
+29,Niger,0.1
+29,Nigeria,0.05
+29,Norway,1.0
+29,Oman,1.0
+29,Pakistan,0.02
+29,Panama,1.0
+29,Papua New Guinea,0.1
+29,Paraguay,0.73
+29,Peru,0.44
+29,Philippines,0.08
+29,Poland,0.54
+29,Portugal,1.0
+29,Qatar,1.0
+29,Romania,0.16
+29,Rwanda,0.26
+29,Saudi Arabia,0.02
+29,Senegal,0.08
+29,Sierra Leone,0.02
+29,Slovakia,0.08
+29,Slovenia,1.0
+29,Solomon Islands,1.0
+29,Somalia,0.92
+29,South Sudan,1.0
+29,Sri Lanka,0.49
+29,Sudan,0.01
+29,Suriname,1.0
+29,Sweden,0.44
+29,Switzerland,0.4
+29,Syria,0.08
+29,Taiwan,0.55
+29,Tajikistan,1.0
+29,Thailand,0.05
+29,Togo,1.0
+29,Trinidad and Tobago,0.36
+29,Tunisia,0.57
+29,Turkey,0.06
+29,Turkmenistan,1.0
+29,Uganda,0.57
+29,Ukraine,0.55
+29,United Arab Emirates,0.64
+29,United Kingdom,0.28
+29,Uruguay,1.0
+29,Uzbekistan,0.98
+29,Vanuatu,1.0
+29,Venezuela,0.15
+29,Vietnam,0.13
+29,Yemen,0.01
+29,Zambia,0.06
+29,Zimbabwe,0.06
+30,Afghanistan,0.26
+30,Albania,1.0
+30,Algeria,0.01
+30,Angola,0.07
+30,Argentina,0.31
+30,Armenia,1.0
+30,Australia,0.35
+30,Austria,0.27
+30,Azerbaijan,0.78
+30,Bangladesh,0.28
+30,Belarus,1.0
+30,Belize,1.0
+30,Benin,0.5
+30,Bhutan,1.0
+30,Bolivia,0.83
+30,Bosnia and Herzegovina,1.0
+30,Botswana,1.0
+30,Brazil,0.09
+30,Brunei,0.09
+30,Bulgaria,1.0
+30,Burkina Faso,0.07
+30,Burundi,0.03
+30,Cambodia,1.0
+30,Cameroon,0.07
+30,Canada,0.05
+30,Central African Republic,0.84
+30,Chad,0.03
+30,Chile,1.0
+30,Colombia,1.0
+30,Costa Rica,0.25
+30,Croatia,1.0
+30,Cuba,1.0
+30,Cyprus,1.0
+30,Denmark,0.92
+30,Djibouti,1.0
+30,Dominican Republic,1.0
+30,Ecuador,0.94
+30,Egypt,0.03
+30,El Salvador,0.44
+30,Equatorial Guinea,0.98
+30,Estonia,1.0
+30,Ethiopia,0.05
+30,Falkland Islands,1.0
+30,Fiji,1.0
+30,Finland,1.0
+30,France,0.6
+30,Gabon,1.0
+30,Gambia,0.44
+30,Georgia,1.0
+30,Ghana,0.11
+30,Greece,1.0
+30,Greenland,1.0
+30,Guatemala,0.23
+30,Guinea,0.59
+30,Guyana,1.0
+30,Haiti,0.11
+30,Honduras,0.47
+30,Hungary,1.0
+30,Iceland,1.0
+30,Indonesia,0.1
+30,Iran,0.01
+30,Iraq,0.01
+30,Ireland,1.0
+30,Israel,0.95
+30,Italy,0.07
+30,Jamaica,0.59
+30,Jordan,1.0
+30,Kazakhstan,1.0
+30,Kenya,0.31
+30,Kuwait,1.0
+30,Kyrgyzstan,0.07
+30,Laos,1.0
+30,Latvia,0.71
+30,Lebanon,1.0
+30,Lesotho,0.97
+30,Liberia,1.0
+30,Libya,0.98
+30,Lithuania,0.26
+30,Luxembourg,1.0
+30,Madagascar,0.01
+30,Malawi,0.79
+30,Malaysia,1.0
+30,Mali,0.37
+30,Mauritania,0.49
+30,Mexico,0.48
+30,Moldova,1.0
+30,Mongolia,1.0
+30,Montenegro,1.0
+30,Morocco,0.6
+30,Mozambique,0.21
+30,Myanmar,0.2
+30,Namibia,1.0
+30,Nepal,0.0
+30,Netherlands,0.14
+30,New Caledonia,1.0
+30,New Zealand,0.59
+30,Nicaragua,1.0
+30,Niger,0.12
+30,Nigeria,0.05
+30,Norway,1.0
+30,Oman,1.0
+30,Pakistan,0.07
+30,Panama,1.0
+30,Papua New Guinea,0.11
+30,Paraguay,0.78
+30,Peru,0.47
+30,Philippines,0.09
+30,Poland,0.92
+30,Portugal,1.0
+30,Qatar,1.0
+30,Romania,0.19
+30,Rwanda,0.3
+30,Saudi Arabia,0.02
+30,Senegal,0.09
+30,Sierra Leone,0.02
+30,Slovakia,0.09
+30,Slovenia,1.0
+30,Solomon Islands,1.0
+30,Somalia,1.0
+30,South Sudan,1.0
+30,Sri Lanka,0.6
+30,Sudan,0.02
+30,Suriname,1.0
+30,Sweden,0.47
+30,Switzerland,0.42
+30,Syria,0.09
+30,Taiwan,0.74
+30,Tajikistan,1.0
+30,Thailand,0.06
+30,Togo,1.0
+30,Trinidad and Tobago,0.4
+30,Tunisia,0.65
+30,Turkey,0.07
+30,Turkmenistan,1.0
+30,Uganda,0.64
+30,Ukraine,0.61
+30,United Arab Emirates,0.73
+30,United Kingdom,0.31
+30,Uruguay,1.0
+30,Uzbekistan,1.0
+30,Vanuatu,1.0
+30,Venezuela,0.16
+30,Vietnam,0.15
+30,Yemen,0.01
+30,Zambia,0.07
+30,Zimbabwe,0.07
+31,Afghanistan,0.3
+31,Albania,1.0
+31,Algeria,0.02
+31,Angola,0.08
+31,Argentina,0.34
+31,Armenia,1.0
+31,Australia,0.38
+31,Austria,0.31
+31,Azerbaijan,1.0
+31,Bangladesh,0.3
+31,Belarus,1.0
+31,Belize,1.0
+31,Benin,0.54
+31,Bhutan,1.0
+31,Bolivia,0.95
+31,Bosnia and Herzegovina,1.0
+31,Botswana,1.0
+31,Brazil,0.1
+31,Brunei,0.64
+31,Bulgaria,1.0
+31,Burkina Faso,0.07
+31,Burundi,0.04
+31,Cambodia,1.0
+31,Cameroon,0.07
+31,Canada,0.05
+31,Central African Republic,1.0
+31,Chad,0.05
+31,Chile,1.0
+31,Colombia,1.0
+31,Costa Rica,0.27
+31,Croatia,1.0
+31,Cuba,1.0
+31,Cyprus,1.0
+31,Denmark,1.0
+31,Djibouti,1.0
+31,Dominican Republic,1.0
+31,Ecuador,1.0
+31,Egypt,0.03
+31,El Salvador,0.47
+31,Equatorial Guinea,1.0
+31,Estonia,1.0
+31,Ethiopia,0.05
+31,Falkland Islands,1.0
+31,Fiji,1.0
+31,Finland,1.0
+31,France,0.67
+31,Gabon,1.0
+31,Gambia,0.48
+31,Georgia,1.0
+31,Ghana,0.11
+31,Greece,1.0
+31,Greenland,1.0
+31,Guatemala,0.25
+31,Guinea,0.91
+31,Guyana,1.0
+31,Haiti,0.13
+31,Honduras,0.54
+31,Hungary,1.0
+31,Iceland,1.0
+31,Indonesia,0.11
+31,Iran,0.01
+31,Iraq,0.03
+31,Ireland,1.0
+31,Israel,1.0
+31,Italy,0.09
+31,Jamaica,0.75
+31,Jordan,1.0
+31,Kazakhstan,1.0
+31,Kenya,0.33
+31,Kuwait,1.0
+31,Kyrgyzstan,0.07
+31,Laos,1.0
+31,Latvia,1.0
+31,Lebanon,1.0
+31,Lesotho,1.0
+31,Liberia,1.0
+31,Libya,1.0
+31,Lithuania,0.34
+31,Luxembourg,1.0
+31,Madagascar,0.01
+31,Malawi,0.86
+31,Malaysia,1.0
+31,Mali,0.42
+31,Mauritania,0.53
+31,Mexico,0.56
+31,Moldova,1.0
+31,Mongolia,1.0
+31,Montenegro,1.0
+31,Morocco,0.69
+31,Mozambique,0.31
+31,Myanmar,0.22
+31,Namibia,1.0
+31,Nepal,0.0
+31,Netherlands,0.18
+31,New Caledonia,1.0
+31,New Zealand,0.67
+31,Nicaragua,1.0
+31,Niger,0.13
+31,Nigeria,0.06
+31,Norway,1.0
+31,Oman,1.0
+31,Pakistan,0.13
+31,Panama,1.0
+31,Papua New Guinea,0.12
+31,Paraguay,0.83
+31,Peru,0.5
+31,Philippines,0.09
+31,Poland,1.0
+31,Portugal,1.0
+31,Qatar,1.0
+31,Romania,0.22
+31,Rwanda,0.34
+31,Saudi Arabia,0.21
+31,Senegal,0.11
+31,Sierra Leone,0.02
+31,Slovakia,0.12
+31,Slovenia,1.0
+31,Solomon Islands,1.0
+31,Somalia,1.0
+31,South Sudan,1.0
+31,Sri Lanka,0.7
+31,Sudan,0.02
+31,Suriname,1.0
+31,Sweden,0.51
+31,Switzerland,0.45
+31,Syria,0.1
+31,Taiwan,0.93
+31,Tajikistan,1.0
+31,Thailand,0.06
+31,Togo,1.0
+31,Trinidad and Tobago,0.43
+31,Tunisia,0.73
+31,Turkey,0.08
+31,Turkmenistan,1.0
+31,Uganda,0.7
+31,Ukraine,0.68
+31,United Arab Emirates,0.81
+31,United Kingdom,0.34
+31,Uruguay,1.0
+31,Uzbekistan,1.0
+31,Vanuatu,1.0
+31,Venezuela,0.17
+31,Vietnam,0.18
+31,Yemen,0.01
+31,Zambia,0.07
+31,Zimbabwe,0.07
+32,Afghanistan,0.33
+32,Albania,1.0
+32,Algeria,0.02
+32,Angola,0.1
+32,Argentina,0.38
+32,Armenia,1.0
+32,Australia,0.41
+32,Austria,0.34
+32,Azerbaijan,1.0
+32,Bangladesh,0.33
+32,Belarus,1.0
+32,Belize,1.0
+32,Benin,0.58
+32,Bhutan,1.0
+32,Bolivia,1.0
+32,Bosnia and Herzegovina,1.0
+32,Botswana,1.0
+32,Brazil,0.11
+32,Brunei,1.0
+32,Bulgaria,1.0
+32,Burkina Faso,0.08
+32,Burundi,0.05
+32,Cambodia,1.0
+32,Cameroon,0.08
+32,Canada,0.07
+32,Central African Republic,1.0
+32,Chad,0.06
+32,Chile,1.0
+32,Colombia,1.0
+32,Costa Rica,0.28
+32,Croatia,1.0
+32,Cuba,1.0
+32,Cyprus,1.0
+32,Denmark,1.0
+32,Djibouti,1.0
+32,Dominican Republic,1.0
+32,Ecuador,1.0
+32,Egypt,0.03
+32,El Salvador,0.51
+32,Equatorial Guinea,1.0
+32,Estonia,1.0
+32,Ethiopia,0.06
+32,Falkland Islands,1.0
+32,Fiji,1.0
+32,Finland,1.0
+32,France,0.74
+32,Gabon,1.0
+32,Gambia,0.53
+32,Georgia,1.0
+32,Ghana,0.12
+32,Greece,1.0
+32,Greenland,1.0
+32,Guatemala,0.27
+32,Guinea,1.0
+32,Guyana,1.0
+32,Haiti,0.14
+32,Honduras,0.64
+32,Hungary,1.0
+32,Iceland,1.0
+32,Indonesia,0.13
+32,Iran,0.01
+32,Iraq,0.06
+32,Ireland,1.0
+32,Israel,1.0
+32,Italy,0.12
+32,Jamaica,0.9
+32,Jordan,1.0
+32,Kazakhstan,1.0
+32,Kenya,0.35
+32,Kuwait,1.0
+32,Kyrgyzstan,0.08
+32,Laos,1.0
+32,Latvia,1.0
+32,Lebanon,1.0
+32,Lesotho,1.0
+32,Liberia,1.0
+32,Libya,1.0
+32,Lithuania,0.46
+32,Luxembourg,1.0
+32,Madagascar,0.01
+32,Malawi,0.93
+32,Malaysia,1.0
+32,Mali,0.46
+32,Mauritania,0.57
+32,Mexico,0.64
+32,Moldova,1.0
+32,Mongolia,1.0
+32,Montenegro,1.0
+32,Morocco,0.78
+32,Mozambique,0.41
+32,Myanmar,0.24
+32,Namibia,1.0
+32,Nepal,0.0
+32,Netherlands,0.23
+32,New Caledonia,1.0
+32,New Zealand,0.76
+32,Nicaragua,1.0
+32,Niger,0.14
+32,Nigeria,0.06
+32,Norway,1.0
+32,Oman,1.0
+32,Pakistan,0.18
+32,Panama,1.0
+32,Papua New Guinea,0.13
+32,Paraguay,0.88
+32,Peru,0.53
+32,Philippines,0.1
+32,Poland,1.0
+32,Portugal,1.0
+32,Qatar,1.0
+32,Romania,0.24
+32,Rwanda,0.37
+32,Saudi Arabia,0.4
+32,Senegal,0.12
+32,Sierra Leone,0.06
+32,Slovakia,0.16
+32,Slovenia,1.0
+32,Solomon Islands,1.0
+32,Somalia,1.0
+32,South Sudan,1.0
+32,Sri Lanka,0.8
+32,Sudan,0.02
+32,Suriname,1.0
+32,Sweden,0.54
+32,Switzerland,0.47
+32,Syria,0.12
+32,Taiwan,1.0
+32,Tajikistan,1.0
+32,Thailand,0.08
+32,Togo,1.0
+32,Trinidad and Tobago,0.46
+32,Tunisia,0.8
+32,Turkey,0.09
+32,Turkmenistan,1.0
+32,Uganda,0.76
+32,Ukraine,0.74
+32,United Arab Emirates,0.89
+32,United Kingdom,0.55
+32,Uruguay,1.0
+32,Uzbekistan,1.0
+32,Vanuatu,1.0
+32,Venezuela,0.18
+32,Vietnam,0.2
+32,Yemen,0.01
+32,Zambia,0.08
+32,Zimbabwe,0.08
+33,Afghanistan,0.36
+33,Albania,1.0
+33,Algeria,0.03
+33,Angola,0.12
+33,Argentina,0.42
+33,Armenia,1.0
+33,Australia,0.44
+33,Austria,0.38
+33,Azerbaijan,1.0
+33,Bangladesh,0.37
+33,Belarus,1.0
+33,Belize,1.0
+33,Benin,0.63
+33,Bhutan,1.0
+33,Bolivia,1.0
+33,Bosnia and Herzegovina,1.0
+33,Botswana,1.0
+33,Brazil,0.13
+33,Brunei,1.0
+33,Bulgaria,1.0
+33,Burkina Faso,0.08
+33,Burundi,0.05
+33,Cambodia,1.0
+33,Cameroon,0.09
+33,Canada,0.1
+33,Central African Republic,1.0
+33,Chad,0.07
+33,Chile,1.0
+33,Colombia,1.0
+33,Costa Rica,0.3
+33,Croatia,1.0
+33,Cuba,1.0
+33,Cyprus,1.0
+33,Denmark,1.0
+33,Djibouti,1.0
+33,Dominican Republic,1.0
+33,Ecuador,1.0
+33,Egypt,0.04
+33,El Salvador,0.55
+33,Equatorial Guinea,1.0
+33,Estonia,1.0
+33,Ethiopia,0.06
+33,Falkland Islands,1.0
+33,Fiji,1.0
+33,Finland,1.0
+33,France,0.8
+33,Gabon,1.0
+33,Gambia,0.57
+33,Georgia,1.0
+33,Ghana,0.13
+33,Greece,1.0
+33,Greenland,1.0
+33,Guatemala,0.29
+33,Guinea,1.0
+33,Guyana,1.0
+33,Haiti,0.16
+33,Honduras,0.73
+33,Hungary,1.0
+33,Iceland,1.0
+33,Indonesia,0.14
+33,Iran,0.01
+33,Iraq,0.1
+33,Ireland,1.0
+33,Israel,1.0
+33,Italy,0.14
+33,Jamaica,1.0
+33,Jordan,1.0
+33,Kazakhstan,1.0
+33,Kenya,0.37
+33,Kuwait,1.0
+33,Kyrgyzstan,0.08
+33,Laos,1.0
+33,Latvia,1.0
+33,Lebanon,1.0
+33,Lesotho,1.0
+33,Liberia,1.0
+33,Libya,1.0
+33,Lithuania,0.58
+33,Luxembourg,1.0
+33,Madagascar,0.01
+33,Malawi,1.0
+33,Malaysia,1.0
+33,Mali,0.5
+33,Mauritania,0.61
+33,Mexico,0.72
+33,Moldova,1.0
+33,Mongolia,1.0
+33,Montenegro,1.0
+33,Morocco,0.96
+33,Mozambique,0.5
+33,Myanmar,0.26
+33,Namibia,1.0
+33,Nepal,0.0
+33,Netherlands,0.27
+33,New Caledonia,1.0
+33,New Zealand,0.84
+33,Nicaragua,1.0
+33,Niger,0.16
+33,Nigeria,0.06
+33,Norway,1.0
+33,Oman,1.0
+33,Pakistan,0.24
+33,Panama,1.0
+33,Papua New Guinea,0.14
+33,Paraguay,0.93
+33,Peru,0.56
+33,Philippines,0.15
+33,Poland,1.0
+33,Portugal,1.0
+33,Qatar,1.0
+33,Romania,0.27
+33,Rwanda,0.41
+33,Saudi Arabia,0.59
+33,Senegal,0.14
+33,Sierra Leone,0.1
+33,Slovakia,0.19
+33,Slovenia,1.0
+33,Solomon Islands,1.0
+33,Somalia,1.0
+33,South Sudan,1.0
+33,Sri Lanka,0.91
+33,Sudan,0.02
+33,Suriname,1.0
+33,Sweden,0.57
+33,Switzerland,0.5
+33,Syria,0.13
+33,Taiwan,1.0
+33,Tajikistan,1.0
+33,Thailand,0.1
+33,Togo,1.0
+33,Trinidad and Tobago,0.5
+33,Tunisia,0.88
+33,Turkey,0.1
+33,Turkmenistan,1.0
+33,Uganda,0.83
+33,Ukraine,0.81
+33,United Arab Emirates,0.98
+33,United Kingdom,0.75
+33,Uruguay,1.0
+33,Uzbekistan,1.0
+33,Vanuatu,1.0
+33,Venezuela,0.2
+33,Vietnam,0.23
+33,Yemen,0.01
+33,Zambia,0.22
+33,Zimbabwe,0.08
+34,Afghanistan,0.42
+34,Albania,1.0
+34,Algeria,0.04
+34,Angola,0.14
+34,Argentina,0.46
+34,Armenia,1.0
+34,Australia,0.91
+34,Austria,0.56
+34,Azerbaijan,1.0
+34,Bangladesh,0.41
+34,Belarus,1.0
+34,Belize,1.0
+34,Benin,0.67
+34,Bhutan,1.0
+34,Bolivia,1.0
+34,Bosnia and Herzegovina,1.0
+34,Botswana,1.0
+34,Brazil,0.14
+34,Brunei,1.0
+34,Bulgaria,1.0
+34,Burkina Faso,0.09
+34,Burundi,0.06
+34,Cambodia,1.0
+34,Cameroon,0.1
+34,Canada,0.12
+34,Central African Republic,1.0
+34,Chad,0.08
+34,Chile,1.0
+34,Colombia,1.0
+34,Costa Rica,0.32
+34,Croatia,1.0
+34,Cuba,1.0
+34,Cyprus,1.0
+34,Denmark,1.0
+34,Djibouti,1.0
+34,Dominican Republic,1.0
+34,Ecuador,1.0
+34,Egypt,0.06
+34,El Salvador,0.88
+34,Equatorial Guinea,1.0
+34,Estonia,1.0
+34,Ethiopia,0.07
+34,Falkland Islands,1.0
+34,Fiji,1.0
+34,Finland,1.0
+34,France,0.87
+34,Gabon,1.0
+34,Gambia,0.62
+34,Georgia,1.0
+34,Ghana,0.14
+34,Greece,1.0
+34,Greenland,1.0
+34,Guatemala,0.31
+34,Guinea,1.0
+34,Guyana,1.0
+34,Haiti,0.17
+34,Honduras,0.82
+34,Hungary,1.0
+34,Iceland,1.0
+34,Indonesia,0.16
+34,Iran,0.01
+34,Iraq,0.14
+34,Ireland,1.0
+34,Israel,1.0
+34,Italy,0.17
+34,Jamaica,1.0
+34,Jordan,1.0
+34,Kazakhstan,1.0
+34,Kenya,0.4
+34,Kuwait,1.0
+34,Kyrgyzstan,0.09
+34,Laos,1.0
+34,Latvia,1.0
+34,Lebanon,1.0
+34,Lesotho,1.0
+34,Liberia,1.0
+34,Libya,1.0
+34,Lithuania,0.7
+34,Luxembourg,1.0
+34,Madagascar,0.01
+34,Malawi,1.0
+34,Malaysia,1.0
+34,Mali,0.54
+34,Mauritania,1.0
+34,Mexico,0.81
+34,Moldova,1.0
+34,Mongolia,1.0
+34,Montenegro,1.0
+34,Morocco,1.0
+34,Mozambique,0.6
+34,Myanmar,0.3
+34,Namibia,1.0
+34,Nepal,0.0
+34,Netherlands,0.32
+34,New Caledonia,1.0
+34,New Zealand,0.93
+34,Nicaragua,1.0
+34,Niger,0.18
+34,Nigeria,0.07
+34,Norway,1.0
+34,Oman,1.0
+34,Pakistan,0.29
+34,Panama,1.0
+34,Papua New Guinea,0.14
+34,Paraguay,0.98
+34,Peru,0.68
+34,Philippines,0.2
+34,Poland,1.0
+34,Portugal,1.0
+34,Qatar,1.0
+34,Romania,0.29
+34,Rwanda,0.44
+34,Saudi Arabia,0.78
+34,Senegal,0.15
+34,Sierra Leone,0.14
+34,Slovakia,0.23
+34,Slovenia,1.0
+34,Solomon Islands,1.0
+34,Somalia,1.0
+34,South Sudan,1.0
+34,Sri Lanka,1.0
+34,Sudan,0.02
+34,Suriname,1.0
+34,Sweden,0.61
+34,Switzerland,0.52
+34,Syria,0.14
+34,Taiwan,1.0
+34,Tajikistan,1.0
+34,Thailand,0.12
+34,Togo,1.0
+34,Trinidad and Tobago,0.53
+34,Tunisia,0.95
+34,Turkey,0.11
+34,Turkmenistan,1.0
+34,Uganda,0.89
+34,Ukraine,0.87
+34,United Arab Emirates,1.0
+34,United Kingdom,0.95
+34,Uruguay,1.0
+34,Uzbekistan,1.0
+34,Vanuatu,1.0
+34,Venezuela,0.21
+34,Vietnam,0.26
+34,Yemen,0.01
+34,Zambia,0.35
+34,Zimbabwe,0.09
+35,Afghanistan,0.48
+35,Albania,1.0
+35,Algeria,0.06
+35,Angola,0.15
+35,Argentina,0.49
+35,Armenia,1.0
+35,Australia,1.0
+35,Austria,0.73
+35,Azerbaijan,1.0
+35,Bangladesh,0.45
+35,Belarus,1.0
+35,Belize,1.0
+35,Benin,0.72
+35,Bhutan,1.0
+35,Bolivia,1.0
+35,Bosnia and Herzegovina,1.0
+35,Botswana,1.0
+35,Brazil,0.15
+35,Brunei,1.0
+35,Bulgaria,1.0
+35,Burkina Faso,0.09
+35,Burundi,0.07
+35,Cambodia,1.0
+35,Cameroon,0.1
+35,Canada,0.15
+35,Central African Republic,1.0
+35,Chad,0.09
+35,Chile,1.0
+35,Colombia,1.0
+35,Costa Rica,0.33
+35,Croatia,1.0
+35,Cuba,1.0
+35,Cyprus,1.0
+35,Denmark,1.0
+35,Djibouti,1.0
+35,Dominican Republic,1.0
+35,Ecuador,1.0
+35,Egypt,0.08
+35,El Salvador,1.0
+35,Equatorial Guinea,1.0
+35,Estonia,1.0
+35,Ethiopia,0.07
+35,Falkland Islands,1.0
+35,Fiji,1.0
+35,Finland,1.0
+35,France,0.94
+35,Gabon,1.0
+35,Gambia,0.66
+35,Georgia,1.0
+35,Ghana,0.14
+35,Greece,1.0
+35,Greenland,1.0
+35,Guatemala,0.33
+35,Guinea,1.0
+35,Guyana,1.0
+35,Haiti,0.19
+35,Honduras,0.92
+35,Hungary,1.0
+35,Iceland,1.0
+35,Indonesia,0.17
+35,Iran,0.01
+35,Iraq,0.18
+35,Ireland,1.0
+35,Israel,1.0
+35,Italy,0.19
+35,Jamaica,1.0
+35,Jordan,1.0
+35,Kazakhstan,1.0
+35,Kenya,0.43
+35,Kuwait,1.0
+35,Kyrgyzstan,0.09
+35,Laos,1.0
+35,Latvia,1.0
+35,Lebanon,1.0
+35,Lesotho,1.0
+35,Liberia,1.0
+35,Libya,1.0
+35,Lithuania,1.0
+35,Luxembourg,1.0
+35,Madagascar,0.01
+35,Malawi,1.0
+35,Malaysia,1.0
+35,Mali,0.59
+35,Mauritania,1.0
+35,Mexico,0.89
+35,Moldova,1.0
+35,Mongolia,1.0
+35,Montenegro,1.0
+35,Morocco,1.0
+35,Mozambique,0.7
+35,Myanmar,0.35
+35,Namibia,1.0
+35,Nepal,0.0
+35,Netherlands,0.36
+35,New Caledonia,1.0
+35,New Zealand,1.0
+35,Nicaragua,1.0
+35,Niger,0.2
+35,Nigeria,0.07
+35,Norway,1.0
+35,Oman,1.0
+35,Pakistan,0.35
+35,Panama,1.0
+35,Papua New Guinea,0.15
+35,Paraguay,1.0
+35,Peru,0.8
+35,Philippines,0.26
+35,Poland,1.0
+35,Portugal,1.0
+35,Qatar,1.0
+35,Romania,0.32
+35,Rwanda,0.48
+35,Saudi Arabia,0.97
+35,Senegal,0.17
+35,Sierra Leone,0.18
+35,Slovakia,0.26
+35,Slovenia,1.0
+35,Solomon Islands,1.0
+35,Somalia,1.0
+35,South Sudan,1.0
+35,Sri Lanka,1.0
+35,Sudan,0.02
+35,Suriname,1.0
+35,Sweden,0.64
+35,Switzerland,0.55
+35,Syria,0.16
+35,Taiwan,1.0
+35,Tajikistan,1.0
+35,Thailand,0.15
+35,Togo,1.0
+35,Trinidad and Tobago,0.57
+35,Tunisia,1.0
+35,Turkey,0.12
+35,Turkmenistan,1.0
+35,Uganda,0.96
+35,Ukraine,0.94
+35,United Arab Emirates,1.0
+35,United Kingdom,1.0
+35,Uruguay,1.0
+35,Uzbekistan,1.0
+35,Vanuatu,1.0
+35,Venezuela,0.22
+35,Vietnam,0.29
+35,Yemen,0.02
+35,Zambia,0.57
+35,Zimbabwe,0.09
+36,Afghanistan,0.53
+36,Albania,1.0
+36,Algeria,0.07
+36,Angola,0.17
+36,Argentina,0.63
+36,Armenia,1.0
+36,Australia,1.0
+36,Austria,0.91
+36,Azerbaijan,1.0
+36,Bangladesh,0.5
+36,Belarus,1.0
+36,Belize,1.0
+36,Benin,0.91
+36,Bhutan,1.0
+36,Bolivia,1.0
+36,Bosnia and Herzegovina,1.0
+36,Botswana,1.0
+36,Brazil,0.18
+36,Brunei,1.0
+36,Bulgaria,1.0
+36,Burkina Faso,0.1
+36,Burundi,0.08
+36,Cambodia,1.0
+36,Cameroon,0.11
+36,Canada,0.18
+36,Central African Republic,1.0
+36,Chad,0.11
+36,Chile,1.0
+36,Colombia,1.0
+36,Costa Rica,0.5
+36,Croatia,1.0
+36,Cuba,1.0
+36,Cyprus,1.0
+36,Denmark,1.0
+36,Djibouti,1.0
+36,Dominican Republic,1.0
+36,Ecuador,1.0
+36,Egypt,0.1
+36,El Salvador,1.0
+36,Equatorial Guinea,1.0
+36,Estonia,1.0
+36,Ethiopia,0.08
+36,Falkland Islands,1.0
+36,Fiji,1.0
+36,Finland,1.0
+36,France,1.0
+36,Gabon,1.0
+36,Gambia,1.0
+36,Georgia,1.0
+36,Ghana,0.15
+36,Greece,1.0
+36,Greenland,1.0
+36,Guatemala,0.34
+36,Guinea,1.0
+36,Guyana,1.0
+36,Haiti,0.2
+36,Honduras,1.0
+36,Hungary,1.0
+36,Iceland,1.0
+36,Indonesia,0.19
+36,Iran,0.01
+36,Iraq,0.22
+36,Ireland,1.0
+36,Israel,1.0
+36,Italy,0.22
+36,Jamaica,1.0
+36,Jordan,1.0
+36,Kazakhstan,1.0
+36,Kenya,0.46
+36,Kuwait,1.0
+36,Kyrgyzstan,0.09
+36,Laos,1.0
+36,Latvia,1.0
+36,Lebanon,1.0
+36,Lesotho,1.0
+36,Liberia,1.0
+36,Libya,1.0
+36,Lithuania,1.0
+36,Luxembourg,1.0
+36,Madagascar,0.01
+36,Malawi,1.0
+36,Malaysia,1.0
+36,Mali,0.63
+36,Mauritania,1.0
+36,Mexico,0.97
+36,Moldova,1.0
+36,Mongolia,1.0
+36,Montenegro,1.0
+36,Morocco,1.0
+36,Mozambique,0.8
+36,Myanmar,0.41
+36,Namibia,1.0
+36,Nepal,0.0
+36,Netherlands,0.41
+36,New Caledonia,1.0
+36,New Zealand,1.0
+36,Nicaragua,1.0
+36,Niger,0.22
+36,Nigeria,0.08
+36,Norway,1.0
+36,Oman,1.0
+36,Pakistan,0.4
+36,Panama,1.0
+36,Papua New Guinea,0.16
+36,Paraguay,1.0
+36,Peru,0.92
+36,Philippines,0.32
+36,Poland,1.0
+36,Portugal,1.0
+36,Qatar,1.0
+36,Romania,0.34
+36,Rwanda,0.51
+36,Saudi Arabia,1.0
+36,Senegal,0.18
+36,Sierra Leone,0.22
+36,Slovakia,0.3
+36,Slovenia,1.0
+36,Solomon Islands,1.0
+36,Somalia,1.0
+36,South Sudan,1.0
+36,Sri Lanka,1.0
+36,Sudan,0.02
+36,Suriname,1.0
+36,Sweden,0.67
+36,Switzerland,0.57
+36,Syria,0.17
+36,Taiwan,1.0
+36,Tajikistan,1.0
+36,Thailand,0.17
+36,Togo,1.0
+36,Trinidad and Tobago,0.6
+36,Tunisia,1.0
+36,Turkey,0.13
+36,Turkmenistan,1.0
+36,Uganda,1.0
+36,Ukraine,1.0
+36,United Arab Emirates,1.0
+36,United Kingdom,1.0
+36,Uruguay,1.0
+36,Uzbekistan,1.0
+36,Vanuatu,1.0
+36,Venezuela,0.23
+36,Vietnam,0.32
+36,Yemen,0.03
+36,Zambia,0.78
+36,Zimbabwe,0.09
+37,Afghanistan,0.59
+37,Albania,1.0
+37,Algeria,0.08
+37,Angola,0.19
+37,Argentina,0.77
+37,Armenia,1.0
+37,Australia,1.0
+37,Austria,1.0
+37,Azerbaijan,1.0
+37,Bangladesh,0.54
+37,Belarus,1.0
+37,Belize,1.0
+37,Benin,1.0
+37,Bhutan,1.0
+37,Bolivia,1.0
+37,Bosnia and Herzegovina,1.0
+37,Botswana,1.0
+37,Brazil,0.21
+37,Brunei,1.0
+37,Bulgaria,1.0
+37,Burkina Faso,0.13
+37,Burundi,0.08
+37,Cambodia,1.0
+37,Cameroon,0.12
+37,Canada,0.22
+37,Central African Republic,1.0
+37,Chad,0.12
+37,Chile,1.0
+37,Colombia,1.0
+37,Costa Rica,0.69
+37,Croatia,1.0
+37,Cuba,1.0
+37,Cyprus,1.0
+37,Denmark,1.0
+37,Djibouti,1.0
+37,Dominican Republic,1.0
+37,Ecuador,1.0
+37,Egypt,0.12
+37,El Salvador,1.0
+37,Equatorial Guinea,1.0
+37,Estonia,1.0
+37,Ethiopia,0.09
+37,Falkland Islands,1.0
+37,Fiji,1.0
+37,Finland,1.0
+37,France,1.0
+37,Gabon,1.0
+37,Gambia,1.0
+37,Georgia,1.0
+37,Ghana,0.16
+37,Greece,1.0
+37,Greenland,1.0
+37,Guatemala,0.36
+37,Guinea,1.0
+37,Guyana,1.0
+37,Haiti,0.22
+37,Honduras,1.0
+37,Hungary,1.0
+37,Iceland,1.0
+37,Indonesia,0.2
+37,Iran,0.02
+37,Iraq,0.26
+37,Ireland,1.0
+37,Israel,1.0
+37,Italy,0.24
+37,Jamaica,1.0
+37,Jordan,1.0
+37,Kazakhstan,1.0
+37,Kenya,0.48
+37,Kuwait,1.0
+37,Kyrgyzstan,0.1
+37,Laos,1.0
+37,Latvia,1.0
+37,Lebanon,1.0
+37,Lesotho,1.0
+37,Liberia,1.0
+37,Libya,1.0
+37,Lithuania,1.0
+37,Luxembourg,1.0
+37,Madagascar,0.01
+37,Malawi,1.0
+37,Malaysia,1.0
+37,Mali,0.67
+37,Mauritania,1.0
+37,Mexico,1.0
+37,Moldova,1.0
+37,Mongolia,1.0
+37,Montenegro,1.0
+37,Morocco,1.0
+37,Mozambique,0.89
+37,Myanmar,0.46
+37,Namibia,1.0
+37,Nepal,0.0
+37,Netherlands,0.45
+37,New Caledonia,1.0
+37,New Zealand,1.0
+37,Nicaragua,1.0
+37,Niger,0.24
+37,Nigeria,0.08
+37,Norway,1.0
+37,Oman,1.0
+37,Pakistan,0.46
+37,Panama,1.0
+37,Papua New Guinea,0.17
+37,Paraguay,1.0
+37,Peru,1.0
+37,Philippines,0.37
+37,Poland,1.0
+37,Portugal,1.0
+37,Qatar,1.0
+37,Romania,0.37
+37,Rwanda,0.55
+37,Saudi Arabia,1.0
+37,Senegal,0.2
+37,Sierra Leone,0.26
+37,Slovakia,0.33
+37,Slovenia,1.0
+37,Solomon Islands,1.0
+37,Somalia,1.0
+37,South Sudan,1.0
+37,Sri Lanka,1.0
+37,Sudan,0.02
+37,Suriname,1.0
+37,Sweden,0.71
+37,Switzerland,0.71
+37,Syria,0.18
+37,Taiwan,1.0
+37,Tajikistan,1.0
+37,Thailand,0.2
+37,Togo,1.0
+37,Trinidad and Tobago,0.64
+37,Tunisia,1.0
+37,Turkey,0.14
+37,Turkmenistan,1.0
+37,Uganda,1.0
+37,Ukraine,1.0
+37,United Arab Emirates,1.0
+37,United Kingdom,1.0
+37,Uruguay,1.0
+37,Uzbekistan,1.0
+37,Vanuatu,1.0
+37,Venezuela,0.25
+37,Vietnam,0.35
+37,Yemen,0.04
+37,Zambia,1.0
+37,Zimbabwe,0.14
+38,Afghanistan,0.65
+38,Albania,1.0
+38,Algeria,0.09
+38,Angola,0.21
+38,Argentina,0.91
+38,Armenia,1.0
+38,Australia,1.0
+38,Austria,1.0
+38,Azerbaijan,1.0
+38,Bangladesh,0.58
+38,Belarus,1.0
+38,Belize,1.0
+38,Benin,1.0
+38,Bhutan,1.0
+38,Bolivia,1.0
+38,Bosnia and Herzegovina,1.0
+38,Botswana,1.0
+38,Brazil,0.24
+38,Brunei,1.0
+38,Bulgaria,1.0
+38,Burkina Faso,0.17
+38,Burundi,0.09
+38,Cambodia,1.0
+38,Cameroon,0.15
+38,Canada,0.26
+38,Central African Republic,1.0
+38,Chad,0.13
+38,Chile,1.0
+38,Colombia,1.0
+38,Costa Rica,0.88
+38,Croatia,1.0
+38,Cuba,1.0
+38,Cyprus,1.0
+38,Denmark,1.0
+38,Djibouti,1.0
+38,Dominican Republic,1.0
+38,Ecuador,1.0
+38,Egypt,0.14
+38,El Salvador,1.0
+38,Equatorial Guinea,1.0
+38,Estonia,1.0
+38,Ethiopia,0.11
+38,Falkland Islands,1.0
+38,Fiji,1.0
+38,Finland,1.0
+38,France,1.0
+38,Gabon,1.0
+38,Gambia,1.0
+38,Georgia,1.0
+38,Ghana,0.17
+38,Greece,1.0
+38,Greenland,1.0
+38,Guatemala,0.38
+38,Guinea,1.0
+38,Guyana,1.0
+38,Haiti,0.23
+38,Honduras,1.0
+38,Hungary,1.0
+38,Iceland,1.0
+38,Indonesia,0.22
+38,Iran,0.02
+38,Iraq,0.31
+38,Ireland,1.0
+38,Israel,1.0
+38,Italy,0.27
+38,Jamaica,1.0
+38,Jordan,1.0
+38,Kazakhstan,1.0
+38,Kenya,0.51
+38,Kuwait,1.0
+38,Kyrgyzstan,0.1
+38,Laos,1.0
+38,Latvia,1.0
+38,Lebanon,1.0
+38,Lesotho,1.0
+38,Liberia,1.0
+38,Libya,1.0
+38,Lithuania,1.0
+38,Luxembourg,1.0
+38,Madagascar,0.01
+38,Malawi,1.0
+38,Malaysia,1.0
+38,Mali,0.71
+38,Mauritania,1.0
+38,Mexico,1.0
+38,Moldova,1.0
+38,Mongolia,1.0
+38,Montenegro,1.0
+38,Morocco,1.0
+38,Mozambique,0.99
+38,Myanmar,0.51
+38,Namibia,1.0
+38,Nepal,0.0
+38,Netherlands,0.5
+38,New Caledonia,1.0
+38,New Zealand,1.0
+38,Nicaragua,1.0
+38,Niger,0.26
+38,Nigeria,0.09
+38,Norway,1.0
+38,Oman,1.0
+38,Pakistan,0.51
+38,Panama,1.0
+38,Papua New Guinea,0.18
+38,Paraguay,1.0
+38,Peru,1.0
+38,Philippines,0.43
+38,Poland,1.0
+38,Portugal,1.0
+38,Qatar,1.0
+38,Romania,0.4
+38,Rwanda,0.81
+38,Saudi Arabia,1.0
+38,Senegal,0.21
+38,Sierra Leone,0.3
+38,Slovakia,0.37
+38,Slovenia,1.0
+38,Solomon Islands,1.0
+38,Somalia,1.0
+38,South Sudan,1.0
+38,Sri Lanka,1.0
+38,Sudan,0.03
+38,Suriname,1.0
+38,Sweden,0.74
+38,Switzerland,0.89
+38,Syria,0.2
+38,Taiwan,1.0
+38,Tajikistan,1.0
+38,Thailand,0.22
+38,Togo,1.0
+38,Trinidad and Tobago,0.67
+38,Tunisia,1.0
+38,Turkey,0.15
+38,Turkmenistan,1.0
+38,Uganda,1.0
+38,Ukraine,1.0
+38,United Arab Emirates,1.0
+38,United Kingdom,1.0
+38,Uruguay,1.0
+38,Uzbekistan,1.0
+38,Vanuatu,1.0
+38,Venezuela,0.26
+38,Vietnam,0.37
+38,Yemen,0.05
+38,Zambia,1.0
+38,Zimbabwe,0.2
+39,Afghanistan,0.71
+39,Albania,1.0
+39,Algeria,0.1
+39,Angola,0.23
+39,Argentina,1.0
+39,Armenia,1.0
+39,Australia,1.0
+39,Austria,1.0
+39,Azerbaijan,1.0
+39,Bangladesh,0.62
+39,Belarus,1.0
+39,Belize,1.0
+39,Benin,1.0
+39,Bhutan,1.0
+39,Bolivia,1.0
+39,Bosnia and Herzegovina,1.0
+39,Botswana,1.0
+39,Brazil,0.27
+39,Brunei,1.0
+39,Bulgaria,1.0
+39,Burkina Faso,0.31
+39,Burundi,0.1
+39,Cambodia,1.0
+39,Cameroon,0.19
+39,Canada,0.3
+39,Central African Republic,1.0
+39,Chad,0.14
+39,Chile,1.0
+39,Colombia,1.0
+39,Costa Rica,1.0
+39,Croatia,1.0
+39,Cuba,1.0
+39,Cyprus,1.0
+39,Denmark,1.0
+39,Djibouti,1.0
+39,Dominican Republic,1.0
+39,Ecuador,1.0
+39,Egypt,0.17
+39,El Salvador,1.0
+39,Equatorial Guinea,1.0
+39,Estonia,1.0
+39,Ethiopia,0.12
+39,Falkland Islands,1.0
+39,Fiji,1.0
+39,Finland,1.0
+39,France,1.0
+39,Gabon,1.0
+39,Gambia,1.0
+39,Georgia,1.0
+39,Ghana,0.17
+39,Greece,1.0
+39,Greenland,1.0
+39,Guatemala,0.4
+39,Guinea,1.0
+39,Guyana,1.0
+39,Haiti,0.25
+39,Honduras,1.0
+39,Hungary,1.0
+39,Iceland,1.0
+39,Indonesia,0.24
+39,Iran,0.02
+39,Iraq,0.35
+39,Ireland,1.0
+39,Israel,1.0
+39,Italy,0.29
+39,Jamaica,1.0
+39,Jordan,1.0
+39,Kazakhstan,1.0
+39,Kenya,0.6
+39,Kuwait,1.0
+39,Kyrgyzstan,0.11
+39,Laos,1.0
+39,Latvia,1.0
+39,Lebanon,1.0
+39,Lesotho,1.0
+39,Liberia,1.0
+39,Libya,1.0
+39,Lithuania,1.0
+39,Luxembourg,1.0
+39,Madagascar,0.01
+39,Malawi,1.0
+39,Malaysia,1.0
+39,Mali,0.76
+39,Mauritania,1.0
+39,Mexico,1.0
+39,Moldova,1.0
+39,Mongolia,1.0
+39,Montenegro,1.0
+39,Morocco,1.0
+39,Mozambique,1.0
+39,Myanmar,0.56
+39,Namibia,1.0
+39,Nepal,0.0
+39,Netherlands,0.77
+39,New Caledonia,1.0
+39,New Zealand,1.0
+39,Nicaragua,1.0
+39,Niger,0.27
+39,Nigeria,0.09
+39,Norway,1.0
+39,Oman,1.0
+39,Pakistan,0.57
+39,Panama,1.0
+39,Papua New Guinea,0.19
+39,Paraguay,1.0
+39,Peru,1.0
+39,Philippines,0.49
+39,Poland,1.0
+39,Portugal,1.0
+39,Qatar,1.0
+39,Romania,0.6
+39,Rwanda,1.0
+39,Saudi Arabia,1.0
+39,Senegal,0.23
+39,Sierra Leone,0.35
+39,Slovakia,0.4
+39,Slovenia,1.0
+39,Solomon Islands,1.0
+39,Somalia,1.0
+39,South Sudan,1.0
+39,Sri Lanka,1.0
+39,Sudan,0.03
+39,Suriname,1.0
+39,Sweden,0.77
+39,Switzerland,1.0
+39,Syria,0.21
+39,Taiwan,1.0
+39,Tajikistan,1.0
+39,Thailand,0.25
+39,Togo,1.0
+39,Trinidad and Tobago,0.71
+39,Tunisia,1.0
+39,Turkey,0.16
+39,Turkmenistan,1.0
+39,Uganda,1.0
+39,Ukraine,1.0
+39,United Arab Emirates,1.0
+39,United Kingdom,1.0
+39,Uruguay,1.0
+39,Uzbekistan,1.0
+39,Vanuatu,1.0
+39,Venezuela,0.27
+39,Vietnam,0.4
+39,Yemen,0.07
+39,Zambia,1.0
+39,Zimbabwe,0.25
+40,Afghanistan,0.76
+40,Albania,1.0
+40,Algeria,0.12
+40,Angola,0.24
+40,Argentina,1.0
+40,Armenia,1.0
+40,Australia,1.0
+40,Austria,1.0
+40,Azerbaijan,1.0
+40,Bangladesh,0.66
+40,Belarus,1.0
+40,Belize,1.0
+40,Benin,1.0
+40,Bhutan,1.0
+40,Bolivia,1.0
+40,Bosnia and Herzegovina,1.0
+40,Botswana,1.0
+40,Brazil,0.3
+40,Brunei,1.0
+40,Bulgaria,1.0
+40,Burkina Faso,0.46
+40,Burundi,0.1
+40,Cambodia,1.0
+40,Cameroon,0.22
+40,Canada,0.36
+40,Central African Republic,1.0
+40,Chad,0.16
+40,Chile,1.0
+40,Colombia,1.0
+40,Costa Rica,1.0
+40,Croatia,1.0
+40,Cuba,1.0
+40,Cyprus,1.0
+40,Denmark,1.0
+40,Djibouti,1.0
+40,Dominican Republic,1.0
+40,Ecuador,1.0
+40,Egypt,0.22
+40,El Salvador,1.0
+40,Equatorial Guinea,1.0
+40,Estonia,1.0
+40,Ethiopia,0.14
+40,Falkland Islands,1.0
+40,Fiji,1.0
+40,Finland,1.0
+40,France,1.0
+40,Gabon,1.0
+40,Gambia,1.0
+40,Georgia,1.0
+40,Ghana,0.18
+40,Greece,1.0
+40,Greenland,1.0
+40,Guatemala,0.42
+40,Guinea,1.0
+40,Guyana,1.0
+40,Haiti,0.27
+40,Honduras,1.0
+40,Hungary,1.0
+40,Iceland,1.0
+40,Indonesia,0.25
+40,Iran,0.02
+40,Iraq,0.39
+40,Ireland,1.0
+40,Israel,1.0
+40,Italy,0.32
+40,Jamaica,1.0
+40,Jordan,1.0
+40,Kazakhstan,1.0
+40,Kenya,0.7
+40,Kuwait,1.0
+40,Kyrgyzstan,0.11
+40,Laos,1.0
+40,Latvia,1.0
+40,Lebanon,1.0
+40,Lesotho,1.0
+40,Liberia,1.0
+40,Libya,1.0
+40,Lithuania,1.0
+40,Luxembourg,1.0
+40,Madagascar,0.01
+40,Malawi,1.0
+40,Malaysia,1.0
+40,Mali,0.8
+40,Mauritania,1.0
+40,Mexico,1.0
+40,Moldova,1.0
+40,Mongolia,1.0
+40,Montenegro,1.0
+40,Morocco,1.0
+40,Mozambique,1.0
+40,Myanmar,0.62
+40,Namibia,1.0
+40,Nepal,0.0
+40,Netherlands,1.0
+40,New Caledonia,1.0
+40,New Zealand,1.0
+40,Nicaragua,1.0
+40,Niger,0.29
+40,Nigeria,0.09
+40,Norway,1.0
+40,Oman,1.0
+40,Pakistan,0.62
+40,Panama,1.0
+40,Papua New Guinea,0.2
+40,Paraguay,1.0
+40,Peru,1.0
+40,Philippines,0.55
+40,Poland,1.0
+40,Portugal,1.0
+40,Qatar,1.0
+40,Romania,0.81
+40,Rwanda,1.0
+40,Saudi Arabia,1.0
+40,Senegal,0.25
+40,Sierra Leone,0.39
+40,Slovakia,1.0
+40,Slovenia,1.0
+40,Solomon Islands,1.0
+40,Somalia,1.0
+40,South Sudan,1.0
+40,Sri Lanka,1.0
+40,Sudan,0.03
+40,Suriname,1.0
+40,Sweden,0.81
+40,Switzerland,1.0
+40,Syria,0.22
+40,Taiwan,1.0
+40,Tajikistan,1.0
+40,Thailand,0.28
+40,Togo,1.0
+40,Trinidad and Tobago,0.74
+40,Tunisia,1.0
+40,Turkey,0.17
+40,Turkmenistan,1.0
+40,Uganda,1.0
+40,Ukraine,1.0
+40,United Arab Emirates,1.0
+40,United Kingdom,1.0
+40,Uruguay,1.0
+40,Uzbekistan,1.0
+40,Vanuatu,1.0
+40,Venezuela,0.28
+40,Vietnam,0.43
+40,Yemen,0.08
+40,Zambia,1.0
+40,Zimbabwe,0.3
+41,Afghanistan,0.82
+41,Albania,1.0
+41,Algeria,0.13
+41,Angola,0.26
+41,Argentina,1.0
+41,Armenia,1.0
+41,Australia,1.0
+41,Austria,1.0
+41,Azerbaijan,1.0
+41,Bangladesh,0.71
+41,Belarus,1.0
+41,Belize,1.0
+41,Benin,1.0
+41,Bhutan,1.0
+41,Bolivia,1.0
+41,Bosnia and Herzegovina,1.0
+41,Botswana,1.0
+41,Brazil,0.33
+41,Brunei,1.0
+41,Bulgaria,1.0
+41,Burkina Faso,0.6
+41,Burundi,0.11
+41,Cambodia,1.0
+41,Cameroon,0.26
+41,Canada,0.41
+41,Central African Republic,1.0
+41,Chad,0.17
+41,Chile,1.0
+41,Colombia,1.0
+41,Costa Rica,1.0
+41,Croatia,1.0
+41,Cuba,1.0
+41,Cyprus,1.0
+41,Denmark,1.0
+41,Djibouti,1.0
+41,Dominican Republic,1.0
+41,Ecuador,1.0
+41,Egypt,0.27
+41,El Salvador,1.0
+41,Equatorial Guinea,1.0
+41,Estonia,1.0
+41,Ethiopia,0.16
+41,Falkland Islands,1.0
+41,Fiji,1.0
+41,Finland,1.0
+41,France,1.0
+41,Gabon,1.0
+41,Gambia,1.0
+41,Georgia,1.0
+41,Ghana,0.19
+41,Greece,1.0
+41,Greenland,1.0
+41,Guatemala,0.44
+41,Guinea,1.0
+41,Guyana,1.0
+41,Haiti,0.28
+41,Honduras,1.0
+41,Hungary,1.0
+41,Iceland,1.0
+41,Indonesia,0.27
+41,Iran,0.02
+41,Iraq,0.44
+41,Ireland,1.0
+41,Israel,1.0
+41,Italy,0.34
+41,Jamaica,1.0
+41,Jordan,1.0
+41,Kazakhstan,1.0
+41,Kenya,0.79
+41,Kuwait,1.0
+41,Kyrgyzstan,0.12
+41,Laos,1.0
+41,Latvia,1.0
+41,Lebanon,1.0
+41,Lesotho,1.0
+41,Liberia,1.0
+41,Libya,1.0
+41,Lithuania,1.0
+41,Luxembourg,1.0
+41,Madagascar,0.01
+41,Malawi,1.0
+41,Malaysia,1.0
+41,Mali,0.85
+41,Mauritania,1.0
+41,Mexico,1.0
+41,Moldova,1.0
+41,Mongolia,1.0
+41,Montenegro,1.0
+41,Morocco,1.0
+41,Mozambique,1.0
+41,Myanmar,0.67
+41,Namibia,1.0
+41,Nepal,0.0
+41,Netherlands,1.0
+41,New Caledonia,1.0
+41,New Zealand,1.0
+41,Nicaragua,1.0
+41,Niger,0.31
+41,Nigeria,0.13
+41,Norway,1.0
+41,Oman,1.0
+41,Pakistan,0.68
+41,Panama,1.0
+41,Papua New Guinea,0.21
+41,Paraguay,1.0
+41,Peru,1.0
+41,Philippines,0.64
+41,Poland,1.0
+41,Portugal,1.0
+41,Qatar,1.0
+41,Romania,1.0
+41,Rwanda,1.0
+41,Saudi Arabia,1.0
+41,Senegal,0.26
+41,Sierra Leone,0.43
+41,Slovakia,1.0
+41,Slovenia,1.0
+41,Solomon Islands,1.0
+41,Somalia,1.0
+41,South Sudan,1.0
+41,Sri Lanka,1.0
+41,Sudan,0.03
+41,Suriname,1.0
+41,Sweden,0.84
+41,Switzerland,1.0
+41,Syria,0.24
+41,Taiwan,1.0
+41,Tajikistan,1.0
+41,Thailand,0.3
+41,Togo,1.0
+41,Trinidad and Tobago,0.78
+41,Tunisia,1.0
+41,Turkey,0.19
+41,Turkmenistan,1.0
+41,Uganda,1.0
+41,Ukraine,1.0
+41,United Arab Emirates,1.0
+41,United Kingdom,1.0
+41,Uruguay,1.0
+41,Uzbekistan,1.0
+41,Vanuatu,1.0
+41,Venezuela,0.3
+41,Vietnam,0.46
+41,Yemen,0.09
+41,Zambia,1.0
+41,Zimbabwe,0.35
+42,Afghanistan,0.88
+42,Albania,1.0
+42,Algeria,0.14
+42,Angola,0.28
+42,Argentina,1.0
+42,Armenia,1.0
+42,Australia,1.0
+42,Austria,1.0
+42,Azerbaijan,1.0
+42,Bangladesh,0.75
+42,Belarus,1.0
+42,Belize,1.0
+42,Benin,1.0
+42,Bhutan,1.0
+42,Bolivia,1.0
+42,Bosnia and Herzegovina,1.0
+42,Botswana,1.0
+42,Brazil,0.36
+42,Brunei,1.0
+42,Bulgaria,1.0
+42,Burkina Faso,0.74
+42,Burundi,0.12
+42,Cambodia,1.0
+42,Cameroon,0.29
+42,Canada,0.46
+42,Central African Republic,1.0
+42,Chad,0.18
+42,Chile,1.0
+42,Colombia,1.0
+42,Costa Rica,1.0
+42,Croatia,1.0
+42,Cuba,1.0
+42,Cyprus,1.0
+42,Denmark,1.0
+42,Djibouti,1.0
+42,Dominican Republic,1.0
+42,Ecuador,1.0
+42,Egypt,0.34
+42,El Salvador,1.0
+42,Equatorial Guinea,1.0
+42,Estonia,1.0
+42,Ethiopia,0.17
+42,Falkland Islands,1.0
+42,Fiji,1.0
+42,Finland,1.0
+42,France,1.0
+42,Gabon,1.0
+42,Gambia,1.0
+42,Georgia,1.0
+42,Ghana,0.2
+42,Greece,1.0
+42,Greenland,1.0
+42,Guatemala,0.46
+42,Guinea,1.0
+42,Guyana,1.0
+42,Haiti,0.3
+42,Honduras,1.0
+42,Hungary,1.0
+42,Iceland,1.0
+42,Indonesia,0.28
+42,Iran,0.02
+42,Iraq,0.48
+42,Ireland,1.0
+42,Israel,1.0
+42,Italy,0.37
+42,Jamaica,1.0
+42,Jordan,1.0
+42,Kazakhstan,1.0
+42,Kenya,0.88
+42,Kuwait,1.0
+42,Kyrgyzstan,0.16
+42,Laos,1.0
+42,Latvia,1.0
+42,Lebanon,1.0
+42,Lesotho,1.0
+42,Liberia,1.0
+42,Libya,1.0
+42,Lithuania,1.0
+42,Luxembourg,1.0
+42,Madagascar,0.02
+42,Malawi,1.0
+42,Malaysia,1.0
+42,Mali,0.89
+42,Mauritania,1.0
+42,Mexico,1.0
+42,Moldova,1.0
+42,Mongolia,1.0
+42,Montenegro,1.0
+42,Morocco,1.0
+42,Mozambique,1.0
+42,Myanmar,0.72
+42,Namibia,1.0
+42,Nepal,0.0
+42,Netherlands,1.0
+42,New Caledonia,1.0
+42,New Zealand,1.0
+42,Nicaragua,1.0
+42,Niger,0.33
+42,Nigeria,0.16
+42,Norway,1.0
+42,Oman,1.0
+42,Pakistan,0.73
+42,Panama,1.0
+42,Papua New Guinea,0.22
+42,Paraguay,1.0
+42,Peru,1.0
+42,Philippines,0.76
+42,Poland,1.0
+42,Portugal,1.0
+42,Qatar,1.0
+42,Romania,1.0
+42,Rwanda,1.0
+42,Saudi Arabia,1.0
+42,Senegal,0.28
+42,Sierra Leone,0.48
+42,Slovakia,1.0
+42,Slovenia,1.0
+42,Solomon Islands,1.0
+42,Somalia,1.0
+42,South Sudan,1.0
+42,Sri Lanka,1.0
+42,Sudan,0.03
+42,Suriname,1.0
+42,Sweden,0.87
+42,Switzerland,1.0
+42,Syria,0.25
+42,Taiwan,1.0
+42,Tajikistan,1.0
+42,Thailand,0.33
+42,Togo,1.0
+42,Trinidad and Tobago,0.81
+42,Tunisia,1.0
+42,Turkey,0.2
+42,Turkmenistan,1.0
+42,Uganda,1.0
+42,Ukraine,1.0
+42,United Arab Emirates,1.0
+42,United Kingdom,1.0
+42,Uruguay,1.0
+42,Uzbekistan,1.0
+42,Vanuatu,1.0
+42,Venezuela,0.38
+42,Vietnam,0.49
+42,Yemen,0.1
+42,Zambia,1.0
+42,Zimbabwe,0.4
+43,Afghanistan,0.94
+43,Albania,1.0
+43,Algeria,0.16
+43,Angola,0.3
+43,Argentina,1.0
+43,Armenia,1.0
+43,Australia,1.0
+43,Austria,1.0
+43,Azerbaijan,1.0
+43,Bangladesh,0.79
+43,Belarus,1.0
+43,Belize,1.0
+43,Benin,1.0
+43,Bhutan,1.0
+43,Bolivia,1.0
+43,Bosnia and Herzegovina,1.0
+43,Botswana,1.0
+43,Brazil,0.39
+43,Brunei,1.0
+43,Bulgaria,1.0
+43,Burkina Faso,0.88
+43,Burundi,0.13
+43,Cambodia,1.0
+43,Cameroon,0.33
+43,Canada,0.77
+43,Central African Republic,1.0
+43,Chad,0.19
+43,Chile,1.0
+43,Colombia,1.0
+43,Costa Rica,1.0
+43,Croatia,1.0
+43,Cuba,1.0
+43,Cyprus,1.0
+43,Denmark,1.0
+43,Djibouti,1.0
+43,Dominican Republic,1.0
+43,Ecuador,1.0
+43,Egypt,0.4
+43,El Salvador,1.0
+43,Equatorial Guinea,1.0
+43,Estonia,1.0
+43,Ethiopia,0.19
+43,Falkland Islands,1.0
+43,Fiji,1.0
+43,Finland,1.0
+43,France,1.0
+43,Gabon,1.0
+43,Gambia,1.0
+43,Georgia,1.0
+43,Ghana,0.2
+43,Greece,1.0
+43,Greenland,1.0
+43,Guatemala,0.48
+43,Guinea,1.0
+43,Guyana,1.0
+43,Haiti,0.32
+43,Honduras,1.0
+43,Hungary,1.0
+43,Iceland,1.0
+43,Indonesia,0.3
+43,Iran,0.02
+43,Iraq,0.52
+43,Ireland,1.0
+43,Israel,1.0
+43,Italy,0.39
+43,Jamaica,1.0
+43,Jordan,1.0
+43,Kazakhstan,1.0
+43,Kenya,0.99
+43,Kuwait,1.0
+43,Kyrgyzstan,0.21
+43,Laos,1.0
+43,Latvia,1.0
+43,Lebanon,1.0
+43,Lesotho,1.0
+43,Liberia,1.0
+43,Libya,1.0
+43,Lithuania,1.0
+43,Luxembourg,1.0
+43,Madagascar,0.02
+43,Malawi,1.0
+43,Malaysia,1.0
+43,Mali,0.94
+43,Mauritania,1.0
+43,Mexico,1.0
+43,Moldova,1.0
+43,Mongolia,1.0
+43,Montenegro,1.0
+43,Morocco,1.0
+43,Mozambique,1.0
+43,Myanmar,0.78
+43,Namibia,1.0
+43,Nepal,0.0
+43,Netherlands,1.0
+43,New Caledonia,1.0
+43,New Zealand,1.0
+43,Nicaragua,1.0
+43,Niger,0.35
+43,Nigeria,0.19
+43,Norway,1.0
+43,Oman,1.0
+43,Pakistan,0.79
+43,Panama,1.0
+43,Papua New Guinea,0.26
+43,Paraguay,1.0
+43,Peru,1.0
+43,Philippines,0.87
+43,Poland,1.0
+43,Portugal,1.0
+43,Qatar,1.0
+43,Romania,1.0
+43,Rwanda,1.0
+43,Saudi Arabia,1.0
+43,Senegal,0.3
+43,Sierra Leone,0.52
+43,Slovakia,1.0
+43,Slovenia,1.0
+43,Solomon Islands,1.0
+43,Somalia,1.0
+43,South Sudan,1.0
+43,Sri Lanka,1.0
+43,Sudan,0.03
+43,Suriname,1.0
+43,Sweden,0.91
+43,Switzerland,1.0
+43,Syria,0.26
+43,Taiwan,1.0
+43,Tajikistan,1.0
+43,Thailand,0.36
+43,Togo,1.0
+43,Trinidad and Tobago,1.0
+43,Tunisia,1.0
+43,Turkey,0.22
+43,Turkmenistan,1.0
+43,Uganda,1.0
+43,Ukraine,1.0
+43,United Arab Emirates,1.0
+43,United Kingdom,1.0
+43,Uruguay,1.0
+43,Uzbekistan,1.0
+43,Vanuatu,1.0
+43,Venezuela,0.47
+43,Vietnam,0.52
+43,Yemen,0.12
+43,Zambia,1.0
+43,Zimbabwe,0.45
+44,Afghanistan,0.99
+44,Albania,1.0
+44,Algeria,0.17
+44,Angola,0.32
+44,Argentina,1.0
+44,Armenia,1.0
+44,Australia,1.0
+44,Austria,1.0
+44,Azerbaijan,1.0
+44,Bangladesh,0.83
+44,Belarus,1.0
+44,Belize,1.0
+44,Benin,1.0
+44,Bhutan,1.0
+44,Bolivia,1.0
+44,Bosnia and Herzegovina,1.0
+44,Botswana,1.0
+44,Brazil,0.43
+44,Brunei,1.0
+44,Bulgaria,1.0
+44,Burkina Faso,1.0
+44,Burundi,0.13
+44,Cambodia,1.0
+44,Cameroon,0.36
+44,Canada,1.0
+44,Central African Republic,1.0
+44,Chad,0.2
+44,Chile,1.0
+44,Colombia,1.0
+44,Costa Rica,1.0
+44,Croatia,1.0
+44,Cuba,1.0
+44,Cyprus,1.0
+44,Denmark,1.0
+44,Djibouti,1.0
+44,Dominican Republic,1.0
+44,Ecuador,1.0
+44,Egypt,0.47
+44,El Salvador,1.0
+44,Equatorial Guinea,1.0
+44,Estonia,1.0
+44,Ethiopia,0.21
+44,Falkland Islands,1.0
+44,Fiji,1.0
+44,Finland,1.0
+44,France,1.0
+44,Gabon,1.0
+44,Gambia,1.0
+44,Georgia,1.0
+44,Ghana,0.21
+44,Greece,1.0
+44,Greenland,1.0
+44,Guatemala,0.5
+44,Guinea,1.0
+44,Guyana,1.0
+44,Haiti,0.34
+44,Honduras,1.0
+44,Hungary,1.0
+44,Iceland,1.0
+44,Indonesia,0.32
+44,Iran,0.02
+44,Iraq,0.56
+44,Ireland,1.0
+44,Israel,1.0
+44,Italy,0.42
+44,Jamaica,1.0
+44,Jordan,1.0
+44,Kazakhstan,1.0
+44,Kenya,1.0
+44,Kuwait,1.0
+44,Kyrgyzstan,0.25
+44,Laos,1.0
+44,Latvia,1.0
+44,Lebanon,1.0
+44,Lesotho,1.0
+44,Liberia,1.0
+44,Libya,1.0
+44,Lithuania,1.0
+44,Luxembourg,1.0
+44,Madagascar,0.02
+44,Malawi,1.0
+44,Malaysia,1.0
+44,Mali,0.99
+44,Mauritania,1.0
+44,Mexico,1.0
+44,Moldova,1.0
+44,Mongolia,1.0
+44,Montenegro,1.0
+44,Morocco,1.0
+44,Mozambique,1.0
+44,Myanmar,0.83
+44,Namibia,1.0
+44,Nepal,0.0
+44,Netherlands,1.0
+44,New Caledonia,1.0
+44,New Zealand,1.0
+44,Nicaragua,1.0
+44,Niger,0.44
+44,Nigeria,0.22
+44,Norway,1.0
+44,Oman,1.0
+44,Pakistan,0.84
+44,Panama,1.0
+44,Papua New Guinea,0.3
+44,Paraguay,1.0
+44,Peru,1.0
+44,Philippines,0.98
+44,Poland,1.0
+44,Portugal,1.0
+44,Qatar,1.0
+44,Romania,1.0
+44,Rwanda,1.0
+44,Saudi Arabia,1.0
+44,Senegal,0.31
+44,Sierra Leone,0.57
+44,Slovakia,1.0
+44,Slovenia,1.0
+44,Solomon Islands,1.0
+44,Somalia,1.0
+44,South Sudan,1.0
+44,Sri Lanka,1.0
+44,Sudan,0.03
+44,Suriname,1.0
+44,Sweden,0.94
+44,Switzerland,1.0
+44,Syria,0.28
+44,Taiwan,1.0
+44,Tajikistan,1.0
+44,Thailand,0.99
+44,Togo,1.0
+44,Trinidad and Tobago,1.0
+44,Tunisia,1.0
+44,Turkey,0.24
+44,Turkmenistan,1.0
+44,Uganda,1.0
+44,Ukraine,1.0
+44,United Arab Emirates,1.0
+44,United Kingdom,1.0
+44,Uruguay,1.0
+44,Uzbekistan,1.0
+44,Vanuatu,1.0
+44,Venezuela,0.56
+44,Vietnam,0.55
+44,Yemen,0.16
+44,Zambia,1.0
+44,Zimbabwe,0.5
+45,Afghanistan,1.0
+45,Albania,1.0
+45,Algeria,0.19
+45,Angola,0.33
+45,Argentina,1.0
+45,Armenia,1.0
+45,Australia,1.0
+45,Austria,1.0
+45,Azerbaijan,1.0
+45,Bangladesh,0.87
+45,Belarus,1.0
+45,Belize,1.0
+45,Benin,1.0
+45,Bhutan,1.0
+45,Bolivia,1.0
+45,Bosnia and Herzegovina,1.0
+45,Botswana,1.0
+45,Brazil,0.5
+45,Brunei,1.0
+45,Bulgaria,1.0
+45,Burkina Faso,1.0
+45,Burundi,0.14
+45,Cambodia,1.0
+45,Cameroon,0.4
+45,Canada,1.0
+45,Central African Republic,1.0
+45,Chad,0.22
+45,Chile,1.0
+45,Colombia,1.0
+45,Costa Rica,1.0
+45,Croatia,1.0
+45,Cuba,1.0
+45,Cyprus,1.0
+45,Denmark,1.0
+45,Djibouti,1.0
+45,Dominican Republic,1.0
+45,Ecuador,1.0
+45,Egypt,0.53
+45,El Salvador,1.0
+45,Equatorial Guinea,1.0
+45,Estonia,1.0
+45,Ethiopia,0.22
+45,Falkland Islands,1.0
+45,Fiji,1.0
+45,Finland,1.0
+45,France,1.0
+45,Gabon,1.0
+45,Gambia,1.0
+45,Georgia,1.0
+45,Ghana,0.22
+45,Greece,1.0
+45,Greenland,1.0
+45,Guatemala,0.53
+45,Guinea,1.0
+45,Guyana,1.0
+45,Haiti,0.37
+45,Honduras,1.0
+45,Hungary,1.0
+45,Iceland,1.0
+45,Indonesia,0.33
+45,Iran,0.02
+45,Iraq,0.61
+45,Ireland,1.0
+45,Israel,1.0
+45,Italy,0.47
+45,Jamaica,1.0
+45,Jordan,1.0
+45,Kazakhstan,1.0
+45,Kenya,1.0
+45,Kuwait,1.0
+45,Kyrgyzstan,0.3
+45,Laos,1.0
+45,Latvia,1.0
+45,Lebanon,1.0
+45,Lesotho,1.0
+45,Liberia,1.0
+45,Libya,1.0
+45,Lithuania,1.0
+45,Luxembourg,1.0
+45,Madagascar,0.02
+45,Malawi,1.0
+45,Malaysia,1.0
+45,Mali,1.0
+45,Mauritania,1.0
+45,Mexico,1.0
+45,Moldova,1.0
+45,Mongolia,1.0
+45,Montenegro,1.0
+45,Morocco,1.0
+45,Mozambique,1.0
+45,Myanmar,0.88
+45,Namibia,1.0
+45,Nepal,0.0
+45,Netherlands,1.0
+45,New Caledonia,1.0
+45,New Zealand,1.0
+45,Nicaragua,1.0
+45,Niger,0.54
+45,Nigeria,0.26
+45,Norway,1.0
+45,Oman,1.0
+45,Pakistan,0.9
+45,Panama,1.0
+45,Papua New Guinea,0.34
+45,Paraguay,1.0
+45,Peru,1.0
+45,Philippines,1.0
+45,Poland,1.0
+45,Portugal,1.0
+45,Qatar,1.0
+45,Romania,1.0
+45,Rwanda,1.0
+45,Saudi Arabia,1.0
+45,Senegal,0.33
+45,Sierra Leone,0.8
+45,Slovakia,1.0
+45,Slovenia,1.0
+45,Solomon Islands,1.0
+45,Somalia,1.0
+45,South Sudan,1.0
+45,Sri Lanka,1.0
+45,Sudan,0.03
+45,Suriname,1.0
+45,Sweden,0.97
+45,Switzerland,1.0
+45,Syria,0.29
+45,Taiwan,1.0
+45,Tajikistan,1.0
+45,Thailand,1.0
+45,Togo,1.0
+45,Trinidad and Tobago,1.0
+45,Tunisia,1.0
+45,Turkey,0.26
+45,Turkmenistan,1.0
+45,Uganda,1.0
+45,Ukraine,1.0
+45,United Arab Emirates,1.0
+45,United Kingdom,1.0
+45,Uruguay,1.0
+45,Uzbekistan,1.0
+45,Vanuatu,1.0
+45,Venezuela,0.65
+45,Vietnam,0.58
+45,Yemen,0.2
+45,Zambia,1.0
+45,Zimbabwe,0.63
+46,Afghanistan,1.0
+46,Albania,1.0
+46,Algeria,0.21
+46,Angola,0.35
+46,Argentina,1.0
+46,Armenia,1.0
+46,Australia,1.0
+46,Austria,1.0
+46,Azerbaijan,1.0
+46,Bangladesh,0.92
+46,Belarus,1.0
+46,Belize,1.0
+46,Benin,1.0
+46,Bhutan,1.0
+46,Bolivia,1.0
+46,Bosnia and Herzegovina,1.0
+46,Botswana,1.0
+46,Brazil,0.58
+46,Brunei,1.0
+46,Bulgaria,1.0
+46,Burkina Faso,1.0
+46,Burundi,0.15
+46,Cambodia,1.0
+46,Cameroon,0.43
+46,Canada,1.0
+46,Central African Republic,1.0
+46,Chad,0.23
+46,Chile,1.0
+46,Colombia,1.0
+46,Costa Rica,1.0
+46,Croatia,1.0
+46,Cuba,1.0
+46,Cyprus,1.0
+46,Denmark,1.0
+46,Djibouti,1.0
+46,Dominican Republic,1.0
+46,Ecuador,1.0
+46,Egypt,0.59
+46,El Salvador,1.0
+46,Equatorial Guinea,1.0
+46,Estonia,1.0
+46,Ethiopia,0.24
+46,Falkland Islands,1.0
+46,Fiji,1.0
+46,Finland,1.0
+46,France,1.0
+46,Gabon,1.0
+46,Gambia,1.0
+46,Georgia,1.0
+46,Ghana,0.23
+46,Greece,1.0
+46,Greenland,1.0
+46,Guatemala,0.56
+46,Guinea,1.0
+46,Guyana,1.0
+46,Haiti,0.4
+46,Honduras,1.0
+46,Hungary,1.0
+46,Iceland,1.0
+46,Indonesia,0.35
+46,Iran,0.02
+46,Iraq,0.65
+46,Ireland,1.0
+46,Israel,1.0
+46,Italy,0.52
+46,Jamaica,1.0
+46,Jordan,1.0
+46,Kazakhstan,1.0
+46,Kenya,1.0
+46,Kuwait,1.0
+46,Kyrgyzstan,0.34
+46,Laos,1.0
+46,Latvia,1.0
+46,Lebanon,1.0
+46,Lesotho,1.0
+46,Liberia,1.0
+46,Libya,1.0
+46,Lithuania,1.0
+46,Luxembourg,1.0
+46,Madagascar,0.02
+46,Malawi,1.0
+46,Malaysia,1.0
+46,Mali,1.0
+46,Mauritania,1.0
+46,Mexico,1.0
+46,Moldova,1.0
+46,Mongolia,1.0
+46,Montenegro,1.0
+46,Morocco,1.0
+46,Mozambique,1.0
+46,Myanmar,0.93
+46,Namibia,1.0
+46,Nepal,0.0
+46,Netherlands,1.0
+46,New Caledonia,1.0
+46,New Zealand,1.0
+46,Nicaragua,1.0
+46,Niger,0.64
+46,Nigeria,0.29
+46,Norway,1.0
+46,Oman,1.0
+46,Pakistan,0.95
+46,Panama,1.0
+46,Papua New Guinea,0.38
+46,Paraguay,1.0
+46,Peru,1.0
+46,Philippines,1.0
+46,Poland,1.0
+46,Portugal,1.0
+46,Qatar,1.0
+46,Romania,1.0
+46,Rwanda,1.0
+46,Saudi Arabia,1.0
+46,Senegal,0.35
+46,Sierra Leone,1.0
+46,Slovakia,1.0
+46,Slovenia,1.0
+46,Solomon Islands,1.0
+46,Somalia,1.0
+46,South Sudan,1.0
+46,Sri Lanka,1.0
+46,Sudan,0.03
+46,Suriname,1.0
+46,Sweden,1.0
+46,Switzerland,1.0
+46,Syria,0.3
+46,Taiwan,1.0
+46,Tajikistan,1.0
+46,Thailand,1.0
+46,Togo,1.0
+46,Trinidad and Tobago,1.0
+46,Tunisia,1.0
+46,Turkey,0.28
+46,Turkmenistan,1.0
+46,Uganda,1.0
+46,Ukraine,1.0
+46,United Arab Emirates,1.0
+46,United Kingdom,1.0
+46,Uruguay,1.0
+46,Uzbekistan,1.0
+46,Vanuatu,1.0
+46,Venezuela,0.74
+46,Vietnam,0.61
+46,Yemen,0.24
+46,Zambia,1.0
+46,Zimbabwe,0.76
+47,Afghanistan,1.0
+47,Albania,1.0
+47,Algeria,0.23
+47,Angola,0.37
+47,Argentina,1.0
+47,Armenia,1.0
+47,Australia,1.0
+47,Austria,1.0
+47,Azerbaijan,1.0
+47,Bangladesh,0.96
+47,Belarus,1.0
+47,Belize,1.0
+47,Benin,1.0
+47,Bhutan,1.0
+47,Bolivia,1.0
+47,Bosnia and Herzegovina,1.0
+47,Botswana,1.0
+47,Brazil,0.65
+47,Brunei,1.0
+47,Bulgaria,1.0
+47,Burkina Faso,1.0
+47,Burundi,0.16
+47,Cambodia,1.0
+47,Cameroon,0.47
+47,Canada,1.0
+47,Central African Republic,1.0
+47,Chad,0.24
+47,Chile,1.0
+47,Colombia,1.0
+47,Costa Rica,1.0
+47,Croatia,1.0
+47,Cuba,1.0
+47,Cyprus,1.0
+47,Denmark,1.0
+47,Djibouti,1.0
+47,Dominican Republic,1.0
+47,Ecuador,1.0
+47,Egypt,0.66
+47,El Salvador,1.0
+47,Equatorial Guinea,1.0
+47,Estonia,1.0
+47,Ethiopia,0.26
+47,Falkland Islands,1.0
+47,Fiji,1.0
+47,Finland,1.0
+47,France,1.0
+47,Gabon,1.0
+47,Gambia,1.0
+47,Georgia,1.0
+47,Ghana,0.23
+47,Greece,1.0
+47,Greenland,1.0
+47,Guatemala,0.6
+47,Guinea,1.0
+47,Guyana,1.0
+47,Haiti,0.44
+47,Honduras,1.0
+47,Hungary,1.0
+47,Iceland,1.0
+47,Indonesia,0.36
+47,Iran,0.02
+47,Iraq,0.69
+47,Ireland,1.0
+47,Israel,1.0
+47,Italy,0.57
+47,Jamaica,1.0
+47,Jordan,1.0
+47,Kazakhstan,1.0
+47,Kenya,1.0
+47,Kuwait,1.0
+47,Kyrgyzstan,0.39
+47,Laos,1.0
+47,Latvia,1.0
+47,Lebanon,1.0
+47,Lesotho,1.0
+47,Liberia,1.0
+47,Libya,1.0
+47,Lithuania,1.0
+47,Luxembourg,1.0
+47,Madagascar,0.02
+47,Malawi,1.0
+47,Malaysia,1.0
+47,Mali,1.0
+47,Mauritania,1.0
+47,Mexico,1.0
+47,Moldova,1.0
+47,Mongolia,1.0
+47,Montenegro,1.0
+47,Morocco,1.0
+47,Mozambique,1.0
+47,Myanmar,0.99
+47,Namibia,1.0
+47,Nepal,0.11
+47,Netherlands,1.0
+47,New Caledonia,1.0
+47,New Zealand,1.0
+47,Nicaragua,1.0
+47,Niger,0.74
+47,Nigeria,0.32
+47,Norway,1.0
+47,Oman,1.0
+47,Pakistan,1.0
+47,Panama,1.0
+47,Papua New Guinea,0.42
+47,Paraguay,1.0
+47,Peru,1.0
+47,Philippines,1.0
+47,Poland,1.0
+47,Portugal,1.0
+47,Qatar,1.0
+47,Romania,1.0
+47,Rwanda,1.0
+47,Saudi Arabia,1.0
+47,Senegal,0.36
+47,Sierra Leone,1.0
+47,Slovakia,1.0
+47,Slovenia,1.0
+47,Solomon Islands,1.0
+47,Somalia,1.0
+47,South Sudan,1.0
+47,Sri Lanka,1.0
+47,Sudan,0.04
+47,Suriname,1.0
+47,Sweden,1.0
+47,Switzerland,1.0
+47,Syria,0.32
+47,Taiwan,1.0
+47,Tajikistan,1.0
+47,Thailand,1.0
+47,Togo,1.0
+47,Trinidad and Tobago,1.0
+47,Tunisia,1.0
+47,Turkey,0.31
+47,Turkmenistan,1.0
+47,Uganda,1.0
+47,Ukraine,1.0
+47,United Arab Emirates,1.0
+47,United Kingdom,1.0
+47,Uruguay,1.0
+47,Uzbekistan,1.0
+47,Vanuatu,1.0
+47,Venezuela,0.83
+47,Vietnam,0.64
+47,Yemen,0.27
+47,Zambia,1.0
+47,Zimbabwe,0.89
+48,Afghanistan,1.0
+48,Albania,1.0
+48,Algeria,0.25
+48,Angola,0.39
+48,Argentina,1.0
+48,Armenia,1.0
+48,Australia,1.0
+48,Austria,1.0
+48,Azerbaijan,1.0
+48,Bangladesh,1.0
+48,Belarus,1.0
+48,Belize,1.0
+48,Benin,1.0
+48,Bhutan,1.0
+48,Bolivia,1.0
+48,Bosnia and Herzegovina,1.0
+48,Botswana,1.0
+48,Brazil,0.72
+48,Brunei,1.0
+48,Bulgaria,1.0
+48,Burkina Faso,1.0
+48,Burundi,0.17
+48,Cambodia,1.0
+48,Cameroon,0.5
+48,Canada,1.0
+48,Central African Republic,1.0
+48,Chad,0.26
+48,Chile,1.0
+48,Colombia,1.0
+48,Costa Rica,1.0
+48,Croatia,1.0
+48,Cuba,1.0
+48,Cyprus,1.0
+48,Denmark,1.0
+48,Djibouti,1.0
+48,Dominican Republic,1.0
+48,Ecuador,1.0
+48,Egypt,0.72
+48,El Salvador,1.0
+48,Equatorial Guinea,1.0
+48,Estonia,1.0
+48,Ethiopia,0.28
+48,Falkland Islands,1.0
+48,Fiji,1.0
+48,Finland,1.0
+48,France,1.0
+48,Gabon,1.0
+48,Gambia,1.0
+48,Georgia,1.0
+48,Ghana,0.24
+48,Greece,1.0
+48,Greenland,1.0
+48,Guatemala,0.63
+48,Guinea,1.0
+48,Guyana,1.0
+48,Haiti,0.47
+48,Honduras,1.0
+48,Hungary,1.0
+48,Iceland,1.0
+48,Indonesia,0.38
+48,Iran,0.02
+48,Iraq,0.74
+48,Ireland,1.0
+48,Israel,1.0
+48,Italy,0.67
+48,Jamaica,1.0
+48,Jordan,1.0
+48,Kazakhstan,1.0
+48,Kenya,1.0
+48,Kuwait,1.0
+48,Kyrgyzstan,0.43
+48,Laos,1.0
+48,Latvia,1.0
+48,Lebanon,1.0
+48,Lesotho,1.0
+48,Liberia,1.0
+48,Libya,1.0
+48,Lithuania,1.0
+48,Luxembourg,1.0
+48,Madagascar,0.03
+48,Malawi,1.0
+48,Malaysia,1.0
+48,Mali,1.0
+48,Mauritania,1.0
+48,Mexico,1.0
+48,Moldova,1.0
+48,Mongolia,1.0
+48,Montenegro,1.0
+48,Morocco,1.0
+48,Mozambique,1.0
+48,Myanmar,1.0
+48,Namibia,1.0
+48,Nepal,0.55
+48,Netherlands,1.0
+48,New Caledonia,1.0
+48,New Zealand,1.0
+48,Nicaragua,1.0
+48,Niger,0.84
+48,Nigeria,0.36
+48,Norway,1.0
+48,Oman,1.0
+48,Pakistan,1.0
+48,Panama,1.0
+48,Papua New Guinea,0.46
+48,Paraguay,1.0
+48,Peru,1.0
+48,Philippines,1.0
+48,Poland,1.0
+48,Portugal,1.0
+48,Qatar,1.0
+48,Romania,1.0
+48,Rwanda,1.0
+48,Saudi Arabia,1.0
+48,Senegal,0.38
+48,Sierra Leone,1.0
+48,Slovakia,1.0
+48,Slovenia,1.0
+48,Solomon Islands,1.0
+48,Somalia,1.0
+48,South Sudan,1.0
+48,Sri Lanka,1.0
+48,Sudan,0.04
+48,Suriname,1.0
+48,Sweden,1.0
+48,Switzerland,1.0
+48,Syria,0.35
+48,Taiwan,1.0
+48,Tajikistan,1.0
+48,Thailand,1.0
+48,Togo,1.0
+48,Trinidad and Tobago,1.0
+48,Tunisia,1.0
+48,Turkey,0.35
+48,Turkmenistan,1.0
+48,Uganda,1.0
+48,Ukraine,1.0
+48,United Arab Emirates,1.0
+48,United Kingdom,1.0
+48,Uruguay,1.0
+48,Uzbekistan,1.0
+48,Vanuatu,1.0
+48,Venezuela,0.92
+48,Vietnam,0.69
+48,Yemen,0.31
+48,Zambia,1.0
+48,Zimbabwe,1.0
+49,Afghanistan,1.0
+49,Albania,1.0
+49,Algeria,0.28
+49,Angola,0.41
+49,Argentina,1.0
+49,Armenia,1.0
+49,Australia,1.0
+49,Austria,1.0
+49,Azerbaijan,1.0
+49,Bangladesh,1.0
+49,Belarus,1.0
+49,Belize,1.0
+49,Benin,1.0
+49,Bhutan,1.0
+49,Bolivia,1.0
+49,Bosnia and Herzegovina,1.0
+49,Botswana,1.0
+49,Brazil,0.8
+49,Brunei,1.0
+49,Bulgaria,1.0
+49,Burkina Faso,1.0
+49,Burundi,0.18
+49,Cambodia,1.0
+49,Cameroon,0.54
+49,Canada,1.0
+49,Central African Republic,1.0
+49,Chad,0.27
+49,Chile,1.0
+49,Colombia,1.0
+49,Costa Rica,1.0
+49,Croatia,1.0
+49,Cuba,1.0
+49,Cyprus,1.0
+49,Denmark,1.0
+49,Djibouti,1.0
+49,Dominican Republic,1.0
+49,Ecuador,1.0
+49,Egypt,0.78
+49,El Salvador,1.0
+49,Equatorial Guinea,1.0
+49,Estonia,1.0
+49,Ethiopia,0.29
+49,Falkland Islands,1.0
+49,Fiji,1.0
+49,Finland,1.0
+49,France,1.0
+49,Gabon,1.0
+49,Gambia,1.0
+49,Georgia,1.0
+49,Ghana,0.25
+49,Greece,1.0
+49,Greenland,1.0
+49,Guatemala,0.66
+49,Guinea,1.0
+49,Guyana,1.0
+49,Haiti,0.51
+49,Honduras,1.0
+49,Hungary,1.0
+49,Iceland,1.0
+49,Indonesia,0.4
+49,Iran,0.11
+49,Iraq,0.78
+49,Ireland,1.0
+49,Israel,1.0
+49,Italy,0.77
+49,Jamaica,1.0
+49,Jordan,1.0
+49,Kazakhstan,1.0
+49,Kenya,1.0
+49,Kuwait,1.0
+49,Kyrgyzstan,0.47
+49,Laos,1.0
+49,Latvia,1.0
+49,Lebanon,1.0
+49,Lesotho,1.0
+49,Liberia,1.0
+49,Libya,1.0
+49,Lithuania,1.0
+49,Luxembourg,1.0
+49,Madagascar,0.04
+49,Malawi,1.0
+49,Malaysia,1.0
+49,Mali,1.0
+49,Mauritania,1.0
+49,Mexico,1.0
+49,Moldova,1.0
+49,Mongolia,1.0
+49,Montenegro,1.0
+49,Morocco,1.0
+49,Mozambique,1.0
+49,Myanmar,1.0
+49,Namibia,1.0
+49,Nepal,1.0
+49,Netherlands,1.0
+49,New Caledonia,1.0
+49,New Zealand,1.0
+49,Nicaragua,1.0
+49,Niger,0.94
+49,Nigeria,0.39
+49,Norway,1.0
+49,Oman,1.0
+49,Pakistan,1.0
+49,Panama,1.0
+49,Papua New Guinea,0.5
+49,Paraguay,1.0
+49,Peru,1.0
+49,Philippines,1.0
+49,Poland,1.0
+49,Portugal,1.0
+49,Qatar,1.0
+49,Romania,1.0
+49,Rwanda,1.0
+49,Saudi Arabia,1.0
+49,Senegal,0.4
+49,Sierra Leone,1.0
+49,Slovakia,1.0
+49,Slovenia,1.0
+49,Solomon Islands,1.0
+49,Somalia,1.0
+49,South Sudan,1.0
+49,Sri Lanka,1.0
+49,Sudan,0.04
+49,Suriname,1.0
+49,Sweden,1.0
+49,Switzerland,1.0
+49,Syria,0.39
+49,Taiwan,1.0
+49,Tajikistan,1.0
+49,Thailand,1.0
+49,Togo,1.0
+49,Trinidad and Tobago,1.0
+49,Tunisia,1.0
+49,Turkey,0.38
+49,Turkmenistan,1.0
+49,Uganda,1.0
+49,Ukraine,1.0
+49,United Arab Emirates,1.0
+49,United Kingdom,1.0
+49,Uruguay,1.0
+49,Uzbekistan,1.0
+49,Vanuatu,1.0
+49,Venezuela,1.0
+49,Vietnam,0.73
+49,Yemen,0.35
+49,Zambia,1.0
+49,Zimbabwe,1.0
+50,Afghanistan,1.0
+50,Albania,1.0
+50,Algeria,0.31
+50,Angola,0.42
+50,Argentina,1.0
+50,Armenia,1.0
+50,Australia,1.0
+50,Austria,1.0
+50,Azerbaijan,1.0
+50,Bangladesh,1.0
+50,Belarus,1.0
+50,Belize,1.0
+50,Benin,1.0
+50,Bhutan,1.0
+50,Bolivia,1.0
+50,Bosnia and Herzegovina,1.0
+50,Botswana,1.0
+50,Brazil,0.87
+50,Brunei,1.0
+50,Bulgaria,1.0
+50,Burkina Faso,1.0
+50,Burundi,0.22
+50,Cambodia,1.0
+50,Cameroon,0.58
+50,Canada,1.0
+50,Central African Republic,1.0
+50,Chad,0.29
+50,Chile,1.0
+50,Colombia,1.0
+50,Costa Rica,1.0
+50,Croatia,1.0
+50,Cuba,1.0
+50,Cyprus,1.0
+50,Denmark,1.0
+50,Djibouti,1.0
+50,Dominican Republic,1.0
+50,Ecuador,1.0
+50,Egypt,0.85
+50,El Salvador,1.0
+50,Equatorial Guinea,1.0
+50,Estonia,1.0
+50,Ethiopia,0.32
+50,Falkland Islands,1.0
+50,Fiji,1.0
+50,Finland,1.0
+50,France,1.0
+50,Gabon,1.0
+50,Gambia,1.0
+50,Georgia,1.0
+50,Ghana,0.26
+50,Greece,1.0
+50,Greenland,1.0
+50,Guatemala,0.71
+50,Guinea,1.0
+50,Guyana,1.0
+50,Haiti,0.66
+50,Honduras,1.0
+50,Hungary,1.0
+50,Iceland,1.0
+50,Indonesia,0.41
+50,Iran,0.2
+50,Iraq,0.82
+50,Ireland,1.0
+50,Israel,1.0
+50,Italy,0.87
+50,Jamaica,1.0
+50,Jordan,1.0
+50,Kazakhstan,1.0
+50,Kenya,1.0
+50,Kuwait,1.0
+50,Kyrgyzstan,0.54
+50,Laos,1.0
+50,Latvia,1.0
+50,Lebanon,1.0
+50,Lesotho,1.0
+50,Liberia,1.0
+50,Libya,1.0
+50,Lithuania,1.0
+50,Luxembourg,1.0
+50,Madagascar,0.04
+50,Malawi,1.0
+50,Malaysia,1.0
+50,Mali,1.0
+50,Mauritania,1.0
+50,Mexico,1.0
+50,Moldova,1.0
+50,Mongolia,1.0
+50,Montenegro,1.0
+50,Morocco,1.0
+50,Mozambique,1.0
+50,Myanmar,1.0
+50,Namibia,1.0
+50,Nepal,1.0
+50,Netherlands,1.0
+50,New Caledonia,1.0
+50,New Zealand,1.0
+50,Nicaragua,1.0
+50,Niger,1.0
+50,Nigeria,0.42
+50,Norway,1.0
+50,Oman,1.0
+50,Pakistan,1.0
+50,Panama,1.0
+50,Papua New Guinea,0.54
+50,Paraguay,1.0
+50,Peru,1.0
+50,Philippines,1.0
+50,Poland,1.0
+50,Portugal,1.0
+50,Qatar,1.0
+50,Romania,1.0
+50,Rwanda,1.0
+50,Saudi Arabia,1.0
+50,Senegal,0.42
+50,Sierra Leone,1.0
+50,Slovakia,1.0
+50,Slovenia,1.0
+50,Solomon Islands,1.0
+50,Somalia,1.0
+50,South Sudan,1.0
+50,Sri Lanka,1.0
+50,Sudan,0.04
+50,Suriname,1.0
+50,Sweden,1.0
+50,Switzerland,1.0
+50,Syria,0.43
+50,Taiwan,1.0
+50,Tajikistan,1.0
+50,Thailand,1.0
+50,Togo,1.0
+50,Trinidad and Tobago,1.0
+50,Tunisia,1.0
+50,Turkey,0.42
+50,Turkmenistan,1.0
+50,Uganda,1.0
+50,Ukraine,1.0
+50,United Arab Emirates,1.0
+50,United Kingdom,1.0
+50,Uruguay,1.0
+50,Uzbekistan,1.0
+50,Vanuatu,1.0
+50,Venezuela,1.0
+50,Vietnam,0.77
+50,Yemen,0.4
+50,Zambia,1.0
+50,Zimbabwe,1.0
+51,Afghanistan,1.0
+51,Albania,1.0
+51,Algeria,0.33
+51,Angola,0.44
+51,Argentina,1.0
+51,Armenia,1.0
+51,Australia,1.0
+51,Austria,1.0
+51,Azerbaijan,1.0
+51,Bangladesh,1.0
+51,Belarus,1.0
+51,Belize,1.0
+51,Benin,1.0
+51,Bhutan,1.0
+51,Bolivia,1.0
+51,Bosnia and Herzegovina,1.0
+51,Botswana,1.0
+51,Brazil,0.94
+51,Brunei,1.0
+51,Bulgaria,1.0
+51,Burkina Faso,1.0
+51,Burundi,0.26
+51,Cambodia,1.0
+51,Cameroon,0.61
+51,Canada,1.0
+51,Central African Republic,1.0
+51,Chad,0.3
+51,Chile,1.0
+51,Colombia,1.0
+51,Costa Rica,1.0
+51,Croatia,1.0
+51,Cuba,1.0
+51,Cyprus,1.0
+51,Denmark,1.0
+51,Djibouti,1.0
+51,Dominican Republic,1.0
+51,Ecuador,1.0
+51,Egypt,0.91
+51,El Salvador,1.0
+51,Equatorial Guinea,1.0
+51,Estonia,1.0
+51,Ethiopia,0.36
+51,Falkland Islands,1.0
+51,Fiji,1.0
+51,Finland,1.0
+51,France,1.0
+51,Gabon,1.0
+51,Gambia,1.0
+51,Georgia,1.0
+51,Ghana,0.27
+51,Greece,1.0
+51,Greenland,1.0
+51,Guatemala,0.76
+51,Guinea,1.0
+51,Guyana,1.0
+51,Haiti,0.8
+51,Honduras,1.0
+51,Hungary,1.0
+51,Iceland,1.0
+51,Indonesia,0.43
+51,Iran,0.29
+51,Iraq,0.87
+51,Ireland,1.0
+51,Israel,1.0
+51,Italy,0.97
+51,Jamaica,1.0
+51,Jordan,1.0
+51,Kazakhstan,1.0
+51,Kenya,1.0
+51,Kuwait,1.0
+51,Kyrgyzstan,0.61
+51,Laos,1.0
+51,Latvia,1.0
+51,Lebanon,1.0
+51,Lesotho,1.0
+51,Liberia,1.0
+51,Libya,1.0
+51,Lithuania,1.0
+51,Luxembourg,1.0
+51,Madagascar,0.05
+51,Malawi,1.0
+51,Malaysia,1.0
+51,Mali,1.0
+51,Mauritania,1.0
+51,Mexico,1.0
+51,Moldova,1.0
+51,Mongolia,1.0
+51,Montenegro,1.0
+51,Morocco,1.0
+51,Mozambique,1.0
+51,Myanmar,1.0
+51,Namibia,1.0
+51,Nepal,1.0
+51,Netherlands,1.0
+51,New Caledonia,1.0
+51,New Zealand,1.0
+51,Nicaragua,1.0
+51,Niger,1.0
+51,Nigeria,0.45
+51,Norway,1.0
+51,Oman,1.0
+51,Pakistan,1.0
+51,Panama,1.0
+51,Papua New Guinea,0.58
+51,Paraguay,1.0
+51,Peru,1.0
+51,Philippines,1.0
+51,Poland,1.0
+51,Portugal,1.0
+51,Qatar,1.0
+51,Romania,1.0
+51,Rwanda,1.0
+51,Saudi Arabia,1.0
+51,Senegal,0.44
+51,Sierra Leone,1.0
+51,Slovakia,1.0
+51,Slovenia,1.0
+51,Solomon Islands,1.0
+51,Somalia,1.0
+51,South Sudan,1.0
+51,Sri Lanka,1.0
+51,Sudan,0.06
+51,Suriname,1.0
+51,Sweden,1.0
+51,Switzerland,1.0
+51,Syria,0.47
+51,Taiwan,1.0
+51,Tajikistan,1.0
+51,Thailand,1.0
+51,Togo,1.0
+51,Trinidad and Tobago,1.0
+51,Tunisia,1.0
+51,Turkey,0.45
+51,Turkmenistan,1.0
+51,Uganda,1.0
+51,Ukraine,1.0
+51,United Arab Emirates,1.0
+51,United Kingdom,1.0
+51,Uruguay,1.0
+51,Uzbekistan,1.0
+51,Vanuatu,1.0
+51,Venezuela,1.0
+51,Vietnam,0.84
+51,Yemen,0.44
+51,Zambia,1.0
+51,Zimbabwe,1.0
+52,Afghanistan,1.0
+52,Albania,1.0
+52,Algeria,0.36
+52,Angola,0.52
+52,Argentina,1.0
+52,Armenia,1.0
+52,Australia,1.0
+52,Austria,1.0
+52,Azerbaijan,1.0
+52,Bangladesh,1.0
+52,Belarus,1.0
+52,Belize,1.0
+52,Benin,1.0
+52,Bhutan,1.0
+52,Bolivia,1.0
+52,Bosnia and Herzegovina,1.0
+52,Botswana,1.0
+52,Brazil,1.0
+52,Brunei,1.0
+52,Bulgaria,1.0
+52,Burkina Faso,1.0
+52,Burundi,0.29
+52,Cambodia,1.0
+52,Cameroon,0.65
+52,Canada,1.0
+52,Central African Republic,1.0
+52,Chad,0.31
+52,Chile,1.0
+52,Colombia,1.0
+52,Costa Rica,1.0
+52,Croatia,1.0
+52,Cuba,1.0
+52,Cyprus,1.0
+52,Denmark,1.0
+52,Djibouti,1.0
+52,Dominican Republic,1.0
+52,Ecuador,1.0
+52,Egypt,0.98
+52,El Salvador,1.0
+52,Equatorial Guinea,1.0
+52,Estonia,1.0
+52,Ethiopia,0.4
+52,Falkland Islands,1.0
+52,Fiji,1.0
+52,Finland,1.0
+52,France,1.0
+52,Gabon,1.0
+52,Gambia,1.0
+52,Georgia,1.0
+52,Ghana,0.27
+52,Greece,1.0
+52,Greenland,1.0
+52,Guatemala,0.85
+52,Guinea,1.0
+52,Guyana,1.0
+52,Haiti,0.95
+52,Honduras,1.0
+52,Hungary,1.0
+52,Iceland,1.0
+52,Indonesia,0.46
+52,Iran,0.4
+52,Iraq,0.91
+52,Ireland,1.0
+52,Israel,1.0
+52,Italy,1.0
+52,Jamaica,1.0
+52,Jordan,1.0
+52,Kazakhstan,1.0
+52,Kenya,1.0
+52,Kuwait,1.0
+52,Kyrgyzstan,0.67
+52,Laos,1.0
+52,Latvia,1.0
+52,Lebanon,1.0
+52,Lesotho,1.0
+52,Liberia,1.0
+52,Libya,1.0
+52,Lithuania,1.0
+52,Luxembourg,1.0
+52,Madagascar,0.05
+52,Malawi,1.0
+52,Malaysia,1.0
+52,Mali,1.0
+52,Mauritania,1.0
+52,Mexico,1.0
+52,Moldova,1.0
+52,Mongolia,1.0
+52,Montenegro,1.0
+52,Morocco,1.0
+52,Mozambique,1.0
+52,Myanmar,1.0
+52,Namibia,1.0
+52,Nepal,1.0
+52,Netherlands,1.0
+52,New Caledonia,1.0
+52,New Zealand,1.0
+52,Nicaragua,1.0
+52,Niger,1.0
+52,Nigeria,0.49
+52,Norway,1.0
+52,Oman,1.0
+52,Pakistan,1.0
+52,Panama,1.0
+52,Papua New Guinea,0.62
+52,Paraguay,1.0
+52,Peru,1.0
+52,Philippines,1.0
+52,Poland,1.0
+52,Portugal,1.0
+52,Qatar,1.0
+52,Romania,1.0
+52,Rwanda,1.0
+52,Saudi Arabia,1.0
+52,Senegal,0.46
+52,Sierra Leone,1.0
+52,Slovakia,1.0
+52,Slovenia,1.0
+52,Solomon Islands,1.0
+52,Somalia,1.0
+52,South Sudan,1.0
+52,Sri Lanka,1.0
+52,Sudan,0.09
+52,Suriname,1.0
+52,Sweden,1.0
+52,Switzerland,1.0
+52,Syria,0.51
+52,Taiwan,1.0
+52,Tajikistan,1.0
+52,Thailand,1.0
+52,Togo,1.0
+52,Trinidad and Tobago,1.0
+52,Tunisia,1.0
+52,Turkey,0.49
+52,Turkmenistan,1.0
+52,Uganda,1.0
+52,Ukraine,1.0
+52,United Arab Emirates,1.0
+52,United Kingdom,1.0
+52,Uruguay,1.0
+52,Uzbekistan,1.0
+52,Vanuatu,1.0
+52,Venezuela,1.0
+52,Vietnam,0.91
+52,Yemen,0.48
+52,Zambia,1.0
+52,Zimbabwe,1.0
+53,Afghanistan,1.0
+53,Albania,1.0
+53,Algeria,0.39
+53,Angola,0.59
+53,Argentina,1.0
+53,Armenia,1.0
+53,Australia,1.0
+53,Austria,1.0
+53,Azerbaijan,1.0
+53,Bangladesh,1.0
+53,Belarus,1.0
+53,Belize,1.0
+53,Benin,1.0
+53,Bhutan,1.0
+53,Bolivia,1.0
+53,Bosnia and Herzegovina,1.0
+53,Botswana,1.0
+53,Brazil,1.0
+53,Brunei,1.0
+53,Bulgaria,1.0
+53,Burkina Faso,1.0
+53,Burundi,0.33
+53,Cambodia,1.0
+53,Cameroon,0.76
+53,Canada,1.0
+53,Central African Republic,1.0
+53,Chad,0.33
+53,Chile,1.0
+53,Colombia,1.0
+53,Costa Rica,1.0
+53,Croatia,1.0
+53,Cuba,1.0
+53,Cyprus,1.0
+53,Denmark,1.0
+53,Djibouti,1.0
+53,Dominican Republic,1.0
+53,Ecuador,1.0
+53,Egypt,1.0
+53,El Salvador,1.0
+53,Equatorial Guinea,1.0
+53,Estonia,1.0
+53,Ethiopia,0.44
+53,Falkland Islands,1.0
+53,Fiji,1.0
+53,Finland,1.0
+53,France,1.0
+53,Gabon,1.0
+53,Gambia,1.0
+53,Georgia,1.0
+53,Ghana,0.28
+53,Greece,1.0
+53,Greenland,1.0
+53,Guatemala,0.94
+53,Guinea,1.0
+53,Guyana,1.0
+53,Haiti,1.0
+53,Honduras,1.0
+53,Hungary,1.0
+53,Iceland,1.0
+53,Indonesia,0.49
+53,Iran,0.51
+53,Iraq,0.95
+53,Ireland,1.0
+53,Israel,1.0
+53,Italy,1.0
+53,Jamaica,1.0
+53,Jordan,1.0
+53,Kazakhstan,1.0
+53,Kenya,1.0
+53,Kuwait,1.0
+53,Kyrgyzstan,0.74
+53,Laos,1.0
+53,Latvia,1.0
+53,Lebanon,1.0
+53,Lesotho,1.0
+53,Liberia,1.0
+53,Libya,1.0
+53,Lithuania,1.0
+53,Luxembourg,1.0
+53,Madagascar,0.06
+53,Malawi,1.0
+53,Malaysia,1.0
+53,Mali,1.0
+53,Mauritania,1.0
+53,Mexico,1.0
+53,Moldova,1.0
+53,Mongolia,1.0
+53,Montenegro,1.0
+53,Morocco,1.0
+53,Mozambique,1.0
+53,Myanmar,1.0
+53,Namibia,1.0
+53,Nepal,1.0
+53,Netherlands,1.0
+53,New Caledonia,1.0
+53,New Zealand,1.0
+53,Nicaragua,1.0
+53,Niger,1.0
+53,Nigeria,0.52
+53,Norway,1.0
+53,Oman,1.0
+53,Pakistan,1.0
+53,Panama,1.0
+53,Papua New Guinea,0.66
+53,Paraguay,1.0
+53,Peru,1.0
+53,Philippines,1.0
+53,Poland,1.0
+53,Portugal,1.0
+53,Qatar,1.0
+53,Romania,1.0
+53,Rwanda,1.0
+53,Saudi Arabia,1.0
+53,Senegal,0.48
+53,Sierra Leone,1.0
+53,Slovakia,1.0
+53,Slovenia,1.0
+53,Solomon Islands,1.0
+53,Somalia,1.0
+53,South Sudan,1.0
+53,Sri Lanka,1.0
+53,Sudan,0.11
+53,Suriname,1.0
+53,Sweden,1.0
+53,Switzerland,1.0
+53,Syria,0.54
+53,Taiwan,1.0
+53,Tajikistan,1.0
+53,Thailand,1.0
+53,Togo,1.0
+53,Trinidad and Tobago,1.0
+53,Tunisia,1.0
+53,Turkey,0.52
+53,Turkmenistan,1.0
+53,Uganda,1.0
+53,Ukraine,1.0
+53,United Arab Emirates,1.0
+53,United Kingdom,1.0
+53,Uruguay,1.0
+53,Uzbekistan,1.0
+53,Vanuatu,1.0
+53,Venezuela,1.0
+53,Vietnam,0.97
+53,Yemen,0.53
+53,Zambia,1.0
+53,Zimbabwe,1.0
+54,Afghanistan,1.0
+54,Albania,1.0
+54,Algeria,0.42
+54,Angola,0.67
+54,Argentina,1.0
+54,Armenia,1.0
+54,Australia,1.0
+54,Austria,1.0
+54,Azerbaijan,1.0
+54,Bangladesh,1.0
+54,Belarus,1.0
+54,Belize,1.0
+54,Benin,1.0
+54,Bhutan,1.0
+54,Bolivia,1.0
+54,Bosnia and Herzegovina,1.0
+54,Botswana,1.0
+54,Brazil,1.0
+54,Brunei,1.0
+54,Bulgaria,1.0
+54,Burkina Faso,1.0
+54,Burundi,0.38
+54,Cambodia,1.0
+54,Cameroon,0.86
+54,Canada,1.0
+54,Central African Republic,1.0
+54,Chad,0.36
+54,Chile,1.0
+54,Colombia,1.0
+54,Costa Rica,1.0
+54,Croatia,1.0
+54,Cuba,1.0
+54,Cyprus,1.0
+54,Denmark,1.0
+54,Djibouti,1.0
+54,Dominican Republic,1.0
+54,Ecuador,1.0
+54,Egypt,1.0
+54,El Salvador,1.0
+54,Equatorial Guinea,1.0
+54,Estonia,1.0
+54,Ethiopia,0.48
+54,Falkland Islands,1.0
+54,Fiji,1.0
+54,Finland,1.0
+54,France,1.0
+54,Gabon,1.0
+54,Gambia,1.0
+54,Georgia,1.0
+54,Ghana,0.29
+54,Greece,1.0
+54,Greenland,1.0
+54,Guatemala,1.0
+54,Guinea,1.0
+54,Guyana,1.0
+54,Haiti,1.0
+54,Honduras,1.0
+54,Hungary,1.0
+54,Iceland,1.0
+54,Indonesia,0.51
+54,Iran,0.62
+54,Iraq,1.0
+54,Ireland,1.0
+54,Israel,1.0
+54,Italy,1.0
+54,Jamaica,1.0
+54,Jordan,1.0
+54,Kazakhstan,1.0
+54,Kenya,1.0
+54,Kuwait,1.0
+54,Kyrgyzstan,0.8
+54,Laos,1.0
+54,Latvia,1.0
+54,Lebanon,1.0
+54,Lesotho,1.0
+54,Liberia,1.0
+54,Libya,1.0
+54,Lithuania,1.0
+54,Luxembourg,1.0
+54,Madagascar,0.06
+54,Malawi,1.0
+54,Malaysia,1.0
+54,Mali,1.0
+54,Mauritania,1.0
+54,Mexico,1.0
+54,Moldova,1.0
+54,Mongolia,1.0
+54,Montenegro,1.0
+54,Morocco,1.0
+54,Mozambique,1.0
+54,Myanmar,1.0
+54,Namibia,1.0
+54,Nepal,1.0
+54,Netherlands,1.0
+54,New Caledonia,1.0
+54,New Zealand,1.0
+54,Nicaragua,1.0
+54,Niger,1.0
+54,Nigeria,0.56
+54,Norway,1.0
+54,Oman,1.0
+54,Pakistan,1.0
+54,Panama,1.0
+54,Papua New Guinea,0.7
+54,Paraguay,1.0
+54,Peru,1.0
+54,Philippines,1.0
+54,Poland,1.0
+54,Portugal,1.0
+54,Qatar,1.0
+54,Romania,1.0
+54,Rwanda,1.0
+54,Saudi Arabia,1.0
+54,Senegal,0.51
+54,Sierra Leone,1.0
+54,Slovakia,1.0
+54,Slovenia,1.0
+54,Solomon Islands,1.0
+54,Somalia,1.0
+54,South Sudan,1.0
+54,Sri Lanka,1.0
+54,Sudan,0.13
+54,Suriname,1.0
+54,Sweden,1.0
+54,Switzerland,1.0
+54,Syria,0.6
+54,Taiwan,1.0
+54,Tajikistan,1.0
+54,Thailand,1.0
+54,Togo,1.0
+54,Trinidad and Tobago,1.0
+54,Tunisia,1.0
+54,Turkey,0.56
+54,Turkmenistan,1.0
+54,Uganda,1.0
+54,Ukraine,1.0
+54,United Arab Emirates,1.0
+54,United Kingdom,1.0
+54,Uruguay,1.0
+54,Uzbekistan,1.0
+54,Vanuatu,1.0
+54,Venezuela,1.0
+54,Vietnam,1.0
+54,Yemen,0.57
+54,Zambia,1.0
+54,Zimbabwe,1.0
+55,Afghanistan,1.0
+55,Albania,1.0
+55,Algeria,0.46
+55,Angola,0.75
+55,Argentina,1.0
+55,Armenia,1.0
+55,Australia,1.0
+55,Austria,1.0
+55,Azerbaijan,1.0
+55,Bangladesh,1.0
+55,Belarus,1.0
+55,Belize,1.0
+55,Benin,1.0
+55,Bhutan,1.0
+55,Bolivia,1.0
+55,Bosnia and Herzegovina,1.0
+55,Botswana,1.0
+55,Brazil,1.0
+55,Brunei,1.0
+55,Bulgaria,1.0
+55,Burkina Faso,1.0
+55,Burundi,0.42
+55,Cambodia,1.0
+55,Cameroon,0.97
+55,Canada,1.0
+55,Central African Republic,1.0
+55,Chad,0.43
+55,Chile,1.0
+55,Colombia,1.0
+55,Costa Rica,1.0
+55,Croatia,1.0
+55,Cuba,1.0
+55,Cyprus,1.0
+55,Denmark,1.0
+55,Djibouti,1.0
+55,Dominican Republic,1.0
+55,Ecuador,1.0
+55,Egypt,1.0
+55,El Salvador,1.0
+55,Equatorial Guinea,1.0
+55,Estonia,1.0
+55,Ethiopia,0.52
+55,Falkland Islands,1.0
+55,Fiji,1.0
+55,Finland,1.0
+55,France,1.0
+55,Gabon,1.0
+55,Gambia,1.0
+55,Georgia,1.0
+55,Ghana,0.37
+55,Greece,1.0
+55,Greenland,1.0
+55,Guatemala,1.0
+55,Guinea,1.0
+55,Guyana,1.0
+55,Haiti,1.0
+55,Honduras,1.0
+55,Hungary,1.0
+55,Iceland,1.0
+55,Indonesia,0.56
+55,Iran,0.73
+55,Iraq,1.0
+55,Ireland,1.0
+55,Israel,1.0
+55,Italy,1.0
+55,Jamaica,1.0
+55,Jordan,1.0
+55,Kazakhstan,1.0
+55,Kenya,1.0
+55,Kuwait,1.0
+55,Kyrgyzstan,0.87
+55,Laos,1.0
+55,Latvia,1.0
+55,Lebanon,1.0
+55,Lesotho,1.0
+55,Liberia,1.0
+55,Libya,1.0
+55,Lithuania,1.0
+55,Luxembourg,1.0
+55,Madagascar,0.2
+55,Malawi,1.0
+55,Malaysia,1.0
+55,Mali,1.0
+55,Mauritania,1.0
+55,Mexico,1.0
+55,Moldova,1.0
+55,Mongolia,1.0
+55,Montenegro,1.0
+55,Morocco,1.0
+55,Mozambique,1.0
+55,Myanmar,1.0
+55,Namibia,1.0
+55,Nepal,1.0
+55,Netherlands,1.0
+55,New Caledonia,1.0
+55,New Zealand,1.0
+55,Nicaragua,1.0
+55,Niger,1.0
+55,Nigeria,0.59
+55,Norway,1.0
+55,Oman,1.0
+55,Pakistan,1.0
+55,Panama,1.0
+55,Papua New Guinea,0.75
+55,Paraguay,1.0
+55,Peru,1.0
+55,Philippines,1.0
+55,Poland,1.0
+55,Portugal,1.0
+55,Qatar,1.0
+55,Romania,1.0
+55,Rwanda,1.0
+55,Saudi Arabia,1.0
+55,Senegal,0.54
+55,Sierra Leone,1.0
+55,Slovakia,1.0
+55,Slovenia,1.0
+55,Solomon Islands,1.0
+55,Somalia,1.0
+55,South Sudan,1.0
+55,Sri Lanka,1.0
+55,Sudan,0.16
+55,Suriname,1.0
+55,Sweden,1.0
+55,Switzerland,1.0
+55,Syria,0.66
+55,Taiwan,1.0
+55,Tajikistan,1.0
+55,Thailand,1.0
+55,Togo,1.0
+55,Trinidad and Tobago,1.0
+55,Tunisia,1.0
+55,Turkey,0.59
+55,Turkmenistan,1.0
+55,Uganda,1.0
+55,Ukraine,1.0
+55,United Arab Emirates,1.0
+55,United Kingdom,1.0
+55,Uruguay,1.0
+55,Uzbekistan,1.0
+55,Vanuatu,1.0
+55,Venezuela,1.0
+55,Vietnam,1.0
+55,Yemen,0.62
+55,Zambia,1.0
+55,Zimbabwe,1.0
+56,Afghanistan,1.0
+56,Albania,1.0
+56,Algeria,0.5
+56,Angola,0.83
+56,Argentina,1.0
+56,Armenia,1.0
+56,Australia,1.0
+56,Austria,1.0
+56,Azerbaijan,1.0
+56,Bangladesh,1.0
+56,Belarus,1.0
+56,Belize,1.0
+56,Benin,1.0
+56,Bhutan,1.0
+56,Bolivia,1.0
+56,Bosnia and Herzegovina,1.0
+56,Botswana,1.0
+56,Brazil,1.0
+56,Brunei,1.0
+56,Bulgaria,1.0
+56,Burkina Faso,1.0
+56,Burundi,0.46
+56,Cambodia,1.0
+56,Cameroon,1.0
+56,Canada,1.0
+56,Central African Republic,1.0
+56,Chad,0.51
+56,Chile,1.0
+56,Colombia,1.0
+56,Costa Rica,1.0
+56,Croatia,1.0
+56,Cuba,1.0
+56,Cyprus,1.0
+56,Denmark,1.0
+56,Djibouti,1.0
+56,Dominican Republic,1.0
+56,Ecuador,1.0
+56,Egypt,1.0
+56,El Salvador,1.0
+56,Equatorial Guinea,1.0
+56,Estonia,1.0
+56,Ethiopia,0.56
+56,Falkland Islands,1.0
+56,Fiji,1.0
+56,Finland,1.0
+56,France,1.0
+56,Gabon,1.0
+56,Gambia,1.0
+56,Georgia,1.0
+56,Ghana,0.46
+56,Greece,1.0
+56,Greenland,1.0
+56,Guatemala,1.0
+56,Guinea,1.0
+56,Guyana,1.0
+56,Haiti,1.0
+56,Honduras,1.0
+56,Hungary,1.0
+56,Iceland,1.0
+56,Indonesia,0.71
+56,Iran,0.84
+56,Iraq,1.0
+56,Ireland,1.0
+56,Israel,1.0
+56,Italy,1.0
+56,Jamaica,1.0
+56,Jordan,1.0
+56,Kazakhstan,1.0
+56,Kenya,1.0
+56,Kuwait,1.0
+56,Kyrgyzstan,0.93
+56,Laos,1.0
+56,Latvia,1.0
+56,Lebanon,1.0
+56,Lesotho,1.0
+56,Liberia,1.0
+56,Libya,1.0
+56,Lithuania,1.0
+56,Luxembourg,1.0
+56,Madagascar,0.33
+56,Malawi,1.0
+56,Malaysia,1.0
+56,Mali,1.0
+56,Mauritania,1.0
+56,Mexico,1.0
+56,Moldova,1.0
+56,Mongolia,1.0
+56,Montenegro,1.0
+56,Morocco,1.0
+56,Mozambique,1.0
+56,Myanmar,1.0
+56,Namibia,1.0
+56,Nepal,1.0
+56,Netherlands,1.0
+56,New Caledonia,1.0
+56,New Zealand,1.0
+56,Nicaragua,1.0
+56,Niger,1.0
+56,Nigeria,0.62
+56,Norway,1.0
+56,Oman,1.0
+56,Pakistan,1.0
+56,Panama,1.0
+56,Papua New Guinea,0.81
+56,Paraguay,1.0
+56,Peru,1.0
+56,Philippines,1.0
+56,Poland,1.0
+56,Portugal,1.0
+56,Qatar,1.0
+56,Romania,1.0
+56,Rwanda,1.0
+56,Saudi Arabia,1.0
+56,Senegal,0.57
+56,Sierra Leone,1.0
+56,Slovakia,1.0
+56,Slovenia,1.0
+56,Solomon Islands,1.0
+56,Somalia,1.0
+56,South Sudan,1.0
+56,Sri Lanka,1.0
+56,Sudan,0.28
+56,Suriname,1.0
+56,Sweden,1.0
+56,Switzerland,1.0
+56,Syria,0.72
+56,Taiwan,1.0
+56,Tajikistan,1.0
+56,Thailand,1.0
+56,Togo,1.0
+56,Trinidad and Tobago,1.0
+56,Tunisia,1.0
+56,Turkey,0.63
+56,Turkmenistan,1.0
+56,Uganda,1.0
+56,Ukraine,1.0
+56,United Arab Emirates,1.0
+56,United Kingdom,1.0
+56,Uruguay,1.0
+56,Uzbekistan,1.0
+56,Vanuatu,1.0
+56,Venezuela,1.0
+56,Vietnam,1.0
+56,Yemen,0.66
+56,Zambia,1.0
+56,Zimbabwe,1.0
+57,Afghanistan,1.0
+57,Albania,1.0
+57,Algeria,0.54
+57,Angola,0.91
+57,Argentina,1.0
+57,Armenia,1.0
+57,Australia,1.0
+57,Austria,1.0
+57,Azerbaijan,1.0
+57,Bangladesh,1.0
+57,Belarus,1.0
+57,Belize,1.0
+57,Benin,1.0
+57,Bhutan,1.0
+57,Bolivia,1.0
+57,Bosnia and Herzegovina,1.0
+57,Botswana,1.0
+57,Brazil,1.0
+57,Brunei,1.0
+57,Bulgaria,1.0
+57,Burkina Faso,1.0
+57,Burundi,0.52
+57,Cambodia,1.0
+57,Cameroon,1.0
+57,Canada,1.0
+57,Central African Republic,1.0
+57,Chad,0.59
+57,Chile,1.0
+57,Colombia,1.0
+57,Costa Rica,1.0
+57,Croatia,1.0
+57,Cuba,1.0
+57,Cyprus,1.0
+57,Denmark,1.0
+57,Djibouti,1.0
+57,Dominican Republic,1.0
+57,Ecuador,1.0
+57,Egypt,1.0
+57,El Salvador,1.0
+57,Equatorial Guinea,1.0
+57,Estonia,1.0
+57,Ethiopia,0.6
+57,Falkland Islands,1.0
+57,Fiji,1.0
+57,Finland,1.0
+57,France,1.0
+57,Gabon,1.0
+57,Gambia,1.0
+57,Georgia,1.0
+57,Ghana,0.54
+57,Greece,1.0
+57,Greenland,1.0
+57,Guatemala,1.0
+57,Guinea,1.0
+57,Guyana,1.0
+57,Haiti,1.0
+57,Honduras,1.0
+57,Hungary,1.0
+57,Iceland,1.0
+57,Indonesia,0.87
+57,Iran,0.95
+57,Iraq,1.0
+57,Ireland,1.0
+57,Israel,1.0
+57,Italy,1.0
+57,Jamaica,1.0
+57,Jordan,1.0
+57,Kazakhstan,1.0
+57,Kenya,1.0
+57,Kuwait,1.0
+57,Kyrgyzstan,1.0
+57,Laos,1.0
+57,Latvia,1.0
+57,Lebanon,1.0
+57,Lesotho,1.0
+57,Liberia,1.0
+57,Libya,1.0
+57,Lithuania,1.0
+57,Luxembourg,1.0
+57,Madagascar,0.46
+57,Malawi,1.0
+57,Malaysia,1.0
+57,Mali,1.0
+57,Mauritania,1.0
+57,Mexico,1.0
+57,Moldova,1.0
+57,Mongolia,1.0
+57,Montenegro,1.0
+57,Morocco,1.0
+57,Mozambique,1.0
+57,Myanmar,1.0
+57,Namibia,1.0
+57,Nepal,1.0
+57,Netherlands,1.0
+57,New Caledonia,1.0
+57,New Zealand,1.0
+57,Nicaragua,1.0
+57,Niger,1.0
+57,Nigeria,0.66
+57,Norway,1.0
+57,Oman,1.0
+57,Pakistan,1.0
+57,Panama,1.0
+57,Papua New Guinea,0.86
+57,Paraguay,1.0
+57,Peru,1.0
+57,Philippines,1.0
+57,Poland,1.0
+57,Portugal,1.0
+57,Qatar,1.0
+57,Romania,1.0
+57,Rwanda,1.0
+57,Saudi Arabia,1.0
+57,Senegal,0.6
+57,Sierra Leone,1.0
+57,Slovakia,1.0
+57,Slovenia,1.0
+57,Solomon Islands,1.0
+57,Somalia,1.0
+57,South Sudan,1.0
+57,Sri Lanka,1.0
+57,Sudan,0.39
+57,Suriname,1.0
+57,Sweden,1.0
+57,Switzerland,1.0
+57,Syria,0.77
+57,Taiwan,1.0
+57,Tajikistan,1.0
+57,Thailand,1.0
+57,Togo,1.0
+57,Trinidad and Tobago,1.0
+57,Tunisia,1.0
+57,Turkey,0.66
+57,Turkmenistan,1.0
+57,Uganda,1.0
+57,Ukraine,1.0
+57,United Arab Emirates,1.0
+57,United Kingdom,1.0
+57,Uruguay,1.0
+57,Uzbekistan,1.0
+57,Vanuatu,1.0
+57,Venezuela,1.0
+57,Vietnam,1.0
+57,Yemen,0.7
+57,Zambia,1.0
+57,Zimbabwe,1.0
+58,Afghanistan,1.0
+58,Albania,1.0
+58,Algeria,0.58
+58,Angola,0.99
+58,Argentina,1.0
+58,Armenia,1.0
+58,Australia,1.0
+58,Austria,1.0
+58,Azerbaijan,1.0
+58,Bangladesh,1.0
+58,Belarus,1.0
+58,Belize,1.0
+58,Benin,1.0
+58,Bhutan,1.0
+58,Bolivia,1.0
+58,Bosnia and Herzegovina,1.0
+58,Botswana,1.0
+58,Brazil,1.0
+58,Brunei,1.0
+58,Bulgaria,1.0
+58,Burkina Faso,1.0
+58,Burundi,0.58
+58,Cambodia,1.0
+58,Cameroon,1.0
+58,Canada,1.0
+58,Central African Republic,1.0
+58,Chad,0.67
+58,Chile,1.0
+58,Colombia,1.0
+58,Costa Rica,1.0
+58,Croatia,1.0
+58,Cuba,1.0
+58,Cyprus,1.0
+58,Denmark,1.0
+58,Djibouti,1.0
+58,Dominican Republic,1.0
+58,Ecuador,1.0
+58,Egypt,1.0
+58,El Salvador,1.0
+58,Equatorial Guinea,1.0
+58,Estonia,1.0
+58,Ethiopia,0.64
+58,Falkland Islands,1.0
+58,Fiji,1.0
+58,Finland,1.0
+58,France,1.0
+58,Gabon,1.0
+58,Gambia,1.0
+58,Georgia,1.0
+58,Ghana,0.63
+58,Greece,1.0
+58,Greenland,1.0
+58,Guatemala,1.0
+58,Guinea,1.0
+58,Guyana,1.0
+58,Haiti,1.0
+58,Honduras,1.0
+58,Hungary,1.0
+58,Iceland,1.0
+58,Indonesia,1.0
+58,Iran,1.0
+58,Iraq,1.0
+58,Ireland,1.0
+58,Israel,1.0
+58,Italy,1.0
+58,Jamaica,1.0
+58,Jordan,1.0
+58,Kazakhstan,1.0
+58,Kenya,1.0
+58,Kuwait,1.0
+58,Kyrgyzstan,1.0
+58,Laos,1.0
+58,Latvia,1.0
+58,Lebanon,1.0
+58,Lesotho,1.0
+58,Liberia,1.0
+58,Libya,1.0
+58,Lithuania,1.0
+58,Luxembourg,1.0
+58,Madagascar,0.59
+58,Malawi,1.0
+58,Malaysia,1.0
+58,Mali,1.0
+58,Mauritania,1.0
+58,Mexico,1.0
+58,Moldova,1.0
+58,Mongolia,1.0
+58,Montenegro,1.0
+58,Morocco,1.0
+58,Mozambique,1.0
+58,Myanmar,1.0
+58,Namibia,1.0
+58,Nepal,1.0
+58,Netherlands,1.0
+58,New Caledonia,1.0
+58,New Zealand,1.0
+58,Nicaragua,1.0
+58,Niger,1.0
+58,Nigeria,0.69
+58,Norway,1.0
+58,Oman,1.0
+58,Pakistan,1.0
+58,Panama,1.0
+58,Papua New Guinea,0.91
+58,Paraguay,1.0
+58,Peru,1.0
+58,Philippines,1.0
+58,Poland,1.0
+58,Portugal,1.0
+58,Qatar,1.0
+58,Romania,1.0
+58,Rwanda,1.0
+58,Saudi Arabia,1.0
+58,Senegal,0.63
+58,Sierra Leone,1.0
+58,Slovakia,1.0
+58,Slovenia,1.0
+58,Solomon Islands,1.0
+58,Somalia,1.0
+58,South Sudan,1.0
+58,Sri Lanka,1.0
+58,Sudan,0.51
+58,Suriname,1.0
+58,Sweden,1.0
+58,Switzerland,1.0
+58,Syria,0.83
+58,Taiwan,1.0
+58,Tajikistan,1.0
+58,Thailand,1.0
+58,Togo,1.0
+58,Trinidad and Tobago,1.0
+58,Tunisia,1.0
+58,Turkey,0.7
+58,Turkmenistan,1.0
+58,Uganda,1.0
+58,Ukraine,1.0
+58,United Arab Emirates,1.0
+58,United Kingdom,1.0
+58,Uruguay,1.0
+58,Uzbekistan,1.0
+58,Vanuatu,1.0
+58,Venezuela,1.0
+58,Vietnam,1.0
+58,Yemen,0.75
+58,Zambia,1.0
+58,Zimbabwe,1.0
+59,Afghanistan,1.0
+59,Albania,1.0
+59,Algeria,0.62
+59,Angola,1.0
+59,Argentina,1.0
+59,Armenia,1.0
+59,Australia,1.0
+59,Austria,1.0
+59,Azerbaijan,1.0
+59,Bangladesh,1.0
+59,Belarus,1.0
+59,Belize,1.0
+59,Benin,1.0
+59,Bhutan,1.0
+59,Bolivia,1.0
+59,Bosnia and Herzegovina,1.0
+59,Botswana,1.0
+59,Brazil,1.0
+59,Brunei,1.0
+59,Bulgaria,1.0
+59,Burkina Faso,1.0
+59,Burundi,0.65
+59,Cambodia,1.0
+59,Cameroon,1.0
+59,Canada,1.0
+59,Central African Republic,1.0
+59,Chad,0.75
+59,Chile,1.0
+59,Colombia,1.0
+59,Costa Rica,1.0
+59,Croatia,1.0
+59,Cuba,1.0
+59,Cyprus,1.0
+59,Denmark,1.0
+59,Djibouti,1.0
+59,Dominican Republic,1.0
+59,Ecuador,1.0
+59,Egypt,1.0
+59,El Salvador,1.0
+59,Equatorial Guinea,1.0
+59,Estonia,1.0
+59,Ethiopia,0.69
+59,Falkland Islands,1.0
+59,Fiji,1.0
+59,Finland,1.0
+59,France,1.0
+59,Gabon,1.0
+59,Gambia,1.0
+59,Georgia,1.0
+59,Ghana,0.79
+59,Greece,1.0
+59,Greenland,1.0
+59,Guatemala,1.0
+59,Guinea,1.0
+59,Guyana,1.0
+59,Haiti,1.0
+59,Honduras,1.0
+59,Hungary,1.0
+59,Iceland,1.0
+59,Indonesia,1.0
+59,Iran,1.0
+59,Iraq,1.0
+59,Ireland,1.0
+59,Israel,1.0
+59,Italy,1.0
+59,Jamaica,1.0
+59,Jordan,1.0
+59,Kazakhstan,1.0
+59,Kenya,1.0
+59,Kuwait,1.0
+59,Kyrgyzstan,1.0
+59,Laos,1.0
+59,Latvia,1.0
+59,Lebanon,1.0
+59,Lesotho,1.0
+59,Liberia,1.0
+59,Libya,1.0
+59,Lithuania,1.0
+59,Luxembourg,1.0
+59,Madagascar,0.72
+59,Malawi,1.0
+59,Malaysia,1.0
+59,Mali,1.0
+59,Mauritania,1.0
+59,Mexico,1.0
+59,Moldova,1.0
+59,Mongolia,1.0
+59,Montenegro,1.0
+59,Morocco,1.0
+59,Mozambique,1.0
+59,Myanmar,1.0
+59,Namibia,1.0
+59,Nepal,1.0
+59,Netherlands,1.0
+59,New Caledonia,1.0
+59,New Zealand,1.0
+59,Nicaragua,1.0
+59,Niger,1.0
+59,Nigeria,0.73
+59,Norway,1.0
+59,Oman,1.0
+59,Pakistan,1.0
+59,Panama,1.0
+59,Papua New Guinea,0.96
+59,Paraguay,1.0
+59,Peru,1.0
+59,Philippines,1.0
+59,Poland,1.0
+59,Portugal,1.0
+59,Qatar,1.0
+59,Romania,1.0
+59,Rwanda,1.0
+59,Saudi Arabia,1.0
+59,Senegal,0.66
+59,Sierra Leone,1.0
+59,Slovakia,1.0
+59,Slovenia,1.0
+59,Solomon Islands,1.0
+59,Somalia,1.0
+59,South Sudan,1.0
+59,Sri Lanka,1.0
+59,Sudan,0.63
+59,Suriname,1.0
+59,Sweden,1.0
+59,Switzerland,1.0
+59,Syria,0.89
+59,Taiwan,1.0
+59,Tajikistan,1.0
+59,Thailand,1.0
+59,Togo,1.0
+59,Trinidad and Tobago,1.0
+59,Tunisia,1.0
+59,Turkey,0.74
+59,Turkmenistan,1.0
+59,Uganda,1.0
+59,Ukraine,1.0
+59,United Arab Emirates,1.0
+59,United Kingdom,1.0
+59,Uruguay,1.0
+59,Uzbekistan,1.0
+59,Vanuatu,1.0
+59,Venezuela,1.0
+59,Vietnam,1.0
+59,Yemen,0.79
+59,Zambia,1.0
+59,Zimbabwe,1.0
+60,Afghanistan,1.0
+60,Albania,1.0
+60,Algeria,0.66
+60,Angola,1.0
+60,Argentina,1.0
+60,Armenia,1.0
+60,Australia,1.0
+60,Austria,1.0
+60,Azerbaijan,1.0
+60,Bangladesh,1.0
+60,Belarus,1.0
+60,Belize,1.0
+60,Benin,1.0
+60,Bhutan,1.0
+60,Bolivia,1.0
+60,Bosnia and Herzegovina,1.0
+60,Botswana,1.0
+60,Brazil,1.0
+60,Brunei,1.0
+60,Bulgaria,1.0
+60,Burkina Faso,1.0
+60,Burundi,0.72
+60,Cambodia,1.0
+60,Cameroon,1.0
+60,Canada,1.0
+60,Central African Republic,1.0
+60,Chad,0.83
+60,Chile,1.0
+60,Colombia,1.0
+60,Costa Rica,1.0
+60,Croatia,1.0
+60,Cuba,1.0
+60,Cyprus,1.0
+60,Denmark,1.0
+60,Djibouti,1.0
+60,Dominican Republic,1.0
+60,Ecuador,1.0
+60,Egypt,1.0
+60,El Salvador,1.0
+60,Equatorial Guinea,1.0
+60,Estonia,1.0
+60,Ethiopia,0.73
+60,Falkland Islands,1.0
+60,Fiji,1.0
+60,Finland,1.0
+60,France,1.0
+60,Gabon,1.0
+60,Gambia,1.0
+60,Georgia,1.0
+60,Ghana,0.95
+60,Greece,1.0
+60,Greenland,1.0
+60,Guatemala,1.0
+60,Guinea,1.0
+60,Guyana,1.0
+60,Haiti,1.0
+60,Honduras,1.0
+60,Hungary,1.0
+60,Iceland,1.0
+60,Indonesia,1.0
+60,Iran,1.0
+60,Iraq,1.0
+60,Ireland,1.0
+60,Israel,1.0
+60,Italy,1.0
+60,Jamaica,1.0
+60,Jordan,1.0
+60,Kazakhstan,1.0
+60,Kenya,1.0
+60,Kuwait,1.0
+60,Kyrgyzstan,1.0
+60,Laos,1.0
+60,Latvia,1.0
+60,Lebanon,1.0
+60,Lesotho,1.0
+60,Liberia,1.0
+60,Libya,1.0
+60,Lithuania,1.0
+60,Luxembourg,1.0
+60,Madagascar,0.86
+60,Malawi,1.0
+60,Malaysia,1.0
+60,Mali,1.0
+60,Mauritania,1.0
+60,Mexico,1.0
+60,Moldova,1.0
+60,Mongolia,1.0
+60,Montenegro,1.0
+60,Morocco,1.0
+60,Mozambique,1.0
+60,Myanmar,1.0
+60,Namibia,1.0
+60,Nepal,1.0
+60,Netherlands,1.0
+60,New Caledonia,1.0
+60,New Zealand,1.0
+60,Nicaragua,1.0
+60,Niger,1.0
+60,Nigeria,0.76
+60,Norway,1.0
+60,Oman,1.0
+60,Pakistan,1.0
+60,Panama,1.0
+60,Papua New Guinea,1.0
+60,Paraguay,1.0
+60,Peru,1.0
+60,Philippines,1.0
+60,Poland,1.0
+60,Portugal,1.0
+60,Qatar,1.0
+60,Romania,1.0
+60,Rwanda,1.0
+60,Saudi Arabia,1.0
+60,Senegal,0.69
+60,Sierra Leone,1.0
+60,Slovakia,1.0
+60,Slovenia,1.0
+60,Solomon Islands,1.0
+60,Somalia,1.0
+60,South Sudan,1.0
+60,Sri Lanka,1.0
+60,Sudan,0.75
+60,Suriname,1.0
+60,Sweden,1.0
+60,Switzerland,1.0
+60,Syria,0.95
+60,Taiwan,1.0
+60,Tajikistan,1.0
+60,Thailand,1.0
+60,Togo,1.0
+60,Trinidad and Tobago,1.0
+60,Tunisia,1.0
+60,Turkey,0.81
+60,Turkmenistan,1.0
+60,Uganda,1.0
+60,Ukraine,1.0
+60,United Arab Emirates,1.0
+60,United Kingdom,1.0
+60,Uruguay,1.0
+60,Uzbekistan,1.0
+60,Vanuatu,1.0
+60,Venezuela,1.0
+60,Vietnam,1.0
+60,Yemen,0.84
+60,Zambia,1.0
+60,Zimbabwe,1.0
+61,Afghanistan,1.0
+61,Albania,1.0
+61,Algeria,0.7
+61,Angola,1.0
+61,Argentina,1.0
+61,Armenia,1.0
+61,Australia,1.0
+61,Austria,1.0
+61,Azerbaijan,1.0
+61,Bangladesh,1.0
+61,Belarus,1.0
+61,Belize,1.0
+61,Benin,1.0
+61,Bhutan,1.0
+61,Bolivia,1.0
+61,Bosnia and Herzegovina,1.0
+61,Botswana,1.0
+61,Brazil,1.0
+61,Brunei,1.0
+61,Bulgaria,1.0
+61,Burkina Faso,1.0
+61,Burundi,0.79
+61,Cambodia,1.0
+61,Cameroon,1.0
+61,Canada,1.0
+61,Central African Republic,1.0
+61,Chad,0.91
+61,Chile,1.0
+61,Colombia,1.0
+61,Costa Rica,1.0
+61,Croatia,1.0
+61,Cuba,1.0
+61,Cyprus,1.0
+61,Denmark,1.0
+61,Djibouti,1.0
+61,Dominican Republic,1.0
+61,Ecuador,1.0
+61,Egypt,1.0
+61,El Salvador,1.0
+61,Equatorial Guinea,1.0
+61,Estonia,1.0
+61,Ethiopia,0.77
+61,Falkland Islands,1.0
+61,Fiji,1.0
+61,Finland,1.0
+61,France,1.0
+61,Gabon,1.0
+61,Gambia,1.0
+61,Georgia,1.0
+61,Ghana,1.0
+61,Greece,1.0
+61,Greenland,1.0
+61,Guatemala,1.0
+61,Guinea,1.0
+61,Guyana,1.0
+61,Haiti,1.0
+61,Honduras,1.0
+61,Hungary,1.0
+61,Iceland,1.0
+61,Indonesia,1.0
+61,Iran,1.0
+61,Iraq,1.0
+61,Ireland,1.0
+61,Israel,1.0
+61,Italy,1.0
+61,Jamaica,1.0
+61,Jordan,1.0
+61,Kazakhstan,1.0
+61,Kenya,1.0
+61,Kuwait,1.0
+61,Kyrgyzstan,1.0
+61,Laos,1.0
+61,Latvia,1.0
+61,Lebanon,1.0
+61,Lesotho,1.0
+61,Liberia,1.0
+61,Libya,1.0
+61,Lithuania,1.0
+61,Luxembourg,1.0
+61,Madagascar,0.99
+61,Malawi,1.0
+61,Malaysia,1.0
+61,Mali,1.0
+61,Mauritania,1.0
+61,Mexico,1.0
+61,Moldova,1.0
+61,Mongolia,1.0
+61,Montenegro,1.0
+61,Morocco,1.0
+61,Mozambique,1.0
+61,Myanmar,1.0
+61,Namibia,1.0
+61,Nepal,1.0
+61,Netherlands,1.0
+61,New Caledonia,1.0
+61,New Zealand,1.0
+61,Nicaragua,1.0
+61,Niger,1.0
+61,Nigeria,0.8
+61,Norway,1.0
+61,Oman,1.0
+61,Pakistan,1.0
+61,Panama,1.0
+61,Papua New Guinea,1.0
+61,Paraguay,1.0
+61,Peru,1.0
+61,Philippines,1.0
+61,Poland,1.0
+61,Portugal,1.0
+61,Qatar,1.0
+61,Romania,1.0
+61,Rwanda,1.0
+61,Saudi Arabia,1.0
+61,Senegal,0.72
+61,Sierra Leone,1.0
+61,Slovakia,1.0
+61,Slovenia,1.0
+61,Solomon Islands,1.0
+61,Somalia,1.0
+61,South Sudan,1.0
+61,Sri Lanka,1.0
+61,Sudan,0.87
+61,Suriname,1.0
+61,Sweden,1.0
+61,Switzerland,1.0
+61,Syria,1.0
+61,Taiwan,1.0
+61,Tajikistan,1.0
+61,Thailand,1.0
+61,Togo,1.0
+61,Trinidad and Tobago,1.0
+61,Tunisia,1.0
+61,Turkey,0.88
+61,Turkmenistan,1.0
+61,Uganda,1.0
+61,Ukraine,1.0
+61,United Arab Emirates,1.0
+61,United Kingdom,1.0
+61,Uruguay,1.0
+61,Uzbekistan,1.0
+61,Vanuatu,1.0
+61,Venezuela,1.0
+61,Vietnam,1.0
+61,Yemen,0.88
+61,Zambia,1.0
+61,Zimbabwe,1.0
