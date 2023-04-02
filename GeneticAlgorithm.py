@@ -40,22 +40,22 @@ class Gene:
 
     def fitness(self, world: World, num_timestamps: int) -> None:
         """Runs simulation and gives a fitness score to the gene"""
-        vaccine_shipiments: list[VaccineShipment] = []
+        vaccine_shipments: list[VaccineShipment] = []
         exporters = list(world.exporting_countries.keys())
         for i in range(num_timestamps):
-            for shipment in vaccine_shipiments:
+            for shipment in vaccine_shipments:
                 # updating shipments
                 shipment.time_left -= 1
                 if shipment.time_left == 0:
                     # shipment has arrived to country
                     world.export_vaccine(
                         importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
-                    vaccine_shipiments.remove(shipment)
+                    vaccine_shipments.remove(shipment)
             for exporter in exporters:
                 for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
                     exporter_obj = world.exporting_countries[exporter]
                     # adding shipment to stack
-                    vaccine_shipiments.append(VaccineShipment(
+                    vaccine_shipments.append(VaccineShipment(
                         importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
             for country in world.countries.values():
                 # country distributes vaccines to its population
@@ -145,14 +145,14 @@ class GeneticAlgorithm:
     chromosome_size: int
     num_chromosomes: int
     num_best_genes: int
-    chromosome_dict: dict[int, dict[str, float]]
+    chromosome_dict: dict[int, dict[str, float]] = {}
     chromosome_dataframe: pandas.DataFrame
 
     world_graph: World
     num_timestamps: int
     data_record: pandas.DataFrame
 
-    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World, num_timestamps: int, num_best_genes: int, chromosome_dict: dict[int, dict[Country, float]]):
+    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World, num_timestamps: int, num_best_genes: int) -> None:
         self.mutation_rate = mutation_rate
         self.crossover_rate = crossover_rate
         self.replication_rate = replication_rate
@@ -161,7 +161,6 @@ class GeneticAlgorithm:
         self.world_graph = world
         self.num_timestamps = num_timestamps
         self.num_best_genes = num_best_genes
-        self.chromosome_dict = {}
 
     def run(self) -> Chromosome:
         """Runs the genetic algorithm and returns the final chromosome"""
@@ -169,8 +168,7 @@ class GeneticAlgorithm:
         index_so_far = 0
         chromosome = self.create_initial_chromosome()
         self.chromosome_dict[index_so_far] = self.average_percentage_vaccinated(
-            chromosome)
-
+            self.world_graph, chromosome)
         chromosome.fitness(
             num_timestamps=self.num_timestamps, world=self.world_graph)
         for i in range(self.num_chromosomes):
@@ -178,13 +176,13 @@ class GeneticAlgorithm:
             chromosome = self.selection(chromosome=chromosome)
             chromosome.fitness(world=self.world_graph,
                                num_timestamps=self.num_timestamps)
-            self.chromosome_dict[i + 1] = self.average_percentage_vaccinated(
-                chromosome)
+            self.chromosome_dict[index_so_far + 1] = self.average_percentage_vaccinated(
+                self.world_graph, chromosome)
             index_so_far += 1
             print(
                 f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} min: {min([gene.fitness_value for gene in chromosome.genes])} max: {max([gene.fitness_value for gene in chromosome.genes])}")
         # self.data_record.to_csv("data.csv", index=False)
-            self.chrosmosome_dataframe = pandas.DataFrame.from_dict(
+            self.chromosome_dataframe = pandas.DataFrame.from_dict(
                 self.chromosome_dict, orient='index')
         return chromosome
 
@@ -382,29 +380,22 @@ class GeneticAlgorithm:
 
     def average_percentage_vaccinated(self, world: World, chromosome: Chromosome) -> dict[str, float]:
         """Calculates the average percentage of vaccinated people in each country in a gene in a chromosome"""
-        importing_countries = world.countries
-        exporting_countries = world.exporting_countries
-        countries = self.merge(importing_countries, exporting_countries)
-        countries_to_population = {
-            country_name: countries[country_name].population for country_name in countries}
-
         countries2 = {}
         countries_with_genes = {}
         for gene in chromosome.genes:
             for exporter in gene.vaccine_distribution:
-                for list in gene.vaccine_distribution[exporter]:
-                    for timestamp in list:
-                        for tuple in timestamp:
-                            if tuple[0] not in countries2:
-                                countries2[tuple[0]] = tuple[1]
-                            else:
-                                countries2[tuple[0]] += tuple[1]
+                for timestamp in gene.vaccine_distribution[exporter]:
+                    for tpl in timestamp:
+                        if tpl[0] not in countries2:
+                            countries2[tpl[0]] = tpl[1]
+                        else:
+                            countries2[tpl[0]] += tpl[1]
             countries_with_genes[gene] = countries2
             countries2 = {}
         for gene in countries_with_genes:
             for country in countries_with_genes[gene]:
                 countries_with_genes[gene][country] = countries_with_genes[gene][country] / \
-                    countries_to_population[country]
+                    self.world_graph.countries[country].population
 
         countries_with_weighted_avg = {}
         for gene in countries_with_genes:
@@ -418,8 +409,9 @@ class GeneticAlgorithm:
                 chromosome.genes)
         return countries_with_weighted_avg
 
-    def merge(dict1, dict2):
-        return (dict2.update(dict1))
+    def merge(self, dict1: dict, dict2: dict) -> dict:
+        dict2.update(dict1)
+        return dict2
 
 
 def generate_timestamp_vaccine_amount(num_timestamps, world) -> list[int]:
