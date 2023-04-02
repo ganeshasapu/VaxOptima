@@ -184,8 +184,6 @@ class GeneticAlgorithm:
         # self.data_record.to_csv("data.csv", index=False)
             self.chromosome_dataframe = pandas.DataFrame.from_dict(
                 self.chromosome_dict, orient='index')
-        print(self.chromosome_dict)
-        print(self.chromosome_dataframe)
         return chromosome
 
     def record_data(self, generation: int):
