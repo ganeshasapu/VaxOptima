@@ -184,6 +184,8 @@ class GeneticAlgorithm:
         # self.data_record.to_csv("data.csv", index=False)
             self.chromosome_dataframe = pandas.DataFrame.from_dict(
                 self.chromosome_dict, orient='index')
+        print(self.chromosome_dict)
+        print(self.chromosome_dataframe)
         return chromosome
 
     def record_data(self, generation: int):
@@ -408,10 +410,6 @@ class GeneticAlgorithm:
             countries_with_weighted_avg[country] = countries_with_weighted_avg[country] / len(
                 chromosome.genes)
         return countries_with_weighted_avg
-
-    def merge(self, dict1: dict, dict2: dict) -> dict:
-        dict2.update(dict1)
-        return dict2
 
 
 def generate_timestamp_vaccine_amount(num_timestamps, world) -> list[int]:
