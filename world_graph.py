@@ -133,6 +133,11 @@ def create_world() -> World:
     for exporter in exporters:
         exporters[exporter].edges[exporter] = Edge(
             importer=exporter, shipment_time=0)
+        for other_exporter in exporters:
+            if other_exporter != exporter:
+                edge = Edge(importer=countries[other_exporter],
+                            shipment_time=shipment_times[exporter][all_countries_to_continent[other_exporter]])
+                exporters[exporter].edges[other_exporter] = edge
 
     return World(countries, exporters)
 
