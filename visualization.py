@@ -30,6 +30,12 @@ def visualize_data(dataframe : pandas.DataFrame):
     # Merge your data with the GeoDataFrame
     world_data = world.merge(dataframe, left_on="name", right_on="Country")
 
+    custom_color_scale = [
+        (0, "#ff0000"),
+        (0.5, "#ffff00"),
+        (1.0, "#00ff00"),
+    ]
+
     # Create the interactive map using plotly
     fig = px.choropleth(
         world_data,
@@ -38,7 +44,7 @@ def visualize_data(dataframe : pandas.DataFrame):
         hover_name="Country",
         animation_frame="Timestamp",
         projection="natural earth",
-        color_continuous_scale=px.colors.sequential.Plasma,
+        color_continuous_scale=custom_color_scale,
         range_color=(0.0, 1.0)
     )
 
