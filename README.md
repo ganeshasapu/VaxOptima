@@ -1,5 +1,5 @@
 # VaxOptima
-Plotting the optimal course for global vaccination
+Our project goal is to use the genetic algorithm and the power of the graph data structure to optimize vaccine distribution to reach the 70% goal set out by the WHO in the fastest amount of time. We used several datasets to model the transportation of vaccine shipments.  
 
 Plots:
 
