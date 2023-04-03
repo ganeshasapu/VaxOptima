@@ -21,6 +21,7 @@ def visualize_data(dataframe : pandas.DataFrame):
     world["name"].replace("S. Sudan", "South Sudan", inplace=True)
     world["name"].replace("Bosnia and Herz.", "Bosnia and Herzegovina", inplace=True)
     world["name"].replace("Timor-Leste", "Timor", inplace=True)
+    world["name"].replace("Côte d'Ivoire", "Cote d'Ivoire", inplace=True)
 
     countries = world["name"].to_list()
     print(set(countries))
