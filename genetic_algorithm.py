@@ -3,10 +3,10 @@ File that performs the genetic algorithm
 """
 
 from dataclasses import dataclass
+from world_graph import World, ExportingCountry, Country, Edge
 import random
 from typing import Optional
 import pandas
-from WorldGraph import World, Country
 
 
 class Gene:
@@ -39,6 +39,7 @@ class Gene:
         self.fitness_value = fitness_value
         self.vaccine_distribution = vaccine_distribution
         self.country_data = {}
+
 
     def __str__(self) -> str:
         return f"Termination Timestamp: {self.fitness_value}"

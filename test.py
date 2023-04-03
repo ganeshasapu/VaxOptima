@@ -1,4 +1,4 @@
-from GeneticAlgorithm import GeneticAlgorithm
+from genetic_algorithm import GeneticAlgorithm
 from WorldGraph import World
 
 if __name__ == "__main__":
