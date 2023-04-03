@@ -1,7 +1,7 @@
 """Main runner file"""
 import random
-import WorldGraph as wg
-import genetic_algorithm as ga
+import world_graph as wg
+import GeneticAlgorithm as ga
 
 
 def algorithm_runner_fixed(num_timestamps: int, num_best_genes: int, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int):

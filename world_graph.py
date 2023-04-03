@@ -1,5 +1,5 @@
 """File for the representation of the world graph"""
-import DataManipulation as dm
+import data_manipulation as dm
 
 
 class Country:
@@ -18,14 +18,14 @@ class Country:
     vaccines_held: int
     vaccine_rate: float
 
-    def __init__(self, name: str, vaccine_rate: float, population: int):
+    def __init__(self, name: str, vaccine_rate: float, population: int) -> None:
         self.name = name
         self.vaccine_rate = vaccine_rate
         self.population = population
         self.vaccinated_population = 0
         self.vaccines_held = 0
 
-    def vaccinate(self):
+    def vaccinate(self) -> None:
         """Vaccinates the country"""
         amount_vaxinated = self.vaccine_rate * self.vaccines_held
         if amount_vaxinated > self.population - self.vaccinated_population:
@@ -33,7 +33,7 @@ class Country:
         else:
             self.vaccinated_population += amount_vaxinated
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name}: {self.vaccinated_population} / {self.population}"
 
 
@@ -44,7 +44,7 @@ class Edge:
     shipment_time: int
     buffer_vaccine_shipments: list[tuple[int, int]] = []
 
-    def __init__(self, importer: Country, shipment_time: int):
+    def __init__(self, importer: Country, shipment_time: int) -> None:
         self.importer = importer
         self.shipment_time = shipment_time
         self.buffer_vaccine_shipments = []
@@ -55,7 +55,12 @@ class ExportingCountry(Country):
     export_rate: float
     edges: dict[str: Edge]
 
-    def __init__(self, name: str, vaccine_rate: float, export_rate: float, edges: dict[str: Edge], population: int):
+    def __init__(self,
+                 name: str,
+                 vaccine_rate: float,
+                 export_rate: float,
+                 edges: dict[str: Edge],
+                 population: int) -> None:
         super().__init__(name=name, vaccine_rate=vaccine_rate, population=population)
         self.export_rate = export_rate
         self.edges = edges
@@ -66,11 +71,11 @@ class World:
     exporting_countries: dict[str: ExportingCountry]
     countries: dict[str: Country]
 
-    def __init__(self, countries: dict, exporting_countries: dict):
+    def __init__(self, countries: dict, exporting_countries: dict) -> None:
         self.countries = countries
         self.exporting_countries = exporting_countries
 
-    def reset(self):
+    def reset(self) -> None:
         """Resets the world to the initial state"""
         for country in self.countries.values():
             country.vaccinated_population = 0
@@ -81,7 +86,7 @@ class World:
             for edge in exporter.edges.values():
                 edge.buffer_vaccine_shipments = []
 
-    def export_vaccine(self, importer: Country, vaccine_amount: int):
+    def export_vaccine(self, importer: Country, vaccine_amount: int) -> None:
         """Export vaccine"""
         importer.vaccines_held += vaccine_amount
 
@@ -143,5 +148,12 @@ def get_edges(exporter: str, countries: dict, continents: dict, shipment_times: 
 
 
 if __name__ == '__main__':
-    w = create_world()
-    print(w)
+    import doctest
+    doctest.testmod(verbose=True)
+
+    import python_ta
+    python_ta.check_all(config={
+        'extra-imports': ["data_manipulation"],  # the names (strs) of imported modules
+        'allowed-io': [],  # the names (strs) of functions that call print/open/input
+        'max-line-length': 120
+    })

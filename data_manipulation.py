@@ -1,6 +1,6 @@
-"""File for data manipulation for data in datasets folder"""
+"""File for manipulating for data in datasets folder"""
 import pandas as pd
-import json
+import geopandas as gp
 
 # Dictionary maps source to destinations and the time it takes to ship to each destination
 # Shipment Time Meaning:
@@ -123,7 +123,7 @@ def _get_vaxrates(countries: dict, vaccines_df: pd.DataFrame) -> dict:
 
 
 def _get_populations(countries: dict, population_df: pd.DataFrame) -> dict:
-    """Helper Method that returns a dict mapping an exporting country to its export rate"""
+    """Helper Method that returns a dict mapping an exporting country to its population"""
     country_to_pop = {}
     for item in population_df.iterrows():
         country = item[1]['Country (or dependency)']
@@ -134,8 +134,9 @@ def _get_populations(countries: dict, population_df: pd.DataFrame) -> dict:
 
 
 def _get_export_rates() -> dict:
-    """Helper Method that returns a dict mapping a country to its population"""
-    country_vac_export_rate = {c: ((VACCINE_EXPORTERS[c] - 67000000) / (1986400000 - 67000000)) for c in VACCINE_EXPORTERS}
+    """Helper Method that returns a dict mapping a country to its export rate"""
+    vac_exp = VACCINE_EXPORTERS
+    country_vac_export_rate = {c: ((vac_exp[c] - 67000000) / (1986400000 - 67000000)) for c in vac_exp}
     return country_vac_export_rate
 
 
@@ -147,15 +148,10 @@ def _get_shipment_times(countries: dict) -> dict:
 
 def _get_countries_on_map() -> set:
     """Helper Method that returns a set of countries that are represented on the folium map"""
-    countries = set()
-
-    with open("datasets/world-countries.json") as file:
-        data = json.load(file)
-        features = data["features"]
-        for f in features:
-            countries.add(f["properties"]["name"])
-
-    return countries
+    world = gp.read_file(gp.datasets.get_path("naturalearth_lowres"))
+    world["name"].replace("United States of America", "United States", inplace=True)
+    countries = world["name"].to_list()
+    return set(countries)
 
 
 def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
@@ -169,24 +165,12 @@ def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
 # Testing
 # ----------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
-    # cont = pd.read_csv("datasets\\continents-according-to-our-world-in-data.csv")
-    # vac = pd.read_csv("datasets\\vaccinations.csv")
-    # pop = pd.read_csv("datasets\\population_by_country_2020.csv")
-    # count = _get_countries_on_map()
-    # countr = _get_all_countries(cont, vac, pop, count)
-    # print(str(len(countr)) + ": " + str(countr))
-    #
-    # vacr = _get_vaxrates(countr, vac)
-    # print(str(len(vacr)) + ": " + str(vacr))
-    #
-    # popu = _get_populations(countr, pop)
-    # print(str(len(popu)) + ": " + str(popu))
-    #
-    # exprate = _get_export_rates()
-    # print(str(len(exprate)) + ": " + str(exprate))
-    #
-    # shiptime = _get_shipment_times(countr)
-    # print(str(len(shiptime)) + ": " + str(shiptime))
+    import doctest
+    doctest.testmod(verbose=True)
 
-    all_att = get_all_country_attributes()
-    # print(all_att)
+    import python_ta
+    python_ta.check_all(config={
+        'extra-imports': ["pandas", "geopandas"],  # the names (strs) of imported modules
+        'allowed-io': ["_get_countries_on_map"],  # the names (strs) of functions that call print/open/input
+        'max-line-length': 120
+    })
