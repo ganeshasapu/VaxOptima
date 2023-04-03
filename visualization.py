@@ -39,6 +39,7 @@ def visualize_data(dataframe : pandas.DataFrame):
         animation_frame="Timestamp",
         projection="natural earth",
         color_continuous_scale=px.colors.sequential.Plasma,
+        range_color=(0.0, 1.0)
     )
 
     # Show the map
