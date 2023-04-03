@@ -48,10 +48,10 @@ class Gene:
         """Runs simulation and gives a fitness score to the gene"""
         vaccine_shipments: list[VaccineShipment] = []
         exporters = list(world.exporting_countries.keys())
-        lst_to_remove = []
         if record_data:
             self.country_data = {}
         for i in range(num_timestamps):
+            lst_to_remove = []
             for shipment in vaccine_shipments:
                 # updating shipments
                 shipment.time_left -= 1
@@ -60,8 +60,8 @@ class Gene:
                     world.export_vaccine(
                         importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
                     lst_to_remove.append(shipment)
-        for shipment in lst_to_remove:
-            vaccine_shipments.remove(shipment)
+            for shipment in lst_to_remove:
+                vaccine_shipments.remove(shipment)
             for exporter in exporters:
                 for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
                     exporter_obj = world.exporting_countries[exporter]
