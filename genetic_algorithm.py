@@ -181,8 +181,8 @@ class GeneticAlgorithm:
 
     world_graph: World
     num_timestamps: int
-    data_record: pandas.DataFrame
     final_chromosome_data: pandas.DataFrame
+    fitness_values: pandas.DataFrame
 
     def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int,
                  num_chromosomes: int, world: World, num_timestamps: int, num_best_genes: int) -> None:
@@ -196,6 +196,7 @@ class GeneticAlgorithm:
         self.num_best_genes = num_best_genes
         self.final_chromosome_data = pandas.DataFrame(
             columns=["Timestamp", "Country", "Percent Vaccinated"])
+        self.fitness_values = pandas.DataFrame(columns=["Timestamp", "Fitness Value"])
 
     def run(self) -> Chromosome:
         """Runs the genetic algorithm and returns the final chromosome"""
@@ -211,12 +212,11 @@ class GeneticAlgorithm:
             print(f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} \
             min: {min([gene.fitness_value for gene in chromosome.genes])} \
             max: {max([gene.fitness_value for gene in chromosome.genes])}")
+            self.fitness_values.loc[i + 1] = [i + 1, chromosome.calculate_average_fitness()]
 
         # self.chromosome_dataframe.to_csv("chromosome_data.csv", index=False)
         chromosome.update_final_distribution(
             world=self.world_graph, dataframe=self.final_chromosome_data)
-        self.final_chromosome_data.to_csv(
-            "final_chromosome_data.csv", index=False)
         return chromosome
 
     def create_initial_chromosome(self) -> Chromosome:
@@ -363,7 +363,7 @@ class GeneticAlgorithm:
         """Mutates certain genes aggressively to help escape local minima"""
         timestamp_copy = timestamp.copy()
         newest_timestamp = []
-        for __ in range(len(timestamp_copy)):
+        for _ in range(len(timestamp_copy)):
             mutated_tuple = timestamp_copy.pop()
             mutated_tuple = (mutated_tuple[0], random.randint(
                 int(mutated_tuple[1] * 0.5), int(mutated_tuple[1] * 1.5)))
@@ -414,7 +414,7 @@ def generate_timestamp_vaccine_amount(num_timestamps: int, world: World) -> list
         timestamps_vaccine_amount[exporter.name] = []
         for i in range(num_timestamps):
             timestamps_vaccine_amount[exporter.name].append(
-                ((i + 1) ** 2) * exporter.export_rate * 10_000_000)
+                (i + 1) * exporter.export_rate * 1000_000_000)
     return timestamps_vaccine_amount
 
 

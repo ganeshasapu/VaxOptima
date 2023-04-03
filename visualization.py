@@ -1,8 +1,12 @@
+import os
 from urllib.request import urlopen
+import webbrowser
 
 import pandas
 import plotly.express as px
 import geopandas
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
 
 def visualize_data(dataframe : pandas.DataFrame):
     """
@@ -23,10 +27,6 @@ def visualize_data(dataframe : pandas.DataFrame):
     world["name"].replace("Timor-Leste", "Timor", inplace=True)
     world["name"].replace("Côte d'Ivoire", "Cote d'Ivoire", inplace=True)
 
-    countries = world["name"].to_list()
-    print(set(countries))
-
-
     # Merge your data with the GeoDataFrame
     world_data = world.merge(dataframe, left_on="name", right_on="Country")
 
@@ -37,7 +37,7 @@ def visualize_data(dataframe : pandas.DataFrame):
     ]
 
     # Create the interactive map using plotly
-    fig = px.choropleth(
+    cloropleth = px.choropleth(
         world_data,
         locations="iso_a3",
         color="Percent Vaccinated",
@@ -48,39 +48,15 @@ def visualize_data(dataframe : pandas.DataFrame):
         range_color=(0.0, 1.0)
     )
 
-    # Show the map
-    fig.show()
+    cloropleth.write_html("world_map.html")
+    os.system("open world_map.html")
 
-if __name__ == '__main__':
-    data = pandas.DataFrame({
-        "Timestamp": [1, 1, 1, 2, 2, 2],
-        "Country": ["United States", "Canada", 'Mexico', "United States", "Canada", 'Mexico'],
-        "Percent Vaccinated": [20, 50, 30, 50, 70, 100]
-        })
-    visualize_data(data)
 
-    # # Load data into a pandas DataFrame
-    # df = pandas.DataFrame(data)
+def visualize_fitness(fitness_values : pandas.DataFrame):
+    """
+    Visualize the fitness values over time.
+    """
+    line_graph = px.line(fitness_values, x="Timestamp", y="Fitness Value", title="Fitness over time")
 
-    # # Load a GeoDataFrame with world geometry data
-    # world = geopandas.read_file(geopandas.datasets.get_path("naturalearth_lowres"))
-    # world["name"].replace("United States of America", "United States", inplace=True)
-
-    # # Merge your data with the GeoDataFrame
-    # world_data = world.merge(df, left_on="name", right_on="Country")
-    # countries = world["name"].tolist()
-    # print(countries)
-
-    # # Create the interactive map using plotly
-    # fig = px.choropleth(
-    #     world_data,
-    #     locations="iso_a3",
-    #     color="Vaccination_Score",
-    #     hover_name="Country",
-    #     animation_frame="Timestamp",
-    #     projection="natural earth",
-    #     color_continuous_scale=px.colors.sequential.Plasma,
-    # )
-
-    # # Show the map
-    # fig.show()
+    line_graph.write_html("fitness.html")
+    os.system("open fitness.html")
