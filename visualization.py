@@ -1,45 +1,37 @@
-# Draw a map using Folium
-# Show each country on the map across generations
-# Whenever you click on a country, reveal the popup for that country containing the graph with \
-# its vaccination score across generations (https://python-visualization.github.io/folium/quickstart.html, \
-# https://nbviewer.org/github/python-visualization/folium/blob/main/examples/Popups.ipynb)
-# Use Chloropleth to map each country, since it is compatible with Pandas. The colours represent the vaccination score \
-# of each country in the current generation.
-# Use this json file for the borders and cite it \
-# (https://github.com/python-visualization/folium/blob/main/examples/data/world-countries.json)
-
-# For Styling, use the [16] red to yellow colour scheme \
-# (https://python-visualization.github.io/folium/quickstart.html#Styling-function)
 from urllib.request import urlopen
 
 import pandas
 import plotly.express as px
 import geopandas
 
-if __name__ == '__main__':
-    data = {
-        "Timestamp": ["2018-01-01", "2018-01-01", "2018-01-02", "2018-01-02"],
-        "Country": ["United States", "Canada", "United States", "Canada"],
-        "Vaccination_Score": [80, 60, 85, 70]
-        }
-
-    # Load data into a pandas DataFrame
-    df = pandas.DataFrame(data)
-
+def visualize_data(dataframe : pandas.DataFrame):
+    """
+    Visualize the dataframe on a map across timestamps using plotly and geopandas.
+    """
     # Load a GeoDataFrame with world geometry data
     world = geopandas.read_file(geopandas.datasets.get_path("naturalearth_lowres"))
     world["name"].replace("United States of America", "United States", inplace=True)
+    world["name"].replace("N. Cyprus", "North Cyprus", inplace=True)
+    world["name"].replace("Falkland Is.", "Falkland Islands", inplace=True)
+    world["name"].replace("Eq. Guinea", "Equitorial Guinea", inplace=True)
+    world["name"].replace("Dem. Rep. Congo", "Democratic Republic of Congo", inplace=True)
+    world["name"].replace("Central African Rep.", "Central African Republic", inplace=True)
+    world["name"].replace("Dominican Rep.", "Dominican Republic", inplace=True)
+    world["name"].replace("Soloman Is.", "Soloman Islands", inplace=True)
+    world["name"].replace("S. Sudan", "South Sudan", inplace=True)
+    world["name"].replace("Bosnia and Herz.", "Bosnia and Herzegovina", inplace=True)
+    world["name"].replace("Timor-Leste", "Timor", inplace=True)
+
+    print(world["name"].tolist())    
 
     # Merge your data with the GeoDataFrame
-    world_data = world.merge(df, left_on="name", right_on="Country")
-    countries = world["name"].tolist()
-    print(countries)
+    world_data = world.merge(dataframe, left_on="name", right_on="Country")
 
     # Create the interactive map using plotly
     fig = px.choropleth(
         world_data,
         locations="iso_a3",
-        color="Vaccination_Score",
+        color="Percent Vaccinated",
         hover_name="Country",
         animation_frame="Timestamp",
         projection="natural earth",
@@ -48,3 +40,37 @@ if __name__ == '__main__':
 
     # Show the map
     fig.show()
+
+if __name__ == '__main__':
+    data = pandas.DataFrame({
+        "Timestamp": ["2018-01-01", "2018-01-01", "2018-01-01", "2018-01-02", "2018-01-02", "2018-01-02"],
+        "Country": ["United States", "Canada", 'Mexico', "United States", "Canada", 'Mexico'],
+        "Percent Vaccinated": [20, 50, 30, 50, 70, 100]
+        })
+    visualize_data(data)
+
+    # # Load data into a pandas DataFrame
+    # df = pandas.DataFrame(data)
+
+    # # Load a GeoDataFrame with world geometry data
+    # world = geopandas.read_file(geopandas.datasets.get_path("naturalearth_lowres"))
+    # world["name"].replace("United States of America", "United States", inplace=True)
+
+    # # Merge your data with the GeoDataFrame
+    # world_data = world.merge(df, left_on="name", right_on="Country")
+    # countries = world["name"].tolist()
+    # print(countries)
+
+    # # Create the interactive map using plotly
+    # fig = px.choropleth(
+    #     world_data,
+    #     locations="iso_a3",
+    #     color="Vaccination_Score",
+    #     hover_name="Country",
+    #     animation_frame="Timestamp",
+    #     projection="natural earth",
+    #     color_continuous_scale=px.colors.sequential.Plasma,
+    # )
+
+    # # Show the map
+    # fig.show()
