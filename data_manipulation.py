@@ -149,7 +149,20 @@ def _get_shipment_times(countries: dict) -> dict:
 def _get_countries_on_map() -> set:
     """Helper Method that returns a set of countries that are represented on the folium map"""
     world = gp.read_file(gp.datasets.get_path("naturalearth_lowres"))
+
+    # Reformatting certain country names
     world["name"].replace("United States of America", "United States", inplace=True)
+    world["name"].replace("N. Cyprus", "North Cyprus", inplace=True)
+    world["name"].replace("Falkland Is.", "Falkland Islands", inplace=True)
+    world["name"].replace("Eq. Guinea", "Equitorial Guinea", inplace=True)
+    world["name"].replace("Dem. Rep. Congo", "Democratic Republic of Congo", inplace=True)
+    world["name"].replace("Central African Rep.", "Central African Republic", inplace=True)
+    world["name"].replace("Dominican Rep.", "Dominican Republic", inplace=True)
+    world["name"].replace("Soloman Is.", "Soloman Islands", inplace=True)
+    world["name"].replace("S. Sudan", "South Sudan", inplace=True)
+    world["name"].replace("Bosnia and Herz.", "Bosnia and Herzegovina", inplace=True)
+    world["name"].replace("Timor-Leste", "Timor", inplace=True)
+
     countries = world["name"].to_list()
     return set(countries)
 
