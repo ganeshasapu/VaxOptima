@@ -252,68 +252,68 @@ def test_isolation():
 
     isolate_timestamp_and_display(dataframe)
 
-# def test_multiple_timestamps():
-#     df = pandas.DataFrame({
-#         'Timestamp': ['2022-01-01', '2022-01-01', '2022-01-02', '2022-01-02'],
-#         'Country': ['USA', 'Canada', 'USA', 'Canada'],
-#         'Vaccination Score': [80, 60, 85, 70]
-#     })
-#
-#     df['Timestamp'] = pandas.to_datetime(df['Timestamp'])
-#     dt_index_epochs = df['Timestamp'].astype(int) // 10 ** 9
-#     df['Timestamp'] = dt_index_epochs
-#
-#     color_scale = branca.colormap.LinearColormap(
-#         colors=['#d73027', '#f46d43', '#fdae61', '#fee08b', '#ffffbf', '#d9ef8b', '#a6d96a', '#66bd63', '#1a9850'],
-#         vmin=df['Vaccination Score'].min(),
-#         vmax=df['Vaccination Score'].max(),
-#         caption='Vaccination Score',
-#     )
-#
-#     world_map = generate_map(background='terrain')
-#
-#     # Read in GeoJSON data
-#     url = 'https://raw.githubusercontent.com/python-visualization/folium/main/examples/data/world-countries.json'
-#     response = requests.get(url)
-#     geojson_data = json.loads(response.content.decode())
-#
-#     # Create a dictionary to map country names to vaccination scores
-#     country_vaccination_scores = dict(zip(df['Country'], df['Vaccination Score']))
-#
-#     # Initialize feature variable
-#     feature = None
-#
-#     # Iterate over each feature in the GeoJSON data and add a new 'Vaccination Score' property
-#     # based on the corresponding vaccination score for the country
-#     for feature in geojson_data['features']:
-#         country_name = feature['properties']['name']
-#         if country_name in country_vaccination_scores:
-#             vaccination_score = country_vaccination_scores[country_name]
-#             feature['properties']['Vaccination Score'] = vaccination_score
-#         else:
-#             feature['properties']['Vaccination Score'] = None
-#
-#     folium.plugins.TimeSliderChoropleth(
-#         data=json.dumps(geojson_data),
-#         styledict={
-#             str(timestamp): {
-#                 'fillColor': '#ff0000' if feature is None or feature['properties'][
-#                     'Vaccination Score'] is None else color_scale(
-#                     feature['properties']['Vaccination Score']),
-#                 'color': '#000000',
-#                 'weight': 1,
-#                 'fillOpacity': 0.7
-#             }
-#             for timestamp in df['Timestamp'].unique()
-#         },
-#         overlay=True,
-#         name='Vaccination Scores',
-#         control=True,
-#         show=False,
-#         init_timestamp=0
-#     ).add_to(world_map)
-#
-#     display_map(world_map, 'visualization_result.html')
+def test_multiple_timestamps():
+    df = pandas.DataFrame({
+        'Timestamp': ['2022-01-01', '2022-01-01', '2022-01-02', '2022-01-02'],
+        'Country': ['USA', 'Canada', 'USA', 'Canada'],
+        'Vaccination Score': [80, 60, 85, 70]
+    })
+
+    df['Timestamp'] = pandas.to_datetime(df['Timestamp'])
+    dt_index_epochs = df['Timestamp'].astype(int) // 10 ** 9
+    df['Timestamp'] = dt_index_epochs
+
+    color_scale = branca.colormap.LinearColormap(
+        colors=['#d73027', '#f46d43', '#fdae61', '#fee08b', '#ffffbf', '#d9ef8b', '#a6d96a', '#66bd63', '#1a9850'],
+        vmin=df['Vaccination Score'].min(),
+        vmax=df['Vaccination Score'].max(),
+        caption='Vaccination Score',
+    )
+
+    world_map = generate_map(background='terrain')
+
+    # Read in GeoJSON data
+    url = 'https://raw.githubusercontent.com/python-visualization/folium/main/examples/data/world-countries.json'
+    response = requests.get(url)
+    geojson_data = json.loads(response.content.decode())
+
+    # Create a dictionary to map country names to vaccination scores
+    country_vaccination_scores = dict(zip(df['Country'], df['Vaccination Score']))
+
+    # Initialize feature variable
+    feature = None
+
+    # Iterate over each feature in the GeoJSON data and add a new 'Vaccination Score' property
+    # based on the corresponding vaccination score for the country
+    for feature in geojson_data['features']:
+        country_name = feature['properties']['name']
+        if country_name in country_vaccination_scores:
+            vaccination_score = country_vaccination_scores[country_name]
+            feature['properties']['Vaccination Score'] = vaccination_score
+        else:
+            feature['properties']['Vaccination Score'] = None
+
+    folium.plugins.TimeSliderChoropleth(
+        data=json.dumps(geojson_data),
+        styledict={
+            str(timestamp): {
+                'fillColor': '#ff0000' if feature is None or feature['properties'][
+                    'Vaccination Score'] is None else color_scale(
+                    feature['properties']['Vaccination Score']),
+                'color': '#000000',
+                'weight': 1,
+                'fillOpacity': 0.7
+            }
+            for timestamp in df['Timestamp'].unique()
+        },
+        overlay=True,
+        name='Vaccination Scores',
+        control=True,
+        show=False,
+        init_timestamp=0
+    ).add_to(world_map)
+
+    display_map(world_map, 'visualization_result.html')
 
 
 # Our Helper Functions for Generating Example Test Data
