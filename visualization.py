@@ -1,4 +1,4 @@
-from urllib.request import urlopen
+"""File that handles visualization"""
 
 import pandas
 import plotly.express as px
