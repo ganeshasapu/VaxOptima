@@ -11,11 +11,13 @@ import pandas
 
 class Gene:
     """
-    A gene is a mapping of exporting countries to a list of importing countries while also specifying their chronological order of the exports
+    A gene is a mapping of exporting countries to a list of importing countries while also specifying their
+    chronological order of the exports
 
     Instance Attributes:
         - fitness_value: the fitness value of the gene obtained by passing the gene into the fitness function
-        - vaccine_distribution: a dictionary mapping an exporter to a list of tuples of importing countries and the amount of vaccines to be exported to them
+        - vaccine_distribution: a dictionary mapping an exporter to a list of tuples of importing countries and the
+        amount of vaccines to be exported to them
     Notes:
      - vaccine_distribution is ordered in chronological order by the concept of timestamps
     """
@@ -23,11 +25,14 @@ class Gene:
     fitness_value: Optional[int]
     vaccine_distribution: dict[str: list[list[tuple[str, int]]]]
     country_data: dict[int: dict[str: float]]
+
     # Exporter -> Timestamp -> List of (Country, Vaccine Amount)
     # Example vaccine distribution (2 exporters, 2 countries, 3 timestamps):
     # {
-    # 'exporter1': [[('country1', 48), ('country2', 52)], [('country2', 63), ('country1', 137)], [('country2', 105), ('country1', 195)]],
-    # 'exporter2': [[('country2', 39), ('country1', 61)], [('country2', 81), ('country1', 119)], [('country2', 139), ('country1', 161)]]
+    # 'exporter1': [[('country1', 48), ('country2', 52)], [('country2', 63), ('country1', 137)],
+    # [('country2', 105), ('country1', 195)]],
+    # 'exporter2': [[('country2', 39), ('country1', 61)], [('country2', 81), ('country1', 119)],
+    # [('country2', 139), ('country1', 161)]]
     # }
 
     def __init__(self, vaccine_distribution: dict, fitness_value: Optional[int] = None) -> None:
@@ -43,6 +48,7 @@ class Gene:
         """Runs simulation and gives a fitness score to the gene"""
         vaccine_shipments: list[VaccineShipment] = []
         exporters = list(world.exporting_countries.keys())
+        lst_to_remove = []
         if record_data:
             self.country_data = {}
         for i in range(num_timestamps):
@@ -53,13 +59,16 @@ class Gene:
                     # shipment has arrived to country
                     world.export_vaccine(
                         importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
-                    vaccine_shipments.remove(shipment)
+                    lst_to_remove.append(shipment)
+        for shipment in lst_to_remove:
+            vaccine_shipments.remove(shipment)
             for exporter in exporters:
                 for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
                     exporter_obj = world.exporting_countries[exporter]
                     # adding shipment to stack
                     vaccine_shipments.append(VaccineShipment(
-                        importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
+                        importing_country=world.countries[country], vaccine_amount=vaccine_amount,
+                        time_left=exporter_obj.edges[country].shipment_time))
             for country in world.countries.values():
                 # country distributes vaccines to its population
                 country.vaccinate()
@@ -70,7 +79,8 @@ class Gene:
             if record_data:
                 self.country_data[i] = {}
                 for country in world.countries.values():
-                    average_vaccinated_population = round(country.vaccinated_population / country.population, 2)
+                    average_vaccinated_population = round(
+                        country.vaccinated_population / country.population, 2)
                     self.country_data[i][country.name] = average_vaccinated_population
 
         self.fitness_value = num_timestamps
@@ -78,6 +88,8 @@ class Gene:
 
 @dataclass
 class VaccineShipment:
+    """VaccineShipment instance that gives info about the vaccine shipment like the importing country,
+    amount of vaccines, and the time left until the shipment is received"""
     importing_country: Country
     vaccine_amount: int
     time_left: int
@@ -94,10 +106,11 @@ class Chromosome:
     def __init__(self, genes: list[Gene]) -> None:
         self.genes = genes
 
-    def fitness(self, world: World, num_timestamps: int, dataframe: pandas.DataFrame) -> None:
+    def fitness(self, world: World, num_timestamps: int) -> None:
         """Runs simulation and gives a fitness score to the each of the genes in the chromosome"""
         for gene in self.genes:
-            gene.fitness(world=world, num_timestamps=num_timestamps, record_data=False)
+            gene.fitness(
+                world=world, num_timestamps=num_timestamps, record_data=False)
             world.reset()
 
     def calculate_average_fitness(self) -> float:
@@ -131,11 +144,13 @@ class Chromosome:
         for gene in self.genes:
             if gene.fitness_value < lowest_gene.fitness_value:
                 lowest_gene = gene
-        lowest_gene.fitness(world=world, num_timestamps=lowest_gene.fitness_value, record_data=True)
+        lowest_gene.fitness(
+            world=world, num_timestamps=lowest_gene.fitness_value, record_data=True)
         for i in lowest_gene.country_data:
             timestamp = lowest_gene.country_data[i]
             for country in timestamp.keys():
-                dataframe.loc[len(dataframe)] = [i, country, timestamp[country]]
+                dataframe.loc[len(dataframe)] = [
+                    i, country, timestamp[country]]
 
     def __str__(self) -> str:
         string = ""
@@ -171,7 +186,8 @@ class GeneticAlgorithm:
     data_record: pandas.DataFrame
     final_chromosome_data: pandas.DataFrame
 
-    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World, num_timestamps: int, num_best_genes: int) -> None:
+    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int,
+                 num_chromosomes: int, world: World, num_timestamps: int, num_best_genes: int) -> None:
         self.mutation_rate = mutation_rate
         self.crossover_rate = crossover_rate
         self.replication_rate = replication_rate
@@ -190,21 +206,22 @@ class GeneticAlgorithm:
         # print("Generation 0: Initial Chromosome")
         chromosome = self.create_initial_chromosome()
         chromosome.fitness(
-            num_timestamps=self.num_timestamps, world=self.world_graph, dataframe=self.chromosome_dataframe)
+            num_timestamps=self.num_timestamps, world=self.world_graph)
         for i in range(self.num_chromosomes):
             # print(f"Generation {i + 1}: {chromosome}")
             chromosome = self.selection(chromosome=chromosome)
             chromosome.fitness(world=self.world_graph,
-                               num_timestamps=self.num_timestamps, dataframe=self.chromosome_dataframe)
-            print(
-                f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} min: {min([gene.fitness_value for gene in chromosome.genes])} max: {max([gene.fitness_value for gene in chromosome.genes])}")
-
+                               num_timestamps=self.num_timestamps)
+            print(f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} \
+            min: {min([gene.fitness_value for gene in chromosome.genes])} \
+            max: {max([gene.fitness_value for gene in chromosome.genes])}")
 
         # self.chromosome_dataframe.to_csv("chromosome_data.csv", index=False)
-        chromosome.update_final_distribution(world=self.world_graph, dataframe=self.final_chromosome_data)
-        self.final_chromosome_data.to_csv("final_chromosome_data.csv", index=False)
+        chromosome.update_final_distribution(
+            world=self.world_graph, dataframe=self.final_chromosome_data)
+        self.final_chromosome_data.to_csv(
+            "final_chromosome_data.csv", index=False)
         return chromosome
-
 
     def create_initial_chromosome(self) -> Chromosome:
         """Creates the initial chromosome
@@ -272,7 +289,8 @@ class GeneticAlgorithm:
             return 'crossover'
 
     def selection(self, chromosome: Chromosome) -> Chromosome:
-        """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes and returns a chromosome including these genes"""
+        """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes
+        and returns a chromosome including these genes"""
         # ("fitnesses: ", [gene.fitness_value for gene in chromosome.genes])
         # print("Average fitness: ", chromosome.calculate_average_fitness())
 
@@ -346,16 +364,17 @@ class GeneticAlgorithm:
         return Gene(vaccine_distribution=new_vaccine_distribution)
 
     def mutation_helper_aggressive(self, timestamp: list[tuple]) -> list[tuple]:
+        """Mutates certain genes aggressively to help escape local minima"""
         timestamp_copy = timestamp.copy()
         newest_timestamp = []
-        for _ in range(len(timestamp_copy)):
+        for __ in range(len(timestamp_copy)):
             mutated_tuple = timestamp_copy.pop()
             mutated_tuple = (mutated_tuple[0], random.randint(
                 int(mutated_tuple[1] * 0.5), int(mutated_tuple[1] * 1.5)))
             newest_timestamp.append(mutated_tuple)
-        for tuple in timestamp_copy:
-            if tuple[0] not in [tup[0] for tup in newest_timestamp]:
-                newest_timestamp.append(tuple)
+        for tpl in timestamp_copy:
+            if tpl[0] not in [tup[0] for tup in newest_timestamp]:
+                newest_timestamp.append(tpl)
         return newest_timestamp
 
     def mutation(self, gene: Gene) -> Gene:
@@ -372,6 +391,7 @@ class GeneticAlgorithm:
         return Gene(vaccine_distribution=new_vaccine_distribution)
 
     def mutation_helper(self, timestamp: list[tuple]) -> list[tuple]:
+        """Helps the function in mutation """
         timestamp_copy = timestamp.copy()
         newest_timestamp = []
         num = random.randint(0, len(timestamp))
@@ -381,21 +401,40 @@ class GeneticAlgorithm:
                 int(mutated_tuple[1] * 0.8), int(mutated_tuple[1] * 1.2)))
             newest_timestamp.append(mutated_tuple)
             num -= 1
-        for tuple in timestamp_copy:
-            if tuple[0] not in [tup[0] for tup in newest_timestamp]:
-                newest_timestamp.append(tuple)
+        for tpl in timestamp_copy:
+            if tpl[0] not in [tup[0] for tup in newest_timestamp]:
+                newest_timestamp.append(tpl)
         return newest_timestamp
 
     def replication(self, gene: Gene) -> Gene:
         """Returns the replicated gene"""
         return Gene(vaccine_distribution=gene.vaccine_distribution)
 
-def generate_timestamp_vaccine_amount(num_timestamps, world) -> list[int]:
+
+def generate_timestamp_vaccine_amount(num_timestamps: int, world: World) -> list[int]:
     """Generates a list of the amount of vaccines at each timestamp"""
     timestamps_vaccine_amount = {}
     for exporter in world.exporting_countries.values():
         timestamps_vaccine_amount[exporter.name] = []
         for i in range(num_timestamps):
             timestamps_vaccine_amount[exporter.name].append(
-                ((i+1) ** 2) * exporter.export_rate * 10_000_000)
+                ((i + 1) ** 2) * exporter.export_rate * 10_000_000)
     return timestamps_vaccine_amount
+
+
+if __name__ == '__main__':
+    import doctest
+
+    doctest.testmod(verbose=True)
+
+    # When you are ready to check your work with python_ta, uncomment the following lines.
+    # (In PyCharm, select the lines below and press Ctrl/Cmd + / to toggle comments.)
+    # You can use "Run file in Python Console" to run PythonTA,
+    # and then also test your methods manually in the console.
+    import python_ta
+
+    python_ta.check_all(config={
+        'extra-imports': ['WorldGraph', 'pandas', 'typing', 'random', 'dataclasses'],
+        'allowed-io': ['GeneticAlgorithm.run'],
+        'max-line-length': 120
+    })
