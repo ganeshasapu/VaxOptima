@@ -23,6 +23,7 @@ def visualize_data(dataframe : pandas.DataFrame):
     world["name"].replace("Timor-Leste", "Timor", inplace=True)
 
     countries = world["name"].to_list()
+    print(set(countries))
 
 
     # Merge your data with the GeoDataFrame

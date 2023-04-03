@@ -11,6 +11,7 @@ def algorithm_runner_fixed(num_timestamps: int, num_best_genes: int, mutation_ra
     simulation = ga.GeneticAlgorithm(mutation_rate=mutation_rate, crossover_rate=crossover_rate, replication_rate=replication_rate,
                                      chromosome_size=chromosome_size, num_chromosomes=num_chromosomes, world=world, num_timestamps=num_timestamps, num_best_genes=num_best_genes)
     simulation.run()
+    print(set(simulation.final_chromosome_data["Country"].to_list()))
     vis.visualize_data(simulation.final_chromosome_data)
 
 
