@@ -6,6 +6,7 @@ from dataclasses import dataclass
 import random
 from typing import Optional
 import pandas
+import python_ta
 from world_graph import World, Country
 
 
@@ -26,6 +27,7 @@ class Gene:
     vaccine_distribution: dict[str: list[list[tuple[str, int]]]]
     country_data: dict[int: dict[str: float]]
 
+    # Example vaccine distribution (2 exporters, 2 countries, 3 timestamps):
     # Exporter -> Timestamp -> List of (Country, Vaccine Amount)
     # Example vaccine distribution (2 exporters, 2 countries, 3 timestamps):
     # {
@@ -116,17 +118,6 @@ class Chromosome:
         """Calculates the average fitness of the genes in the chromosome"""
         return sum([gene.fitness_value for gene in self.genes]) / len(self.genes)
 
-    def calculate_mode_fitness(self) -> float:
-        """Calculates the mode fitness of the genes in the chromosome"""
-        fitness_values = [gene.fitness_value for gene in self.genes]
-        return max(set(fitness_values), key=fitness_values.count)
-
-    def calculate_median_fitness(self) -> float:
-        """Calculates the median fitness of the genes in the chromosome"""
-        fitness_values = [gene.fitness_value for gene in self.genes]
-        fitness_values.sort()
-        return fitness_values[len(fitness_values) // 2]
-
     def calculate_maximum_fitness(self) -> float:
         """Calculates the maximum of all genes in the chromosome"""
         fitness_values = [gene.fitness_value for gene in self.genes]
@@ -196,25 +187,22 @@ class GeneticAlgorithm:
         self.num_best_genes = num_best_genes
         self.final_chromosome_data = pandas.DataFrame(
             columns=["Timestamp", "Country", "Percent Vaccinated"])
-        self.fitness_values = pandas.DataFrame(columns=["Timestamp", "Fitness Value"])
+        self.fitness_values = pandas.DataFrame(columns=["Generation", "Fitness Value"])
 
     def run(self) -> Chromosome:
         """Runs the genetic algorithm and returns the final chromosome"""
-        # print("Generation 0: Initial Chromosome")
         chromosome = self.create_initial_chromosome()
         chromosome.fitness(
             num_timestamps=self.num_timestamps, world=self.world_graph)
         for i in range(self.num_chromosomes):
-            # print(f"Generation {i + 1}: {chromosome}")
             chromosome = self.selection(chromosome=chromosome)
             chromosome.fitness(world=self.world_graph,
                                num_timestamps=self.num_timestamps)
             print(f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} \
-            min: {min([gene.fitness_value for gene in chromosome.genes])} \
-            max: {max([gene.fitness_value for gene in chromosome.genes])}")
+            min: {chromosome.calculate_minimum_fitness()} \
+            max: {chromosome.calculate_maximum_fitness()}")
             self.fitness_values.loc[i + 1] = [i + 1, chromosome.calculate_average_fitness()]
 
-        # self.chromosome_dataframe.to_csv("chromosome_data.csv", index=False)
         chromosome.update_final_distribution(
             world=self.world_graph, dataframe=self.final_chromosome_data)
         return chromosome
@@ -268,6 +256,7 @@ class GeneticAlgorithm:
 
     def pick_random_option(self, remove_crossover: bool) -> str:
         """Returns a random option from the options of replication, mutation, and crossover"""
+        # We don't want to do crossover if there are only 1 gene spot remaining
         if remove_crossover:
             weighted_randint = random.uniform(
                 0, self.replication_rate + self.mutation_rate)
@@ -287,8 +276,6 @@ class GeneticAlgorithm:
     def selection(self, chromosome: Chromosome) -> Chromosome:
         """Select the best genes from the chromosome and perform crossover, mutation, and replication on the best genes
         and returns a chromosome including these genes"""
-        # ("fitnesses: ", [gene.fitness_value for gene in chromosome.genes])
-        # print("Average fitness: ", chromosome.calculate_average_fitness())
 
         best_genes = self.pick_best_genes(
             genes=chromosome.genes, num_genes=self.num_best_genes)
@@ -308,31 +295,18 @@ class GeneticAlgorithm:
                     self.replication(best_genes[current_gene_index]))
             elif change_option == 'mutation':
                 next_chromosome_genes.append(
-                    self.mutation_aggressive(best_genes[current_gene_index]))
+                    self.mutation(best_genes[current_gene_index]))
             else:
                 # picking a random secondary gene to crossover with
                 crossover_index = random.randint(0, len(best_genes) - 2)
                 if crossover_index >= current_gene_index:
                     crossover_index += 1
-                next_chromosome_genes.extend(self.crossover_aggressive(
+                next_chromosome_genes.extend(self.crossover(
                     best_genes[current_gene_index], best_genes[crossover_index]))
             current_gene_index = (current_gene_index + 1) % len(best_genes)
         return Chromosome(next_chromosome_genes)
 
     def crossover(self, gene1: Gene, gene2: Gene) -> list[Gene]:
-        """Performs crossover on the two genes and returns a list of the two children genes"""
-        # print(Chromosome([gene1, gene2]))
-        gene1_copy = Gene(vaccine_distribution=gene1.vaccine_distribution)
-        gene2_copy = Gene(vaccine_distribution=gene2.vaccine_distribution)
-        for exporter in gene1_copy.vaccine_distribution:
-            for i in range(len(gene1_copy.vaccine_distribution[exporter])):
-                truth_value = random.choice([True, False])
-                if truth_value:
-                    gene1_copy.vaccine_distribution[exporter][i], gene2_copy.vaccine_distribution[exporter][
-                        i] = gene2_copy.vaccine_distribution[exporter][i], gene1_copy.vaccine_distribution[exporter][i]
-        return [gene1_copy, gene2_copy]
-
-    def crossover_aggressive(self, gene1: Gene, gene2: Gene) -> list[Gene]:
         """Performs crossover on the two genes and returns a list of the two children genes aggressively"""
         gene1_copy = Gene(vaccine_distribution=gene1.vaccine_distribution)
         gene2_copy = Gene(vaccine_distribution=gene2.vaccine_distribution)
@@ -345,7 +319,7 @@ class GeneticAlgorithm:
                         i] = gene2_copy.vaccine_distribution[exporter][i], gene1_copy.vaccine_distribution[exporter][i]
         return [gene1_copy, gene2_copy]
 
-    def mutation_aggressive(self, gene: Gene) -> Gene:
+    def mutation(self, gene: Gene) -> Gene:
         """Performs mutation on the gene and returns the mutated gene aggressively"""
         new_vaccine_distribution = {}
         # traversing through the vaccine distribution of the gene
@@ -354,37 +328,11 @@ class GeneticAlgorithm:
             for timestamp in gene.vaccine_distribution[exporter]:
                 # pass each timestamp to the mutation helper to mutate it
                 list_of_timestamps.append(
-                    self.mutation_helper_aggressive(timestamp))
+                    self.mutation_helper(timestamp))
                 # reassign the mutated timestamp to the mutation helper
                 new_vaccine_distribution[exporter] = list_of_timestamps
         return Gene(vaccine_distribution=new_vaccine_distribution)
 
-    def mutation_helper_aggressive(self, timestamp: list[tuple]) -> list[tuple]:
-        """Mutates certain genes aggressively to help escape local minima"""
-        timestamp_copy = timestamp.copy()
-        newest_timestamp = []
-        for _ in range(len(timestamp_copy)):
-            mutated_tuple = timestamp_copy.pop()
-            mutated_tuple = (mutated_tuple[0], random.randint(
-                int(mutated_tuple[1] * 0.5), int(mutated_tuple[1] * 1.5)))
-            newest_timestamp.append(mutated_tuple)
-        for tpl in timestamp_copy:
-            if tpl[0] not in [tup[0] for tup in newest_timestamp]:
-                newest_timestamp.append(tpl)
-        return newest_timestamp
-
-    def mutation(self, gene: Gene) -> Gene:
-        """Performs mutation on the gene and returns the mutated gene"""
-        new_vaccine_distribution = {}
-        # traversing through the vaccine distribution of the gene
-        for exporter in gene.vaccine_distribution:
-            list_of_timestamps = []
-            for timestamp in gene.vaccine_distribution[exporter]:
-                # pass each timestamp to the mutation helper to mutate it
-                list_of_timestamps.append(self.mutation_helper(timestamp))
-                # reassign the mutated timestamp to the mutation helper
-                new_vaccine_distribution[exporter] = list_of_timestamps
-        return Gene(vaccine_distribution=new_vaccine_distribution)
 
     def mutation_helper(self, timestamp: list[tuple]) -> list[tuple]:
         """Helps the function in mutation """
@@ -414,21 +362,11 @@ def generate_timestamp_vaccine(num_timestamps: int, world: World) -> list[int]:
         timestamps_vaccine_amount[exporter.name] = []
         for i in range(num_timestamps):
             timestamps_vaccine_amount[exporter.name].append(
-                (i + 1) * exporter.export_rate * 1000_000_000)
+                (i + 1) * exporter.export_rate * 10_000_000)
     return timestamps_vaccine_amount
 
 
 if __name__ == '__main__':
-    import doctest
-
-    doctest.testmod(verbose=True)
-
-    # When you are ready to check your work with python_ta, uncomment the following lines.
-    # (In PyCharm, select the lines below and press Ctrl/Cmd + / to toggle comments.)
-    # You can use "Run file in Python Console" to run PythonTA,
-    # and then also test your methods manually in the console.
-    import python_ta
-
     python_ta.check_all(config={
         'extra-imports': ['world_graph', 'pandas', 'typing', 'random', 'dataclasses'],
         'allowed-io': ['GeneticAlgorithm.run'],

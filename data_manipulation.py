@@ -179,12 +179,9 @@ def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
 # Testing
 # ----------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
-    import doctest
-    doctest.testmod(verbose=True)
-
-    # import python_ta
-    # python_ta.check_all(config={
-    #     'extra-imports': ["pandas", "geopandas"],  # the names (strs) of imported modules
-    #     'allowed-io': ["_get_countries_on_map"],  # the names (strs) of functions that call print/open/input
-    #     'max-line-length': 120
-    # })
+    import python_ta
+    python_ta.check_all(config={
+        'extra-imports': ["pandas", "geopandas"],  # the names (strs) of imported modules
+        'allowed-io': ["_get_countries_on_map"],  # the names (strs) of functions that call print/open/input
+        'max-line-length': 120
+    })

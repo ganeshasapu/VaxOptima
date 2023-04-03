@@ -42,12 +42,10 @@ class Edge:
     Equivalent to a directed and weighted edge."""
     importer: Country
     shipment_time: int
-    buffer_vaccine_shipments: list[tuple[int, int]] = []
 
     def __init__(self, importer: Country, shipment_time: int) -> None:
         self.importer = importer
         self.shipment_time = shipment_time
-        self.buffer_vaccine_shipments = []
 
 
 class ExportingCountry(Country):
@@ -154,12 +152,9 @@ def get_edges(exporter: str, countries: dict, continents: dict, shipment_times: 
 
 
 if __name__ == '__main__':
-    import doctest
-    doctest.testmod(verbose=True)
-
     import python_ta
     python_ta.check_all(config={
-        'extra-imports': ["data_manipulation"],  # the names (strs) of imported modules
-        'allowed-io': [],  # the names (strs) of functions that call print/open/input
+        'extra-imports': ["data_manipulation"],
+        'allowed-io': [],
         'max-line-length': 120
     })
