@@ -1,6 +1,6 @@
 """Main runner file"""
 import random
-import WorldGraph as wg
+import world_graph as wg
 import GeneticAlgorithm as ga
 
 
