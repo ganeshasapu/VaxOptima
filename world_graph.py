@@ -127,11 +127,10 @@ def create_world() -> World:
                                             edges=edges,
                                             population=populations[exporter])
         exporters[exporter] = exporter_country
-        countries[exporter] = exporter_country
 
     # Add Exporter Edges to themselves
     for exporter in exporters:
-        exporter.edges[exporter.name] = Edge(
+        exporters[exporter].edges[exporter] = Edge(
             importer=exporter, shipment_time=0)
 
     return World(countries, exporters)
