@@ -1,16 +1,9 @@
 # Draw a map using Folium
 # Show each country on the map across generations
-import json
-import random
-import re
-import tempfile
-from typing import io
-
-import numpy
 # Whenever you click on a country, reveal the popup for that country containing the graph with \
 # its vaccination score across generations (https://python-visualization.github.io/folium/quickstart.html, \
 # https://nbviewer.org/github/python-visualization/folium/blob/main/examples/Popups.ipynb)
-
+import datetime
 # Use Chloropleth to map each country, since it is compatible with Pandas. The colours represent the vaccination score \
 # of each country in the current generation.
 # Use this json file for the borders and cite it \
@@ -18,16 +11,21 @@ import numpy
 
 # For Styling, use the [16] red to yellow colour scheme \
 # (https://python-visualization.github.io/folium/quickstart.html#Styling-function)
+import json
+import random
+import time
+from urllib.request import urlopen
 
+import branca
+from branca.colormap import LinearColormap
+import numpy
 import pandas
 import folium
 import ssl
 import os
 import webbrowser
-
 import requests
-from bs4 import BeautifulSoup
-from requests import HTTPError, JSONDecodeError
+import folium.plugins
 
 # Disable SSL verification, since it can prevent the web browser tabs from opening
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -217,6 +215,107 @@ def test_world_map5(runs: int, int_range: tuple[int, int] | int):
         test_world_map4(countries)
 
 
+def isolate_timestamp(timestamp: int, dataframe: pandas.DataFrame):
+    """
+    After running the simulation, pass the desired timestamp and the resultant dataframe into this function to visualize
+    the data in the given timestamp.
+    """
+    countries_geographical = \
+        'https://raw.githubusercontent.com/python-visualization/folium/main/examples/data/world-countries.json'
+    num_data = dataframe[dataframe['Timestamp'] == timestamp].drop('Timestamp', axis=1)
+    headers = num_data.columns.tolist()
+    world_map = generate_map(background='terrain')
+    add_choropleth(world_map, countries_geographical, num_data, headers, legend_name=num_data.columns.tolist()[1],
+                   key_on='feature.properties.name')
+    display_map(world_map, 'visualization_result.html')
+
+
+def isolate_timestamp_and_display(dataframe: pandas.DataFrame):
+    timestamps = dataframe['Timestamp']
+    for i in range(min(timestamps), max(timestamps) + 1):
+        isolate_timestamp(i, dataframe)
+
+
+def test_isolation():
+    # Create list of country names
+    countries = ['USA', 'Canada', 'UK', 'France', 'Germany', 'Australia', 'Japan', 'Brazil', 'Russia', 'China']
+
+    # Create empty dataframe
+    dataframe = pandas.DataFrame(columns=['Timestamp', 'Country', 'Percent Vaccinated'])
+
+    # Populate dataframe with random values
+    for ts in range(10):
+        for country in countries:
+            percent_vaccinated = round(random.uniform(0, 1), 2)
+            dataframe = dataframe.append({'Timestamp': ts, 'Country': country, 'Percent Vaccinated': percent_vaccinated},
+                           ignore_index=True)
+
+    isolate_timestamp_and_display(dataframe)
+
+# def test_multiple_timestamps():
+#     df = pandas.DataFrame({
+#         'Timestamp': ['2022-01-01', '2022-01-01', '2022-01-02', '2022-01-02'],
+#         'Country': ['USA', 'Canada', 'USA', 'Canada'],
+#         'Vaccination Score': [80, 60, 85, 70]
+#     })
+#
+#     df['Timestamp'] = pandas.to_datetime(df['Timestamp'])
+#     dt_index_epochs = df['Timestamp'].astype(int) // 10 ** 9
+#     df['Timestamp'] = dt_index_epochs
+#
+#     color_scale = branca.colormap.LinearColormap(
+#         colors=['#d73027', '#f46d43', '#fdae61', '#fee08b', '#ffffbf', '#d9ef8b', '#a6d96a', '#66bd63', '#1a9850'],
+#         vmin=df['Vaccination Score'].min(),
+#         vmax=df['Vaccination Score'].max(),
+#         caption='Vaccination Score',
+#     )
+#
+#     world_map = generate_map(background='terrain')
+#
+#     # Read in GeoJSON data
+#     url = 'https://raw.githubusercontent.com/python-visualization/folium/main/examples/data/world-countries.json'
+#     response = requests.get(url)
+#     geojson_data = json.loads(response.content.decode())
+#
+#     # Create a dictionary to map country names to vaccination scores
+#     country_vaccination_scores = dict(zip(df['Country'], df['Vaccination Score']))
+#
+#     # Initialize feature variable
+#     feature = None
+#
+#     # Iterate over each feature in the GeoJSON data and add a new 'Vaccination Score' property
+#     # based on the corresponding vaccination score for the country
+#     for feature in geojson_data['features']:
+#         country_name = feature['properties']['name']
+#         if country_name in country_vaccination_scores:
+#             vaccination_score = country_vaccination_scores[country_name]
+#             feature['properties']['Vaccination Score'] = vaccination_score
+#         else:
+#             feature['properties']['Vaccination Score'] = None
+#
+#     folium.plugins.TimeSliderChoropleth(
+#         data=json.dumps(geojson_data),
+#         styledict={
+#             str(timestamp): {
+#                 'fillColor': '#ff0000' if feature is None or feature['properties'][
+#                     'Vaccination Score'] is None else color_scale(
+#                     feature['properties']['Vaccination Score']),
+#                 'color': '#000000',
+#                 'weight': 1,
+#                 'fillOpacity': 0.7
+#             }
+#             for timestamp in df['Timestamp'].unique()
+#         },
+#         overlay=True,
+#         name='Vaccination Scores',
+#         control=True,
+#         show=False,
+#         init_timestamp=0
+#     ).add_to(world_map)
+#
+#     display_map(world_map, 'visualization_result.html')
+
+
 # Our Helper Functions for Generating Example Test Data
 def generate_example_dataframe(countries: int, geodata: str, float_range: tuple[float, float],
                                fitness_name: str = 'Vaccination Score', print_result: bool = False) -> tuple[
@@ -300,17 +399,16 @@ def generate_map(location: tuple = (48, -102), zoom_start: int = 3, background: 
 def add_choropleth(folium_map: folium.Map, geo_data: str, num_data: pandas.DataFrame, headers: list[str],
                    legend_name: str = '', colourbrew: str = 'RdYlGn', name: str = 'choropleth',
                    fill_opacity: float = 0.9, line_opacity: float = 0.2, smooth_factor: float = 1,
-                   key_on: str = 'feature.properties.name', time_slider: bool = False) -> None:
+                   key_on: str = 'feature.properties.name') -> None:
     """
     Generates a Choropleth and adds it to the given map.
     Creates a TimeSliderChoropleth if time_slider is True.
     """
-    # Initialize and add the Choropleth object
-    # TODO: Implement TimeSliderChoropleth
 
     # To prevent a JSON error, we convert the link to proper json
     geo_data_json = json.loads(requests.get(geo_data).content.decode('utf-8'))
 
+    # Add the Choropleth object
     folium.Choropleth(
         geo_data=geo_data_json,
         name=name,
