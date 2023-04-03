@@ -1,8 +1,4 @@
 pandas~=1.5.3
-folium~=0.14.0
-requests~=2.28.2
-geopandas~=0.10.2
-plotly~=5.3.1
-
+geopandas~=0.12.2
+plotly~=5.14.0
 python-ta~=2.4.2
-certifi~=2022.12.7

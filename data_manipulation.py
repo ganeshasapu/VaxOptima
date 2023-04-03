@@ -1,6 +1,6 @@
 """File for manipulating for data in datasets folder"""
-import json
 import pandas as pd
+import geopandas as gp
 
 # Dictionary maps source to destinations and the time it takes to ship to each destination
 # Shipment Time Meaning:
@@ -148,15 +148,10 @@ def _get_shipment_times(countries: dict) -> dict:
 
 def _get_countries_on_map() -> set:
     """Helper Method that returns a set of countries that are represented on the folium map"""
-    countries = set()
-
-    with open("datasets/world-countries.json") as file:
-        data = json.load(file)
-        features = data["features"]
-        for f in features:
-            countries.add(f["properties"]["name"])
-
-    return countries
+    world = gp.read_file(gp.datasets.get_path("naturalearth_lowres"))
+    world["name"].replace("United States of America", "United States", inplace=True)
+    countries = world["name"].to_list()
+    return set(countries)
 
 
 def _get_avg_daily_vax_rate(df: pd.DataFrame, country: str) -> float:
@@ -175,7 +170,7 @@ if __name__ == "__main__":
 
     import python_ta
     python_ta.check_all(config={
-        'extra-imports': ["pandas", "json"],  # the names (strs) of imported modules
+        'extra-imports': ["pandas", "geopandas"],  # the names (strs) of imported modules
         'allowed-io': ["_get_countries_on_map"],  # the names (strs) of functions that call print/open/input
         'max-line-length': 120
     })
