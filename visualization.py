@@ -22,7 +22,9 @@ def visualize_data(dataframe : pandas.DataFrame):
     world["name"].replace("Bosnia and Herz.", "Bosnia and Herzegovina", inplace=True)
     world["name"].replace("Timor-Leste", "Timor", inplace=True)
 
-    print(world["name"].tolist())    
+    countries = world["name"].to_list()
+    print(countries)
+
 
     # Merge your data with the GeoDataFrame
     world_data = world.merge(dataframe, left_on="name", right_on="Country")
@@ -43,10 +45,11 @@ def visualize_data(dataframe : pandas.DataFrame):
 
 if __name__ == '__main__':
     data = pandas.DataFrame({
-        "Timestamp": ["2018-01-01", "2018-01-01", "2018-01-01", "2018-01-02", "2018-01-02", "2018-01-02"],
+        "Timestamp": [1, 1, 1, 2, 2, 2],
         "Country": ["United States", "Canada", 'Mexico', "United States", "Canada", 'Mexico'],
         "Percent Vaccinated": [20, 50, 30, 50, 70, 100]
         })
+    print(data)
     visualize_data(data)
 
     # # Load data into a pandas DataFrame

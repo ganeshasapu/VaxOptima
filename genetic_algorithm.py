@@ -178,7 +178,6 @@ class GeneticAlgorithm:
     chromosome_size: int
     num_chromosomes: int
     num_best_genes: int
-    chromosome_dict: dict[int, dict[str, float]] = {}
     chromosome_dataframe: pandas.DataFrame
 
     world_graph: World
@@ -196,8 +195,6 @@ class GeneticAlgorithm:
         self.world_graph = world
         self.num_timestamps = num_timestamps
         self.num_best_genes = num_best_genes
-        self.chromosome_dataframe = pandas.DataFrame(
-            columns=["Generation", "Country", "Average Vaccinated"])
         self.final_chromosome_data = pandas.DataFrame(
             columns=["Timestamp", "Country", "Percent Vaccinated"])
 
