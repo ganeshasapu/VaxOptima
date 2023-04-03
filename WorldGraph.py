@@ -114,7 +114,8 @@ def create_world() -> World:
                                          population=populations[country])
     # Initialzing Exporters
     for exporter in all_exporters:
-        edges = get_edges(exporter, countries, all_countries_to_continent, shipment_times)
+        edges = get_edges(exporter, countries,
+                          all_countries_to_continent, shipment_times)
         exporter = ExportingCountry(name=exporter,
                                     vaccine_rate=vaccine_rates[exporter],
                                     export_rate=export_rates[exporter],
@@ -124,7 +125,8 @@ def create_world() -> World:
 
     # Add Exporter Edges to themselves
     for exporter in exporters:
-        exporter.edges[exporter.name] = Edge(importer=exporter, shipment_time=0)
+        exporter.edges[exporter.name] = Edge(
+            importer=exporter, shipment_time=0)
 
     return World(countries, exporters)
 
