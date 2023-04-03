@@ -127,6 +127,7 @@ def create_world() -> World:
                                             edges=edges,
                                             population=populations[exporter])
         exporters[exporter] = exporter_country
+        countries[exporter] = exporter_country
 
     # Add Exporter Edges to themselves
     for exporter in exporters:
