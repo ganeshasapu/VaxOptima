@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from WorldGraph import World, ExportingCountry, Country, Edge
 import random
 from typing import Optional
+import pandas
 
 
 class Gene:
@@ -21,6 +22,7 @@ class Gene:
 
     fitness_value: Optional[int]
     vaccine_distribution: dict[str: list[list[tuple[str, int]]]]
+    country_data: dict[int: dict[str: float]]
     # Exporter -> Timestamp -> List of (Country, Vaccine Amount)
     # Example vaccine distribution (2 exporters, 2 countries, 3 timestamps):
     # {
@@ -31,29 +33,33 @@ class Gene:
     def __init__(self, vaccine_distribution: dict, fitness_value: Optional[int] = None) -> None:
         self.fitness_value = fitness_value
         self.vaccine_distribution = vaccine_distribution
+        self.country_data = {}
+        
 
     def __str__(self) -> str:
-        return f"Termination Timestamp: {self.fitness_value}, Vaccine Distribution: {self.vaccine_distribution}"
+        return f"Termination Timestamp: {self.fitness_value}"
 
-    def fitness(self, world: World, num_timestamps: int):
+    def fitness(self, world: World, num_timestamps: int, record_data: bool) -> None:
         """Runs simulation and gives a fitness score to the gene"""
-        vaccine_shipiments: list[VaccineShipment] = []
+        vaccine_shipments: list[VaccineShipment] = []
         exporters = list(world.exporting_countries.keys())
+        if record_data:
+            self.country_data = {}
         for i in range(num_timestamps):
-            for exporter in exporters:
-                for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
-                    exporter_obj = world.exporting_countries[exporter]
-                    # adding shipment to stack
-                    vaccine_shipiments.append(VaccineShipment(
-                        importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
-            for shipment in vaccine_shipiments:
+            for shipment in vaccine_shipments:
                 # updating shipments
                 shipment.time_left -= 1
                 if shipment.time_left == 0:
                     # shipment has arrived to country
                     world.export_vaccine(
                         importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
-                    vaccine_shipiments.remove(shipment)
+                    vaccine_shipments.remove(shipment)
+            for exporter in exporters:
+                for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
+                    exporter_obj = world.exporting_countries[exporter]
+                    # adding shipment to stack
+                    vaccine_shipments.append(VaccineShipment(
+                        importing_country=world.countries[country], vaccine_amount=vaccine_amount, time_left=exporter_obj.edges[country].shipment_time))
             for country in world.countries.values():
                 # country distributes vaccines to its population
                 country.vaccinate()
@@ -61,8 +67,14 @@ class Gene:
                 # if 70% of the population is vaccinated, terminate
                 self.fitness_value = i
                 return
-        self.fitness_value = num_timestamps
+            if record_data:
+                self.country_data[i] = {}
+                for country in world.countries.values():
+                    average_vaccinated_population = round(country.vaccinated_population / country.population, 2)
+                    self.country_data[i][country.name] = average_vaccinated_population
 
+        self.fitness_value = num_timestamps
+            
 
 @dataclass
 class VaccineShipment:
@@ -82,25 +94,54 @@ class Chromosome:
     def __init__(self, genes: list[Gene]) -> None:
         self.genes = genes
 
-    def fitness(self, world: World, num_timestamps: int):
+    def fitness(self, world: World, num_timestamps: int, dataframe: pandas.DataFrame) -> None:
         """Runs simulation and gives a fitness score to the each of the genes in the chromosome"""
         for gene in self.genes:
-            gene.fitness(world=world, num_timestamps=num_timestamps)
+            gene.fitness(world=world, num_timestamps=num_timestamps, record_data=False)
             world.reset()
 
     def calculate_average_fitness(self) -> float:
         """Calculates the average fitness of the genes in the chromosome"""
         return sum([gene.fitness_value for gene in self.genes]) / len(self.genes)
 
+    def calculate_mode_fitness(self) -> float:
+        """Calculates the mode fitness of the genes in the chromosome"""
+        fitness_values = [gene.fitness_value for gene in self.genes]
+        return max(set(fitness_values), key=fitness_values.count)
+
+    def calculate_median_fitness(self) -> float:
+        """Calculates the median fitness of the genes in the chromosome"""
+        fitness_values = [gene.fitness_value for gene in self.genes]
+        fitness_values.sort()
+        return fitness_values[len(fitness_values) // 2]
+
+    def calculate_maximum_fitness(self) -> float:
+        """Calculates the maximum of all genes in the chromosome"""
+        fitness_values = [gene.fitness_value for gene in self.genes]
+        return max(fitness_values)
+
+    def calculate_minimum_fitness(self) -> float:
+        """Calculates the worst gene in the chromosome"""
+        fitness_values = [gene.fitness_value for gene in self.genes]
+        return min(fitness_values)
+
+    def update_final_distribution(self, world: World, dataframe: pandas.DataFrame) -> None:
+        """Updates the final distribution of the chromosome"""
+        lowest_gene = self.genes[0]
+        for gene in self.genes:
+            if gene.fitness_value < lowest_gene.fitness_value:
+                lowest_gene = gene
+        lowest_gene.fitness(world=world, num_timestamps=lowest_gene.fitness_value, record_data=True)
+        for i in lowest_gene.country_data:
+            timestamp = lowest_gene.country_data[i]
+            for country in timestamp.keys():
+                dataframe.loc[len(dataframe)] = [i, country, timestamp[country]]
+            
     def __str__(self) -> str:
         string = ""
         for i in range(len(self.genes)):
             string += f"Gene {i + 1}: {self.genes[i]}\n\n"
         return string
-
-
-CROSSOVER_AGGRESSION_RATE = 0.45
-MUTATION_AGGRESSION_RATE = 0.6
 
 
 class GeneticAlgorithm:
@@ -122,11 +163,15 @@ class GeneticAlgorithm:
     chromosome_size: int
     num_chromosomes: int
     num_best_genes: int
+    chromosome_dict: dict[int, dict[str, float]] = {}
+    chromosome_dataframe: pandas.DataFrame
 
     world_graph: World
     num_timestamps: int
+    data_record: pandas.DataFrame
+    final_chromosome_data: pandas.DataFrame
 
-    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World, num_timestamps: int, num_best_genes: int):
+    def __init__(self, mutation_rate: float, crossover_rate: float, replication_rate: float, chromosome_size: int, num_chromosomes: int, world: World, num_timestamps: int, num_best_genes: int) -> None:
         self.mutation_rate = mutation_rate
         self.crossover_rate = crossover_rate
         self.replication_rate = replication_rate
@@ -135,46 +180,57 @@ class GeneticAlgorithm:
         self.world_graph = world
         self.num_timestamps = num_timestamps
         self.num_best_genes = num_best_genes
+        self.chromosome_dataframe = pandas.DataFrame(
+            columns=["Generation", "Country", "Average Vaccinated"])
+        self.final_chromosome_data = pandas.DataFrame(
+            columns=["Timestamp", "Country", "Percent Vaccinated"])
 
     def run(self) -> Chromosome:
         """Runs the genetic algorithm and returns the final chromosome"""
         # print("Generation 0: Initial Chromosome")
         chromosome = self.create_initial_chromosome()
         chromosome.fitness(
-            num_timestamps=self.num_timestamps, world=self.world_graph)
+            num_timestamps=self.num_timestamps, world=self.world_graph, dataframe=self.chromosome_dataframe)
         for i in range(self.num_chromosomes):
             # print(f"Generation {i + 1}: {chromosome}")
             chromosome = self.selection(chromosome=chromosome)
             chromosome.fitness(world=self.world_graph,
-                               num_timestamps=self.num_timestamps)
+                               num_timestamps=self.num_timestamps, dataframe=self.chromosome_dataframe)
             print(
-                f"Generation {i + 1} fitness : {chromosome.calculate_average_fitness()}")
+                f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} min: {min([gene.fitness_value for gene in chromosome.genes])} max: {max([gene.fitness_value for gene in chromosome.genes])}")
+            
+                
+        # self.chromosome_dataframe.to_csv("chromosome_data.csv", index=False)
+        chromosome.update_final_distribution(world=self.world_graph, dataframe=self.final_chromosome_data)
+        self.final_chromosome_data.to_csv("final_chromosome_data.csv", index=False)
         return chromosome
+
 
     def create_initial_chromosome(self) -> Chromosome:
         """Creates the initial chromosome
         """
         genes: list[Gene] = []
         timestamps_vaccine_amount = generate_timestamp_vaccine_amount(
-            num_timestamps=self.num_timestamps)
+            num_timestamps=self.num_timestamps, world=self.world_graph)
         countries = list(self.world_graph.countries.keys())
         exporting_countries = list(self.world_graph.exporting_countries.keys())
 
         for i in range(self.chromosome_size):
             vaccine_distribution = {}  # Building up gene
             for exporter in exporting_countries:
+                exporter_vaccine_amounts = timestamps_vaccine_amount[exporter.name]
                 # each exporter has a list of shipments
                 vaccine_distribution[exporter] = []
-                for i in range(len(timestamps_vaccine_amount)):
+                for i in range(len(exporter_vaccine_amounts)):
                     chosen_countries = []  # list of countries that have already been chosen
                     # each timestamp has a list of shipments
                     vaccine_distribution[exporter].append([])
                     # total amount of vaccines at timestamp i (decreases as we pick countries)
-                    total_vaccine_amount = timestamps_vaccine_amount[i]
+                    total_vaccine_amount = exporter_vaccine_amounts[i]
                     while True:
                         # picks between 1/4 and 1/2 of the total amount of vaccines at timestamp i
                         selected_amount = random.randint(
-                            timestamps_vaccine_amount[i] // 4, timestamps_vaccine_amount[i] // 2)
+                            exporter_vaccine_amounts[i] // 4, exporter_vaccine_amounts[i] // 2)
                         countries_left = list(
                             set(countries).difference(set(chosen_countries)))
                         # 1 country left or chosen amount is greater than the amount of vaccines left
@@ -268,7 +324,7 @@ class GeneticAlgorithm:
         gene2_copy = Gene(vaccine_distribution=gene2.vaccine_distribution)
         for exporter in gene1_copy.vaccine_distribution:
             for i in range(len(gene1_copy.vaccine_distribution[exporter])):
-                occurrence_percentage = CROSSOVER_AGGRESSION_RATE
+                occurrence_percentage = 0.45
                 crossover_probability = random.uniform(0, 1)
                 if crossover_probability > occurrence_percentage:
                     gene1_copy.vaccine_distribution[exporter][i], gene2_copy.vaccine_distribution[exporter][
@@ -334,10 +390,12 @@ class GeneticAlgorithm:
         """Returns the replicated gene"""
         return Gene(vaccine_distribution=gene.vaccine_distribution)
 
-
-def generate_timestamp_vaccine_amount(num_timestamps) -> list[int]:
+def generate_timestamp_vaccine_amount(num_timestamps, world) -> list[int]:
     """Generates a list of the amount of vaccines at each timestamp"""
-    timestamps_vaccine_amount = []
-    for i in range(num_timestamps):
-        timestamps_vaccine_amount.append((i + 1) * 1000)
+    timestamps_vaccine_amount = {}
+    for exporter in world.exporting_countries.values():
+        timestamps_vaccine_amount[exporter.name] = []
+        for i in range(num_timestamps):
+            timestamps_vaccine_amount[exporter.name].append(
+                ((i+1) ** 2) * exporter.export_rate * 10_000_000)
     return timestamps_vaccine_amount
