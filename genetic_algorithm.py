@@ -223,7 +223,7 @@ class GeneticAlgorithm:
         """Creates the initial chromosome
         """
         genes: list[Gene] = []
-        timestamps_vaccine_amount = generate_timestamp_vaccine_amount(
+        timestamps_vaccine_amount = generate_timestamp_vaccine(
             num_timestamps=self.num_timestamps, world=self.world_graph)
         countries = list(self.world_graph.countries.keys())
         exporting_countries = list(self.world_graph.exporting_countries.keys())
@@ -407,7 +407,7 @@ class GeneticAlgorithm:
         return Gene(vaccine_distribution=gene.vaccine_distribution)
 
 
-def generate_timestamp_vaccine_amount(num_timestamps: int, world: World) -> list[int]:
+def generate_timestamp_vaccine(num_timestamps: int, world: World) -> list[int]:
     """Generates a list of the amount of vaccines at each timestamp"""
     timestamps_vaccine_amount = {}
     for exporter in world.exporting_countries.values():
