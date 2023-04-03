@@ -3,10 +3,10 @@ File that performs the genetic algorithm
 """
 
 from dataclasses import dataclass
-from world_graph import World, ExportingCountry, Country, Edge
 import random
 from typing import Optional
 import pandas
+from world_graph import World, Country
 
 
 class Gene:
@@ -40,7 +40,6 @@ class Gene:
         self.vaccine_distribution = vaccine_distribution
         self.country_data = {}
 
-
     def __str__(self) -> str:
         return f"Termination Timestamp: {self.fitness_value}"
 
@@ -48,10 +47,10 @@ class Gene:
         """Runs simulation and gives a fitness score to the gene"""
         vaccine_shipments: list[VaccineShipment] = []
         exporters = list(world.exporting_countries.keys())
-        lst_to_remove = []
         if record_data:
             self.country_data = {}
         for i in range(num_timestamps):
+            lst_to_remove = []
             for shipment in vaccine_shipments:
                 # updating shipments
                 shipment.time_left -= 1
@@ -60,8 +59,8 @@ class Gene:
                     world.export_vaccine(
                         importer=shipment.importing_country, vaccine_amount=shipment.vaccine_amount)
                     lst_to_remove.append(shipment)
-        for shipment in lst_to_remove:
-            vaccine_shipments.remove(shipment)
+            for shipment in lst_to_remove:
+                vaccine_shipments.remove(shipment)
             for exporter in exporters:
                 for country, vaccine_amount in self.vaccine_distribution[exporter][i]:
                     exporter_obj = world.exporting_countries[exporter]
@@ -434,7 +433,7 @@ if __name__ == '__main__':
     import python_ta
 
     python_ta.check_all(config={
-        'extra-imports': ['WorldGraph', 'pandas', 'typing', 'random', 'dataclasses'],
+        'extra-imports': ['world_graph', 'pandas', 'typing', 'random', 'dataclasses'],
         'allowed-io': ['GeneticAlgorithm.run'],
         'max-line-length': 120
     })
