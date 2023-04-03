@@ -216,7 +216,7 @@ class GeneticAlgorithm:
         countries = list(self.world_graph.countries.keys())
         exporting_countries = list(self.world_graph.exporting_countries.keys())
 
-        for i in range(self.chromosome_size):
+        for _ in range(self.chromosome_size):
             vaccine_distribution = {}  # Building up gene
             for exporter in exporting_countries:
                 exporter_vaccine_amounts = timestamps_vaccine_amount[exporter]
@@ -332,7 +332,6 @@ class GeneticAlgorithm:
                 # reassign the mutated timestamp to the mutation helper
                 new_vaccine_distribution[exporter] = list_of_timestamps
         return Gene(vaccine_distribution=new_vaccine_distribution)
-
 
     def mutation_helper(self, timestamp: list[tuple]) -> list[tuple]:
         """Helps the function in mutation """

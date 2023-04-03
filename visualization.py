@@ -56,7 +56,10 @@ def visualize_fitness(fitness_values: pandas.DataFrame) -> None:
     """
     Visualize the average time to reach 70% vaccination population for each country over time.
     """
-    line_graph = px.line(fitness_values, x="Generation", y="Fitness Value", title="Average Time to Vaccinate 70% of the Population over Generation")
+    line_graph = px.line(fitness_values,
+                         x="Generation",
+                         y="Fitness Value",
+                         title="Average Time to Vaccinate 70% of the Population over Generation")
     line_graph.show()
 
 
