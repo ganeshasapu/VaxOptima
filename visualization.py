@@ -48,7 +48,7 @@ def visualize_data(dataframe : pandas.DataFrame):
     )
 
     cloropleth.write_html("world_map.html")
-    webbrowser.open_new_tab("world_map.html")
+    cloropleth.show()
 
 
 def visualize_fitness(fitness_values : pandas.DataFrame):
@@ -58,4 +58,4 @@ def visualize_fitness(fitness_values : pandas.DataFrame):
     line_graph = px.line(fitness_values, x="Timestamp", y="Fitness Value", title="Fitness over time")
 
     line_graph.write_html("fitness.html")
-    webbrowser.open_new_tab("fitness.html")
+    line_graph.show()
