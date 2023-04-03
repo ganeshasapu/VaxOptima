@@ -231,7 +231,7 @@ class GeneticAlgorithm:
         for i in range(self.chromosome_size):
             vaccine_distribution = {}  # Building up gene
             for exporter in exporting_countries:
-                exporter_vaccine_amounts = timestamps_vaccine_amount[exporter.name]
+                exporter_vaccine_amounts = timestamps_vaccine_amount[exporter]
                 # each exporter has a list of shipments
                 vaccine_distribution[exporter] = []
                 for i in range(len(exporter_vaccine_amounts)):

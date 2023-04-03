@@ -23,7 +23,6 @@ def visualize_data(dataframe : pandas.DataFrame):
     world["name"].replace("Timor-Leste", "Timor", inplace=True)
 
     countries = world["name"].to_list()
-    print(countries)
 
 
     # Merge your data with the GeoDataFrame
@@ -49,7 +48,6 @@ if __name__ == '__main__':
         "Country": ["United States", "Canada", 'Mexico', "United States", "Canada", 'Mexico'],
         "Percent Vaccinated": [20, 50, 30, 50, 70, 100]
         })
-    print(data)
     visualize_data(data)
 
     # # Load data into a pandas DataFrame
