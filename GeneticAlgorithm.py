@@ -3,7 +3,7 @@ File that performs the genetic algorithm
 """
 
 from dataclasses import dataclass
-from WorldGraph import World, ExportingCountry, Country, Edge
+from world_graph import World, ExportingCountry, Country, Edge
 import random
 from typing import Optional
 import pandas
@@ -34,7 +34,7 @@ class Gene:
         self.fitness_value = fitness_value
         self.vaccine_distribution = vaccine_distribution
         self.country_data = {}
-        
+
 
     def __str__(self) -> str:
         return f"Termination Timestamp: {self.fitness_value}"
@@ -74,7 +74,7 @@ class Gene:
                     self.country_data[i][country.name] = average_vaccinated_population
 
         self.fitness_value = num_timestamps
-            
+
 
 @dataclass
 class VaccineShipment:
@@ -136,7 +136,7 @@ class Chromosome:
             timestamp = lowest_gene.country_data[i]
             for country in timestamp.keys():
                 dataframe.loc[len(dataframe)] = [i, country, timestamp[country]]
-            
+
     def __str__(self) -> str:
         string = ""
         for i in range(len(self.genes)):
@@ -198,8 +198,8 @@ class GeneticAlgorithm:
                                num_timestamps=self.num_timestamps, dataframe=self.chromosome_dataframe)
             print(
                 f"Generation {i + 1} mean : {chromosome.calculate_average_fitness()} min: {min([gene.fitness_value for gene in chromosome.genes])} max: {max([gene.fitness_value for gene in chromosome.genes])}")
-            
-                
+
+
         # self.chromosome_dataframe.to_csv("chromosome_data.csv", index=False)
         chromosome.update_final_distribution(world=self.world_graph, dataframe=self.final_chromosome_data)
         self.final_chromosome_data.to_csv("final_chromosome_data.csv", index=False)

@@ -4,4 +4,5 @@ requests~=2.28.2
 geopandas~=0.10.2
 plotly~=5.3.1
 
+python-ta~=2.4.2
 certifi~=2022.12.7
